@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
 
   sassOptions: {
     includePaths: ['./styles'],
+    silenceDeprecations: ['import'],
   },
 
   // Suppress hydration warnings in development
