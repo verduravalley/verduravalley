@@ -29,12 +29,13 @@ export default function CocPage() {
 
   const [saving, setSaving] = useState(false);
 
-  const handlePdfChange = async (url: string) => {
-    if (!url) return;
+  const handlePdfChange = async (url: string | string[]) => {
+    const finalUrl = Array.isArray(url) ? url[0] : url;
+    if (!finalUrl) return;
     setSaving(true);
     try {
-      await axios.post('/api/code-of-conduct', { pdfUrl: url });
-      setPdfUrl(url);
+      await axios.post('/api/code-of-conduct', { pdfUrl: finalUrl });
+      setPdfUrl(finalUrl);
       setActiveTab('view');
     } catch (error) {
       alert('Failed to update');
