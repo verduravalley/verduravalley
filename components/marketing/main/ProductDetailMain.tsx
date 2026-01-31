@@ -23,7 +23,7 @@ const ProductDetailMain = ({ item }: Props) => {
   return (
     <section className="rv-product-details rv-section-spacing">
       <div className="container">
-        <div className="row g-0 align-items-start justify-content-center">
+        <div className="row gx-lg-5 gy-5 align-items-start justify-content-center">
           <div className="col-lg-6 col-12 col-xxs-12">
             <ProductDetailsImageSlider images={item.images} />
           </div>
