@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import ProductContactModal from "../modal/ProductContactModal";
 import { useTranslations } from "next-intl";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 type Props = {
   img: string;
@@ -32,7 +33,7 @@ const ShopCard = ({
   return (
     <div className={`rv-3-product rv-12-product ${style ? style : ""}`} style={{ position: 'relative' }}>
       <div className="rv-3-product__img rv-12-product__img">
-        <img src={img} alt="Product Image" />
+        <CloudinaryImage src={img} alt="Product Image" width={400} height={400} />
         {discount && <span className="rv-3-product__tag">-20%</span>}
       </div>
 

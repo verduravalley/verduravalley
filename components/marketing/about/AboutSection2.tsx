@@ -7,6 +7,7 @@ import IconRespect from "../utils/svg/IconRespect";
 import IconSafe from "../utils/svg/IconSafe";
 import IconStewardship from "../utils/svg/IconStewardship";
 import { useTranslations } from "next-intl";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const AboutSection2 = () => {
   const t = useTranslations('about');
@@ -16,9 +17,9 @@ const AboutSection2 = () => {
       <div className="container position-relative">
         <div className="row rv-1-about-row g-0 justify-content-between">
           {/* Left Side: Main Visual (The Modern Facility) */}
-          <DivAnimateXAxis className="col-xl-5 col-lg-6" position={-80}>
+          <DivAnimateXAxis className="col-xl-4 col-lg-6" position={-80}>
             <div className="rv-1-about__img reveal">
-              <img src="assets/img/about-img-1.jpg" alt="Verdura Valley Facility" />
+              <CloudinaryImage src="/assets/img/about-img-1.jpg" alt="Verdura Valley Facility" width={600} height={600} />
             </div>
           </DivAnimateXAxis>
 
@@ -131,10 +132,12 @@ const AboutSection2 = () => {
           <div className="rv-legacy-card mt-40 mb-40 w-100">
             <div className="d-flex align-items-start align-items-md-center gap-4 flex-column flex-md-row">
               <div className="rv-legacy-card__img-wrapper">
-                <img
+                <CloudinaryImage
                   src="/assets/images/medhat-marzouk.jpg"
                   alt={t('memorialName')}
                   className="rv-legacy-img"
+                  width={300}
+                  height={300}
                 />
               </div>
 
@@ -152,9 +155,9 @@ const AboutSection2 = () => {
 
 
         <div className="rv-1-about__vectors">
-          <img src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434580/rv-1-vector-6_pk9i7z.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-1" />
-          <img src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434580/rv-1-vector-7_nmuwed.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-2" />
-          <img src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434581/rv-1-vector-8_k11vah.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-3" />
+          <CloudinaryImage src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434580/rv-1-vector-6_pk9i7z.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-1" width={100} height={100} />
+          <CloudinaryImage src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434580/rv-1-vector-7_nmuwed.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-2" width={100} height={100} />
+          <CloudinaryImage src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434581/rv-1-vector-8_k11vah.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-3" width={100} height={100} />
         </div>
       </div>
     </section>

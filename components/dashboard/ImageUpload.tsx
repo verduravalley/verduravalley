@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Upload, X, Loader2 } from 'lucide-react';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 interface ImageUploadProps {
   value?: string;
@@ -87,10 +88,12 @@ export default function ImageUpload({
       {value ? (
         <div className="relative inline-block">
           {resourceType === 'image' ? (
-            <img
+            <CloudinaryImage
               src={value}
               alt="Uploaded"
               className="h-32 w-32 object-cover rounded-lg border border-gray-200"
+              width={128}
+              height={128}
             />
           ) : (
             <div className="h-32 w-32 flex items-center justify-center bg-gray-100 rounded-lg border border-gray-200">

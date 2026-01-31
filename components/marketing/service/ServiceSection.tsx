@@ -4,6 +4,7 @@ import { serviceData } from "@/data/Data";
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const ServiceSection = () => {
   const t = useTranslations('home.service');
@@ -80,7 +81,7 @@ const ServiceSection = () => {
                 }`}
               >
                 <div className="rv-20-single_service_iamge">
-                  <img src={item.imgMain} alt="image" />
+                  <CloudinaryImage src={item.imgMain} alt="image" width={600} height={400} />
                 </div>
                 <div
                   className="rv-20-single_service_content_main"
@@ -91,7 +92,7 @@ const ServiceSection = () => {
                   <div className="visible-part">
                     <div className="rv-20-single_service_content_top">
                       <div className="rv-20-single_service_icon">
-                        <img src={item.imgIcon} alt="image" />
+                        <CloudinaryImage src={item.imgIcon} alt="image" width={80} height={80} />
                       </div>
                     </div>
 
@@ -118,10 +119,10 @@ const ServiceSection = () => {
       </div>
 
       <span className="service-sh-1">
-        <img src="assets/img/services/home-6-service-4.png" alt="image" />
+        <CloudinaryImage src="/assets/img/services/home-6-service-4.png" alt="image" width={300} height={300} />
       </span>
       <span className="service-sh-2">
-        <img src="assets/img/services/home-6-service-5.png" alt="image" />
+        <CloudinaryImage src="/assets/img/services/home-6-service-5.png" alt="image" width={300} height={300} />
       </span>
     </section>
   );

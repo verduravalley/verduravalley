@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Upload, X, Loader2, Image as ImageIcon } from 'lucide-react';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 interface MultiImageUploadProps {
   value: string[];
@@ -77,10 +78,12 @@ export default function MultiImageUpload({
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
         {value.map((url, index) => (
           <div key={index} className="relative aspect-square group">
-            <img
+            <CloudinaryImage
               src={url}
               alt={`Product ${index}`}
               className="h-full w-full object-cover rounded-lg border border-gray-200"
+              width={150}
+              height={150}
             />
             <button
               type="button"

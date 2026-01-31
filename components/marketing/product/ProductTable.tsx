@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ShopItem } from "@/types";
 import { useState } from "react";
 import ProductContactModal from "../modal/ProductContactModal";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 type Props = {
   items: ShopItem[];
@@ -38,7 +39,7 @@ const ProductTable = ({
                   <td>
                     <div className="cart-product">
                       <div className="cart-product__img">
-                        <img src={item.img} alt="Product Image" />
+                        <CloudinaryImage src={item.img} alt="Product Image" width={100} height={100} />
                       </div>
                       <div className="cart-product__txt">
                         <h6>

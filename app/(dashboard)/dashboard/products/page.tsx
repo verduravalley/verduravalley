@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { Dialog } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import MultiImageUpload from '@/components/dashboard/MultiImageUpload';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 interface Product {
   id: string;
@@ -133,7 +134,7 @@ export default function ProductsPage() {
                     <div className="flex items-center">
                       <div className="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
                         {product.images?.[0] ? (
-                          <img className="h-10 w-10 object-cover" src={product.images[0]} alt="" />
+                          <CloudinaryImage className="h-10 w-10 object-cover" src={product.images[0]} alt="" width={40} height={40} />
                         ) : (
                           <Package className="h-6 w-6 m-2 text-gray-400" />
                         )}

@@ -1,15 +1,20 @@
 import { motion } from "framer-motion";
+import CloudinaryImage from "@/components/CloudinaryImage";
 type Props = {
   className?: string;
   alt: string;
   src: string;
 };
 
+const MotionCloudinaryImage = motion(CloudinaryImage);
+
 const CustomImageAnimate = ({ className, alt, src }: Props) => {
   return (
-    <motion.img
+    <MotionCloudinaryImage
       src={src}
       alt={alt}
+      width={600}
+      height={800}
       className={className ? className : ""}
       initial={{
         scale: 1.2,

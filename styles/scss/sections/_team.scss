@@ -144,7 +144,7 @@
             left: -15px;
             width: calc(100% + 5px);
             height: calc(100% + 5px);
-            background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434675/rv-5-member-img-frame_nfrrgl.png) no-repeat center center;
+            background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434675/rv-5-member-img-frame_nfrrgl.png) no-repeat center center;
             background-size: 100% 100%;
 
             @include xl {
@@ -638,7 +638,7 @@
                 font-family: var(--mulish);
                 font-size: 16px;
                 font-weight: 700;
-                text-underline-offset: 3px;
+                // removed underline offset
 
                 &:hover {
                     color: #EFC329;

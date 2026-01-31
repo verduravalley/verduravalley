@@ -97,11 +97,11 @@ const BannerSection = () => {
       </Swiper>
 
       <div className="rv-20-banner_slide_button_area">
-        <div className="rv-20-banner_slide_button_prev ">
+        <div className="rv-20-banner_slide_button_prev">
           {" "}
           <i className={`fas fa-arrow-${isRTL ? 'right' : 'left'}`}></i>{" "}
         </div>
-        <div className="rv-20-banner_slide_button_next ">
+        <div className="rv-20-banner_slide_button_next">
           {" "}
           <i className={`fas fa-arrow-${isRTL ? 'left' : 'right'}`}></i>{" "}
         </div>

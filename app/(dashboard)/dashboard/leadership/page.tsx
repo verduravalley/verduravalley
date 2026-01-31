@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { Dialog } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import ImageUpload from '@/components/dashboard/ImageUpload';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 interface Member {
   id: string;
@@ -99,10 +100,12 @@ export default function LeadershipPage() {
         ) : members.map((member) => (
           <div key={member.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md transition">
             <div className="relative">
-               <img 
+               <CloudinaryImage 
                 src={member.image_url || "https://via.placeholder.com/150"} 
                 alt={member.name}
                 className="w-20 h-20 rounded-2xl object-cover bg-gray-50 ring-4 ring-gray-50"
+                width={80}
+                height={80}
               />
             </div>
             <div className="flex-1">

@@ -1,6 +1,6 @@
 /* ----- 25. Partners ----- */
 .rv-5-partners {
-    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434676/rv-5-partner-bg_dqx2dh.jpg) no-repeat center center;
+    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434676/rv-5-partner-bg_dqx2dh.jpg) no-repeat center center;
     background-size: cover;
     padding: 55px 0;
     text-align: center;
@@ -38,8 +38,7 @@
 
         a {
             color: #F2584C;
-            text-decoration: 1px underline;
-            text-underline-offset: 4px;
+            // removed underline
         }
     }
 

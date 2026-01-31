@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, FreeMode } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 // Import Swiper styles
 import "swiper/css";
@@ -36,10 +37,13 @@ const ProductDetailsImageSlider = ({ images = [] }: Props) => {
         {displayImages.map((img, index) => (
           <SwiperSlide key={index}>
             <div className="rv-product-details__img">
-              <img
+              <CloudinaryImage
                 src={img}
                 alt={`Product Image ${index + 1}`}
+                width={800}
+                height={800}
                 style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '15px' }}
+                priority={index === 0}
               />
             </div>
           </SwiperSlide>
@@ -61,9 +65,11 @@ const ProductDetailsImageSlider = ({ images = [] }: Props) => {
           {displayImages.map((img, index) => (
             <SwiperSlide key={index} className="cursor-pointer">
               <div className="rv-product-details__img-thumb-item">
-                <img
+                <CloudinaryImage
                   src={img}
                   alt={`Thumbnail ${index + 1}`}
+                  width={150}
+                  height={150}
                   style={{ 
                     width: '100%', 
                     aspectRatio: '1/1', 

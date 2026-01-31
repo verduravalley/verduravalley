@@ -50,6 +50,10 @@ const NavSection = ({ style }: Props) => {
               cursor: "default !important",
               textAlign: "start",
               width: "100%",
+              fontWeight: 500,
+              fontFamily: 'inherit',
+              color: 'inherit',
+              textDecoration: "none"
             }}
           >{t('about')}</button>
           <ul className="sub-menu">
@@ -76,6 +80,10 @@ const NavSection = ({ style }: Props) => {
               whiteSpace: "nowrap",
               textAlign: "start",
               width: "100%",
+              fontWeight: 500,
+              fontFamily: 'inherit',
+              color: 'inherit',
+              textDecoration: "none"
             }}
           >
             {t('sustainability')}

@@ -2,6 +2,7 @@ import { teamData2 } from "@/data/Data";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const TeamSection2 = () => {
   return (
@@ -46,7 +47,7 @@ const TeamSection2 = () => {
             {teamData2.map((item) => (
               <SwiperSlide className="rv-9-member" key={item.id}>
                 <div className="rv-9-member__img">
-                  <img src={item.mainImg} alt="Project Image" />
+                  <CloudinaryImage src={item.mainImg} alt="Project Image" width={400} height={500} />
                 </div>
 
                 <div className="rv-9-member__txt">

@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const TeamSection = () => {
   const t = useTranslations('home.team');
@@ -50,7 +51,12 @@ const TeamSection = () => {
             <div className="col-md-6 col-sm-8 col-lg-4" key={item.id}>
               <div className="rv-20-single_team ">
                 <div className="rv-20-single_team_image">
-                  <img src={item.image} alt={t(item.nameKey)} />
+                  <CloudinaryImage 
+                    src={item.image} 
+                    alt={t(item.nameKey)} 
+                    width={400} 
+                    height={500} 
+                  />
                 </div>
                 <div className="rv-20-team_member_info">
                   <h4 className="rv-20-team_member_name">

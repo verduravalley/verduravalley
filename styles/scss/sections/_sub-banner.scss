@@ -99,8 +99,7 @@
         a.email {
             border: none;
             margin-left: 14px;
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            // removed underline
             width: auto;
 
             @include xxs {
@@ -155,7 +154,7 @@
 
 // INDEX-7 SUB-BANNER
 .rv-7-sub-banner {
-    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434716/rv-7-sub-banner-bg-1_kjbogp.jpg) no-repeat center center;
+    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434716/rv-7-sub-banner-bg-1_kjbogp.jpg) no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -183,7 +182,7 @@
     }
 
     &--2 {
-        background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434716/rv-7-sub-banner-bg-2_b3f2zf.jpg);
+        background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434716/rv-7-sub-banner-bg-2_b3f2zf.jpg);
     }
 
     .rv-7-section__sub-title {
@@ -232,7 +231,7 @@
 
 // INDEX-13 SUB-BANNER
 .rv-13-sub-banner {
-    background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434797/rv-13-sub-banner-bg-1_cxkhxj.jpg);
+    background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434797/rv-13-sub-banner-bg-1_cxkhxj.jpg);
 
     .rv-7-sub-banner__img {
         flex-shrink: 0;
@@ -254,11 +253,11 @@
     }
 
     &-2 {
-        background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434798/rv-13-sub-banner-bg-2_h6dliw.jpg);
+        background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434798/rv-13-sub-banner-bg-2_h6dliw.jpg);
     }
 
     &-3 {
-        background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434799/rv-13-sub-banner-bg-3_susom3.jpg);
+        background-image: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434799/rv-13-sub-banner-bg-3_susom3.jpg);
         position: relative;
         display: block;
         padding: 80px 80px 85px;

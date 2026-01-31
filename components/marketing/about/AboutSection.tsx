@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import NumberCounter from "../utils/NumberCounter";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const AboutSection = () => {
   const t = useTranslations('home.about');
@@ -101,7 +102,7 @@ const AboutSection = () => {
       </div>
 
       <span className="about-sh-6">
-        <img src="assets/img/about/home-6-about-3.png" alt="decorative shape" />
+        <CloudinaryImage src="/assets/img/about/home-6-about-3.png" alt="decorative shape" width={200} height={200} />
       </span>
     </section>
   );

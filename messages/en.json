@@ -117,6 +117,7 @@
     "home": "Home",
     "products": "Products",
     "about": "About",
+    "aboutUs": "About Us",
     "contact": "Contact",
     "leadership": "Leadership",
     "codeOfConduct": "Code of Conduct",
@@ -341,6 +342,6 @@
   "common": {
     "loading": "Loading...",
     "notFound": "Page Not Found",
-    "switchLang": "العربية"
+    "switchLang": "عربي"
   }
 }

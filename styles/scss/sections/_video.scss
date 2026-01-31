@@ -1044,12 +1044,12 @@
 
         a {
             color: #FFFFFF;
-            text-decoration: underline;
+            // removed underline
             display: inline;
 
             &:hover {
                 color: #1e3932;
-                text-decoration: underline;
+                // removed underline
             }
         }
     }

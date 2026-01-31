@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const ContactSection = () => {
   const t = useTranslations('home.contact');
@@ -28,9 +29,11 @@ const ContactSection = () => {
           {/* Left Side: Image */}
           <div className="col-md-12 col-lg-5">
             <div className="rv-20-contact_image">
-              <img
+              <CloudinaryImage
                 src="https://res.cloudinary.com/dh1mv7xlv/image/upload/organiyo/contact.jpg"
                 alt="Operations in Cairo, Egypt"
+                width={800}
+                height={600}
               />
             </div>
           </div>
@@ -54,10 +57,10 @@ const ContactSection = () => {
 
       {/* Decorative Background Elements */}
       <span className="home-6-sh-1">
-        <img src="assets/img/contact/home-6-sh-1.png" alt="shape" />
+        <CloudinaryImage src="/assets/img/contact/home-6-sh-1.png" alt="shape" width={200} height={200} />
       </span>
       <span className="home-6-sh-2">
-        <img src="assets/img/contact/home-6-sh-2.png" alt="shape" />
+        <CloudinaryImage src="/assets/img/contact/home-6-sh-2.png" alt="shape" width={200} height={200} />
       </span>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 type Props = {
   style?: string;
@@ -32,7 +33,7 @@ const FooterSection = ({
             <div className="col-12 col-md-3 col-lg-4">
               <div className="rv-1-footer__about">
                             <Link href="/" style={{ textDecoration: 'none' }} className="mb-4 d-block">
-                              <img src={logo} alt="logo" className="logo" width={120} />
+                              <CloudinaryImage src={logo} alt="logo" className="logo" width={120} height={40} />
                             </Link>
                 <p className="rv-1-footer__about-txt">
                   {t('aboutText')}

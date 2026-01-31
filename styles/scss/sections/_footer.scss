@@ -628,7 +628,7 @@
         }
 
         a {
-            text-decoration: 1px underline rgb(255 255 255 / 50%);
+            // removed underline
         }
     }
 }
@@ -1232,7 +1232,7 @@
 
 // INDEX-17 FOOTER 
 .rv-17-footer {
-    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434819/rv-17-footer-bg_edoz04.jpg) no-repeat center center;
+    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434819/rv-17-footer-bg_edoz04.jpg) no-repeat center center;
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -1458,7 +1458,7 @@
 
 // INDEX-23 FOOTER
 .rv-23-footer {
-    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434819/rv-22-footer-bg_q9hc41.jpg) no-repeat center center;
+    background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto/v1768434819/rv-22-footer-bg_q9hc41.jpg) no-repeat center center;
     background-size: cover;
 
     &-widget {
