@@ -8,7 +8,7 @@ const intlMiddleware = createMiddleware({
   localePrefix: 'always',
 });
 
-export function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Skip API routes - they don't need locale
