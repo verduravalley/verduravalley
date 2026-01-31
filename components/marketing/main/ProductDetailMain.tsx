@@ -9,8 +9,13 @@ type Props = {
   item: ShopItem;
 };
 
+import { useLocale, useTranslations } from "next-intl";
+
 const ProductDetailMain = ({ item }: Props) => {
   const [activeTab, setActiveTab] = useState<string>("desc");
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
+  const t = useTranslations('shop');
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
@@ -38,7 +43,7 @@ const ProductDetailMain = ({ item }: Props) => {
                     id="descr-tab"
                     onClick={() => handleTabClick("desc")}
                   >
-                    Description
+                    {t('description')}
                   </button>
                 </li>
                 {/* <li className="nav-item">
@@ -60,7 +65,7 @@ const ProductDetailMain = ({ item }: Props) => {
                   }`}
                   id="descr-tab-pane"
                 >
-                  <ProductDescription description={item.description} />
+                  <ProductDescription description={isRtl && item.description_ar ? item.description_ar : item.description} />
                 </div>
 
                 <div

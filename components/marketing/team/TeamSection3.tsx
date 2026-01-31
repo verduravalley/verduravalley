@@ -3,9 +3,13 @@ import CustomImageAnimate from "../utils/CustomImageAnimate";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { fetchDashboardLeadership } from "@/store/features/leadershipSlice";
 
+import { useLocale } from "next-intl";
+
 const TeamSection3 = () => {
   const dispatch = useAppDispatch();
   const { teamData, status } = useAppSelector((state) => state.leadership);
+  const locale = useLocale();
+  const isRtl = locale === "ar";
 
   useEffect(() => {
     dispatch(fetchDashboardLeadership());
@@ -44,12 +48,14 @@ const TeamSection3 = () => {
                     </div>
                     <div>
                       <span className="rv-3-project__sub-title">
-                        {item.subTitle}
+                        {isRtl && item.subTitle_ar ? item.subTitle_ar : item.subTitle}
                       </span>
                     </div>
                     <div>
                       <h5 className="rv-3-project__title">
-                        <a href="#">{item.title}</a>
+                        <a href="#">
+                          {isRtl && item.title_ar ? item.title_ar : item.title}
+                        </a>
                       </h5>
                     </div>
                   </div>

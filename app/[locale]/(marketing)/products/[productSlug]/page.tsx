@@ -9,6 +9,8 @@ import ProductDetailMain from '@/components/marketing/main/ProductDetailMain';
 import RelatedProducts from '@/components/marketing/product/RelatedProducts';
 import ErrorSection from '@/components/marketing/error/ErrorSection';
 
+import { useLocale } from "next-intl";
+
 interface PageProps {
   params: Promise<{ productSlug: string }>;
 }
@@ -18,6 +20,8 @@ export default function ProductDetailsPage({ params }: PageProps) {
   const dispatch = useAppDispatch();
   const { shopData, status } = useAppSelector((state) => state.shop);
   usePageView('product', productSlug);
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
 
   useEffect(() => {
     if (status === 'idle') {
@@ -42,7 +46,7 @@ export default function ProductDetailsPage({ params }: PageProps) {
     <>
       {productInfo ? (
         <>
-          <BreadcrumbSection title={productInfo.name} />
+          <BreadcrumbSection title={isRtl && productInfo.name_ar ? productInfo.name_ar : productInfo.name} />
           <ProductDetailMain item={productInfo} />
           <RelatedProducts />
         </>

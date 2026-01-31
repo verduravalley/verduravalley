@@ -2,19 +2,24 @@ import { ShopItem } from "@/types";
 import { useState } from "react";
 import ProductContactModal from "../modal/ProductContactModal";
 
+import { useLocale, useTranslations } from "next-intl";
+
 type Props = {
   item: ShopItem;
 };
 
 const ProductDetailTop = ({ item }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
+  const t = useTranslations('shop');
 
   return (
     <div className="rv-product-details__top-txt">
-      <h2 className="rv-product-details__title">{item.name}</h2>
+      <h2 className="rv-product-details__title">{isRtl && item.name_ar ? item.name_ar : item.name}</h2>
 
       <p className="rv-product-details__short-descr">
-        {item.product_info}
+        {isRtl && item.product_info_ar ? item.product_info_ar : item.product_info}
       </p>
 
       <h4 className="rv-product-details__price">
@@ -27,7 +32,7 @@ const ProductDetailTop = ({ item }: Props) => {
           className="rv-product-details__add-to-cart"
           onClick={() => setIsModalOpen(true)}
         >
-          Contact for more
+          {t('contactForMore')}
         </button>
       </div>
 

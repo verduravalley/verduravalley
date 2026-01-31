@@ -19,7 +19,7 @@ const AboutSection2 = () => {
           {/* Left Side: Main Visual (The Modern Facility) */}
           <DivAnimateXAxis className="col-xl-4 col-lg-6" position={-80}>
             <div className="rv-1-about__img reveal">
-              <CloudinaryImage src="/assets/img/about-img-1.jpg" alt="Verdura Valley Facility" width={600} height={600} />
+              <CloudinaryImage src="/assets/images/us-about.jpg" alt="Verdura Valley Facility" width={600} height={600} />
             </div> 
           </DivAnimateXAxis> 
 

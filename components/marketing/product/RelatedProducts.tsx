@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { useAppSelector } from "@/store/hooks";
 import ShopCard from "../shop/ShopCard";
+import { useTranslations } from "next-intl";
 
 const RelatedProducts = () => {
   const { shopData } = useAppSelector((state) => state.shop);
+  const t = useTranslations('shop');
 
   if (shopData.length === 0) return null;
 
@@ -12,13 +14,13 @@ const RelatedProducts = () => {
       <div className="container">
         <div className="rv-3-section-heading rv-related-prod-heading">
           <div className="rv-3-section-heading__left">
-            <h6 className="rv-7-section__sub-title">New Collection</h6>
-            <h2 className="rv-related-prod__title">Featured Products</h2>
+            <h6 className="rv-7-section__sub-title">{t('newCollection')}</h6>
+            <h2 className="rv-related-prod__title">{t('featuredProducts')}</h2>
           </div>
 
           <div className="rv-3-section-heading__right">
             <Link href="/products" className="rv-3-def-btn rv-12-banner__btn">
-              Shop all Products
+              {t('shopAllProducts')}
             </Link>
           </div>
         </div>

@@ -82,8 +82,29 @@ export default function EditLeadershipPage({ params }: { params: Promise<{ id: s
         <h1 className="text-2xl font-bold text-gray-800 mb-6">{t('editTeamMember')}</h1>
         
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* English Fields */}
+
+          {/* Shared Fields */}
           <div className="border-b border-gray-200 pb-1 mb-3">
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{tc('shared')}</span>
+          </div>
+          <ImageUpload
+            value={images}
+            onChange={(urls) => setImages(urls as string[])}
+            folder="organiyo/leadership"
+            label="Member Photo(s)"
+            multiple={true}
+          />
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('sortOrder')}</label>
+            <input
+              type="number"
+              {...register('sort_order')}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
+            />
+          </div>
+
+          {/* English Fields */}
+          <div className="border-b border-gray-200 pb-1 mb-3 mt-6">
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{tc('english')}</span>
           </div>
           <div>
@@ -127,26 +148,6 @@ export default function EditLeadershipPage({ params }: { params: Promise<{ id: s
             />
           </div>
 
-          {/* Shared Fields */}
-          <div className="border-b border-gray-200 pb-1 mb-3 mt-6">
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{tc('shared')}</span>
-          </div>
-          <ImageUpload
-            value={images}
-            onChange={(urls) => setImages(urls as string[])}
-            folder="organiyo/leadership"
-            label="Member Photo(s)"
-            multiple={true}
-          />
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('sortOrder')}</label>
-            <input
-              type="number"
-              {...register('sort_order')}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
-            />
-          </div>
 
           <button
             type="submit"

@@ -111,7 +111,12 @@
     "sortByPopularity": "ترتيب حسب الشعبية",
     "sortByRating": "ترتيب حسب التقييم",
     "sortByPriceLow": "ترتيب حسب السعر: من الأقل للأعلى",
-    "sortByPriceHigh": "ترتيب حسب السعر: من الأعلى للأقل"
+    "sortByPriceHigh": "ترتيب حسب السعر: من الأعلى للأقل",
+    "description": "الوصف",
+    "productDescription": "وصف المنتج",
+    "newCollection": "تشكيلة جديدة",
+    "featuredProducts": "منتجات مميزة",
+    "shopAllProducts": "تسوق جميع المنتجات"
   },
   "breadcrumb": {
     "home": "الرئيسية",

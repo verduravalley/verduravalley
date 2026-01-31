@@ -7,6 +7,8 @@ import ProductContactModal from "../modal/ProductContactModal";
 import { useTranslations } from "next-intl";
 import CloudinaryImage from "@/components/CloudinaryImage";
 
+import { useLocale } from "next-intl";
+
 type Props = {
   img: string;
   name: string;
@@ -25,10 +27,15 @@ const ShopCard = ({
   price,
   discount,
   slug,
+  product, // Added product here to access AR fields
   style,
 }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const t = useTranslations('shop');
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
+  
+  const displayName = isRtl && product.name_ar ? product.name_ar : name;
 
   return (
     <div className={`rv-3-product rv-12-product ${style ? style : ""}`} style={{ position: 'relative' }}>
@@ -40,7 +47,7 @@ const ShopCard = ({
       <div className="rv-3-product__txt">
         <h5 className="rv-3-product__title">
           <Link href={`/products/${slug}`}>
-            {name}
+            {displayName}
             {/* Stretched link to make whole card clickable */}
             <span
               style={{

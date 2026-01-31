@@ -111,7 +111,12 @@
     "sortByPopularity": "Sort by Popularity",
     "sortByRating": "Sort by Rating",
     "sortByPriceLow": "Sort by Price: Low to High",
-    "sortByPriceHigh": "Sort by Price: High to Low"
+    "sortByPriceHigh": "Sort by Price: High to Low",
+    "description": "Description",
+    "productDescription": "Product Description",
+    "newCollection": "New Collection",
+    "featuredProducts": "Featured Products",
+    "shopAllProducts": "Shop all Products"
   },
   "breadcrumb": {
     "home": "Home",
