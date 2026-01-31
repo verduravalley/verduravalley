@@ -1,3 +1,5 @@
+@use "../main/breakpoints";
+
 .rv-account-form-section {
     padding: 120px 0;
     .auth-container {
@@ -9,10 +11,10 @@
         padding: 50px 0;
         width: 50%;
         border-radius: 20px;
-        @include md {
+        @include breakpoints.md {
             width: 80%;
         }
-        @include xs {
+        @include breakpoints.xs {
             width: 95%;
         }
         form {
@@ -22,7 +24,7 @@
             gap: 15px;
             border-radius: 3px;
             width: 100%;
-            @include xxs {
+            @include breakpoints.xxs {
                 padding: 25px 15px 0;
             }
             input#login-password, input#login-username, input#register-email, input#register-password, input#register-username {
@@ -38,13 +40,13 @@
             .stay-sign-in {
                 display: flex;
                 align-items: center;
-                @include xxs {
+                @include breakpoints.xxs {
                     font-size: 13px;
                 }
             }
             a.password-recovery-btn {
                 color: #509e0f;
-                @include xxs {
+                @include breakpoints.xxs {
                     font-size: 13px;
                 }
             }

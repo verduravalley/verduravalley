@@ -1,3 +1,5 @@
+@use "../main/breakpoints";
+
 /* ----- 32. Support ----- */
 .rv-10-support {
     max-width: calc(100% - 200px);
@@ -14,11 +16,11 @@
     }
 
     &__row {
-        @include xl {
+        @include breakpoints.xl {
             --bs-gutter-x: 60px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             --bs-gutter-x: 40px;
         }
     }
@@ -37,15 +39,15 @@
         border-radius: 20px;
         text-align: center;
 
-        @include lg {
+        @include breakpoints.lg {
             padding: 50px 40px;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             padding: 40px 30px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             padding: 25px 20px;
         }
     }
@@ -79,13 +81,13 @@
                 font-weight: 700;
                 line-height: 60px;
 
-                @include xl {
+                @include breakpoints.xl {
                     width: 54px;
                     line-height: 54px;
                     font-size: 30px;
                 }
 
-                @include lg {
+                @include breakpoints.lg {
                     width: 50px;
                     line-height: 50px;
                     font-size: 28px;
@@ -101,11 +103,11 @@
                 font-size: 34px;
                 font-weight: 700;
 
-                @include xl {
+                @include breakpoints.xl {
                     font-size: 30px;
                 }
 
-                @include lg {
+                @include breakpoints.lg {
                     padding: 2.5px 20px;
                     font-size: 28px;
                 }
@@ -123,7 +125,7 @@
             gap: 7.9px;
             margin-bottom: 48px;
 
-            @include lg {
+            @include breakpoints.lg {
                 margin-bottom: 38px;
             }
 

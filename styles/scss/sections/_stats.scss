@@ -1,3 +1,5 @@
+@use "../main/breakpoints";
+
 /* ----- 36. STATS ----- */
 .rv-14-stats {
     background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434813/rv-14-stats-bg_glk1pd.jpg) no-repeat center center;
@@ -46,7 +48,7 @@
     font-family: var(--mulish);
     border-right: 1px solid rgb(255 255 255 / 10%);
 
-    @include xxs {
+    @include breakpoints.xxs {
         border-right: none;
     }
 
@@ -64,11 +66,11 @@
         font-weight: 800;
         font-size: 54px;
 
-        @include xs {
+        @include breakpoints.xs {
             font-size: 44px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             font-size: 38px;
         }
     }

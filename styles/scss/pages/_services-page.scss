@@ -1,3 +1,5 @@
+@use "../main/breakpoints";
+
 /* ----- 42. SERVICES INNER PAGE ----- */
 .rv-inner-service {
     padding: 35px 40px;
@@ -6,15 +8,15 @@
     border: none;
     height: 100%;
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 30px 35px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 25px 25px;
     }
 
-    @include xs {
+    @include breakpoints.xs {
         padding: 25px 20px;
     }
 
@@ -35,21 +37,21 @@
     }
 
     .rv-14-service__icon {
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 30px;
         }
 
-        @include md {
+        @include breakpoints.md {
             margin-bottom: 25px;
         }
 
         svg {
-            @include lg {
+            @include breakpoints.lg {
                 width: 71px;
                 height: 71px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 width: 66px;
                 height: 66px;
             }
@@ -57,11 +59,11 @@
     }
 
     .rv-14-service__title {
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 11px;
         }
 
-        @include md {
+        @include breakpoints.md {
             font-size: 20px;
         }
 
@@ -71,11 +73,11 @@
     }
 
     .rv-3-service__descr {
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 27px;
         }
 
-        @include md {
+        @include breakpoints.md {
             margin-bottom: 22px;
         }
     }

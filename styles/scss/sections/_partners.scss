@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+
 /* ----- 25. Partners ----- */
 .rv-5-partners {
     background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434676/rv-5-partner-bg_dqx2dh.jpg) no-repeat center center;
@@ -5,11 +8,11 @@
     padding: 55px 0;
     text-align: center;
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 40px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 30px 0;
     }
 
@@ -32,7 +35,7 @@
         text-align: center;
         margin-bottom: 53px;
 
-        @include xxs {
+        @include breakpoints.xxs {
             font-size: 18px;
         }
 
@@ -78,7 +81,7 @@
             justify-content: center;
             padding: 32px 10px;
 
-            @include xxs {
+            @include breakpoints.xxs {
                 padding: 22px 10px;
             }
 
@@ -91,9 +94,9 @@
         img {
             object-fit: contain;
 
-            @include sm {}
+            @include breakpoints.sm {}
 
-            @include xxs {}
+            @include breakpoints.xxs {}
         }
     }
 }
@@ -109,11 +112,11 @@
         height: 40px;
         color: var(--black);
 
-        @include xl {
+        @include breakpoints.xl {
             line-height: normal;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             translate: 0 0;
         }
 
@@ -125,7 +128,7 @@
         &:last-child {
             translate: 50% 0;
 
-            @include xs {
+            @include breakpoints.xs {
                 translate: 0 0;
             }
         }
@@ -137,11 +140,11 @@
     margin-top: 70px;
     text-align: center;
 
-    @include md {
+    @include breakpoints.md {
         margin-top: 60px;
     }
 
-    @include xxs {
+    @include breakpoints.xxs {
         margin-top: 40px;
     }
 
@@ -163,7 +166,7 @@
     border-bottom: 1px solid rgb(5 5 5 / 10%);
     padding-bottom: 38px;
 
-    @include lg {
+    @include breakpoints.lg {
         padding-bottom: 28px;
     }
 
@@ -201,7 +204,7 @@
     margin-top: 90px;
     text-align: center;
 
-    @include xxs {
+    @include breakpoints.xxs {
         margin-top: 70px;
     }
 
@@ -218,7 +221,7 @@
 .rv-15-brand_main_area {
     padding-bottom: 100px;
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-bottom: 30px;
     }
 

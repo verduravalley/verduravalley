@@ -1,3 +1,7 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+@use "../main/mixin";
+
 /* ----- 09. Videos ----- */
 .rv-1-video {
     background: url(/assets/img/rv-1-video-bg.jpg) no-repeat center center;
@@ -6,23 +10,23 @@
     position: relative;
     z-index: 1;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 199px 0;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 159px 0;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 129px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 109px 0;
     }
 
-    @include xs {
+    @include breakpoints.xs {
         padding: 69px 0;
     }
 
@@ -40,7 +44,7 @@
         text-transform: uppercase;
         margin-bottom: 48px;
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 28px;
         }
     }
@@ -53,11 +57,11 @@
         line-height: 120%;
         width: 55%;
 
-        @include sm {
+        @include breakpoints.sm {
             width: 85%;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 100%;
         }
 
@@ -75,11 +79,11 @@
         gap: 20px;
         justify-content: flex-end;
 
-        @include md {
+        @include breakpoints.md {
             justify-content: flex-start;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             gap: 15px;
         }
 
@@ -94,12 +98,12 @@
             color: var(--black);
             font-size: 20px;
 
-            @include md {
+            @include breakpoints.md {
                 width: 90px;
                 height: 90px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 width: 80px;
                 height: 80px;
             }
@@ -126,19 +130,19 @@
     padding: 295px 0;
     text-align: center;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 206px 0;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 136px 0;
     }
 
-    @include xs {
+    @include breakpoints.xs {
         padding: 106px 0;
     }
 
-    @include xxs {
+    @include breakpoints.xxs {
         padding: 86px 0;
     }
 
@@ -154,13 +158,13 @@
         position: relative;
         z-index: auto;
 
-        @include sm {
+        @include breakpoints.sm {
             width: 90px;
             height: 90px;
             line-height: 90px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 80px;
             height: 80px;
         }
@@ -207,17 +211,17 @@
 .rv-4-videos {
     padding-bottom: 100px;
 
-    @include xl {
+    @include breakpoints.xl {
         padding-bottom: 80px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding-bottom: 60px;
     }
 
     &__banner {
         img {
-            @include xxs {
+            @include breakpoints.xxs {
                 height: 180px;
             }
         }
@@ -230,7 +234,7 @@
             height: 100px;
             line-height: 100px;
 
-            @include xxs {
+            @include breakpoints.xxs {
                 width: 80px;
                 height: 80px;
                 line-height: 80px;
@@ -242,7 +246,7 @@
         --bs-gutter-x: 30px;
         --bs-gutter-y: 30px;
 
-        @include lg {
+        @include breakpoints.lg {
             --bs-gutter-x: 20px;
             --bs-gutter-y: 20px;
         }
@@ -280,19 +284,19 @@
     padding: 360px 0;
     position: relative;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 300px 0;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 250px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 200px 0;
     }
 
-    @include xxs {
+    @include breakpoints.xxs {
         padding: 140px 0;
     }
 
@@ -312,17 +316,17 @@
         justify-content: center;
         align-items: center;
 
-        @include lg {
+        @include breakpoints.lg {
             width: 160px;
             height: 160px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             width: 140px;
             height: 140px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 120px;
             height: 120px;
         }
@@ -340,19 +344,19 @@
         position: relative;
         z-index: 1;
 
-        @include lg {
+        @include breakpoints.lg {
             width: 110px;
             height: 110px;
             line-height: 110px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             width: 100px;
             height: 100px;
             line-height: 100px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 80px;
             height: 80px;
             line-height: 80px;
@@ -388,22 +392,22 @@
     padding: 335px 0;
     position: relative;
 
-    @include xl {
+    @include breakpoints.xl {
         margin-right: 80px;
         padding: 285px 0;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         margin-right: 60px;
         padding: 235px 0;
     }
 
-    @include md {
+    @include breakpoints.md {
         margin-right: 0;
         padding: 200px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 150px 0;
     }
 
@@ -424,17 +428,17 @@
         translate: 0 -50%;
         background: rgb(5 5 5 / 30%);
 
-        @include lg {
+        @include breakpoints.lg {
             width: 140px;
             height: 140px;
         }
 
-        @include md {
+        @include breakpoints.md {
             right: 50%;
             translate: 50% -50%;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             width: 120px;
             height: 120px;
         }
@@ -442,13 +446,13 @@
         a {
             background: linear-gradient(28deg, rgba(171, 24, 12, 0.95) 8.41%, #FF6357 93.57%);
 
-            @include lg {
+            @include breakpoints.lg {
                 width: 90px;
                 height: 90px;
                 line-height: 90px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 width: 80px;
                 height: 80px;
                 line-height: 80px;
@@ -473,29 +477,29 @@
     overflow: hidden;
     text-align: center;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 170px 0;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 140px 0;
         margin: 0 30px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 120px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 90px 0;
     }
 
-    @include xs {
+    @include breakpoints.xs {
         padding: 70px 0;
         border-radius: 70px 0;
     }
 
-    @include xxs {
+    @include breakpoints.xxs {
         padding: 50px 0;
         border-radius: 50px 0;
         margin: 0 12px;
@@ -521,17 +525,17 @@
         font-size: 40px;
         margin-bottom: 25px;
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 18px;
         }
 
-        @include md {
+        @include breakpoints.md {
             width: 90px;
             height: 90px;
             line-height: 93px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 80px;
             height: 80px;
             line-height: 83px;
@@ -549,31 +553,31 @@
         width: 35%;
         margin: auto;
 
-        @include xl {
+        @include breakpoints.xl {
             font-size: 40px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             font-size: 36px;
             width: 50%;
         }
 
-        @include md {
+        @include breakpoints.md {
             font-size: 32px;
             width: 60%;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             font-size: 30px;
             width: 80%;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             font-size: 26px;
             width: 80%;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             font-size: 24px;
             width: 100%;
         }
@@ -589,30 +593,30 @@
     padding: 273px 0;
     position: relative;
 
-    @include xxl {
+    @include breakpoints.xxl {
         padding: 223px 0;
     }
 
-    @include xl {
+    @include breakpoints.xl {
         margin-left: 80px;
         padding: 183px 0;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         margin-left: 60px;
         padding: 163px 0;
     }
 
-    @include md {
+    @include breakpoints.md {
         margin-left: 0;
         padding: 123px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 103px 0;
     }
 
-    @include xxs {
+    @include breakpoints.xxs {
         padding: 73px 0;
     }
 
@@ -699,27 +703,27 @@
         height: 870px;
         width: 100%;
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             height: 700px;
         }
 
-        @media #{$lg,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             height: 500px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             height: 450px;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             height: 300px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             height: 250px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             height: 200px;
         }
 
@@ -729,7 +733,7 @@
         }
 
         .video_btn {
-            @include play_btn;
+            @include mixin.play_btn;
             background-color: #DFE11B;
             z-index: 1;
             color: #080202;
@@ -751,12 +755,12 @@
     background-image: url(/assets/img/video/home-6-video-1.png);
     padding: 150px 0 200px 0;
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 100px 0 170px 0;
         padding: 100px 0;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 70px 0 150px 0;
     }
 
@@ -777,15 +781,15 @@
             column-gap: 4px;
             margin-bottom: 30px;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 width: 200px;
             }
 
-            @media #{$mobile} {
+            @media #{variables.$mobile} {
                 width: 180px;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 margin-bottom: 15px;
                 width: 150px;
             }
@@ -803,25 +807,25 @@
             font-weight: 800;
             color: #FFFFFF;
             margin-bottom: 60px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 30px;
             }
 
-            @media #{$sm,$mobile} {
+            @media #{variables.$sm,variables.$mobile} {
                 font-size: 24px;
             }
 
-            @media #{$mobile} {
+            @media #{variables.$mobile} {
                 font-size: 20px;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 font-size: 18px;
             }
         }
@@ -831,11 +835,11 @@
         position: relative;
 
         .video_btn {
-            @include play_btn;
+            @include mixin.play_btn;
             background-color: #FFFFFF;
             z-index: 1;
             color: #2D6A4F;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
             &:hover {
                 background: #2D6A4F;
@@ -869,22 +873,22 @@
         text-align: center;
         padding: 150px 0;
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 100px 0;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 70px 0;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             padding: 60px 0;
         }
 
         .rv-24-room_rating {
             padding-bottom: 20px;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding-bottom: 10px;
             }
 
@@ -894,34 +898,34 @@
         }
 
         .rv-24-video_sub_title {
-            font-family: $mulish;
+            font-family: variables.$mulish;
             color: rgba(255, 255, 255, 0.8);
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 20px;
 
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 margin-bottom: 10px;
             }
         }
 
         .rv-24-video_title {
-            font-family: $mulish;
+            font-family: variables.$mulish;
             color: #FFFFFF;
             font-size: 44px;
             font-weight: 800;
             margin-bottom: 60px;
 
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 margin-bottom: 30px;
             }
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 25px;
             }
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 18px;
                 margin-bottom: 25px;
             }
@@ -930,8 +934,8 @@
         .rv-24-video_button {
 
             .rv-24-video_btn {
-                font-family: $mulish;
-                @include play_btn;
+                font-family: variables.$mulish;
+                @include mixin.play_btn;
                 background-color: #A58051;
                 position: inherit;
                 color: #FFFFFF;
@@ -957,27 +961,27 @@
         padding-top: 250px;
         position: relative;
 
-        @media #{$lg} {
+        @media #{variables.$lg} {
             padding-top: 200px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-top: 80px;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-top: 200px;
         }
     }
 
     &_btn {
-        @include play_btn;
+        @include mixin.play_btn;
         left: 80%;
         top: 40%;
         background: linear-gradient(28deg, #FF006B 8.41%, #FF8100 93.57%);
         box-shadow: 0px 4px 10px 0px rgba(176, 8, 79, 0.40);
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             left: 50%;
             top: 22%;
         }
@@ -995,16 +999,16 @@
         column-gap: 60px;
 
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 30px;
         }
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 20px;
             column-gap: 30px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 20px;
             row-gap: 30px;
             flex-direction: column;
@@ -1029,13 +1033,13 @@
         border-left: 1px solid rgba(255, 255, 255, 0.3);
         font-size: 16px;
         padding-left: 60px;
-        font-family: $mulish;
+        font-family: variables.$mulish;
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-left: 30px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-top: 30px;
             padding-left: 0;
             border-top: 1px solid rgba(255, 255, 255, 0.3);

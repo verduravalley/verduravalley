@@ -1,3 +1,5 @@
+@use "breakpoints";
+
 /*----- 02. GLOABL -----*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oldenburg&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sahitya:wght@400;700&display=swap');
@@ -181,14 +183,14 @@ html.lenis {
 .outer-container {
     margin: 0 50px;
 
-    @include xl {
+    @include breakpoints.xl {
         margin: 0;
     }
 }
 
 .row-cols-xxs-2 {
     >* {
-        @include xxs {
+        @include breakpoints.xxs {
             width: 50%;
         }
     }
@@ -196,50 +198,50 @@ html.lenis {
 
 .row-cols-xxs-1 {
     >* {
-        @include xxs {
+        @include breakpoints.xxs {
             width: 100%;
         }
     }
 }
 
 .col-xxs-12 {
-    @include xxs {
+    @include breakpoints.xxs {
         width: 100%;
     }
 }
 
 .col-xxs-8 {
-    @include xxs {
+    @include breakpoints.xxs {
         width: 66.66666667%;
     }
 }
 
 .col-xxs-6 {
-    @include xxs {
+    @include breakpoints.xxs {
         width: 50%;
     }
 }
 
 .col-xxs-5 {
-    @include xxs {
+    @include breakpoints.xxs {
         // width: 21.66666667%;
     }
 }
 
 .col-xxs-4 {
-    @include xxs {
+    @include breakpoints.xxs {
         width: 33.33333333%;
     }
 }
 
 .d-xs-none {
-    @include xs {
+    @include breakpoints.xs {
         display: none !important;
     }
 }
 
 .d-xxs-none {
-    @include xxs {
+    @include breakpoints.xxs {
         display: none !important;
     }
 }
@@ -247,7 +249,7 @@ html.lenis {
 .logo img {
     width: 140px;
 
-    @include sm {
+    @include breakpoints.sm {
         width: 130px;
     }
 }
@@ -268,7 +270,7 @@ html.lenis {
     z-index: 10000;
     transform: scale(1);
 
-    @include md {
+    @include breakpoints.md {
         display: none;
     }
 
@@ -294,7 +296,7 @@ html.lenis {
     z-index: 10000;
     transform: translate(2px, 2px);
 
-    @include md {
+    @include breakpoints.md {
         display: none;
     }
 
@@ -324,11 +326,11 @@ html.lenis {
 .rv-2-right-container {
     margin-left: 315px;
 
-    @include xxl {
+    @include breakpoints.xxl {
         margin-left: 270px;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         margin-left: 0;
     }
 
@@ -410,19 +412,19 @@ html.lenis {
         padding: 25px;
     }
 
-    @include md {
+    @include breakpoints.md {
         width: 80%;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         min-width: 500px;
     }
 
-    @include xs {
+    @include breakpoints.xs {
         min-width: 460px;
     }
 
-    @include xxs {
+    @include breakpoints.xxs {
         min-width: 320px;
     }
 
@@ -458,12 +460,12 @@ html.lenis {
             height: 360px;
             border-radius: 10px;
 
-            @include sm {
+            @include breakpoints.sm {
                 height: 300px;
                 width: 80%;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 height: 260px;
                 width: 50%;
             }
@@ -663,12 +665,12 @@ html.lenis {
     --bs-gutter-x: 30px;
     --bs-gutter-y: 30px;
 
-    @include lg {
+    @include breakpoints.lg {
         --bs-gutter-x: 20px;
         --bs-gutter-y: 20px;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         --bs-gutter-x: 15px;
         --bs-gutter-y: 15px;
     }

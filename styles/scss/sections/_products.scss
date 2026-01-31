@@ -1,3 +1,7 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+@use "../main/mixin";
+
 /* ----- 21. Products ----- */
 .rv-3-products {
     .rv-3-section-heading {
@@ -187,11 +191,11 @@
     justify-content: center;
     margin-top: 65px;
 
-    @include xl {
+    @include breakpoints.xl {
         margin-top: 35px;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         margin-top: 20px;
     }
 
@@ -212,11 +216,11 @@
 .rv-7-products {
     padding-top: 60px;
 
-    @include xl {
+    @include breakpoints.xl {
         padding-top: 40px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding-top: 30px;
     }
 
@@ -226,7 +230,7 @@
         justify-content: space-between;
         text-align: left;
 
-        @include sm {
+        @include breakpoints.sm {
             flex-direction: column;
             align-items: center;
             text-align: center;
@@ -249,7 +253,7 @@
     transition: border 0.4s ease;
     position: relative;
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 20px;
     }
 
@@ -375,29 +379,29 @@
 // INDEX-11 PRODUCTS
 .rv-11-products {
     &__heading {
-        @include xl {
+        @include breakpoints.xl {
             margin-bottom: 28px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             gap: 6px 20px;
         }
 
         .rv-9-section-heading__right {
-            @include sm {
+            @include breakpoints.sm {
                 margin-bottom: 0;
             }
         }
 
         .rv-11-section__sub-title {
-            @include sm {
+            @include breakpoints.sm {
                 margin-inline: auto;
             }
 
             .stroke-1 {
                 display: none;
 
-                @include sm {
+                @include breakpoints.sm {
                     display: block;
                 }
             }
@@ -423,7 +427,7 @@
     padding: 45px 40px;
     transition: 0.4s ease;
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 25px 20px;
     }
 
@@ -453,11 +457,11 @@
     &__txt {
         padding-top: 96px;
 
-        @include lg {
+        @include breakpoints.lg {
             padding-top: 66px;
         }
 
-        @include md {
+        @include breakpoints.md {
             padding-top: 46px;
         }
     }
@@ -538,14 +542,14 @@
 // INDEX-12 TOP PRODUCTS
 .rv-12-products-2 {
     &__row {
-        @include xl {
+        @include breakpoints.xl {
             --bs-gutter-x: 20px;
             --bs-gutter-y: 20px;
         }
     }
 
     &__btn {
-        @include xl {
+        @include breakpoints.xl {
             margin-top: 40px;
         }
     }
@@ -567,7 +571,7 @@
         display: grid;
         place-content: center;
 
-        @include lg {
+        @include breakpoints.lg {
             height: 290px;
         }
 
@@ -594,7 +598,7 @@
     }
 
     .rv-3-product__actions {
-        @include lg {
+        @include breakpoints.lg {
             bottom: 20px;
         }
 
@@ -608,7 +612,7 @@
     width: calc(100% + 150px);
     top: 165px;
 
-    @include xs {
+    @include breakpoints.xs {
         position: absolute;
     }
 
@@ -627,7 +631,7 @@
     justify-content: center;
     margin-top: 60px;
 
-    @include lg {
+    @include breakpoints.lg {
         margin-top: 40px;
     }
 
@@ -652,7 +656,7 @@
     gap: 10px 30px;
     justify-content: center;
 
-    @include xs {
+    @include breakpoints.xs {
         gap: 10px 20px;
     }
 
@@ -666,7 +670,7 @@
         border-bottom: 1px solid transparent;
         position: relative;
 
-        @include xs {
+        @include breakpoints.xs {
             padding-bottom: 6px;
         }
 
@@ -692,19 +696,19 @@
     padding-top: 100px;
     padding-bottom: 50px;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 90px;
     }
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 70px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 50px;
     }
 
-    @media #{$sm-mobile} {
+    @media #{variables.$sm-mobile} {
         padding-top: 35px;
     }
 
@@ -715,15 +719,15 @@
             font-weight: 600;
             margin: 0;
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 30px;
             }
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 font-size: 25px;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 padding-bottom: 20px;
                 font-size: 25px;
             }
@@ -734,13 +738,13 @@
         text-align: right;
 
         .rv-16-product_btn {
-            @include rv_btn();
+            @include mixin.rv_btn();
             color: #000000;
             border: 1px solid rgba(2, 2, 8, 0.1);
             padding: 12px 15px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 font-size: 14px;
                 padding: 10px;
             }
@@ -752,7 +756,7 @@
         position: relative;
         z-index: 1;
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-top: 20px;
         }
 
@@ -824,7 +828,7 @@
                                 z-index: 1;
                                 opacity: 0;
                                 pointer-events: none;
-                                font-family: $mulish;
+                                font-family: variables.$mulish;
                                 transition: 0.4s ease;
 
                                 a {
@@ -875,7 +879,7 @@
                     }
 
                     p {
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                         margin: 0;
                         color: rgb(2, 2, 8, 0.50);
                     }
@@ -886,7 +890,7 @@
                     font-weight: 700;
                     color: #020208;
                     transition: all 0.3s linear 0s;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
                     &:hover {
                         color: #D21028;
@@ -902,7 +906,7 @@
 
                     .drone-price {
                         color: #D21028;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 700;
@@ -946,9 +950,9 @@
             content: '';
             top: 50%;
             z-index: 1;
-            @include slide_btn();
+            @include mixin.slide_btn();
 
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 top: 110%;
             }
         }
@@ -956,19 +960,19 @@
         .owl-prev {
             left: -6%;
 
-            @media #{$xl,$lg,$md,$sm,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$sm-mobile} {
                 left: 43%;
             }
 
-            @media #{$md,$sm,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$sm-mobile} {
                 left: 40%;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 left: 36%;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 left: 25%;
             }
         }
@@ -976,19 +980,19 @@
         .owl-next {
             right: -6%;
 
-            @media #{$xl,$lg,$md,$sm,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$sm-mobile} {
                 right: 43%;
             }
 
-            @media #{$md,$sm,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$sm-mobile} {
                 right: 40%;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 right: 36%;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 right: 25%;
             }
         }
@@ -1000,15 +1004,15 @@
     padding-top: 120px;
     position: relative;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 100px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
@@ -1016,7 +1020,7 @@
         text-align: left;
         margin-bottom: 50px;
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             margin-bottom: 20px;
             text-align: center;
         }
@@ -1025,7 +1029,7 @@
             position: relative;
             font-size: 18px;
             font-weight: 700;
-            font-family: $mulish;
+            font-family: variables.$mulish;
             color: #CE512A;
             z-index: 1;
 
@@ -1036,7 +1040,7 @@
                 bottom: -12px;
                 z-index: -1;
 
-                @media #{$mobile,$sm-mobile} {
+                @media #{variables.$mobile,variables.$sm-mobile} {
                     left: 50%;
                 }
             }
@@ -1048,13 +1052,13 @@
             font-weight: 700;
             color: #0E1428;
             z-index: 1;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 35px;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 23px;
             }
 
@@ -1065,7 +1069,7 @@
                 bottom: -5px;
                 z-index: -1;
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     position: absolute;
                     bottom: -24px;
                 }
@@ -1082,7 +1086,7 @@
         align-items: center;
         height: 100%;
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             justify-content: center;
             padding-bottom: 30px;
         }
@@ -1099,7 +1103,7 @@
             color: #f8eeee !important;
             border: 1px solid rgba(14, 20, 40, 0.1);
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 height: 40px;
                 width: 70px;
             }
@@ -1247,8 +1251,8 @@
             .rv-21-single_product_title {
                 font-size: 16px;
                 font-weight: 700;
-                font-family: $mulish;
-                font-family: $mulish;
+                font-family: variables.$mulish;
+                font-family: variables.$mulish;
                 transition: all 0.3s linear 0s;
                 margin-bottom: 10px;
 
@@ -1270,14 +1274,14 @@
                 padding-bottom: 15px;
 
                 span {
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     color: #55585B;
                     font-weight: 400;
                     text-decoration: line-through;
                 }
 
                 p {
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     margin: 0;
                     color: #0E1428;
                     font-weight: 500;
@@ -1294,15 +1298,15 @@
 .rv-21-top_sale_section {
     padding-top: 120px;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
@@ -1310,13 +1314,13 @@
         border: 1px solid rgba(14, 20, 40, 0.1);
         --bs-gutter-x: 0;
 
-        @media #{$sm, $mobile, $sm-mobile} {
+        @media #{variables.$sm, variables.$mobile, variables.$sm-mobile} {
             margin-bottom: 70px;
         }
     }
 
     .rvtsr_m0 {
-        @media #{$sm, $mobile, $sm-mobile} {
+        @media #{variables.$sm, variables.$mobile, variables.$sm-mobile} {
             margin-bottom: 0px;
         }
     }
@@ -1324,7 +1328,7 @@
     .rv-21-top_sale_section_heading {
         padding-bottom: 25px;
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-bottom: 15px;
         }
 
@@ -1333,7 +1337,7 @@
             font-weight: 700;
             color: #0E1428;
             position: relative;
-            font-family: $mulish;
+            font-family: variables.$mulish;
             z-index: 1;
             margin: 0;
 
@@ -1381,7 +1385,7 @@
                     margin: 0;
                     color: #0E1428;
                     font-size: 14px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     font-weight: 500;
                 }
             }
@@ -1389,7 +1393,7 @@
             .rv-21-top_sale_product_title {
                 font-size: 16px;
                 font-weight: 700;
-                font-family: $mulish;
+                font-family: variables.$mulish;
                 transition: all 0.3s linear 0s;
                 margin-bottom: 10px;
 
@@ -1404,7 +1408,7 @@
             }
 
             p {
-                font-family: $mulish;
+                font-family: variables.$mulish;
                 margin: 0;
                 color: #0E1428;
                 font-weight: 500;
@@ -1429,7 +1433,7 @@
         position: relative;
 
         h3 {
-            font-family: $mulish;
+            font-family: variables.$mulish;
             font-size: 19px;
             font-weight: 700;
 
@@ -1438,7 +1442,7 @@
                 transition: all 0.3s ease;
             }
 
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 16px;
             }
         }
@@ -1451,7 +1455,7 @@
             padding-bottom: 15px;
 
             span {
-                font-family: $mulish;
+                font-family: variables.$mulish;
                 color: #FFFFFF;
                 font-weight: 700;
                 font-size: 16px;
@@ -1459,7 +1463,7 @@
             }
 
             p {
-                font-family: $mulish;
+                font-family: variables.$mulish;
                 margin: 0;
                 color: #FFFFFF;
                 font-weight: 400;
@@ -1470,7 +1474,7 @@
         .rv-21-top_sale_btn {
             font-size: 16px;
             font-weight: 700;
-            font-family: $mulish;
+            font-family: variables.$mulish;
             color: #FFFFFF;
             border-bottom: 1px solid #FFFFFF;
             display: inline-block;
@@ -1500,7 +1504,7 @@
                 height: 50px;
 
                 p {
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     color: #FFFFFF;
                     margin: 0;
                     font-size: 14px;

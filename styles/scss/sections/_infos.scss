@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+
 /* ----- 30. Infos ----- */
 .rv-10-infos {
     background-color: #EFC329;
@@ -22,15 +25,15 @@
             width: 77%;
         }
 
-        @include xxl {
+        @include breakpoints.xxl {
             width: 85%;
         }
 
-        @include md {
+        @include breakpoints.md {
             padding: 120px 0 60px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             width: calc(100% - 24px);
             padding: 110px 0 40px;
         }
@@ -47,16 +50,16 @@
             max-width: 50%;
             z-index: 1;
 
-            @include lg {
+            @include breakpoints.lg {
                 gap: 0 42px;
                 padding: 0 30px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 max-width: 100%;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 gap: 0 32px;
                 padding: 0 20px;
             }
@@ -72,7 +75,7 @@
                 padding: 20px 0;
                 position: relative;
 
-                @include xxs {
+                @include breakpoints.xxs {
                     font-size: 16px;
                 }
 
@@ -109,24 +112,24 @@
             line-height: 108.696%;
             margin-bottom: 20px;
 
-            @include xl {
+            @include breakpoints.xl {
                 font-size: 38px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 font-size: 32px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 font-size: 28px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 font-size: 26px;
                 margin-bottom: 12px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 font-size: 24px;
             }
         }
@@ -134,7 +137,7 @@
         .rv-8-about__descr {
             color: rgb(0 0 0 / 60%);
 
-            @include xxs {
+            @include breakpoints.xxs {
                 margin-bottom: 12px;
             }
         }
@@ -147,16 +150,16 @@
     &__stat {
         .rv-8-about-stat__number {
 
-            @include xl {
+            @include breakpoints.xl {
                 font-size: 35px;
                 margin-bottom: 2px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 font-size: 30px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 font-size: 28px;
             }
         }
@@ -167,23 +170,23 @@
             padding: 237px 0;
             background-image: url(/assets/img/rv-10-infos-video-bg.jpg);
 
-            @include xl {
+            @include breakpoints.xl {
                 padding: 197px 0;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 padding: 197px 0;
             }
 
-            @include md {
+            @include breakpoints.md {
                 padding: 127px 0;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 padding: 107px 0;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 padding: 67px 0;
             }
 
@@ -194,7 +197,7 @@
                 align-items: center;
                 gap: 40px;
 
-                @include md {
+                @include breakpoints.md {
                     margin: 0 12px;
                 }
 
@@ -205,7 +208,7 @@
                     font-weight: 400;
                     text-decoration: 1px underline;
 
-                    @include xxs {
+                    @include breakpoints.xxs {
                         font-size: 22px;
                     }
                 }
@@ -239,15 +242,15 @@
     position: relative;
     overflow: hidden;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 120px 0;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 90px 0;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 60px 0;
     }
 
@@ -268,7 +271,7 @@
     &__row {
         --bs-gutter-y: 20px;
 
-        @include xxs {}
+        @include breakpoints.xxs {}
     }
 }
 
@@ -277,12 +280,12 @@
     padding-bottom: 38px;
     margin-bottom: 45px;
 
-    @include xl {
+    @include breakpoints.xl {
         padding-bottom: 18px;
         margin-bottom: 25px;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         flex-direction: column;
         row-gap: 0;
     }
@@ -318,22 +321,22 @@
 .rv-16-dr_details_main_area {
     padding: 50px 0;
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 30px 0;
     }
 
     .rv-16-dr_details_image {
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             width: 400px;
             height: auto;
             margin: auto;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             width: 330px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             width: 270px;
         }
 
@@ -342,11 +345,11 @@
     .rv-16-single_dr_details {
         padding-bottom: 70px;
 
-        @media #{$lg} {
+        @media #{variables.$lg} {
             padding-bottom: 30px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding-bottom: 10px;
         }
 
@@ -356,7 +359,7 @@
             color: #020208;
             margin-bottom: 7px;
             position: relative;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
             span.dr_sh_one {
                 position: absolute;
@@ -365,7 +368,7 @@
                 top: 16px;
                 width: 107%;
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     display: none;
                 }
             }
@@ -378,7 +381,7 @@
                 width: 89%;
                 transform: rotate(16deg);
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     display: none;
                 }
             }
@@ -390,7 +393,7 @@
                 top: -22px;
                 width: 100%;
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     display: none;
                 }
             }
@@ -402,7 +405,7 @@
                 top: 22px;
                 width: 100%;
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     display: none;
                 }
             }
@@ -415,7 +418,7 @@
                 width: 100%;
                 transform: rotate(350deg);
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     display: none;
                 }
             }
@@ -428,11 +431,11 @@
                 width: 100%;
                 transform: rotate(348deg);
 
-                @media #{$lg,$md} {
+                @media #{variables.$lg,variables.$md} {
                     top: -113%;
                 }
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     display: none;
                 }
             }
@@ -441,9 +444,9 @@
         .rv-16-single_dr_details_content {
             color: #696969;
             font-weight: 500;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$md} {
+            @media #{variables.$md} {
                 font-size: 14px;
                 line-height: 18px;
 

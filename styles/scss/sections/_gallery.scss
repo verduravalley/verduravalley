@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+
 /* ----- 11. Gallery ----- */
 .rv-1-gallery {
     background-color: #E4E4E4;
@@ -5,11 +8,11 @@
     .rv-1-section-heading-2 {
         margin-bottom: 48px;
 
-        @include xl {
+        @include breakpoints.xl {
             margin-bottom: 38px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             margin-bottom: 33px;
         }
     }
@@ -28,15 +31,15 @@
             height: 540px;
             width: 100%;
 
-            @include xl {
+            @include breakpoints.xl {
                 height: 430px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 height: 370px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 height: 300px;
             }
         }
@@ -47,13 +50,13 @@
             left: 40px;
             padding-right: 40px;
 
-            @include xl {
+            @include breakpoints.xl {
                 bottom: 30px;
                 left: 25px;
                 padding-right: 25px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 bottom: 20px;
                 left: 20px;
                 padding-right: 20px;
@@ -82,11 +85,11 @@
             font-weight: 600;
             color: var(--white-f);
 
-            @include lg {
+            @include breakpoints.lg {
                 font-size: 22px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 font-size: 20px;
             }
         }
@@ -98,7 +101,7 @@
     padding: 0 20px;
     background: linear-gradient(to bottom, var(--white-f) 52%, #404B44 0);
 
-    @include md {
+    @include breakpoints.md {
         background: var(--white-f);
     }
 
@@ -106,12 +109,12 @@
         --bs-gutter-x: 20px;
         --bs-gutter-y: 20px;
 
-        @include xl {
+        @include breakpoints.xl {
             --bs-gutter-x: 15px;
             --bs-gutter-y: 15px;
         }
 
-        @include md {
+        @include breakpoints.md {
             --bs-gutter-x: 10px;
             --bs-gutter-y: 10px;
         }
@@ -170,14 +173,14 @@
             margin-top: 30px;
             opacity: 0;
 
-            @include xl {
+            @include breakpoints.xl {
                 height: 44px;
                 line-height: 44px;
                 font-size: 14px;
                 padding: 0 23px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 height: 40px;
                 line-height: 40px;
                 font-size: 12px;
@@ -185,7 +188,7 @@
                 gap: 8px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 padding: 0 10px;
             }
 
@@ -197,17 +200,17 @@
             i {
                 font-size: 24px;
 
-                @include xl {
+                @include breakpoints.xl {
                     font-size: 22px;
                 }
 
-                @include lg {
+                @include breakpoints.lg {
                     font-size: 20px;
                 }
             }
 
             span.txt {
-                @include md {
+                @include breakpoints.md {
                     display: none;
                 }
             }
@@ -221,7 +224,7 @@
     padding-top: 0;
     position: relative;
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 15px;
         padding-top: 0;
     }
@@ -243,19 +246,19 @@
         text-align: center;
         font-family: var(--mulish);
 
-        @include xl {
+        @include breakpoints.xl {
             padding: 40px 145px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             padding: 30px 125px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             padding: 30px 105px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             padding: 30px 55px;
         }
 
@@ -272,11 +275,11 @@
             font-size: 34px;
             font-weight: 700;
 
-            @include lg {
+            @include breakpoints.lg {
                 font-size: 32px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 font-size: 30px;
             }
         }
@@ -319,7 +322,7 @@
         width: 100%;
         aspect-ratio: 184 / 235;
 
-        @include xxs {}
+        @include breakpoints.xxs {}
     }
 }
 
@@ -345,11 +348,11 @@
 .rv-19-instagrm_section {
     padding-bottom: 80px;
 
-    @media #{$md} {
+    @media #{variables.$md} {
         padding-bottom: 60px;
     }
 
-    @media #{$sm,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-bottom: 40px;
     }
 
@@ -375,19 +378,19 @@
             overflow: hidden;
             transition: all 0.4s ease;
 
-            @media #{$xl,$lg,$md,$sm,$mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile} {
                 height: 300px;
             }
 
-            @media #{$md,$sm} {
+            @media #{variables.$md,variables.$sm} {
                 height: 230px;
             }
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 height: 200px;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 height: 180px;
             }
 
@@ -429,15 +432,15 @@
 .rv-21-instagrm_section {
     padding-top: 120px;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
@@ -465,15 +468,15 @@
                 overflow: hidden;
                 transition: all 0.4s ease;
 
-                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     height: 300px;
                 }
 
-                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     height: 250px;
                 }
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     height: 200px;
                 }
 
@@ -499,17 +502,17 @@
                     transform: scale(0);
 
                     h4 {
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                         margin-bottom: 10px;
                         color: #FFFFFF;
                         font-size: 34px;
                         font-weight: 700;
 
-                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             font-size: 30px;
                         }
 
-                        @media #{$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             font-size: 20px;
                         }
                     }
@@ -520,27 +523,27 @@
                         color: #FFFFFF;
                         margin-bottom: 30px;
 
-                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             font-size: 16px;
                             margin-bottom: 5px;
                         }
 
-                        @media #{$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             font-size: 14px;
                         }
                     }
 
                     a {
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                         font-size: 60px;
                         color: #FFFFFF;
                         transition: all 0.3s ease;
 
-                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             font-size: 40px;
                         }
 
-                        @media #{$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             font-size: 30px;
                         }
 

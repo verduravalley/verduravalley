@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+
 /* ----- 10. Pricing ----- */
 .rv-1-pricing {
     .rv-1-section-heading {
@@ -7,11 +10,11 @@
     .rv-1-section__title {
         margin-bottom: 48px;
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 33px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             margin-bottom: 23px;
         }
     }
@@ -20,12 +23,12 @@
         --bs-gutter-x: 30px;
         --bs-gutter-y: 30px;
 
-        @include lg {
+        @include breakpoints.lg {
             --bs-gutter-x: 20px;
             --bs-gutter-y: 20px;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             --bs-gutter-x: 15px;
             --bs-gutter-y: 15px;
         }
@@ -36,11 +39,11 @@
         background-size: 100% 100%;
         padding: 60px 24px;
 
-        @include lg {
+        @include breakpoints.lg {
             padding: 45px 24px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             padding: 35px 15px;
         }
 
@@ -55,11 +58,11 @@
             color: var(--black);
             margin-bottom: 11px;
 
-            @include sm {
+            @include breakpoints.sm {
                 margin-bottom: 6px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 font-size: 16px;
             }
         }
@@ -71,21 +74,21 @@
             color: var(--black);
             margin-bottom: 26px;
 
-            @include xl {
+            @include breakpoints.xl {
                 font-size: 45px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 margin-bottom: 16px;
                 font-size: 40px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 font-size: 35px;
                 margin-bottom: 10px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 font-size: 30px;
             }
         }
@@ -95,11 +98,11 @@
             padding: 40px 40px 45px;
             border: 1px solid rgb(5 5 5 / 08%);
 
-            @include lg {
+            @include breakpoints.lg {
                 padding: 30px 25px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 padding: 20px 15px;
             }
         }
@@ -112,18 +115,18 @@
             padding-left: 32px;
             position: relative;
 
-            @include sm {
+            @include breakpoints.sm {
                 padding-left: 27px;
             }
 
             &:not(:last-child) {
                 margin-bottom: 20px;
 
-                @include lg {
+                @include breakpoints.lg {
                     margin-bottom: 15px;
                 }
 
-                @include sm {
+                @include breakpoints.sm {
                     margin-bottom: 12px;
                 }
             }
@@ -141,7 +144,7 @@
                 box-shadow: 0 1px 2px rgb(6, 138, 75, 0.3);
                 border-radius: 50%;
 
-                @include sm {
+                @include breakpoints.sm {
                     width: 18px;
                     height: 18px;
                 }
@@ -153,11 +156,11 @@
             margin-top: 40px;
             line-height: 48px;
 
-            @include lg {
+            @include breakpoints.lg {
                 margin-top: 25px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 margin-top: 15px;
                 line-height: 42px;
             }
@@ -194,7 +197,7 @@
                 border-radius: 14px;
                 transition: 0.4s ease;
 
-                @include xs {
+                @include breakpoints.xs {
                     display: none;
                 }
 
@@ -209,11 +212,11 @@
 
 // INDEX-8 PRICING
 .rv-8-pricing {
-    @include xl {
+    @include breakpoints.xl {
         padding: 40px 0 80px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 30px 0 60px;
     }
 }
@@ -222,11 +225,11 @@
     background: rgba(28, 116, 233, 0.06);
     padding: 50px 40px;
 
-    @include lg {
+    @include breakpoints.lg {
         padding: 40px 30px;
     }
 
-    @include sm {
+    @include breakpoints.sm {
         padding: 35px 30px;
     }
 
@@ -241,12 +244,12 @@
             padding-bottom: 25px;
             margin-bottom: 40px;
 
-            @include lg {
+            @include breakpoints.lg {
                 padding-bottom: 15px;
                 margin-bottom: 30px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 padding-bottom: 10px;
                 margin-bottom: 20px;
             }
@@ -267,11 +270,11 @@
         border: 1px solid rgb(5 5 5 / 08%);
         color: var(--black);
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 44px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             margin-bottom: 34px;
         }
 
@@ -299,7 +302,7 @@
         line-height: 127.273%;
         margin-bottom: 30px;
 
-        @include xl {
+        @include breakpoints.xl {
             margin-bottom: 20px;
         }
     }
@@ -314,13 +317,13 @@
         padding: 60px 40px;
         font-family: var(--mulish);
 
-        @include xl {
+        @include breakpoints.xl {
             margin: 0 20px;
             margin-top: -70px;
             padding: 50px 30px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             margin: 0 15px;
             margin-top: -70px;
             padding: 30px 20px 25px;
@@ -332,7 +335,7 @@
             font-weight: 700;
             margin-top: 27px;
 
-            @include xl {
+            @include breakpoints.xl {
                 margin-top: 22px;
             }
         }
@@ -402,11 +405,11 @@
 .rv-18-price_plan_section {
     padding: 130px 0;
 
-    @media #{$lg,$md} {
+    @media #{variables.$lg,variables.$md} {
         padding: 100px 0;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 70px 0;
     }
 
@@ -418,18 +421,18 @@
         margin-bottom: 60px;
         z-index: 1;
         text-align: center;
-        font-family: $mulish;
+        font-family: variables.$mulish;
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             font-size: 40px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             font-size: 35px;
             margin-bottom: 40px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             font-size: 25px;
             margin-bottom: 40px;
         }
@@ -449,7 +452,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
@@ -465,21 +468,21 @@
                 border: 1px solid rgba(20, 33, 55, 0.14);
                 place-self: center;
 
-                @media #{$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     width: 250px;
                 }
 
-                @media #{$lg,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$lg,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     width: 200px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     width: 120px;
                     height: 100px;
                 }
 
                 img {
-                    @media #{$sm-mobile} {
+                    @media #{variables.$sm-mobile} {
                         width: 80px;
                         height: auto;
                         object-fit: contain;
@@ -493,7 +496,7 @@
                     font-size: 18px;
                     font-weight: 700;
 
-                    @media #{$sm-mobile} {
+                    @media #{variables.$sm-mobile} {
                         font-size: 16px;
                     }
                 }
@@ -532,7 +535,7 @@
                     padding: 50px 25px;
                     position: relative;
 
-                    @media #{$lg,$md,$md,$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$lg,variables.$md,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         padding: 70px 25px;
                     }
 
@@ -545,7 +548,7 @@
                         right: 25px;
                         top: 25px;
                         color: #142137;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                     }
 
                     .rv-18-pricing_plan_header_title {
@@ -553,7 +556,7 @@
                         font-weight: 700;
                         color: #142137;
                         margin-bottom: 7px;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                     }
 
                     .rv-18-pricing_plan_price {
@@ -562,9 +565,9 @@
                         color: #142137;
                         margin: 0;
                         padding-bottom: 30px;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
 
-                        @media #{$lg,$md,$md,$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$lg,variables.$md,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             padding: 0;
                         }
 
@@ -582,7 +585,7 @@
                     top: -40px;
                     background: #FFFFFF;
 
-                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         padding: 40px 20px;
                     }
 
@@ -601,9 +604,9 @@
 
                     li {
                         margin-bottom: 15px;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
 
-                        @media #{$sm-mobile} {
+                        @media #{variables.$sm-mobile} {
                             font-size: 14px;
                         }
 
@@ -616,7 +619,7 @@
                             border-radius: 50%;
                             font-size: 12px;
 
-                            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                                 margin-right: 10px;
                             }
                         }
@@ -644,7 +647,7 @@
                             background: #142137;
                             margin-top: 35px;
                             transition: all 0.4s ease;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
 
                             &:hover {
                                 background: #1C74E9;
@@ -673,15 +676,15 @@
 .rv-19-price_main_section {
     padding: 130px 0;
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 100px 0;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 50px 0;
     }
 
@@ -691,13 +694,13 @@
         font-weight: 800;
         margin-bottom: 60px;
         text-align: center;
-        font-family: $mulish;
+        font-family: variables.$mulish;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             font-size: 55px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             font-size: 45px;
         }
     }
@@ -706,7 +709,7 @@
 
         border: 1px solid rgba(20, 33, 55, 0.2);
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             margin-bottom: 30px;
         }
 
@@ -717,9 +720,9 @@
             background: #DFE11B;
             width: 100%;
             padding: 25px 50px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 15px 20px;
             }
         }
@@ -733,7 +736,7 @@
             border-bottom: 1px solid rgba(20, 33, 55, 0.14);
             margin-bottom: 50px;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 10px 20px;
                 font-size: 40px;
                 margin-bottom: 30px;
@@ -749,7 +752,7 @@
         ul {
             padding: 0 50px;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 0 20px;
             }
 
@@ -782,7 +785,7 @@
             width: 100%;
             padding: 0 50px;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 0 20px;
             }
 
@@ -798,7 +801,7 @@
                 line-height: 50px;
                 margin: 60px 0;
 
-                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     margin: 30px 0;
                 }
 
@@ -812,7 +815,7 @@
                     margin-right: 0;
                     float: right;
 
-                    @media #{$mobile,$sm-mobile} {
+                    @media #{variables.$mobile,variables.$sm-mobile} {
                         widows: 45px;
                     }
                 }
@@ -836,15 +839,15 @@
     padding-bottom: 90px;
     margin-top: -60px;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-bottom: 100px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-bottom: 70px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-bottom: 50px;
     }
 
@@ -865,7 +868,7 @@
             align-items: center;
             column-gap: 4px;
             margin: 0 auto;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
             span {
                 height: 5px;
@@ -881,18 +884,18 @@
             color: #081C15;
             margin-bottom: 50px;
             margin-top: 20px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 28px;
                 margin-bottom: 35px;
             }
 
-            @media #{$md,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$mobile,variables.$sm-mobile} {
                 font-size: 22px;
                 margin-bottom: 30px;
             }
@@ -932,7 +935,7 @@
             position: relative;
             margin-bottom: 20px;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 padding: 0px 20px;
             }
 
@@ -942,7 +945,7 @@
                 color: #081C15;
                 margin-bottom: 7px;
                 transition: all .4s ease;
-                font-family: $mulish;
+                font-family: variables.$mulish;
             }
 
             .rv-20-pricing_plan_header_desc {
@@ -951,7 +954,7 @@
                 font-weight: 400;
                 margin: 0;
                 transition: all .4s ease;
-                font-family: $mulish;
+                font-family: variables.$mulish;
             }
         }
 
@@ -965,9 +968,9 @@
             transition: all .4s ease;
             position: relative;
             z-index: 2;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 margin: 0 0 0 20px;
                 padding: 10px 30px;
             }
@@ -975,7 +978,7 @@
             sub {
                 font-size: 15px;
                 font-weight: 400;
-                font-family: $mulish;
+                font-family: variables.$mulish;
             }
         }
 
@@ -992,7 +995,7 @@
             position: relative;
             z-index: 1;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 padding: 30px 20px;
             }
 
@@ -1030,7 +1033,7 @@
         }
 
         .rv-20-pricing_plan_btn {
-            font-family: $mulish;
+            font-family: variables.$mulish;
             color: #081C15;
             font-weight: 700;
             height: 50px;
@@ -1044,7 +1047,7 @@
             position: relative;
             z-index: 2;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 margin: 0px 20px;
             }
 

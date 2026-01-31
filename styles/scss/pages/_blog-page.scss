@@ -1,3 +1,5 @@
+@use "../main/breakpoints";
+
 /* ----- 37. Blogs Page ----- */
 
 .rv-inner-blogs {
@@ -6,15 +8,15 @@
         column-count: 3;
         column-gap: 30px;
 
-        @include lg {
+        @include breakpoints.lg {
             column-gap: 20px;
         }
 
-        @include md {
+        @include breakpoints.md {
             column-count: 2;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             column-count: 1;
         }
     }
@@ -22,19 +24,19 @@
     .rv-1-blog {
         break-inside: avoid;
 
-        @include sm {
+        @include breakpoints.sm {
             width: 75%;
             margin-inline: auto;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 100%;
         }
 
         &:not(:first-child) {
             margin-top: 30px;
 
-            @include lg {
+            @include breakpoints.lg {
                 margin-top: 20px;
             }
         }

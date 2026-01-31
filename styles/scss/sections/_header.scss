@@ -1,3 +1,5 @@
+@use "../main/breakpoints";
+
 /* ----- 04. Header ----- */
 .sub-menu.rv-mega-menu {
     display: grid;
@@ -6,7 +8,7 @@
     gap: 20px 50px;
     border-radius: 10px;
 
-    @include md {
+    @include breakpoints.md {
         grid-template-columns: repeat(1, max-content);
         padding: 20px;
         background-color: transparent;
@@ -21,11 +23,11 @@
             display: flex;
             gap: calc(50px - 15px);
 
-            @include lg {
+            @include breakpoints.lg {
                 gap: 12px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 flex-direction: column;
             }
 
@@ -33,7 +35,7 @@
                 position: relative;
                 line-height: 50px;
 
-                @include md {
+                @include breakpoints.md {
                     line-height: normal;
                     display: grid;
                     grid-template-rows: max-content 0fr;
@@ -55,7 +57,7 @@
                         opacity: 1;
                         pointer-events: all;
 
-                        @include md {
+                        @include breakpoints.md {
                             transform: none;
                             pointer-events: all;
                             opacity: 1;
@@ -96,7 +98,7 @@
         z-index: 10;
         box-shadow: 0 0 30px rgba(0, 0, 0, .05);
 
-        @include md {
+        @include breakpoints.md {
             position: static;
             transform: perspective(100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
             overflow: hidden;
@@ -116,7 +118,7 @@
             width: 100%;
             color: var(--white-f);
 
-            @include md {
+            @include breakpoints.md {
                 color: #020208;
             }
 
@@ -138,15 +140,15 @@
             max-width: 100%;
 
 
-            @include xxl {
+            @include breakpoints.xxl {
                 grid-template-columns: repeat(4, max-content);
             }
 
-            @include xl {
+            @include breakpoints.xl {
                 grid-template-columns: repeat(3, max-content);
             }
 
-            @include md {
+            @include breakpoints.md {
                 grid-template-columns: repeat(1, 100%);
                 padding: 0 15px;
                 outline: none;
@@ -185,13 +187,13 @@
     }
 
     &__btn {
-        @include xxs {
+        @include breakpoints.xxs {
             display: none;
         }
     }
 
     &-nav__sidebar {
-        @include md {
+        @include breakpoints.md {
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             background: rgba(255, 255, 255, 1);
@@ -236,7 +238,7 @@
         aspect-ratio: 1;
         font-size: 20px;
 
-        @include xxs {
+        @include breakpoints.xxs {
             height: 40px;
             border-radius: 10px;
         }
@@ -265,7 +267,7 @@
     z-index: 2;
     background-color: #292929;
 
-    @include xxs {
+    @include breakpoints.xxs {
         top: 20px;
         left: 20px;
         width: 45px;
@@ -292,11 +294,11 @@
     z-index: 2;
     overflow: visible;
 
-    @include xxl {
+    @include breakpoints.xxl {
         width: 270px;
     }
 
-    @include lg {
+    @include breakpoints.lg {
         transform: translateX(-100%);
         overflow: auto;
     }
@@ -336,17 +338,17 @@
                         transform: translate(0, -10px);
                         opacity: 1;
 
-                        @include lg {
+                        @include breakpoints.lg {
                             transform: translate(0, 0px);
                         }
 
                         &.rv-mega-menu {
-                            @include lg {
+                            @include breakpoints.lg {
                                 margin-top: 20px;
                                 padding: 25px 20px;
                             }
 
-                            @include md {
+                            @include breakpoints.md {
                                 padding: 15px 10px;
                             }
                         }
@@ -364,7 +366,7 @@
                     border: 1px solid rgb(255 255 255 / 20%);
                     margin-right: 20px;
 
-                    @include lg {
+                    @include breakpoints.lg {
                         position: static;
                     }
 
@@ -381,11 +383,11 @@
                         padding: 25px 20px;
                         max-width: fit-content;
 
-                        @include lg {
+                        @include breakpoints.lg {
                             padding: 0 20px;
                         }
 
-                        @include md {
+                        @include breakpoints.md {
 
                             padding: 0 10px;
                         }
@@ -426,7 +428,7 @@
     }
 
     &.active {
-        @include lg {
+        @include breakpoints.lg {
             transform: translateX(0);
         }
     }
@@ -447,7 +449,7 @@
             font-weight: 300;
             font-family: var(--mulish);
 
-            @include md {
+            @include breakpoints.md {
                 color: var(--black);
             }
 
@@ -467,7 +469,7 @@
         align-items: center;
         gap: 50px;
 
-        @include md {
+        @include breakpoints.md {
             gap: 30px;
             padding-right: 20px;
         }
@@ -477,7 +479,7 @@
         display: flex;
         gap: 30px;
 
-        @include xxs {
+        @include breakpoints.xxs {
             display: none;
         }
 
@@ -520,7 +522,7 @@
     align-items: center;
     gap: 20px;
 
-    @include xxs {
+    @include breakpoints.xxs {
         gap: 10px;
     }
 
@@ -529,7 +531,7 @@
         height: 80px;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 60px;
             height: 60px;
         }
@@ -551,11 +553,11 @@
         padding: 35px 0;
 
 
-        @include xl {
+        @include breakpoints.xl {
             padding: 25px 0;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             padding: 15px 0;
         }
 
@@ -569,7 +571,7 @@
     &-bottom {
         border-block: 1px solid rgba(5, 5, 5, 0.10);
 
-        @include md {
+        @include breakpoints.md {
             padding: 12px 0;
         }
 
@@ -610,7 +612,7 @@
         font-size: 16px;
         font-weight: 600;
 
-        @include xxs {
+        @include breakpoints.xxs {
             display: none;
         }
     }
@@ -633,7 +635,7 @@
 .rv-5-header {
     padding: 18px 0;
 
-    @include xxs {
+    @include breakpoints.xxs {
         padding: 12px 0;
     }
 
@@ -654,7 +656,7 @@
 
     &__nav {
         >ul {
-            @include lg {
+            @include breakpoints.lg {
                 gap: 20px;
             }
 
@@ -679,7 +681,7 @@
         align-items: center;
         gap: 24px;
 
-        @include xxs {
+        @include breakpoints.xxs {
             gap: 14px;
         }
 
@@ -706,7 +708,7 @@
             }
 
             .txt {
-                @include xxs {
+                @include breakpoints.xxs {
                     display: none;
                 }
             }
@@ -762,13 +764,13 @@
         border-right: 1px solid rgba(5, 5, 5, 0.10);
         display: inline-block;
 
-        @include xl {
+        @include breakpoints.xl {
             padding: 20px;
             padding-left: 0;
             width: 100%;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             width: auto;
         }
     }
@@ -804,11 +806,11 @@
                 text-align: end;
                 padding: 0 90px;
 
-                @include xl {
+                @include breakpoints.xl {
                     padding: 0 50px;
                 }
 
-                @include lg {
+                @include breakpoints.lg {
                     padding: 0 30px;
                 }
             }
@@ -846,7 +848,7 @@
             align-items: center;
             justify-content: flex-end;
 
-            @include xs {
+            @include breakpoints.xs {
                 justify-content: center;
                 flex-wrap: wrap;
             }
@@ -862,12 +864,12 @@
                     padding-left: 20px;
                     margin-left: 20px;
 
-                    @include lg {
+                    @include breakpoints.lg {
                         padding-left: 15px;
                         margin-left: 15px;
                     }
 
-                    @include sm {
+                    @include breakpoints.sm {
                         padding-left: 10px;
                         margin-left: 10px;
                     }
@@ -896,7 +898,7 @@
             display: flex;
             align-items: center;
 
-            @include sm {
+            @include breakpoints.sm {
                 justify-content: center;
             }
         }
@@ -907,11 +909,11 @@
             gap: 30px;
             justify-content: flex-end;
 
-            @include xxs {
+            @include breakpoints.xxs {
                 justify-content: center;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 flex-direction: column;
                 row-gap: 15px;
             }
@@ -955,7 +957,7 @@
         padding-right: 25px;
         position: relative;
 
-        @include sm {
+        @include breakpoints.sm {
             padding-right: 0;
         }
 
@@ -969,7 +971,7 @@
             top: 50%;
             transform: translateY(-50%);
 
-            @include md {
+            @include breakpoints.md {
                 content: none;
             }
         }
@@ -1001,7 +1003,7 @@
     }
 
     &-search-modal {
-        @include lg {
+        @include breakpoints.lg {
             opacity: 0;
             transform: scale(1.2);
             pointer-events: none;
@@ -1034,7 +1036,7 @@
         display: flex;
         align-items: center;
 
-        @include lg {
+        @include breakpoints.lg {
             background-color: var(--white-f);
         }
 
@@ -1090,7 +1092,7 @@
     &-top__txt {
         justify-content: flex-start;
 
-        @include md {
+        @include breakpoints.md {
             justify-content: center;
         }
     }
@@ -1125,7 +1127,7 @@
         row-gap: 10px;
 
         >* {
-            @include xs {
+            @include breakpoints.xs {
                 border: none;
             }
         }
@@ -1164,7 +1166,7 @@
         border-bottom: 1px solid rgb(5 5 5 / 18%);
         padding: 0 10px;
 
-        @include sm {
+        @include breakpoints.sm {
             background-color: transparent;
             border-color: var(--white-f);
 
@@ -1200,11 +1202,11 @@
         }
 
         &__actions {
-            @include sm {
+            @include breakpoints.sm {
                 justify-content: center;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 row-gap: 10px;
             }
         }
@@ -1221,7 +1223,7 @@
     &-socials {
         color: var(--white-f);
 
-        @include sm {
+        @include breakpoints.sm {
             justify-content: center;
         }
 
@@ -1238,13 +1240,13 @@
         padding: 20px 0;
 
         &.fixed {
-            @include lg {
+            @include breakpoints.lg {
                 padding: 15px 0;
             }
         }
 
         &__right {
-            @include xxs {
+            @include breakpoints.xxs {
                 flex-direction: row;
                 justify-content: flex-end;
                 gap: 15px;
@@ -1325,26 +1327,26 @@
     }
 
     &-bottom-right {
-        @include md {
+        @include breakpoints.md {
             gap: 10px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             flex-direction: row;
             justify-content: flex-end;
         }
 
         .rv-10-search-btn {
-            @include xl {
+            @include breakpoints.xl {
                 font-size: 18px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 margin-right: 10px;
             }
 
             .txt {
-                @include xl {
+                @include breakpoints.xl {
                     display: none;
                 }
             }
@@ -1360,13 +1362,13 @@
         line-height: 40px;
         padding: 0 30px;
 
-        @include sm {
+        @include breakpoints.sm {
             height: 40px;
             line-height: 37px;
             padding: 0 20px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             display: none;
         }
     }
@@ -1396,11 +1398,11 @@
         &-right {
             gap: 40px;
 
-            @include xl {
+            @include breakpoints.xl {
                 gap: 20px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 flex-direction: row;
                 justify-content: flex-end;
             }
@@ -1410,7 +1412,7 @@
                     color: var(--black);
                     font-size: 18px;
 
-                    @include lg {
+                    @include breakpoints.lg {
                         display: none;
                     }
                 }
@@ -1433,7 +1435,7 @@
             }
 
             .rv-11-def-btn {
-                @include lg {
+                @include breakpoints.lg {
                     padding: 0 25px;
                 }
             }
@@ -1483,7 +1485,7 @@
     }
 
     &__actions {
-        @include xl {
+        @include breakpoints.xl {
             gap: 15px;
         }
 
@@ -1520,7 +1522,7 @@
         }
 
         &__txt {
-            @include lg {
+            @include breakpoints.lg {
                 display: none;
             }
         }
@@ -1568,7 +1570,7 @@
         align-items: center;
         justify-content: flex-end;
 
-        @include md {
+        @include breakpoints.md {
             gap: 15px;
         }
 
@@ -1614,7 +1616,7 @@
         &__actions {
             justify-content: flex-start;
 
-            @include sm {
+            @include breakpoints.sm {
                 justify-content: center;
                 row-gap: 10px;
             }
@@ -1625,7 +1627,7 @@
         }
 
         &-form {
-            @include sm {
+            @include breakpoints.sm {
                 justify-content: center;
             }
 
@@ -1648,11 +1650,11 @@
         }
 
         &-right {
-            @include lg {
+            @include breakpoints.lg {
                 gap: 20px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 flex-direction: row;
                 justify-content: flex-end;
             }
@@ -1665,7 +1667,7 @@
                 background: rgba(255, 255, 255, 0.14);
                 backdrop-filter: blur(7px);
 
-                @include lg {
+                @include breakpoints.lg {
                     padding: 0 18px;
                 }
 
@@ -1688,7 +1690,7 @@
         >ul {
             gap: 35px;
 
-            @include md {
+            @include breakpoints.md {
                 gap: 12px;
             }
 
@@ -1703,17 +1705,17 @@
     }
 
     .rv-1-header-nav__sidebar {
-        @include md {
+        @include breakpoints.md {
             background-color: #164e5d;
         }
 
         .sub-menu {
-            @include md {
+            @include breakpoints.md {
                 background-color: #0d4351;
             }
 
             a {
-                @include md {
+                @include breakpoints.md {
                     color: var(--white-f);
                 }
 
@@ -1752,11 +1754,11 @@
     }
 
     &-right-btns {
-        @include md {
+        @include breakpoints.md {
             margin-right: 15px;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             margin-right: 10px;
         }
 
@@ -1769,7 +1771,7 @@
             text-transform: capitalize;
             margin-right: 15px;
 
-            @include sm {
+            @include breakpoints.sm {
                 height: 40px;
                 line-height: 37px;
             }
@@ -1790,11 +1792,11 @@
                 margin-right: 0;
                 border: 1px solid var(--black);
 
-                @include sm {
+                @include breakpoints.sm {
                     padding: 0 25px;
                 }
 
-                @include xs {
+                @include breakpoints.xs {
                     padding: 0 20px;
                 }
 
@@ -1819,11 +1821,11 @@
         border-radius: 0;
         line-height: 43px;
 
-        @include lg {
+        @include breakpoints.lg {
             padding: 0 20px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             line-height: 37px;
         }
 
@@ -1843,7 +1845,7 @@
     border-radius: 0;
     border: 1px solid #f35b04;
 
-    @include sm {
+    @include breakpoints.sm {
         height: 40px;
     }
 
@@ -1888,7 +1890,7 @@
     }
 
     .rv-1-header-nav__sidebar {
-        @include md {
+        @include breakpoints.md {
             background-color: rgba(2, 2, 8, 0.80);
         }
     }
@@ -2017,7 +2019,7 @@
     padding-top: 7px;
     padding-left: 40px;
 
-    @include md {
+    @include breakpoints.md {
         padding: 0;
     }
 }
@@ -2027,7 +2029,7 @@
     background: none;
     backdrop-filter: none;
 
-    @include md {
+    @include breakpoints.md {
         padding: 12px;
     }
 
@@ -2042,18 +2044,18 @@
         justify-content: flex-end;
         gap: 50px;
 
-        @include lg {
+        @include breakpoints.lg {
             gap: 25px;
         }
 
         &-btns {
             gap: 50px;
 
-            @include xl {
+            @include breakpoints.xl {
                 gap: 35px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 margin-right: 25px;
             }
 
@@ -2071,16 +2073,16 @@
                 background-color: #DFE11B;
                 color: var(--black);
 
-                @include xl {
+                @include breakpoints.xl {
                     padding: 0 25px;
                 }
 
-                @include md {
+                @include breakpoints.md {
                     height: 45px;
                     line-height: 43px;
                 }
 
-                @include sm {
+                @include breakpoints.sm {
                     height: 40px;
                     line-height: 37px;
                 }
@@ -2172,11 +2174,11 @@
         }
 
         &__actions {
-            @include sm {
+            @include breakpoints.sm {
                 justify-content: center;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 row-gap: 8px;
             }
 
@@ -2190,7 +2192,7 @@
                 &:not(:first-child) {
                     border-color: rgb(255 255 255 / 20%);
 
-                    @include xl {
+                    @include breakpoints.xl {
                         padding-left: 10px;
                         margin-left: 10px;
                     }
@@ -2211,11 +2213,11 @@
         align-items: center;
         gap: 40px;
 
-        @include xl {
+        @include breakpoints.xl {
             gap: 30px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             gap: 10px;
         }
     }
@@ -2224,11 +2226,11 @@
         padding-left: 40px;
         border-left: 1px solid rgb(4, 14, 31, 0.2);
 
-        @include xl {
+        @include breakpoints.xl {
             padding-left: 30px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             padding-left: 13px;
         }
 
@@ -2252,7 +2254,7 @@
 
     &__nav {
         >ul {
-            @include xl {
+            @include breakpoints.xl {
                 gap: 15px;
             }
 
@@ -2269,11 +2271,11 @@
     }
 
     &-bottom-right {
-        @include md {
+        @include breakpoints.md {
             gap: 20px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             flex-direction: row;
         }
 
@@ -2303,17 +2305,17 @@
         align-items: center;
         gap: 123px;
 
-        @include xl {
+        @include breakpoints.xl {
             gap: 93px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             gap: 63px;
         }
     }
 
     .rv-1-header-nav__sidebar {
-        @include md {
+        @include breakpoints.md {
             background-color: #202731;
         }
     }
@@ -2335,7 +2337,7 @@
     }
 
     &-right-btns {
-        @include lg {
+        @include breakpoints.lg {
             gap: 20px;
         }
 
@@ -2379,7 +2381,7 @@
     }
 
     .rv-1-header-nav__sidebar {
-        @include md {
+        @include breakpoints.md {
             background-color: #142226;
         }
     }
@@ -2406,12 +2408,12 @@
             height: 50px;
             line-height: 47px;
 
-            @include md {
+            @include breakpoints.md {
                 height: 45px;
                 line-height: 43px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 height: 40px;
                 line-height: 37px;
             }
@@ -2464,11 +2466,11 @@
         }
 
         &-right__actions {
-            @include lg {
+            @include breakpoints.lg {
                 gap: 18px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 padding-right: 15px;
             }
 
@@ -2486,7 +2488,7 @@
             }
 
             .rv-3-def-btn {
-                @include lg {
+                @include breakpoints.lg {
                     padding: 0 20px;
                 }
             }
@@ -2501,7 +2503,7 @@
         >li {
             line-height: 80px;
 
-            @include md {
+            @include breakpoints.md {
                 line-height: normal;
             }
         }
@@ -2525,7 +2527,7 @@
     padding: 15px 0;
     padding-right: 40px;
 
-    @include lg {
+    @include breakpoints.lg {
         padding-right: 20px;
     }
 }

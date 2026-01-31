@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+
 /* ----- 20. Categories ----- */
 .rv-3-categories {
     background-color: #F4F4F4;
@@ -5,11 +8,11 @@
     .rv-3-slider-pagination {
         margin-top: 70px;
 
-        @include xl {
+        @include breakpoints.xl {
             margin-top: 50px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             margin-top: 40px;
         }
     }
@@ -49,7 +52,7 @@
         padding: 16px 0 17px;
         transition: 0.4s ease;
 
-        @include xxs {
+        @include breakpoints.xxs {
             font-size: 16px;
         }
     }
@@ -57,11 +60,11 @@
 
 // INDEX-7 CATEGORIES
 .rv-7-categories {
-    @include xl {
+    @include breakpoints.xl {
         padding: 80px 0 40px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 60px 0 30px;
     }
 }
@@ -72,7 +75,7 @@
     padding: 30px;
     font-family: var(--mulish);
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 20px;
     }
 
@@ -113,20 +116,20 @@
     &__row {
         --bs-gutter-x: 138px;
 
-        @include xl {
+        @include breakpoints.xl {
             --bs-gutter-x: 55px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             --bs-gutter-x: 25px;
         }
 
-        @include md {
+        @include breakpoints.md {
             --bs-gutter-x: 30px;
             --bs-gutter-y: 30px;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             --bs-gutter-x: 20px;
             --bs-gutter-y: 20px;
         }
@@ -135,7 +138,7 @@
     .rv-12-def-btn {
         margin-top: 73px;
 
-        @include md {
+        @include breakpoints.md {
             margin-top: 43px;
         }
     }
@@ -154,7 +157,7 @@
         margin-bottom: 36px;
         position: relative;
 
-        @include lg {
+        @include breakpoints.lg {
             width: 160px;
             height: 160px;
             margin-bottom: 26px;
@@ -172,7 +175,7 @@
             top: 50%;
             translate: 0 -50%;
 
-            @include md {
+            @include breakpoints.md {
                 content: none;
             }
         }
@@ -210,15 +213,15 @@
     padding-top: 120px;
     position: relative;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 100px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
@@ -232,7 +235,7 @@
             font-weight: 700;
             color: #CE512A;
             z-index: 1;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
             .rv-21-categorie_sh_1 {
                 left: 50%;
@@ -249,17 +252,17 @@
             font-weight: 700;
             color: #0E1428;
             z-index: 1;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 35px;
             }
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 font-size: 30px;
             }
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 font-size: 23px;
             }
 
@@ -270,7 +273,7 @@
                 bottom: -5px;
                 z-index: -1;
 
-                @media #{$mobile,$sm-mobile} {
+                @media #{variables.$mobile,variables.$sm-mobile} {
                     bottom: -20px;
                 }
             }
@@ -280,11 +283,11 @@
     .rv-21-categorie_slide {
         padding-bottom: 80px;
 
-        @media #{$sm} {
+        @media #{variables.$sm} {
             padding-bottom: 60px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             padding-bottom: 40px;
         }
 
@@ -294,7 +297,7 @@
             transition: all 0.4s ease;
             text-align: center;
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 padding: 10px;
             }
 
@@ -307,7 +310,7 @@
                 width: 100%;
                 margin-bottom: 20px;
 
-                @media #{$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     height: 150px;
                 }
 
@@ -318,7 +321,7 @@
             }
 
             h3 {
-                font-family: $mulish;
+                font-family: variables.$mulish;
                 font-size: 16px;
                 font-weight: 700;
                 color: #0E1428;

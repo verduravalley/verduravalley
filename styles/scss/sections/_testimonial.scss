@@ -1,13 +1,17 @@
+@use "../abstracts/variables";
+@use "../main/breakpoints";
+@use "../main/mixin";
+
 /* ----- 22. Testimonial ----- */
 .rv-3-testimonial {
     padding-bottom: 60px;
     text-align: center;
 
-    @include xl {
+    @include breakpoints.xl {
         padding-bottom: 40px;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding-bottom: 30px;
     }
 
@@ -15,11 +19,11 @@
         margin-inline: auto;
         margin-bottom: 62px;
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 32px;
         }
 
-        @include md {
+        @include breakpoints.md {
             // margin-bottom: 27px;
         }
     }
@@ -30,7 +34,7 @@
         margin-bottom: 25px;
         color: var(--black);
 
-        @include md {
+        @include breakpoints.md {
             margin-bottom: 10px;
         }
     }
@@ -42,19 +46,19 @@
         font-weight: 500;
         line-height: 183.333%;
 
-        @include xl {
+        @include breakpoints.xl {
             font-size: 22px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             font-size: 20px;
         }
 
-        @include md {
+        @include breakpoints.md {
             font-size: 18px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             font-size: 16px;
             margin-bottom: 0;
         }
@@ -74,11 +78,11 @@
         transition: 0.4s ease;
         margin-top: 15px;
 
-        @include md {
+        @include breakpoints.md {
             width: 70px;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             width: 60px;
         }
 
@@ -90,7 +94,7 @@
             padding: 10px;
             border-color: rgb(5 5 5 / 14%);
 
-            @include md {
+            @include breakpoints.md {
                 padding: 8px;
             }
         }
@@ -108,7 +112,7 @@
     justify-content: space-between;
     margin-top: 0;
 
-    @include xs {
+    @include breakpoints.xs {
         display: none;
     }
 }
@@ -139,27 +143,27 @@
             background-size: 100% 100%;
             z-index: -1;
 
-            @include xl {
+            @include breakpoints.xl {
                 width: 152px;
                 height: 195px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 width: 132px;
                 height: 173px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 width: 112px;
                 height: 133px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 width: 102px;
                 height: 123px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 width: 92px;
                 height: 110px;
             }
@@ -173,15 +177,15 @@
     &__txt-slider {
         margin-left: 78px;
 
-        @include xl {
+        @include breakpoints.xl {
             margin-left: 48px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             margin-left: 38px;
         }
 
-        @include md {
+        @include breakpoints.md {
             margin-left: 0;
         }
     }
@@ -193,7 +197,7 @@
             bottom: 220px;
             left: 105px;
 
-            @include md {
+            @include breakpoints.md {
                 opacity: 0;
             }
         }
@@ -202,11 +206,11 @@
             top: 120px;
             right: 183px;
 
-            @include lg {
+            @include breakpoints.lg {
                 top: 30px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 opacity: 0;
             }
         }
@@ -215,20 +219,20 @@
             right: 0;
             bottom: 166px;
 
-            @include xl {
+            @include breakpoints.xl {
                 bottom: 50px;
             }
 
-            @include lg {
+            @include breakpoints.lg {
                 max-width: 150px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 max-width: 140px;
                 bottom: 20px;
             }
 
-            @include xxs {
+            @include breakpoints.xxs {
                 max-width: 110px;
                 bottom: 0;
             }
@@ -242,7 +246,7 @@
         font-size: 14px;
         margin-bottom: 27px;
 
-        @include md {
+        @include breakpoints.md {
             margin-bottom: 17px;
         }
     }
@@ -255,16 +259,16 @@
         line-height: 180%;
         margin-bottom: 50px;
 
-        @include lg {
+        @include breakpoints.lg {
             font-size: 18px;
             margin-bottom: 35px;
         }
 
-        @include md {
+        @include breakpoints.md {
             margin-bottom: 20px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             font-size: 16px;
         }
 
@@ -303,11 +307,11 @@
         gap: 60px;
         align-items: center;
 
-        @include xl {
+        @include breakpoints.xl {
             gap: 45px;
         }
 
-        @include md {
+        @include breakpoints.md {
             flex-direction: column;
             align-items: flex-start;
         }
@@ -317,11 +321,11 @@
         width: 330px;
         max-width: 100%;
 
-        @include lg {
+        @include breakpoints.lg {
             width: 310px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             width: 290px;
         }
     }
@@ -330,11 +334,11 @@
         flex: 330px 0 0;
         margin: 0;
 
-        @include lg {
+        @include breakpoints.lg {
             flex: 310px 0 0;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             flex: 290px 0 0;
         }
     }
@@ -351,7 +355,7 @@
         width: 55%;
         margin: 0;
 
-        @include md {
+        @include breakpoints.md {
             width: 100%;
         }
     }
@@ -377,7 +381,7 @@
         min-width: 186px;
         z-index: 2;
 
-        @include xxs {
+        @include breakpoints.xxs {
             opacity: 0;
         }
     }
@@ -438,18 +442,18 @@
 .rv-7-testimonial {
     padding: 120px 0;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 80px 0;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 60px 0;
     }
 
     .rv-7-section__sub-title {
         margin-bottom: 53px;
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 32px;
         }
     }
@@ -495,26 +499,26 @@
         padding: 80px;
         gap: 95px;
 
-        @include xl {
+        @include breakpoints.xl {
             padding: 60px;
             gap: 55px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             padding: 50px;
             gap: 45px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
             padding: 40px;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             padding: 35px;
             row-gap: 30px;
         }
 
-        @include xxs {
+        @include breakpoints.xxs {
             padding: 20px;
             row-gap: 20px;
         }
@@ -524,7 +528,7 @@
         flex: 310px 0 0;
         margin: 0;
 
-        @include xxs {
+        @include breakpoints.xxs {
             flex: auto 0 0;
         }
     }
@@ -538,15 +542,15 @@
         max-width: 100%;
         width: calc(100% - (310px + 95px));
 
-        @include xl {
+        @include breakpoints.xl {
             width: calc(100% - (310px + 55px));
         }
 
-        @include lg {
+        @include breakpoints.lg {
             width: calc(100% - (310px + 45px));
         }
 
-        @include md {
+        @include breakpoints.md {
             width: 100%;
         }
     }
@@ -638,7 +642,7 @@
             padding: 65px 60px;
             margin: -65px -60px;
 
-            @include md {
+            @include breakpoints.md {
                 padding: 0;
                 margin: 0;
                 margin-bottom: 20px;
@@ -656,17 +660,17 @@
                 height: 349px;
                 transition: 0.4s ease;
 
-                @include xl {
+                @include breakpoints.xl {
                     width: 329px;
                     height: 329px;
                 }
 
-                @include lg {
+                @include breakpoints.lg {
                     width: 289px;
                     height: 289px;
                 }
 
-                @include xs {
+                @include breakpoints.xs {
                     width: 239px;
                     height: 239px;
                 }
@@ -681,7 +685,7 @@
                 img {
                     box-shadow: 0px 10px 70px 0px rgba(5, 5, 5, 0.20);
 
-                    @include md {
+                    @include breakpoints.md {
                         box-shadow: 0px 10px 70px 0px transparent;
                     }
                 }
@@ -690,7 +694,7 @@
             &.swiper-slide-next {
                 translate: -60% 0;
 
-                @include md {
+                @include breakpoints.md {
                     translate: 0 0;
                 }
             }
@@ -699,7 +703,7 @@
             &.swiper-slide-prev:nth-last-child(2) {
                 translate: 60% 0;
 
-                @include md {
+                @include breakpoints.md {
                     translate: 0 0;
                 }
             }
@@ -712,7 +716,7 @@
         margin-left: 80px;
         position: relative;
 
-        @include md {
+        @include breakpoints.md {
             margin-left: 0;
         }
 
@@ -774,24 +778,24 @@
         font-size: 20px;
         margin-bottom: 52px;
 
-        @include xl {
+        @include breakpoints.xl {
             margin-bottom: 42px;
         }
 
-        @include lg {
+        @include breakpoints.lg {
             margin-bottom: 32px;
         }
     }
 
     .rv-12-slider-nav {
-        @include sm {
+        @include breakpoints.sm {
             position: static;
             translate: 0 0;
             justify-content: center;
             margin-top: 35px !important;
         }
 
-        @include xs {
+        @include breakpoints.xs {
             display: flex;
         }
 
@@ -799,12 +803,12 @@
             width: 60px;
             height: 60px;
 
-            @include sm {
+            @include breakpoints.sm {
                 width: 50px;
                 height: 50px;
             }
 
-            @include xs {
+            @include breakpoints.xs {
                 width: 40px;
                 height: 40px;
             }
@@ -832,11 +836,11 @@
     position: relative;
     padding: (120px + 95px) 0;
 
-    @include xl {
+    @include breakpoints.xl {
         padding: 185px 0;
     }
 
-    @include md {
+    @include breakpoints.md {
         padding: 185px 0 60px;
     }
 
@@ -862,16 +866,16 @@
             width: auto;
             margin: auto;
 
-            @include xl {
+            @include breakpoints.xl {
                 inset: -100px;
             }
 
-            @include md {
+            @include breakpoints.md {
                 margin: auto;
                 inset: -80px;
             }
 
-            @include sm {
+            @include breakpoints.sm {
                 background-size: cover;
             }
         }
@@ -893,11 +897,11 @@
         line-height: 176.923%;
         margin-bottom: 0;
 
-        @include lg {
+        @include breakpoints.lg {
             font-size: 22px;
         }
 
-        @include md {
+        @include breakpoints.md {
             font-size: 20px;
         }
 
@@ -943,7 +947,7 @@
         right: 0;
         translate: 0 -50%;
 
-        @include md {
+        @include breakpoints.md {
             position: static;
             translate: 0 0;
             margin: auto;
@@ -959,7 +963,7 @@
     &__inner {
         gap: 54px;
 
-        @include lg {
+        @include breakpoints.lg {
             gap: 34px;
         }
     }
@@ -1011,11 +1015,11 @@
         z-index: 1;
         background: linear-gradient(45deg, #FFFFFF, transparent);
 
-        @media #{$md} {
+        @media #{variables.$md} {
             width: 13%;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             width: 6%;
         }
     }
@@ -1036,7 +1040,7 @@
             background: #F3F5FB;
             padding: 80px;
 
-            @media #{ $lg,$md,$sm,$xs} {
+            @media #{ variables.$lg,variables.$md,variables.$sm,variables.$xs} {
                 padding: 20px;
             }
 
@@ -1045,7 +1049,7 @@
                 display: flex;
                 gap: 5px;
 
-                @media #{ $lg,$md,$sm,$xs} {
+                @media #{ variables.$lg,variables.$md,variables.$sm,variables.$xs} {
                     padding-bottom: 25px;
                 }
 
@@ -1059,9 +1063,9 @@
                 font-size: 20px;
                 font-weight: 500;
                 padding-bottom: 70px;
-                font-family: $mulish;
+                font-family: variables.$mulish;
 
-                @media #{ $lg,$md,$sm,$xs} {
+                @media #{ variables.$lg,variables.$md,variables.$sm,variables.$xs} {
                     padding-bottom: 35px;
                 }
 
@@ -1076,7 +1080,7 @@
                 border-top: 1px solid #66666647;
                 padding-top: 40px;
 
-                @media #{ $lg,$md,$sm,$xs} {
+                @media #{ variables.$lg,variables.$md,variables.$sm,variables.$xs} {
                     padding-top: 30px;
                 }
 
@@ -1085,7 +1089,7 @@
                     font-weight: 600;
                     color: #666666;
 
-                    @media #{ $sm-mobile} {
+                    @media #{ variables.$sm-mobile} {
                         font-size: 20px;
                     }
 
@@ -1112,13 +1116,13 @@
                 span {
                     background: #050505;
                     color: #FFFFFF;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                 }
             }
 
             .rv-15-testimonial_author_name {
                 color: #050505;
-                font-family: $mulish;
+                font-family: variables.$mulish;
             }
         }
     }
@@ -1128,15 +1132,15 @@
         top: 6%;
         left: 24%;
 
-        @media #{$md} {
+        @media #{variables.$md} {
             left: 13%;
         }
 
-        @media #{$mobile,$sm} {
+        @media #{variables.$mobile,variables.$sm} {
             left: 10%;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             left: 60%;
             top: 75%;
             display: none;
@@ -1162,15 +1166,15 @@
         bottom: 15%;
         right: 24%;
 
-        @media #{$md} {
+        @media #{variables.$md} {
             right: 13%;
         }
 
-        @media #{$mobile,$sm} {
+        @media #{variables.$mobile,variables.$sm} {
             right: 10%;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             right: 18%;
             bottom: 14%;
             display: none;
@@ -1196,11 +1200,11 @@
 .rv-16-testimonial_section {
     padding: 70px 0;
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-bottom: 60px;
     }
 
-    @media #{$sm-mobile} {
+    @media #{variables.$sm-mobile} {
         padding: 80px 0;
     }
 
@@ -1217,11 +1221,11 @@
                 text-align: center;
                 padding: 0 150px;
 
-                @media #{$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     padding: 0 50px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     padding: 0 20px;
                 }
 
@@ -1229,7 +1233,7 @@
                     font-size: 50px;
                     color: #020208;
 
-                    @media #{$sm-mobile} {
+                    @media #{variables.$sm-mobile} {
                         font-size: 35px;
                     }
                 }
@@ -1240,15 +1244,15 @@
                     color: #020208;
                     padding: 35px 0;
                     line-height: 36px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
-                    @media #{$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         font-size: 20px;
                         line-height: 27px;
                         padding: 15px 0;
                     }
 
-                    @media #{$sm-mobile} {
+                    @media #{variables.$sm-mobile} {
                         font-size: 16px;
                         line-height: 24px;
                         padding: 15px 0;
@@ -1260,14 +1264,14 @@
                     font-size: 18px;
                     font-weight: 700;
                     margin: 0;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                 }
 
                 .customer_title {
                     color: rgba(2, 2, 8, 0.5);
                     font-weight: 500;
                     text-transform: uppercase;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                 }
             }
         }
@@ -1297,9 +1301,9 @@
             position: absolute;
             top: 50%;
             z-index: 1;
-            @include slide_btn;
+            @include mixin.slide_btn;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 display: none;
             }
         }
@@ -1309,9 +1313,9 @@
             position: absolute;
             top: 50%;
             z-index: 1;
-            @include slide_btn;
+            @include mixin.slide_btn;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 display: none;
             }
         }
@@ -1324,11 +1328,11 @@
     padding: 130px 0;
     position: relative;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{$mobile,$sm-mobile} {
+    @media #{variables.$mobile,variables.$sm-mobile} {
         padding: 50px 0;
     }
 
@@ -1345,11 +1349,11 @@
         text-align: center;
         line-height: 140px;
 
-        @media #{$xxxl,$xxl} {
+        @media #{variables.$xxxl,variables.$xxl} {
             left: 6%;
         }
 
-        @media #{$xl} {
+        @media #{variables.$xl} {
             font-size: 165px;
             bottom: 9%;
             left: 5%;
@@ -1357,7 +1361,7 @@
             width: 200px;
         }
 
-        @media #{$lg} {
+        @media #{variables.$lg} {
             bottom: 4%;
             left: 3%;
             z-index: 1;
@@ -1366,7 +1370,7 @@
             font-size: 140px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             display: none;
         }
     }
@@ -1380,7 +1384,7 @@
             position: relative;
             padding-left: 10px;
             text-transform: uppercase;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
             &::after {
                 position: absolute;
@@ -1399,9 +1403,9 @@
             font-weight: 800;
             margin: 0;
             padding-top: 7px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 font-size: 45px;
             }
         }
@@ -1433,11 +1437,11 @@
                     border: 3px solid #DFE11B;
                     border-top: 3px solid rgb(240 246 250 / 20%);
                     font-size: 14px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                 }
 
                 p {
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     color: #FFFFFF;
                     font-weight: 600;
                     margin: 0;
@@ -1449,13 +1453,13 @@
                 font-size: 24px;
                 font-weight: 500;
                 padding-bottom: 70px;
-                font-family: $mulish;
+                font-family: variables.$mulish;
 
-                @media #{$xl} {
+                @media #{variables.$xl} {
                     font-size: 20px;
                 }
 
-                @media #{$lg} {
+                @media #{variables.$lg} {
                     font-size: 18px;
                 }
             }
@@ -1468,7 +1472,7 @@
                 .rv-17-testimonial_author_meta {
                     padding-left: 27%;
 
-                    @media #{$md,$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         padding-left: 0;
                     }
 
@@ -1477,12 +1481,12 @@
                         color: #FFFFFF;
                         font-weight: 600;
                         margin: 0;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
 
                         a {
                             color: #FFFFFF;
                             transition: 0.3s;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
 
                             &:hover {
                                 color: #DFE11B;
@@ -1493,7 +1497,7 @@
                     .rv-17-testimonial_author_designation {
                         color: #FFFFFF;
                         font-weight: 500;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
                     }
                 }
 
@@ -1511,7 +1515,7 @@
             height: 270px;
             width: 270px;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 margin-top: 20px;
             }
 
@@ -1527,22 +1531,22 @@
         right: 17%;
         bottom: 17%;
 
-        @media #{$xxxl,$xxl,$xl} {
+        @media #{variables.$xxxl,variables.$xxl,variables.$xl} {
             right: 10%;
         }
 
-        @media #{$lg} {
+        @media #{variables.$lg} {
             right: 7%;
             bottom: 15%;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             right: 7%;
             bottom: 12%;
         }
 
         .rv-17-testimonial-swiper-button-next {
-            @include slide_btn;
+            @include mixin.slide_btn;
             background: #FFFFFF;
             display: inline-block;
             border-radius: 50%;
@@ -1550,7 +1554,7 @@
         }
 
         .rv-17-testimonial-swiper-button-prev {
-            @include slide_btn;
+            @include mixin.slide_btn;
             background: #FFFFFF;
             display: inline-block;
             border-radius: 50%;
@@ -1565,11 +1569,11 @@
     position: relative;
     z-index: 1;
 
-    @media #{$lg,$md} {
+    @media #{variables.$lg,variables.$md} {
         padding: 100px 0;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 70px 0;
     }
 
@@ -1592,17 +1596,17 @@
         margin-bottom: 60px;
         z-index: 1;
         text-align: center;
-        font-family: $mulish;
+        font-family: variables.$mulish;
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             font-size: 40px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             font-size: 35px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             font-size: 24px;
             margin-bottom: 40px;
         }
@@ -1623,7 +1627,7 @@
             column-gap: 30px;
             background: rgba(255, 255, 255, 0.1);
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 flex-direction: column;
             }
 
@@ -1632,19 +1636,19 @@
                 width: 400px;
                 flex-shrink: 0;
 
-                @media #{$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     height: 300px;
                     width: 400px;
                     margin-bottom: 30px;
                 }
 
-                @media #{$mobile,$sm-mobile} {
+                @media #{variables.$mobile,variables.$sm-mobile} {
                     height: 300px;
                     width: 100%;
                     margin-bottom: 30px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     height: 230px;
                     width: 100%;
                     margin-bottom: 20px;
@@ -1670,9 +1674,9 @@
                     font-size: 20px;
                     font-weight: 500;
                     margin-bottom: 40px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
-                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         font-size: 15px;
                         margin-bottom: 10px;
                     }
@@ -1683,7 +1687,7 @@
                     align-items: center;
                     justify-content: space-between;
 
-                    @media #{$sm-mobile} {
+                    @media #{variables.$sm-mobile} {
                         flex-direction: column;
                         margin-top: 30px;
                     }
@@ -1694,7 +1698,7 @@
                             color: #FFFFFF;
                             font-weight: 600;
                             margin-bottom: 7px;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
 
                             a {
                                 color: #FFFFFF;
@@ -1709,7 +1713,7 @@
                         .rv-18-testimonial_author_designation {
                             color: rgba(255, 255, 255, 0.6);
                             font-weight: 500;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
                         }
                     }
 
@@ -1730,13 +1734,13 @@
         align-items: center;
         row-gap: 30px;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             margin-top: 30px;
             flex-direction: row;
             gap: 30px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             margin-top: 20px;
         }
 
@@ -1758,11 +1762,11 @@
             width: 70%;
             transition: all 0.4s ease;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 width: 100%;
             }
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 height: 50px;
             }
 
@@ -1780,15 +1784,15 @@
     position: relative;
     z-index: 1;
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 90px 0;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding: 50px 0;
     }
 
@@ -1800,7 +1804,7 @@
         bottom: 0;
         height: 50px;
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             height: 30px;
         }
 
@@ -1830,9 +1834,9 @@
         margin-bottom: 60px;
         z-index: 1;
         text-align: center;
-        font-family: $mulish;
+        font-family: variables.$mulish;
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             font-size: 35px;
             margin-bottom: 40px;
         }
@@ -1867,15 +1871,15 @@
                 color: rgba(255, 255, 255, 0.7);
                 margin-bottom: 50px;
                 padding: 0 100px;
-                font-family: $mulish;
+                font-family: variables.$mulish;
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     font-size: 16px;
                     margin-bottom: 35px;
                     padding: 0 65px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     padding: 0 0;
                 }
             }
@@ -1885,7 +1889,7 @@
                     font-size: 18px;
                     font-weight: 700;
                     margin-bottom: 10px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
                     a {
                         color: #FFFFFF;
@@ -1901,7 +1905,7 @@
                     font-size: 15px;
                     color: rgba(255, 255, 255, 0.7);
                     margin-bottom: 30px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                 }
             }
 
@@ -1920,13 +1924,13 @@
         }
 
         .rv-5-testimonial-swiper-button-prev {
-            @include slide_btn;
+            @include mixin.slide_btn;
             position: absolute;
             z-index: 1;
             left: 0;
             top: 35%;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 top: 88%;
             }
 
@@ -1945,13 +1949,13 @@
         }
 
         .rv-5-testimonial-swiper-button-next {
-            @include slide_btn;
+            @include mixin.slide_btn;
             position: absolute;
             right: 0;
             top: 35%;
             z-index: 1;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 top: 88%;
             }
 
@@ -1976,15 +1980,15 @@
     position: relative;
     top: -180px;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         top: -115px;
     }
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
         top: -100px;
     }
 
-    @media #{$sm-mobile} {
+    @media #{variables.$sm-mobile} {
         top: -90px;
     }
 
@@ -2000,14 +2004,14 @@
             align-items: center;
             column-gap: 30px;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 flex-direction: column;
                 gap: 30px;
                 align-items: flex-start;
                 padding: 30px 60px 30px 20px;
             }
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 flex-direction: column;
                 gap: 30px;
                 align-items: flex-start;
@@ -2019,11 +2023,11 @@
                 width: 400px;
                 flex-shrink: 0;
 
-                @media #{$mobile,$sm-mobile} {
+                @media #{variables.$mobile,variables.$sm-mobile} {
                     width: 330px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     width: 220px;
                 }
 
@@ -2047,13 +2051,13 @@
                     font-size: 16px;
                     font-weight: 500;
                     margin-bottom: 40px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
-                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         margin-bottom: 20px;
                     }
 
-                    @media #{$sm-mobile} {
+                    @media #{variables.$sm-mobile} {
                         font-size: 14px;
                         margin-bottom: 20px;
                     }
@@ -2070,9 +2074,9 @@
                             color: #FFFFFF;
                             font-weight: 700;
                             margin-bottom: 7px;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
 
-                            @media #{$sm-mobile} {
+                            @media #{variables.$sm-mobile} {
                                 font-size: 16px;
                             }
 
@@ -2089,7 +2093,7 @@
                         .rv-20-testimonial_author_designation {
                             color: rgba(255, 255, 255, 0.6);
                             font-weight: 500;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
                         }
                     }
 
@@ -2097,7 +2101,7 @@
                         font-size: 100px;
                         color: rgba(255, 255, 255, 0.06);
 
-                        @media #{$sm-mobile} {
+                        @media #{variables.$sm-mobile} {
                             font-size: 70px;
                         }
                     }
@@ -2128,7 +2132,7 @@
             }
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             display: none;
         }
     }
@@ -2141,11 +2145,11 @@
     top: -200px;
     z-index: 1;
 
-    @media #{$md} {
+    @media #{variables.$md} {
         top: -160px;
     }
 
-    @media #{$mobile,$sm-mobile} {
+    @media #{variables.$mobile,variables.$sm-mobile} {
         top: -130px;
     }
 
@@ -2153,7 +2157,7 @@
         background: #F6F3EE;
         padding: 60px 40px;
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 40px 15px;
         }
 
@@ -2180,7 +2184,7 @@
             position: relative;
             left: -40px;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 position: relative;
                 left: 0;
                 margin-top: 40px;
@@ -2214,13 +2218,13 @@
                         font-size: 18px;
                         font-weight: 500;
                         margin-bottom: 20px;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
 
-                        @media #{$mobile} {
+                        @media #{variables.$mobile} {
                             font-size: 16px;
                         }
 
-                        @media #{$sm-mobile} {
+                        @media #{variables.$sm-mobile} {
                             font-size: 14px;
                         }
 
@@ -2237,7 +2241,7 @@
                         justify-content: space-between;
 
                         .rv-22-testimonial_author_meta {
-                            @media #{$sm-mobile} {
+                            @media #{variables.$sm-mobile} {
                                 padding-bottom: 30px;
                             }
 
@@ -2246,7 +2250,7 @@
                                 color: #040E1F;
                                 font-weight: 600;
                                 margin-bottom: 7px;
-                                font-family: $mulish;
+                                font-family: variables.$mulish;
 
                                 a {
                                     color: #040E1F;
@@ -2257,7 +2261,7 @@
                                 color: rgba(4, 14, 31, 0.60);
                                 font-weight: 500;
                                 font-size: 15px;
-                                font-family: $mulish;
+                                font-family: variables.$mulish;
                             }
                         }
                     }
@@ -2270,7 +2274,7 @@
                 bottom: 20px;
                 z-index: 1;
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     right: 0;
                     bottom: 5px;
                     transform: translateX(-50%);
@@ -2334,27 +2338,27 @@
     padding-top: 140px;
     position: relative;
 
-    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 100px;
     }
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 70px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
-    @media #{$mobile,$sm-mobile} {
+    @media #{variables.$mobile,variables.$sm-mobile} {
         padding-top: 50px
     }
 
-    @media #{$sm-mobile} {
+    @media #{variables.$sm-mobile} {
         padding-top: 35px;
     }
 
@@ -2363,15 +2367,15 @@
         left: 20%;
         top: 13%;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             left: 10%;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             left: 4%;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             left: 0%;
             top: 12%;
         }
@@ -2382,11 +2386,11 @@
         left: 14%;
         top: 45%;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             left: 7%;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             left: -2%;
         }
     }
@@ -2396,7 +2400,7 @@
         left: 20%;
         top: 80%;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             left: 10%;
         }
     }
@@ -2406,15 +2410,15 @@
         right: 20%;
         top: 13%;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             right: 10%;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             right: 4%;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             right: 0%;
             top: 12%;
         }
@@ -2425,11 +2429,11 @@
         right: 14%;
         top: 45%;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             right: 7%;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             right: -2%;
         }
     }
@@ -2439,7 +2443,7 @@
         right: 20%;
         top: 80%;
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             right: 7%;
         }
     }
@@ -2449,7 +2453,7 @@
         width: 80px;
         border-radius: 50%;
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             display: none;
         }
     }
@@ -2459,11 +2463,11 @@
         margin: auto;
         max-width: 650px;
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             max-width: 470px;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             max-width: 400px;
         }
 
@@ -2473,7 +2477,7 @@
             font-weight: 700;
             background: #020208;
             padding: 1px 4px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
             display: inline-block;
         }
 
@@ -2482,14 +2486,14 @@
             font-size: 46px;
             font-weight: 800;
             margin-bottom: 50px;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 35px;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 font-size: 25px;
                 margin-bottom: 20px;
             }
@@ -2508,7 +2512,7 @@
             font-size: 22px;
             font-weight: 700;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 left: 35%;
             }
         }
@@ -2525,7 +2529,7 @@
             z-index: 1;
             transition: all 0.3s ease;
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 display: none;
             }
 
@@ -2542,41 +2546,41 @@
         .rv-23-ti_prev {
             left: 39%;
 
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 left: 35%;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 left: 32%;
             }
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 left: 29%;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 left: 29%;
             }
         }
 
         .rv-23-ti_next {
-            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 right: 31%;
             }
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 right: 29%;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 right: 25%;
             }
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 right: 20%;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 right: 20%;
             }
         }
@@ -2586,11 +2590,11 @@
             position: relative;
             padding-bottom: 100px;
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 0 110px 50px 110px;
             }
 
-            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 0 30px 50px 30px;
             }
 
@@ -2611,11 +2615,11 @@
             .rv-23-single_testimonial_rating {
                 padding-bottom: 40px;
 
-                @media #{$mobile} {
+                @media #{variables.$mobile} {
                     padding-bottom: 20px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     padding-bottom: 15px;
                 }
             }
@@ -2625,7 +2629,7 @@
                 font-size: 18px;
                 font-weight: 500;
                 margin-bottom: 40px;
-                font-family: $mulish;
+                font-family: variables.$mulish;
             }
 
             .rv-23-testimonial_author_meta {
@@ -2634,7 +2638,7 @@
                     color: #020208;
                     font-weight: 700;
                     margin-bottom: 5px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
                     a {
                         color: #020208;
@@ -2643,7 +2647,7 @@
 
                 .rv-23-testimonial_author_designation {
                     color: rgba(2, 2, 8, 0.70);
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     font-weight: 500;
                     font-size: 15px;
                 }
@@ -2662,19 +2666,19 @@
     z-index: 1;
     padding-top: 120px;
 
-    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 110px;
     }
 
-    @media #{$md,$sm,$mobile,$sm-mobile} {
+    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{$sm,$mobile,$sm-mobile} {
+    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
         padding-top: 60px;
     }
 
-    @media #{$mobile,$sm-mobile} {
+    @media #{variables.$mobile,variables.$sm-mobile} {
         padding-top: 50px;
     }
 
@@ -2696,11 +2700,11 @@
         margin-bottom: 50px;
         padding: 0;
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             margin-bottom: 40px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             flex-direction: column;
             justify-content: center;
             text-align: center;
@@ -2711,7 +2715,7 @@
         .rv-24-testimonial_section_heading {
             flex-basis: 55%;
 
-            @media #{$mobile,$sm-mobile} {
+            @media #{variables.$mobile,variables.$sm-mobile} {
                 flex-basis: 60%;
             }
 
@@ -2720,9 +2724,9 @@
                 font-size: 16px;
                 font-weight: 600;
                 margin-bottom: 20px;
-                font-family: $mulish;
+                font-family: variables.$mulish;
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     margin-bottom: 10px;
                 }
             }
@@ -2732,17 +2736,17 @@
                 font-size: 44px;
                 font-weight: 800;
                 margin: 0;
-                font-family: $mulish;
+                font-family: variables.$mulish;
 
-                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     font-size: 35px;
                 }
 
-                @media #{$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     font-size: 28px;
                 }
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     font-size: 20px;
                 }
             }
@@ -2752,7 +2756,7 @@
             text-align: right;
 
             .rv-24-testimonial_button {
-                font-family: $mulish;
+                font-family: variables.$mulish;
                 background: transparent;
                 color: #FFFFFF;
                 position: relative;
@@ -2776,7 +2780,7 @@
                 }
 
                 i {
-                    @include play_btn;
+                    @include mixin.play_btn;
                     color: #020208;
                     background: #FFFFFF;
                     left: -30px;
@@ -2793,7 +2797,7 @@
                     position: absolute;
                     left: 27%;
                     transition: all 0.4s ease;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                 }
             }
         }
@@ -2806,19 +2810,19 @@
         backdrop-filter: blur(10px);
         padding: 110px 120px;
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 100px 100px;
         }
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 70px 70px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 50px 20px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             padding: 40px 0;
         }
 
@@ -2826,17 +2830,17 @@
             height: auto;
             width: auto;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 height: auto;
                 width: 160px;
             }
 
-            @media #{$sm,$mobile,$sm-mobile} {
+            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 height: auto;
                 width: 150px;
             }
 
-            @media #{$sm-mobile} {
+            @media #{variables.$sm-mobile} {
                 height: auto;
                 width: 100px;
             }
@@ -2846,7 +2850,7 @@
             padding-left: 50px;
             position: relative;
 
-            @media #{$md,$sm,$mobile,$sm-mobile} {
+            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                 padding: 30px 0 0 0;
             }
 
@@ -2859,7 +2863,7 @@
                 justify-content: center;
                 column-gap: 30px;
 
-                @media #{$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     right: 0;
                     bottom: 0;
                 }
@@ -2927,7 +2931,7 @@
                     .rv-24-single_testimonial_rating {
                         padding-bottom: 30px;
 
-                        @media #{$md,$sm,$mobile,$sm-mobile} {
+                        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                             padding-bottom: 10px;
                         }
                     }
@@ -2938,9 +2942,9 @@
                         font-weight: 500;
                         margin-bottom: 20px;
                         line-height: 36px;
-                        font-family: $mulish;
+                        font-family: variables.$mulish;
 
-                        @media #{$sm-mobile} {
+                        @media #{variables.$sm-mobile} {
                             font-size: 14px;
                             margin-bottom: 20px;
                             line-height: 23px;
@@ -2948,7 +2952,7 @@
                     }
 
                     .rv-24-testimonial_author_meta {
-                        @media #{$sm-mobile} {
+                        @media #{variables.$sm-mobile} {
                             margin-bottom: 40px;
                         }
 
@@ -2957,9 +2961,9 @@
                             color: #FFFFFF;
                             font-weight: 700;
                             margin-bottom: 7px;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
 
-                            @media #{$sm-mobile} {
+                            @media #{variables.$sm-mobile} {
                                 font-size: 18px;
                             }
 
@@ -2972,7 +2976,7 @@
                             color: rgba(255, 255, 255, 0.6);
                             font-weight: 500;
                             font-size: 15px;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
                         }
                     }
 
@@ -2988,27 +2992,27 @@
         background: #1c312c;
         padding: 120px 20px 140px 20px;
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 100px 0 120px 0;
         }
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 80px 0 100px 0;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 80px 0 60px 0;
         }
 
-        @media #{$sm,$mobile,$sm-mobile} {
+        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
             padding: 60px 0 40px 0;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             padding: 60px 0 50px 0;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             padding: 50px 0 45px 0;
         }
     }
@@ -3019,7 +3023,7 @@
         font-weight: 600;
         margin-bottom: 20px;
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             margin-bottom: 10px;
         }
     }
@@ -3030,20 +3034,20 @@
         font-weight: 700;
         margin-bottom: 60px;
 
-        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             font-size: 40px;
         }
 
-        @media #{$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             font-size: 33px;
             margin-bottom: 40px;
         }
 
-        @media #{$mobile,$sm-mobile} {
+        @media #{variables.$mobile,variables.$sm-mobile} {
             font-size: 28px;
         }
 
-        @media #{$sm-mobile} {
+        @media #{variables.$sm-mobile} {
             font-size: 19px;
             margin-bottom: 30px;
         }
@@ -3061,19 +3065,19 @@
                 text-align: center;
                 padding: 100px 100px;
 
-                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     padding: 80px 60px;
                 }
 
-                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     padding: 60px 40px;
                 }
 
-                @media #{$sm,$mobile,$sm-mobile} {
+                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
                     padding: 50px 30px;
                 }
 
-                @media #{$sm-mobile} {
+                @media #{variables.$sm-mobile} {
                     padding: 30px 20px;
                 }
 
@@ -3082,7 +3086,7 @@
                     font-size: 16px;
                     font-weight: 500;
                     margin-bottom: 30px;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
                     line-height: 36px;
 
                     span {
@@ -3093,7 +3097,7 @@
                 .rv-25-single_testimonial_rating {
                     padding-bottom: 60px;
 
-                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
                         padding-bottom: 40px;
                     }
 
@@ -3107,7 +3111,7 @@
                     align-items: center;
                     column-gap: 20px;
                     justify-content: center;
-                    font-family: $mulish;
+                    font-family: variables.$mulish;
 
                     .rv-25-testimonial_author_image {
                         height: 60px;
@@ -3129,7 +3133,7 @@
                             color: #FFFFFF;
                             font-weight: 700;
                             margin-bottom: 0px;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
 
                             a {
                                 color: #FFFFFF;
@@ -3141,7 +3145,7 @@
                             font-weight: 500;
                             font-size: 15px;
                             margin: 0;
-                            font-family: $mulish;
+                            font-family: variables.$mulish;
                         }
                     }
                 }
@@ -3161,12 +3165,12 @@
         align-items: center;
         column-gap: 100px;
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             margin-top: 50px;
             column-gap: 70px;
         }
 
-        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
             margin-top: 40px;
             column-gap: 40px;
         }
@@ -3178,7 +3182,7 @@
             font-size: 18px;
             font-weight: 500;
             opacity: 0.5;
-            font-family: $mulish;
+            font-family: variables.$mulish;
 
             i {
                 margin: 0 10px;
