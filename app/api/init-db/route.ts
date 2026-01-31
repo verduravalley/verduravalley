@@ -115,6 +115,9 @@ export async function POST() {
         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='leadership' AND column_name='title_ar') THEN
           ALTER TABLE leadership ADD COLUMN title_ar VARCHAR(255);
         END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='leadership' AND column_name='images') THEN
+          ALTER TABLE leadership ADD COLUMN images TEXT[];
+        END IF;
       END $$;
     `);
 

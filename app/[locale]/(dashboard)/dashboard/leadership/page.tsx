@@ -14,6 +14,7 @@ interface Member {
   name: string;
   title: string;
   image_url: string;
+  images?: string[];
   name_ar?: string;
   title_ar?: string;
 }
@@ -33,7 +34,7 @@ export default function LeadershipPage() {
   const [members, setMembers] = useState<Member[]>([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imageUrl, setImageUrl] = useState('');
+  const [images, setImages] = useState<string[]>([]);
 
   const { register, handleSubmit, reset } = useForm<MemberFormData>();
 
@@ -56,7 +57,8 @@ export default function LeadershipPage() {
     try {
       await axios.post('/api/leadership', {
         ...data,
-        image_url: imageUrl,
+        images,
+        image_url: images[0] || '',
       });
       closeModal();
       fetchMembers();
@@ -68,7 +70,7 @@ export default function LeadershipPage() {
   const closeModal = () => {
     setIsModalOpen(false);
     reset();
-    setImageUrl('');
+    setImages([]);
   };
 
   const handleDelete = async (id: string) => {
@@ -177,10 +179,11 @@ export default function LeadershipPage() {
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{tc('shared')}</span>
               </div>
               <ImageUpload
-                value={imageUrl}
-                onChange={setImageUrl}
+                value={images}
+                onChange={(urls) => setImages(urls as string[])}
                 folder="organiyo/leadership"
-                label="Member Photo"
+                label="Member Photo(s)"
+                multiple={true}
               />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('sortOrderOptional')}</label>

@@ -6,7 +6,7 @@ import { Package, Plus, Pencil, Trash2, X } from 'lucide-react';
 import { useRouter } from '@/i18n/navigation';
 import { Dialog } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
-import MultiImageUpload from '@/components/dashboard/MultiImageUpload';
+import ImageUpload from '@/components/dashboard/ImageUpload';
 import { useTranslations } from 'next-intl';
 
 interface Product {
@@ -258,11 +258,12 @@ export default function ProductsPage() {
                   <input type="number" step="0.01" {...register('prev_price', { valueAsNumber: true })} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="0.00" />
                 </div>
               </div>
-              <MultiImageUpload
+              <ImageUpload
                 value={images}
-                onChange={setImages}
+                onChange={(urls) => setImages(urls as string[])}
                 folder="organiyo/products"
                 label="Product Images"
+                multiple={true}
               />
               <div className="flex items-center gap-3">
                 <input type="checkbox" {...register('is_active')} id="is_active_new" defaultChecked className="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500" />

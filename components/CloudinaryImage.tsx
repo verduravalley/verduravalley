@@ -62,6 +62,7 @@ const CloudinaryImage = forwardRef<HTMLImageElement, Props>(({
       style={style}
       priority={priority}
       fill={fill}
+      unoptimized={isCloudinary}
     />
   );
 });

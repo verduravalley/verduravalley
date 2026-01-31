@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { use } from 'react';
 import { ArrowLeft, Save } from 'lucide-react';
-import MultiImageUpload from '@/components/dashboard/MultiImageUpload';
+import ImageUpload from '@/components/dashboard/ImageUpload';
 import { useTranslations } from 'next-intl';
 
 interface Product {
@@ -209,11 +209,12 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
             </div>
           </div>
 
-          <MultiImageUpload
+          <ImageUpload
             value={images}
-            onChange={setImages}
+            onChange={(urls) => setImages(urls as string[])}
             folder="organiyo/products"
             label="Product Images"
+            multiple={true}
           />
 
           <div className="flex items-center gap-3">

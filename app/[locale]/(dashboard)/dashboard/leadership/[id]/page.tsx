@@ -13,6 +13,7 @@ interface Member {
   name: string;
   title: string;
   image_url: string;
+  images?: string[];
   sort_order: number;
   name_ar?: string;
   title_ar?: string;
@@ -27,7 +28,7 @@ export default function EditLeadershipPage({ params }: { params: Promise<{ id: s
 
   const { register, handleSubmit, reset } = useForm<Member>();
   const [loading, setLoading] = useState(true);
-  const [imageUrl, setImageUrl] = useState('');
+  const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
     if (id) fetchMember();
@@ -37,8 +38,10 @@ export default function EditLeadershipPage({ params }: { params: Promise<{ id: s
     try {
       const res = await axios.get(`/api/leadership/${id}`);
       reset(res.data);
-      if (res.data.image_url) {
-        setImageUrl(res.data.image_url);
+      if (res.data.images) {
+        setImages(res.data.images);
+      } else if (res.data.image_url) {
+        setImages([res.data.image_url]);
       }
     } catch (error) {
       console.error('Failed to fetch member', error);
@@ -53,7 +56,8 @@ export default function EditLeadershipPage({ params }: { params: Promise<{ id: s
     try {
       await axios.put(`/api/leadership/${id}`, {
         ...data,
-        image_url: imageUrl,
+        images,
+        image_url: images[0] || '',
       });
       alert('Member updated successfully!');
       router.push('/dashboard/leadership');
@@ -128,10 +132,11 @@ export default function EditLeadershipPage({ params }: { params: Promise<{ id: s
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{tc('shared')}</span>
           </div>
           <ImageUpload
-            value={imageUrl}
-            onChange={setImageUrl}
+            value={images}
+            onChange={(urls) => setImages(urls as string[])}
             folder="organiyo/leadership"
-            label="Member Photo"
+            label="Member Photo(s)"
+            multiple={true}
           />
 
           <div>

@@ -29,11 +29,20 @@ export async function PUT(
 
   try {
     const body = await request.json();
-    const { name, title, image_url, sort_order, name_ar, title_ar } = body;
+    const { name, title, image_url, images, sort_order, name_ar, title_ar } = body;
 
     const result = await query(
-      'UPDATE leadership SET name = $1, title = $2, image_url = $3, sort_order = $4, name_ar = $5, title_ar = $6 WHERE id = $7 RETURNING *',
-      [name, title, image_url, sort_order, name_ar || null, title_ar || null, id]
+      'UPDATE leadership SET name = $1, title = $2, image_url = $3, images = $4, sort_order = $5, name_ar = $6, title_ar = $7 WHERE id = $8 RETURNING *',
+      [
+        name, 
+        title, 
+        image_url || (Array.isArray(images) ? images[0] : null), 
+        Array.isArray(images) ? images : (image_url ? [image_url] : []),
+        sort_order, 
+        name_ar || null, 
+        title_ar || null, 
+        id
+      ]
     );
 
     if (result.rows.length === 0) {
