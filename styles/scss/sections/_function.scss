@@ -1,12 +1,10 @@
-@use "../main/breakpoints";
-
 /* ----- 28. Function ----- */
 .rv-8-functions {
-    @include breakpoints.xl {
+    @include xl {
         padding: 40px 0;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 30px 0;
     }
 }
@@ -17,7 +15,7 @@
     font-family: var(--mulish);
     color: #050505;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 34px 25px 28px;
     }
 
@@ -27,7 +25,7 @@
         object-fit: contain;
         margin-bottom: 42px;
 
-        @include breakpoints.lg {
+        @include lg {
             width: 80px;
             height: 60px;
             margin-bottom: 32px;
@@ -39,11 +37,11 @@
         font-weight: 700;
         margin-bottom: 4px;
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 22px;
         }
 
-        @include breakpoints.md {
+        @include md {
             font-size: 20px;
         }
 

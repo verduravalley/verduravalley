@@ -1,16 +1,16 @@
+'use client';
+
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import IconIntegrity from "../utils/svg/IconIntegrity";
 import IconRespect from "../utils/svg/IconRespect";
-
 import IconSafe from "../utils/svg/IconSafe";
 import IconStewardship from "../utils/svg/IconStewardship";
+import { useTranslations } from "next-intl";
 
-type Props = {
-  btnStyle?: string;
-};
+const AboutSection2 = () => {
+  const t = useTranslations('about');
 
-const AboutSection2 = ({ btnStyle }: Props) => {
   return (
     <section className="rv-1-about rv-section-spacing">
       <div className="container position-relative">
@@ -28,34 +28,34 @@ const AboutSection2 = ({ btnStyle }: Props) => {
               <div className="rv-1-section__heading">
                 <div>
                   <h6 className="rv-1-section__sub-title rv-text-anime">
-                    The Story Behind Our Company
+                    {t('storySubtitle')}
                   </h6>
                 </div>
                 <div>
                   <h2 className="rv-1-section__title rv-text-anime">
-                    A Legacy of Excellence, <br /> Reimagined for the Future.
+                    {t('storyTitle')}
                   </h2>
                 </div>
               </div>
 
               <ul className="rv-1-about__pills">
-                <li className="rv-1-about__pill">Heritage</li>
-                <li className="rv-1-about__pill">Restoration</li>
-                <li className="rv-1-about__pill">Innovation</li>
+                <li className="rv-1-about__pill">{t('heritage')}</li>
+                <li className="rv-1-about__pill">{t('restoration')}</li>
+                <li className="rv-1-about__pill">{t('innovation')}</li>
               </ul>
 
               <div className="rv-1-about__history">
                 <p className="rv-1-about__descr">
-                  <strong>Verdura Valley</strong> is the evolution of a legacy. transforming a former textile facility into a modern agricultural and food production company
+                  <strong>Verdura Valley</strong> {t('descP1').replace('Verdura Valley is the evolution of a legacy. t', 't')}
                 </p>
                 <p className="rv-1-about__descr">
-                  The site was originally developed in the 1980’s by <strong>Medhat Marzouk</strong>, founder of Marzouk Textiles Industries, who began with undeveloped land and built a brick operation before establishing a textile manufacturing facility. After years of operation, the company closed in the early 2000’s due to changing circumstances, leaving the facility dormant for more than fifteen years.
+                  {t('descP2')}
                 </p>
                 <p className="rv-1-about__descr">
-                  In 2025, the site was revisited by <strong>Maged Medhat Marzouk</strong>, the founder’s son, who had long hoped to one day work alongside his father and continue the family business. Although that opportunity ended with his father’s passing in 2014, the vision of restoring the facility endured.
+                  {t('descP3')}
                 </p>
                 <p className="rv-1-about__descr">
-                  Late 2025, the decision was made to revive the site with a new purpose. January 2026 Verdura Valley was established to restore, repurpose, and reimagine the facility - beginning with extensive cleaning, preparation, and redevelopment - marking the start of a new chapter focused on modern, high-standard agricultural and food production.
+                  {t('descP4')}
                 </p>
               </div>
             </div>
@@ -69,11 +69,11 @@ const AboutSection2 = ({ btnStyle }: Props) => {
           <DivAnimateYAxis>
             <div className="rv-vision-section text-center">
               <div className="rv-1-section__heading justify-content-center">
-                <h6 className="rv-1-section__sub-title">Our Vision</h6>
-                <h2 className="rv-1-section__title">Healthy produce, artisan foods,<br/> globally recognized.</h2>
+                <h6 className="rv-1-section__sub-title">{t('visionSubtitle')}</h6>
+                <h2 className="rv-1-section__title">{t('visionTitle')}</h2>
               </div>
               <p className="rv-vision-descr mx-auto">
-                We believe achieving this vision requires more than ambition—it demands discipline, integrity, and a deep respect for both people and nature.
+                {t('visionDesc')}
               </p>
             </div>
           </DivAnimateYAxis>
@@ -84,31 +84,31 @@ const AboutSection2 = ({ btnStyle }: Props) => {
         {/* --- Our Philosophy / Core Values --- */}
         <div className="rv-philosophy-grid mt-100 mb-100">
           <div className="rv-1-section__heading mb-50">
-            <h6 className="rv-1-section__sub-title">Our Philosophy</h6>
-            <h2 className="rv-1-section__title">Core Values</h2>
+            <h6 className="rv-1-section__sub-title">{t('philosophySubtitle')}</h6>
+            <h2 className="rv-1-section__title">{t('philosophyTitle')}</h2>
           </div>
-          
+
           <div className="row g-4">
             {[
               {
-                title: "Stewardship",
+                title: t('stewardshipTitle'),
                 icon: <IconStewardship />,
-                desc: "Long-term custodians of land and water - protecting the future of food production."
+                desc: t('stewardshipDesc')
               },
               {
-                title: "Quality",
+                title: t('qualityTitle'),
                 icon: <IconSafe />,
-                desc: "Safe, healthy, and consistent food without compromise, from farm to delivery."
+                desc: t('qualityDesc')
               },
               {
-                title: "Respect",
+                title: t('respectTitle'),
                 icon: <IconRespect />,
-                desc: "Valuing our teams and partners through fairness, safety, and mutual trust."
+                desc: t('respectDesc')
               },
               {
-                title: "Integrity",
+                title: t('integrityTitle'),
                 icon: <IconIntegrity />,
-                desc: "Transparent processes and honest commitments. We stand behind every product."
+                desc: t('integrityDesc')
               }
             ].map((value, index) => (
               <div className="col-lg-3 col-md-6" key={index}>
@@ -133,17 +133,17 @@ const AboutSection2 = ({ btnStyle }: Props) => {
               <div className="rv-legacy-card__img-wrapper">
                 <img
                   src="/assets/images/medhat-marzouk.jpg"
-                  alt="In Memory of Medhat Marzouk"
+                  alt={t('memorialName')}
                   className="rv-legacy-img"
                 />
               </div>
 
               <div className="rv-legacy-card__txt">
-                <span className="rv-legacy-tag">In Loving Memory</span>
-                <h4 className="rv-legacy-name">Medhat Marzouk</h4>
-                <span className="rv-legacy-dates">May 6, 1949 – January 9, 2014</span>
+                <span className="rv-legacy-tag">{t('memorialTag')}</span>
+                <h4 className="rv-legacy-name">{t('memorialName')}</h4>
+                <span className="rv-legacy-dates">{t('memorialDates')}</span>
                 <p className="rv-legacy-desc">
-                  Founder of Marzouk Textiles Industries. A devoted husband and father, he built his life and work on integrity, education, and hard work. Verdura Valley stands as a continuation of his legacy, transformed by his son with the hope of making him proud.
+                  {t('memorialDesc')}
                 </p>
               </div>
             </div>

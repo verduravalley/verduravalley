@@ -11,6 +11,8 @@ export const fetchDashboardLeadership = createAsyncThunk(
       img: item.image_url || "/assets/img/team/1.png",
       title: item.name,
       subTitle: item.title,
+      title_ar: item.name_ar || "",
+      subTitle_ar: item.title_ar || "",
       socials: [
         { icon: "fa-facebook-f", link: "#" },
         { icon: "fa-twitter", link: "#" },

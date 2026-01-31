@@ -1,5 +1,3 @@
-@use "../abstracts/variables";
-
 @mixin rv_btn {
     background-color: transparent;
     border: 1px solid #666666;
@@ -98,7 +96,7 @@
         color: #F35B04;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         height: 55px;
         width: 55px;
         line-height: 55px;

@@ -1,10 +1,16 @@
+'use client';
+
 import ContactForm from "../form/ContactForm";
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+import { useTranslations } from "next-intl";
+
 type Props = {
   innerPage?: boolean;
 };
 const ContactSection2 = ({ innerPage }: Props) => {
+  const t = useTranslations('contact');
+
   return (
     <section
       className={`rv-2-contact ${
@@ -22,7 +28,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    Contact Numbers
+                    {t('contactNumbers')}
                   </h5>
                 </div>
               </div>
@@ -32,9 +38,6 @@ const ContactSection2 = ({ innerPage }: Props) => {
                   <li>
                     <a href="tel:0123456789">0123 456 789</a>
                   </li>
-                  {/* <li>
-                    <a href="tel:9876543210">9876 543 210</a>
-                  </li> */}
                 </ul>
               </div>
             </div>
@@ -46,7 +49,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    Email Address
+                    {t('emailAddress')}
                   </h5>
                 </div>
               </div>
@@ -54,11 +57,8 @@ const ContactSection2 = ({ innerPage }: Props) => {
               <div className="rv-inner-contact-info__bottom">
                 <ul className="rv-5-footer-timings">
                   <li>
-                    <a href="mailto:info@revel.com">info@verduravalley.com</a>
+                    <a href="mailto:info@verduravalley.com">info@verduravalley.com</a>
                   </li>
-                  {/* <li>
-                    <a href="mailto:test@revel.com">test@revel.com</a>
-                  </li> */}
                 </ul>
               </div>
             </div>
@@ -70,7 +70,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    Hours of Operation
+                    {t('hoursOfOperation')}
                   </h5>
                 </div>
               </div>
@@ -78,13 +78,9 @@ const ContactSection2 = ({ innerPage }: Props) => {
               <div className="rv-inner-contact-info__bottom">
                 <ul className="rv-5-footer-timings">
                   <li>
-                    <span className="key">Monday - Friday : </span>
-                    <span className="value">08:30 am - 10:00 pm</span>
+                    <span className="key">{t('mondayFriday')} </span>
+                    <span className="value">{t('hoursValue')}</span>
                   </li>
-                  {/* <li>
-                    <span className="key">Saturday - Sunday : </span>
-                    <span className="value">10:30 am - 08:00 pm</span>
-                  </li> */}
                 </ul>
               </div>
             </div>
@@ -92,7 +88,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
         ) : (
           <div>
             <h2 className="rv-2-section-title rv-text-anime">
-              Ready to bring your ideas to life? I'm here to help.
+              {t('readyToHelp')}
             </h2>
           </div>
         )}
@@ -105,7 +101,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
               }`}
             >
               <div>
-                <h3 className="rv-2-contact-form-title">Let's Connect.</h3>
+                <h3 className="rv-2-contact-form-title">{t('letsConnect')}</h3>
               </div>
 
               <ContactForm innerPage={innerPage ? true : false} />

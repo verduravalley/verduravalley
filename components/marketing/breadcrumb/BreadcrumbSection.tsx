@@ -1,10 +1,15 @@
-import Link from "next/link";
+'use client';
+
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 type Props = {
   title: string;
   currentPage?: string;
 };
 const BreadcrumbSection = ({ title, currentPage }: Props) => {
+  const t = useTranslations('breadcrumb');
+
   return (
     <div className="rv-breadcrumb pt-120 pb-120">
       <div className="container">
@@ -13,7 +18,7 @@ const BreadcrumbSection = ({ title, currentPage }: Props) => {
         <ul className="rv-breadcrumb__nav d-flex justify-content-center">
           <li>
             <Link href="/">
-              <i className="fa-solid fa-sharp fa-home"></i> Home
+              <i className="fa-solid fa-sharp fa-home"></i> {t('home')}
             </Link>
           </li>
           <li className="current-page">

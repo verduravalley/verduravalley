@@ -1,5 +1,3 @@
-@use "breakpoints";
-
 //------------------------ 03. COMPONENTS ==============================
 // BUTTONS
 .rv-1-def-btn {
@@ -13,12 +11,12 @@
     font-family: var(--mulish);
     transition: none;
 
-    @include breakpoints.xl {
+    @include xl {
         height: 50px;
         line-height: 48px;
     }
 
-    @include breakpoints.md {
+    @include md {
         height: 45px;
         line-height: 43px;
     }
@@ -30,11 +28,11 @@
         transition: 0.4s ease;
         border: 1px solid var(--orange);
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 0 30px;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding: 0 20px;
         }
     }
@@ -49,12 +47,12 @@
         text-align: center;
         line-height: 50px;
 
-        @include breakpoints.xl {
+        @include xl {
             line-height: 45px;
             width: 50px;
         }
 
-        @include breakpoints.md {
+        @include md {
             line-height: 40px;
             width: 45px;
         }
@@ -92,11 +90,11 @@
 .rv-section-spacing {
     padding: 120px 0;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 80px 0;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 60px 0;
     }
 }
@@ -110,7 +108,7 @@
         color: var(--black);
         text-transform: uppercase;
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 14px;
         }
     }
@@ -123,29 +121,29 @@
         line-height: 1.2;
         margin-bottom: 28px;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 45px;
             margin-bottom: 23px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 40px;
             margin-bottom: 18px;
         }
 
-        @include breakpoints.md {
+        @include md {
             font-size: 35px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 32px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 30px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 25px;
         }
     }
@@ -157,24 +155,24 @@
     align-items: center;
     margin-bottom: 48px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-bottom: 38px;
     }
 
-    @include breakpoints.md {
+    @include md {
         flex-direction: column;
         text-align: center;
         row-gap: 20px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         margin-bottom: 33px;
     }
 
     >* {
         width: 50%;
 
-        @include breakpoints.md {
+        @include md {
             width: 100%;
         }
     }
@@ -185,11 +183,11 @@
             justify-content: flex-end;
             gap: 24px;
 
-            @include breakpoints.md {
+            @include md {
                 justify-content: center;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 gap: 14px;
             }
 
@@ -198,11 +196,11 @@
                 line-height: 53px;
                 transition: 0.4s ease;
 
-                @include breakpoints.lg {
+                @include lg {
                     line-height: 48px;
                 }
 
-                @include breakpoints.md {
+                @include md {
                     line-height: 43px;
                 }
 
@@ -220,7 +218,7 @@
                     background-color: transparent;
                     color: var(--black);
 
-                    @include breakpoints.xxs {
+                    @include xxs {
                         padding: 0 20px;
                         font-size: 15px;
                     }
@@ -245,13 +243,13 @@
         border-radius: 50%;
         border: 1.5px solid rgb(5 5 5 / 14%);
 
-        @include breakpoints.xl {
+        @include xl {
             width: 50px;
             height: 50px;
             line-height: 48px;
         }
 
-        @include breakpoints.md {
+        @include md {
             width: 45px;
             height: 45px;
             line-height: 43px;
@@ -289,7 +287,7 @@
         border: 1px solid rgb(5 5 5 / 10%);
         overflow: hidden;
 
-        @include breakpoints.xxs {
+        @include xxs {
             width: 95%;
             height: 50px;
         }
@@ -305,7 +303,7 @@
             background-color: rgb(5 5 5 / 10%);
             font-size: 20px;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 height: 50px;
                 width: 50px;
                 font-size: 18px;
@@ -345,7 +343,7 @@
     border-color: rgb(255 255 255 / 14%);
     color: var(--white-f);
 
-    @include breakpoints.xl {
+    @include xl {
         width: 45px;
         height: 45px;
         line-height: 45px;
@@ -364,11 +362,11 @@
     align-items: center;
     margin-bottom: 58px;
 
-    @include breakpoints.xxl {
+    @include xxl {
         margin-bottom: 38px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         flex-direction: column;
         gap: 15px;
         align-items: center;
@@ -387,27 +385,27 @@
     color: var(--white-f);
     margin-bottom: 60px;
 
-    @include breakpoints.xxl {
+    @include xxl {
         margin-bottom: 40px;
     }
 
-    @include breakpoints.xl {
+    @include xl {
         font-size: 40px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         font-size: 40px;
     }
 
-    @include breakpoints.md {
+    @include md {
         margin-bottom: 30px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         font-size: 35px;
     }
 
-    @include breakpoints.xs {
+    @include xs {
         font-size: 30px;
         margin-bottom: 25px;
     }
@@ -435,15 +433,15 @@
     margin-left: 20px;
     margin-bottom: 35px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-bottom: 25px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         margin-bottom: 15px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         margin: auto;
         margin-bottom: 15px;
     }
@@ -500,19 +498,19 @@
     background-color: rgba(169, 114, 64, 1);
     color: var(--white-f);
 
-    @include breakpoints.lg {
+    @include lg {
         height: 45px;
         line-height: 42px;
         padding: 0 30px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         height: 40px;
         line-height: 37px;
         padding: 0 25px;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         font-size: 14px;
         height: 35px;
         line-height: 33px;
@@ -538,15 +536,15 @@
         margin-bottom: 58px;
         gap: 30px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 43px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 33px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             flex-direction: column;
             align-items: center;
             text-align: center;
@@ -554,7 +552,7 @@
             margin-bottom: 28px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin-bottom: 23px;
         }
 
@@ -565,11 +563,11 @@
         &__left {
             width: 50%;
 
-            @include breakpoints.lg {
+            @include lg {
                 width: 60%;
             }
 
-            @include breakpoints.md {
+            @include md {
                 width: auto;
             }
         }
@@ -578,11 +576,11 @@
             margin-bottom: 12px;
             flex-shrink: 0;
 
-            @include breakpoints.md {
+            @include md {
                 margin-bottom: 7px;
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 margin-bottom: 0;
             }
         }
@@ -595,23 +593,23 @@
         line-height: 120%;
         margin-bottom: 21px;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 40px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 37px;
         }
 
-        @include breakpoints.md {
+        @include md {
             font-size: 32px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 28px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 25px;
         }
     }
@@ -644,11 +642,11 @@
     gap: 10px;
     margin-top: 40px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-top: 30px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         margin-top: 25px;
     }
 
@@ -678,7 +676,7 @@
         margin: auto;
         position: relative;
 
-        @include breakpoints.sm {
+        @include sm {
             width: 90%;
         }
 
@@ -713,30 +711,30 @@
         line-height: 100%;
         margin-bottom: 50px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             font-size: 50px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 45px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 35px;
             font-size: 40px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 35px;
             margin-bottom: 25px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 32px;
             margin-bottom: 20px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 30px;
         }
     }
@@ -762,11 +760,11 @@
         }
     }
 
-    @include breakpoints.lg {
+    @include lg {
         padding: 0 32px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 0 26px;
         height: 46px;
         line-height: 46px;
@@ -783,15 +781,15 @@
         color: #050505;
         margin-bottom: 46px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 36px;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 28px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 22px;
         }
     }
@@ -804,7 +802,7 @@
         margin-bottom: 12px;
         display: inline-block;
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 6px;
         }
 
@@ -826,23 +824,23 @@
         font-weight: 700;
         line-height: 130.435%;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 40px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 35px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 32px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 26px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 24px;
         }
     }
@@ -853,15 +851,15 @@
     text-align: center;
     margin-bottom: 47px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-bottom: 27px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         margin-bottom: 22px;
     }
 
-    @include breakpoints.md {
+    @include md {
         margin-bottom: 17px;
     }
 }
@@ -880,23 +878,23 @@
     font-weight: 700;
     margin-bottom: 0;
 
-    @include breakpoints.xl {
+    @include xl {
         font-size: 40px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         font-size: 35px;
     }
 
-    @include breakpoints.md {
+    @include md {
         font-size: 30px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         font-size: 27px;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         font-size: 25px;
     }
 }
@@ -908,7 +906,7 @@
     margin: auto;
     margin-top: 50px;
 
-    @include breakpoints.lg {
+    @include lg {
         margin-top: 35px;
     }
 
@@ -922,23 +920,23 @@
     text-align: center;
     margin-bottom: 60px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-bottom: 45px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         margin-bottom: 35px;
     }
 
-    @include breakpoints.md {
+    @include md {
         margin-bottom: 30px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         margin-bottom: 25px;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         margin-bottom: 20px;
     }
 }
@@ -953,7 +951,7 @@
     position: relative;
     color: rgba(0, 0, 0, 0.7);
 
-    @include breakpoints.xxs {
+    @include xxs {
         font-size: 14px;
     }
 
@@ -976,19 +974,19 @@
     font-weight: 800;
     line-height: 117.391%;
 
-    @include breakpoints.xl {
+    @include xl {
         font-size: 42px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         font-size: 36px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         font-size: 32px;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         font-size: 26px;
     }
 
@@ -1002,7 +1000,7 @@
             bottom: -6px;
             z-index: -1;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 width: 130px;
             }
         }
@@ -1029,24 +1027,24 @@
         text-align: center;
         margin-bottom: 48px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 38px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 28px;
         }
 
-        @include breakpoints.md {
+        @include md {
             width: 65%;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             width: 80%;
             margin-bottom: 23px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             width: 100%;
         }
     }
@@ -1066,7 +1064,7 @@
         position: relative;
         overflow: hidden;
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding: 5px 15px 5px 25px;
             font-size: 15px;
         }
@@ -1082,7 +1080,7 @@
             border-radius: 50%;
             background-color: #050505;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 left: 15px;
             }
         }
@@ -1094,27 +1092,27 @@
         font-weight: 800;
         line-height: 118.519%;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 48px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 42px;
         }
 
-        @include breakpoints.md {
+        @include md {
             font-size: 38px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 32px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 28px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 26px;
         }
     }
@@ -1155,19 +1153,19 @@
     height: 55px;
     line-height: 52px;
 
-    @include breakpoints.lg {
+    @include lg {
         height: 50px;
         line-height: 47px;
         padding: 0 34px;
     }
 
-    @include breakpoints.md {
+    @include md {
         height: 45px;
         line-height: 42px;
         padding: 0 30px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         height: 42px;
         line-height: 39px;
         padding: 0 24px;
@@ -1188,24 +1186,24 @@
         text-align: center;
         margin-bottom: 48px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 33px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 28px;
         }
 
-        @include breakpoints.md {
+        @include md {
             width: 70%;
             margin-bottom: 23px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             width: 90%;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             width: 100%;
             margin-bottom: 18px;
         }
@@ -1217,19 +1215,19 @@
         font-weight: 400;
         margin-bottom: 20px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 16px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 14px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 16px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 8px;
         }
 
@@ -1244,23 +1242,23 @@
         font-weight: 700;
         line-height: 120%;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 42px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 36px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 32px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 28px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 26px;
         }
     }
@@ -1281,15 +1279,15 @@
     &__heading {
         margin-bottom: 50px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 35px;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 25px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin-bottom: 18px;
         }
     }
@@ -1304,11 +1302,11 @@
         margin: 0 88px;
         margin-bottom: 15px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 5px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin: 0 48px;
         }
 
@@ -1359,19 +1357,19 @@
         font-weight: 700;
         line-height: 125%;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 35px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 32px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 30px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 26px;
         }
     }
@@ -1398,7 +1396,7 @@
     max-width: 100%;
     margin-top: 64px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-top: 44px;
     }
 
@@ -1417,7 +1415,7 @@
 
 // INDEX-13 COMPONENTS
 .rv-13-section-heading {
-    @include breakpoints.md {
+    @include md {
         flex-direction: column;
         align-items: center;
     }
@@ -1481,11 +1479,11 @@
     &__heading {
         margin-bottom: 73px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             margin-bottom: 43px;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 33px;
         }
 
@@ -1528,15 +1526,15 @@
     font-family: var(--mulish);
     line-height: 53px;
 
-    @include breakpoints.lg {
+    @include lg {
         line-height: 48px;
     }
 
-    @include breakpoints.md {
+    @include md {
         line-height: 43px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         line-height: 40px;
     }
 
@@ -1559,11 +1557,11 @@
     position: relative;
     z-index: 1;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 80px 0;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 60px 0;
     }
 
@@ -1576,30 +1574,30 @@
         padding-bottom: 10px;
         margin-bottom: 16px;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 50px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 45px;
         }
 
-        @include breakpoints.md {
+        @include md {
             font-size: 40px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 38px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             font-size: 35px;
             padding: 0;
             padding-bottom: 5px;
             margin-bottom: 10px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 32px;
         }
     }
@@ -1664,7 +1662,7 @@
 
     &-widget {
         .rv-1-footer-widget__title {
-            @include breakpoints.lg {
+            @include lg {
                 margin-bottom: 15px;
             }
         }
@@ -1750,7 +1748,7 @@
     height: 50px;
     line-height: 47px;
 
-    @include breakpoints.md {
+    @include md {
         height: 45px;
         line-height: 43px;
     }

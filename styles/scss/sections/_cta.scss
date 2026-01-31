@@ -1,17 +1,14 @@
-@use "../abstracts/variables";
-@use "../main/breakpoints";
-
 /* ----- 35. CTA ----- */
 .rv-14-nwsltr__form {
     display: flex;
     align-items: center;
     gap: 75px;
 
-    @include breakpoints.lg {
+    @include lg {
         gap: 35px;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         flex-direction: column;
         row-gap: 20px;
     }
@@ -24,7 +21,7 @@
         border-bottom: 1px solid rgba(2, 2, 8, 0.10);
         padding-bottom: 18px;
 
-        @include breakpoints.sm {
+        @include sm {
             padding-bottom: 10px;
         }
 
@@ -61,7 +58,7 @@
 }
 
 .rv-14-nwsltr__checkbox {
-    @include breakpoints.sm {
+    @include sm {
         padding-top: 12px;
     }
 
@@ -89,23 +86,23 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 100px 0 220px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 100px 0 200px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0 190px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 70px 0 180px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 60px 0 170px 0;
     }
 
@@ -121,7 +118,7 @@
     }
 
     .rv-22-cta_section_content {
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-bottom: 30px;
         }
 
@@ -134,7 +131,7 @@
             display: inline-block;
 
             .rv8_sub_pre_nex {
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 content: "";
                 background: rgba(255, 255, 255, 0.6);
                 width: 60px;
@@ -218,23 +215,23 @@
             font-size: 46px;
             font-weight: 700;
             margin-bottom: 60px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 40px;
                 font-size: 35px;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 margin-bottom: 30px;
                 font-size: 25px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-bottom: 30px;
                 font-size: 18px;
             }
@@ -252,9 +249,9 @@
             z-index: 1;
             overflow: hidden;
             transition: all 0.4s ease;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 14px;
                 padding: 10px 20px;
             }
@@ -293,7 +290,7 @@
         backdrop-filter: blur(10px);
         padding: 60px 40px;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 40px 20px;
             margin-top: 50px;
         }
@@ -303,9 +300,9 @@
             font-weight: 700;
             color: #FFFFFF;
             margin-bottom: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 20px;
             }
         }
@@ -325,9 +322,9 @@
                     color: rgba(255, 255, 255, 0.7);
                     font-size: 15px;
                     margin: 0;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
-                    @media #{variables.$sm-mobile} {
+                    @media #{$sm-mobile} {
                         font-size: 12px;
                     }
 
@@ -347,7 +344,7 @@
             display: block;
             text-align: center;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 padding: 12px 15px;
             }
 
@@ -369,11 +366,11 @@
     z-index: 1;
     padding: 100px 0;
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 50px 0;
     }
 
@@ -402,7 +399,7 @@
             flex-wrap: wrap;
             gap: 30px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 column-gap: 25px;
                 padding: 20px;
             }
@@ -434,14 +431,14 @@
                         font-size: 14px;
                         font-weight: 500;
                         background: transparent;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                         border: none;
 
                         option {
                             background: rgba(4, 14, 31, 0.1);
                             color: #040E1F;
                             padding: 0 10px;
-                            font-family: variables.$mulish;
+                            font-family: $mulish;
                         }
                     }
 
@@ -455,7 +452,7 @@
                         font-size: 12px;
                         border-radius: 50%;
                         padding: 5px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
 
                     #CheckOut::-webkit-calendar-picker-indicator {
@@ -464,7 +461,7 @@
                         font-size: 12px;
                         border-radius: 50%;
                         padding: 5px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
 
                     #CheckOut::-moz-calendar-picker-indicator {
@@ -473,7 +470,7 @@
                         font-size: 12px;
                         border-radius: 50%;
                         padding: 5px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
                 }
 
@@ -487,7 +484,7 @@
                     font-size: 16px;
                     font-weight: 700;
                     transition: all 0.5s ease;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
                     &:hover {
                         background: #FFFFFF;

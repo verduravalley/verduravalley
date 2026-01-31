@@ -1,14 +1,10 @@
-@use "../abstracts/variables";
-@use "../main/breakpoints";
-@use "../main/mixin";
-
 /* ----- 06. About ----- */
 .rv-1-about {
     &-row {
         --bs-gutter-x: 40px;
         --bs-gutter-y: 40px;
 
-        @include breakpoints.xxs {
+        @include xxs {
             --bs-gutter-y: 30px;
         }
     }
@@ -17,7 +13,7 @@
         img {
             width: 100%;
 
-            @include breakpoints.md {
+            @include md {
                 height: 350px;
             }
         }
@@ -29,16 +25,16 @@
         gap: 6px;
         margin-bottom: 40px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 30px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             gap: 12px;
             margin-bottom: 20px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             gap: 10px;
         }
     }
@@ -56,11 +52,11 @@
         padding-bottom: 215px;
         position: relative;
 
-        @include breakpoints.xl {
+        @include xl {
             padding-bottom: 45px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding-bottom: 0;
         }
     }
@@ -68,11 +64,11 @@
     &__descr {
         margin-bottom: 53px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 43px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 28px;
         }
     }
@@ -85,12 +81,12 @@
             width: 222px;
             height: 222px;
 
-            @include breakpoints.xs {
+            @include xs {
                 width: 192px;
                 height: 192px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 padding-top: 30px;
                 position: static;
                 width: 100%;
@@ -131,11 +127,11 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-top: 60px;
   
-  @include breakpoints.md {
+  @include md {
     padding: 40px;
   }
 
-  @include breakpoints.sm {
+  @include sm {
     padding: 30px 20px;
     text-align: center;
   }
@@ -163,7 +159,7 @@
     border: 3px solid #ffffff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     
-    @include breakpoints.sm {
+    @include sm {
       margin: 0 auto;
     }
 
@@ -197,14 +193,14 @@
     }
 
     .rv-legacy-name {
-      font-family: variables.$mulish;
+      font-family: $mulish;
       font-size: 25px;
       font-weight: 800;
       color: #081C15;
       margin-bottom: 2px;
       transition: color 0.5s ease;
 
-      @include breakpoints.sm {
+      @include sm {
         font-size: 22px;
       }
     }
@@ -229,11 +225,11 @@
       margin-bottom: 0;
       font-style: italic;
 
-      @include breakpoints.md {
+      @include md {
         font-size: 16px;
       }
 
-      @include breakpoints.sm {
+      @include sm {
         font-size: 14px;
       }
     }
@@ -245,7 +241,7 @@
     overflow: hidden;
 
     &__img {
-        @include breakpoints.sm {
+        @include sm {
             text-align: center;
         }
 
@@ -253,11 +249,11 @@
             background: url(/assets/img/rv-2-about-img-bg.png) no-repeat center center;
             background-size: contain;
 
-            @include breakpoints.sm {
+            @include sm {
                 width: 356px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 width: 265px;
             }
         }
@@ -266,19 +262,19 @@
     &__txt {
         padding-left: 105px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             padding-left: 75px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             padding-left: 55px;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding-left: 35px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             padding-left: 0;
         }
     }
@@ -288,18 +284,18 @@
         gap: 25px;
         max-width: 500px;
 
-        @include breakpoints.md {
+        @include md {
             gap: 15px;
         }
 
         &:not(:last-child) {
             margin-bottom: 30px;
 
-            @include breakpoints.xl {
+            @include xl {
                 margin-bottom: 20px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 margin-bottom: 10px;
             }
         }
@@ -312,7 +308,7 @@
                 height: 50px;
                 object-fit: contain;
 
-                @include breakpoints.md {
+                @include md {
                     width: 40px;
                     height: 40px;
                 }
@@ -323,7 +319,7 @@
             font-size: 20px;
             font-weight: 600;
 
-            @include breakpoints.md {
+            @include md {
                 font-size: 18px;
             }
         }
@@ -339,18 +335,18 @@
 
 // INDEX-3 ABOUT
 .rv-3-about {
-    @include breakpoints.md {
+    @include md {
         padding: 60px 0;
     }
 
     &__row {
         --bs-gutter-x: 100px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             --bs-gutter-x: 60px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             --bs-gutter-x: 45px;
         }
     }
@@ -362,17 +358,17 @@
         img {
             max-width: none;
 
-            @include breakpoints.lg {
+            @include lg {
                 max-height: 670px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 max-width: 100%;
                 width: 100%;
                 max-height: 450px;
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 max-height: 350px;
             }
         }
@@ -382,7 +378,7 @@
         position: relative;
 
         .rv-3-sub-title {
-            @include breakpoints.md {
+            @include md {
                 margin-left: 0;
             }
         }
@@ -394,7 +390,7 @@
         line-height: 162.5%;
         margin-bottom: 32px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 22px;
         }
     }
@@ -407,21 +403,21 @@
         margin-bottom: 46px;
         gap: 10px;
 
-        @include breakpoints.xl {
+        @include xl {
             grid-template-columns: repeat(2, 1fr);
             padding-top: 24px;
             margin-bottom: 36px;
         }
 
-        @include breakpoints.md {
+        @include md {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        @include breakpoints.sm {
+        @include sm {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             grid-template-columns: repeat(1, 1fr);
             margin-bottom: 22px;
         }
@@ -457,7 +453,7 @@
             right: 170px;
             bottom: 100%;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 right: 40px;
             }
         }
@@ -471,7 +467,7 @@
             bottom: -85px;
             right: 120px;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 right: 40px;
             }
         }
@@ -495,11 +491,11 @@
     &__row {
         --bs-gutter-x: 117px;
 
-        @include breakpoints.xl {
+        @include xl {
             --bs-gutter-x: 50px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             --bs-gutter-x: 40px;
         }
     }
@@ -514,16 +510,16 @@
         max-width: 100%;
         margin: auto;
 
-        @include breakpoints.xl {
+        @include xl {
             outline-offset: 0;
             padding: 25px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 15px;
         }
 
-        @include breakpoints.md {
+        @include md {
             width: 100%;
         }
 
@@ -532,7 +528,7 @@
             aspect-ratio: 1;
             object-fit: cover;
 
-            @include breakpoints.md {
+            @include md {
                 width: 100%;
                 aspect-ratio: 2 / 1.5;
             }
@@ -551,12 +547,12 @@
         text-transform: uppercase;
         z-index: 1;
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 18px 35px;
             padding-right: 75px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding: 8px 25px;
             padding-right: 65px;
         }
@@ -572,7 +568,7 @@
             left: -8px;
             z-index: -1;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 right: -15px;
             }
         }
@@ -593,7 +589,7 @@
             line-height: 1;
             margin-bottom: 10px;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 50px;
                 margin-bottom: 5px;
             }
@@ -609,7 +605,7 @@
         .rv-5-section__title {
             margin-bottom: 22px;
 
-            @include breakpoints.lg {
+            @include lg {
                 margin-bottom: 17px;
             }
         }
@@ -620,7 +616,7 @@
         font-family: var(--mulish);
         margin-bottom: 32px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 22px;
         }
     }
@@ -632,15 +628,15 @@
         row-gap: 12px;
         margin-bottom: 54px;
 
-        @include breakpoints.xl {
+        @include xl {
             gap: 12px 20px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 34px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 24px;
         }
     }
@@ -691,7 +687,7 @@
         color: #8E5B63;
         font-size: 22px;
 
-        @include breakpoints.lg {
+        @include lg {
             width: 50px;
             height: 50px;
             line-height: 50px;
@@ -724,7 +720,7 @@
             left: 0;
             top: 263px;
 
-            @include breakpoints.xs {
+            @include xs {
                 top: 133px;
             }
         }
@@ -733,11 +729,11 @@
             right: 0;
             bottom: 188px;
 
-            @include breakpoints.xxl {
+            @include xxl {
                 right: -180px;
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 display: none;
             }
         }
@@ -748,22 +744,22 @@
 .rv-6-about {
     padding-bottom: 160px;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 40px 0 120px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         padding: 40px 0 100px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 30px 0 100px;
     }
 
     .rv-6-section__heading {
         margin-bottom: 18px;
 
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 8px;
         }
     }
@@ -773,7 +769,7 @@
         font-family: var(--mulish);
         margin-bottom: 30px;
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 20px;
         }
     }
@@ -784,11 +780,11 @@
         column-gap: 60px;
         row-gap: 10px;
 
-        @include breakpoints.lg {
+        @include lg {
             column-gap: 30px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             grid-template-columns: repeat(1, max-content);
         }
 
@@ -809,7 +805,7 @@
     }
 
     &__btns {
-        @include breakpoints.xxs {
+        @include xxs {
             flex-direction: column;
             align-items: flex-start;
         }
@@ -829,7 +825,7 @@
             font-size: 18px;
             background-color: #f2584c;
 
-            @include breakpoints.md {
+            @include md {
                 width: 46px;
                 height: 46px;
                 line-height: 46px;
@@ -855,7 +851,7 @@
         img {
             border-radius: 20px;
 
-            @include breakpoints.lg {
+            @include lg {
                 width: 70%;
             }
 
@@ -866,7 +862,7 @@
                 border: 5px solid var(--white-f);
                 box-shadow: 0px 10px 40px 0px rgba(2, 2, 8, 0.14);
 
-                @include breakpoints.lg {
+                @include lg {
                     bottom: -80px;
                 }
             }
@@ -947,11 +943,11 @@
 .mb-100 { margin-bottom: 100px; }
 // INDEX-8 ABOUT
 .rv-8-about {
-    @include breakpoints.xl {
+    @include xl {
         padding: 40px 0;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 30px 0;
     }
 
@@ -960,27 +956,27 @@
         padding: 355px 0;
         background-image: url(/assets/img/rv-8-about-img.jpg);
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 300px 0;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 280px 0;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding: 250px 0;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             padding: 200px 0;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             padding: 170px 0;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding: 150px 0;
         }
 
@@ -1012,15 +1008,15 @@
         padding-left: 80px;
         position: relative;
 
-        @include breakpoints.xl {
+        @include xl {
             padding-left: 30px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding-left: 20px;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding-left: 0;
         }
 
@@ -1032,17 +1028,17 @@
                 bottom: -80px;
                 left: 160px;
 
-                @include breakpoints.md {
+                @include md {
                     bottom: 0;
                     left: auto;
                     right: 0;
                 }
 
-                @include breakpoints.xs {
+                @include xs {
                     right: -80px;
                 }
 
-                @include breakpoints.xxs {
+                @include xxs {
                     right: -190px;
                 }
             }
@@ -1062,7 +1058,7 @@
     .rv-8-section__title {
         margin-bottom: 21px;
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin-bottom: 15px;
         }
     }
@@ -1072,7 +1068,7 @@
         font-family: var(--mulish);
         margin-bottom: 28px;
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 18px;
         }
     }
@@ -1082,15 +1078,15 @@
         margin-bottom: 46px;
         flex-wrap: wrap;
 
-        @include breakpoints.xl {
+        @include xl {
             column-gap: 45px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             column-gap: 25px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 30px;
         }
     }
@@ -1103,11 +1099,11 @@
             font-size: 40px;
             font-weight: 800;
 
-            @include breakpoints.lg {
+            @include lg {
                 font-size: 35px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 30px;
                 margin-bottom: 2px;
             }
@@ -1144,7 +1140,7 @@
             border-radius: 14px;
 
             &.mb-30 {
-                @include breakpoints.sm {
+                @include sm {
                     margin-bottom: 15px;
                 }
             }
@@ -1154,15 +1150,15 @@
     &__txt {
         padding-left: 79px;
 
-        @include breakpoints.xl {
+        @include xl {
             padding-left: 49px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding-left: 29px;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding-left: 0;
         }
     }
@@ -1171,15 +1167,15 @@
         margin-bottom: 20px;
         letter-spacing: -0.2px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 14px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 10px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin-bottom: 8px;
         }
     }
@@ -1189,23 +1185,23 @@
         font-family: var(--mulish);
         margin-bottom: 58px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 48px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 38px;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 28px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 24px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin-bottom: 20px;
         }
     }
@@ -1268,11 +1264,11 @@
     position: relative;
     padding-bottom: 160px;
 
-    @include breakpoints.xl {
+    @include xl {
         padding-bottom: 140px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding-bottom: 30px;
     }
 
@@ -1297,15 +1293,15 @@
         padding-left: 84px;
         position: relative;
 
-        @include breakpoints.xl {
+        @include xl {
             padding-left: 44px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding-left: 20px;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding-left: 0;
         }
 
@@ -1323,15 +1319,15 @@
             font-weight: 700;
             margin-bottom: 4px;
 
-            @include breakpoints.xl {
+            @include xl {
                 font-size: 40px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 font-size: 35px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 font-size: 30px;
             }
 
@@ -1340,7 +1336,7 @@
                 font-size: 40px;
                 font-weight: 800;
 
-                @include breakpoints.xs {
+                @include xs {
                     font-size: 35px;
                 }
             }
@@ -1359,7 +1355,7 @@
     }
 
     &__stats {
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 30px;
         }
     }
@@ -1392,15 +1388,15 @@
     &__txt {
         padding-left: 80px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             padding-left: 70px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             padding-left: 40px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding-left: 0;
         }
 
@@ -1408,7 +1404,7 @@
             margin-top: 16px;
             margin-bottom: 37px;
 
-            @include breakpoints.sm {
+            @include sm {
                 margin-bottom: 27px;
             }
         }
@@ -1422,22 +1418,22 @@
         padding-top: 0;
         margin-bottom: 53px;
 
-        @include breakpoints.lg {
+        @include lg {
             grid-template-columns: repeat(1, max-content);
             margin-bottom: 35px;
         }
 
-        @include breakpoints.md {
+        @include md {
             grid-template-columns: repeat(2, max-content);
         }
 
-        @include breakpoints.sm {
+        @include sm {
             grid-template-columns: repeat(1, max-content);
         }
     }
 
     &__btns {
-        @include breakpoints.xxs {
+        @include xxs {
             flex-direction: column;
         }
     }
@@ -1478,39 +1474,39 @@
     overflow: hidden;
     // background-image: url('/assets/img/about/about_home_bg.png');
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 550px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 45px 0;
     }
 
     .rv-15-about_image_area {
         position: relative;
 
-        @media #{variables.$lg} {
+        @media #{$lg} {
             text-align: center;
         }
 
         img {
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 height: 350px;
                 width: 100%;
                 object-fit: cover;
@@ -1518,23 +1514,23 @@
         }
 
         .video_btn {
-            @include mixin.play_btn;
+            @include play_btn;
         }
     }
 
     .rv-15-about_content {
         padding-left: 40px;
 
-        @media #{variables.$xl,variables.$lg} {
+        @media #{$xl,$lg} {
             padding-left: 30px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding-left: 0;
         }
 
         .rv-15-about_title {
-            font-family: variables.$mulish;
+            font-family: $mulish;
             font-size: 50px;
             font-weight: 600;
             color: #050505;
@@ -1542,25 +1538,25 @@
             padding-top: 25px;
             margin-bottom: 30px;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 32px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 33px;
                 margin-bottom: 20px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 font-size: 28px;
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 20px;
                 margin-bottom: 10px;
             }
@@ -1571,12 +1567,12 @@
                 right: 30px;
                 z-index: -1;
 
-                @media #{variables.$lg} {
+                @media #{$lg} {
                     bottom: -9px;
                     right: 340px;
                 }
 
-                @media #{variables.$md} {
+                @media #{$md} {
                     bottom: -10px;
                     right: 120px;
                 }
@@ -1585,7 +1581,7 @@
 
         .rv-15-about_desc {
             font-size: 16px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             font-weight: 400;
             color: #050505;
         }
@@ -1593,7 +1589,7 @@
         .about_list {
             margin-top: 40px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-top: 25px;
             }
 
@@ -1609,9 +1605,9 @@
                     margin-bottom: 15px;
                     font-weight: 500;
                     color: #050505;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
-                    @media #{variables.$sm-mobile} {
+                    @media #{$sm-mobile} {
                         flex: 0 0 100%;
                         max-width: 100%;
                     }
@@ -1635,9 +1631,9 @@
             letter-spacing: 1px;
             margin-top: 30px;
             transition: 0.5s;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-top: 20px;
                 padding: 0 30px;
             }
@@ -1653,11 +1649,11 @@
 .rv-16-about_main_area {
     padding: 80px 0;
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 0;
     }
 
@@ -1666,12 +1662,12 @@
         width: 500px;
         height: 100%;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin: auto;
             width: 375px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             margin: auto;
             width: 270px;
         }
@@ -1681,25 +1677,25 @@
             height: 550px;
             object-fit: cover;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 width: 250px;
                 height: 400px;
                 margin: auto;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 width: 350px;
                 height: 400px;
                 margin: auto;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 width: 300px;
                 height: 350px;
                 margin: auto;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 width: 200px;
                 height: 260px;
                 margin: auto;
@@ -1712,7 +1708,7 @@
             top: 100px;
             left: 100px;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 top: 75px;
                 left: 75px;
             }
@@ -1722,15 +1718,15 @@
     .rv-16-about_content_area {
         padding-top: 80px;
 
-        @media #{variables.$lg} {
+        @media #{$lg} {
             padding-left: 40px;
         }
 
-        @media #{variables.$md} {
+        @media #{$md} {
             padding-top: 65px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             padding-top: 150px;
         }
 
@@ -1740,13 +1736,13 @@
             font-weight: 800;
             color: #020208;
             margin-bottom: 50px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 28px;
                 margin-bottom: 25px;
             }
@@ -1759,17 +1755,17 @@
             column-gap: 20px;
             padding-bottom: 20px;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 flex-direction: column;
                 text-align: center;
                 row-gap: 10px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-bottom: 15px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 padding-bottom: 7px;
             }
 
@@ -1777,7 +1773,7 @@
                 height: 100px;
                 width: 100px;
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     height: 60px;
                     width: 60px;
                 }
@@ -1795,13 +1791,13 @@
                     cursor: pointer;
                     transition: 0.3s;
                     margin-bottom: 10px;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
                     &:hover {
                         color: #D21028;
                     }
 
-                    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$md,$sm,$mobile,$sm-mobile} {
                         margin-bottom: 7px;
                     }
                 }
@@ -1809,9 +1805,9 @@
                 p {
                     color: #666666;
                     font-weight: 500;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
-                    @media #{variables.$md} {
+                    @media #{$md} {
                         font-size: 14px;
                         line-height: 20px;
                     }
@@ -1825,11 +1821,11 @@
 .rv-17-about_main_section {
     padding: 150px 0;
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm} {
+    @media #{$md,$sm,$mobile,$sm} {
         padding: 100px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 70px 0;
     }
 
@@ -1840,22 +1836,22 @@
             height: 500px;
             width: 400px;
 
-            @media #{variables.$md} {
+            @media #{$md} {
                 height: 500px;
                 width: 500px;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 height: 400px;
                 width: 400px;
             }
 
-            @media #{variables.$mobile, variables.$sm-mobile} {
+            @media #{$mobile, $sm-mobile} {
                 height: 400px;
                 width: 100%;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 300px;
                 width: 100%;
             }
@@ -1868,7 +1864,7 @@
             height: 300px;
             width: 300px;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 250px;
                 width: 250px;
                 left: 50%;
@@ -1879,7 +1875,7 @@
     }
 
     .rv-17-about_content {
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm,$sm-mobile} {
             padding-top: 100px;
         }
 
@@ -1889,8 +1885,8 @@
             position: relative;
             padding-left: 10px;
             text-transform: uppercase;
-            font-family: variables.$mulish;
-            font-family: variables.$mulish;
+            font-family: $mulish;
+            font-family: $mulish;
 
             &::after {
                 position: absolute;
@@ -1909,14 +1905,14 @@
             font-weight: 800;
             padding-top: 10px;
             margin-bottom: 50px;
-            font-family: variables.$mulish;
-            font-family: variables.$mulish;
+            font-family: $mulish;
+            font-family: $mulish;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 30px;
             }
         }
@@ -1936,7 +1932,7 @@
                 padding: 15px 40px;
                 transition: 0.3s;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     padding: 30px 10px;
                 }
 
@@ -1955,16 +1951,16 @@
                         font-weight: 700;
                         color: #020208;
                         margin-bottom: 10px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
 
-                        @media #{variables.$sm-mobile} {
+                        @media #{$sm-mobile} {
                             font-size: 17px;
                         }
                     }
 
                     p {
                         font-weight: 400;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                         color: rgba(2, 2, 8, 0.7);
                     }
                 }
@@ -1978,15 +1974,15 @@
     padding: 130px 0;
     position: relative;
 
-    @media #{variables.$xl,variables.$lg,variables.$md} {
+    @media #{$xl,$lg,$md} {
         padding: 100px 0;
     }
 
-    @media #{variables.$md,variables.$sm} {
+    @media #{$md,$sm} {
         padding: 90px 0;
     }
 
-    @media #{variables.$mobile, variables.$sm-mobile} {
+    @media #{$mobile, $sm-mobile} {
         padding: 60px 0;
     }
 
@@ -1999,7 +1995,7 @@
     .rv4_rgap {
         --bs-gutter-x: 180px;
 
-        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
             --bs-gutter-x: 130px;
         }
     }
@@ -2010,28 +2006,28 @@
         width: auto;
         margin-left: 120px;
 
-        @media #{variables.$xxl,variables.$xl} {
+        @media #{$xxl,$xl} {
             margin-left: 0;
         }
 
-        @media #{variables.$lg} {
+        @media #{$lg} {
             margin-left: 0;
             height: 455px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-left: 0;
             height: 455px;
             width: 388px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             margin-left: 0;
             height: 395px;
             width: 332px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             margin-left: 0;
             height: 300px;
             width: 223px;
@@ -2052,28 +2048,28 @@
             bottom: 25px;
             right: -28%;
 
-            @media #{variables.$lg} {
+            @media #{$lg} {
                 width: 190px;
                 height: 240px;
                 bottom: 20px;
                 right: -24%;
             }
 
-            @media #{variables.$md,variables.$sm} {
+            @media #{$md,$sm} {
                 width: 198px;
                 height: 250px;
                 bottom: 20px;
                 right: -24%;
             }
 
-            @media #{variables.$mobile} {
+            @media #{$mobile} {
                 width: 180px;
                 height: 170px;
                 bottom: 18px;
                 right: -26%;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 width: 140px;
                 height: 140px;
                 bottom: 18px;
@@ -2084,7 +2080,7 @@
     }
 
     .rv-18-about_content {
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-top: 50px;
         }
 
@@ -2094,18 +2090,18 @@
             font-weight: 800;
             position: relative;
             margin-bottom: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl} {
+            @media #{$xl} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
                 margin-bottom: 25px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 24px;
                 margin-bottom: 15px;
             }
@@ -2122,14 +2118,14 @@
             color: rgba(20, 33, 55, 0.8);
             font-size: 18px;
             font-weight: 500;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             margin-bottom: 30px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 20px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 15px;
                 margin-bottom: 15px;
             }
@@ -2140,7 +2136,7 @@
             display: flex;
             column-gap: 20px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 20px;
             }
 
@@ -2154,9 +2150,9 @@
                 line-height: 50px;
                 font-size: 18px;
                 font-weight: 700;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     height: 40px;
                     width: 40px;
                     line-height: 40px;
@@ -2171,13 +2167,13 @@
                     transition: 0.3s;
                     cursor: pointer;
                     margin-bottom: 10px;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
-                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                         margin-bottom: 5px;
                     }
 
-                    @media #{variables.$sm-mobile} {
+                    @media #{$sm-mobile} {
                         font-size: 16px;
                         margin-bottom: 7px;
                     }
@@ -2188,7 +2184,7 @@
                 }
 
                 p {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     color: rgba(20, 33, 55, 0.7);
                     font-weight: 500;
                     font-size: 16px;
@@ -2211,9 +2207,9 @@
             z-index: 1;
             border: 1px solid rgba(20, 33, 55, 0.24);
             color: #142137;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 width: 180px;
                 height: 50px;
             }
@@ -2247,15 +2243,15 @@
 .rv-19-about_section {
     padding-top: 130px;
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-top: 100px;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding-top: 80px;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
@@ -2263,25 +2259,25 @@
         display: flex;
         justify-content: flex-end;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 700px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 374px;
             width: 100%;
             flex: inherit;
             margin-bottom: 40px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             height: 300px;
             width: 100%;
             flex: inherit;
             margin-bottom: 30px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 250px;
             width: 100%;
             flex: inherit;
@@ -2289,12 +2285,12 @@
         }
 
         img {
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 height: 100%;
                 width: 100%;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 height: 100%;
                 width: 100%;
             }
@@ -2307,7 +2303,7 @@
     .rv-19-about_content {
         padding-left: 60px;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 0;
         }
 
@@ -2316,23 +2312,23 @@
             font-weight: 800;
             color: #142137;
             margin-bottom: 50px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 50px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
                 margin-bottom: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 34px;
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 28px;
                 margin-bottom: 25px;
             }
@@ -2344,7 +2340,7 @@
                 column-gap: 20px;
                 padding-bottom: 40px;
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     padding-bottom: 25px;
                 }
 
@@ -2356,7 +2352,7 @@
                         position: relative;
                         border-radius: 50%;
                         top: 5px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
 
                         &::before {
                             position: absolute;
@@ -2378,9 +2374,9 @@
                         font-weight: 700;
                         color: #142137;
                         margin-bottom: 20px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
 
-                        @media #{variables.$sm-mobile} {
+                        @media #{$sm-mobile} {
                             font-size: 24px;
                             margin-bottom: 10px;
                         }
@@ -2391,7 +2387,7 @@
                         font-size: 15px;
                         font-weight: 400;
                         margin: 0;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
                 }
             }
@@ -2414,7 +2410,7 @@
             position: relative;
             z-index: 1;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 width: 180px;
             }
 
@@ -2426,7 +2422,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
 
             &:hover {
@@ -2457,15 +2453,15 @@
     position: relative;
     z-index: 1;
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 170px 0 100px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 150px 0 70px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 100px 0 50px 0;
     }
 
@@ -2475,27 +2471,27 @@
         padding-right: 80px;
         height: 100%;
 
-        @media #{variables.$xxxl,variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
             padding-right: 50px;
             text-align: right;
         }
 
-        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
             padding-right: 0;
             text-align: right;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 400px;
             width: 350px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 400px;
             width: 330px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 250px;
             width: 250px;
         }
@@ -2505,15 +2501,15 @@
             object-fit: cover;
             height: 100%;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 width: 370px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 width: 280px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 width: 200px;
             }
         }
@@ -2539,24 +2535,24 @@
                 }
             }
 
-            @media #{variables.$xxxl,variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 top: -50px;
                 left: -50px;
             }
 
-            @media #{variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 top: -80px;
                 left: -65px;
             }
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 top: -70px;
                 left: -20px;
                 width: 170px;
                 height: 200px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 top: -70px;
                 left: -20px;
                 width: 120px;
@@ -2572,23 +2568,23 @@
             display: flex;
             align-items: center;
 
-            @media #{variables.$xxxl,variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 left: -115px;
             }
 
-            @media #{variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 left: -160px;
             }
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 left: -100px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 left: -90px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 left: -70px;
                 bottom: 65px;
             }
@@ -2599,13 +2595,13 @@
                 color: #081C15;
                 margin: 0;
                 line-height: 1px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 60px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     font-size: 40px;
                 }
             }
@@ -2617,9 +2613,9 @@
                 margin: 0;
                 width: 100px;
                 line-height: 20px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     font-size: 16px;
                 }
             }
@@ -2627,7 +2623,7 @@
     }
 
     .rv-20-about_section_content {
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-top: 40px;
         }
 
@@ -2646,10 +2642,10 @@
                 justify-content: center;
                 align-items: center;
                 column-gap: 4px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 margin-bottom: 30px;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     margin-bottom: 15px;
                 }
 
@@ -2667,16 +2663,16 @@
                 color: #081C15;
                 margin-bottom: 25px;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 35px;
                 }
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 28px;
                     margin-bottom: 35px;
                 }
 
-                @media #{variables.$md,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$mobile,$sm-mobile} {
                     font-size: 22px;
                     margin-bottom: 30px;
                 }
@@ -2690,7 +2686,7 @@
             justify-content: space-between;
             margin-left: -80px; 
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 flex-direction: column;
                 align-items: inherit;
                 gap: 20px;
@@ -2708,7 +2704,7 @@
                 flex: 0 0 48%;
                 max-width: 40%;
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     max-width: 100%;
                 }
 
@@ -2722,7 +2718,7 @@
                         font-weight: 700;
                         color: #081C15;
                         margin-bottom: 4px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
 
                     p {
@@ -2730,7 +2726,7 @@
                         font-size: 14px;
                         font-weight: 400;
                         margin: 0;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
                 }
 
@@ -2776,7 +2772,7 @@
                     margin-bottom: 20px;
                     font-weight: 500;
 
-                    @media #{variables.$mobile,variables.$sm-mobile} {
+                    @media #{$mobile,$sm-mobile} {
                         flex: 0 0 100%;
                         max-width: 100%;
                     }
@@ -2787,7 +2783,7 @@
                         font-weight: 700;
                         transition: all 0.4s ease;
                         cursor: pointer;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
 
                         i {
                             margin-right: 10px;
@@ -2803,7 +2799,7 @@
                         font-size: 15px;
                         font-weight: 400;
                         margin: 0;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                         width: 82%;
                     }
                 }
@@ -2831,23 +2827,23 @@
     padding: 140px 0 100px 0;
     position: relative;
 
-    @media #{variables.$xxl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xxl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 120px 0 80px 0;
     }
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 100px 0 70px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0 50px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 60px 0 40px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 40px 0 30px 0;
     }
 
@@ -2862,25 +2858,25 @@
         height: 600px;
         width: auto;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 500px;
             width: 100%;
             margin-bottom: 40px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 400px;
             width: 100%;
             margin-bottom: 40px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             height: 300px;
             width: 100%;
             margin-bottom: 40px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 270px;
             width: 100%;
             margin-bottom: 25px;
@@ -2891,7 +2887,7 @@
             width: 100%;
             object-fit: cover;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 height: 100%;
                 width: 65%;
             }
@@ -2908,16 +2904,16 @@
             -o-object-fit: contain;
             object-fit: contain;
 
-            @media #{variables.$lg,variables.$md} {
+            @media #{$lg,$md} {
                 right: -45%;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 width: 35%;
                 right: 0;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 height: 150px;
                 width: 35%;
                 right: 0;
@@ -2929,7 +2925,7 @@
         padding-left: 70px;
         position: relative;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding-left: 0;
         }
 
@@ -2941,7 +2937,7 @@
             text-transform: uppercase;
             display: inline-block;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-bottom: 7px;
             }
 
@@ -2952,7 +2948,7 @@
                 height: 1px;
                 position: absolute;
                 right: -65%;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 top: 50%;
                 transform: translateY(-50%);
 
@@ -3030,23 +3026,23 @@
             font-size: 46px;
             font-weight: 700;
             margin-bottom: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 20px;
                 margin-bottom: 10px;
             }
@@ -3057,9 +3053,9 @@
             font-size: 16px;
             font-weight: 400;
             margin-bottom: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-bottom: 20px;
                 font-size: 14px;
             }
@@ -3069,15 +3065,15 @@
             padding-left: 130px;
             margin-bottom: 35px;
 
-            @media #{variables.$xxl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xxl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-left: 100px;
             }
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-left: 80px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 padding-left: 0;
             }
 
@@ -3099,7 +3095,7 @@
                 }
 
                 p {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     font-size: 15px;
                     font-weight: 500;
                     color: #040E1F;
@@ -3121,21 +3117,21 @@
             overflow: hidden;
             letter-spacing: 2px;
             margin-left: 130px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xxl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xxl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-left: 100px;
             }
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-left: 80px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-left: 0;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-left: 0;
                 padding: 13px 30px;
             }
@@ -3199,23 +3195,23 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 120px 0 130px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0 80px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0 60px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 5px 0 50px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 35px 0 35px 0;
     }
 
@@ -3224,27 +3220,27 @@
         height: 570px;
         width: 440px;
 
-        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
             height: 450px;
             width: 400px;
         }
 
-        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
             height: 400px;
             width: 320px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 350px;
             width: 250px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             height: 280px;
             width: 230px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 250px;
             width: 200px;
         }
@@ -3261,7 +3257,7 @@
             left: 100px;
             object-fit: cover;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 top: 50px;
                 left: 70px;
             }
@@ -3272,11 +3268,11 @@
         position: relative;
         padding-left: 70px;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 100px 0 0 0;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             padding: 80px 0 0 0;
         }
 
@@ -3287,9 +3283,9 @@
             background: #020208;
             padding: 1px 4px;
             display: inline-block;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-bottom: 10px;
             }
         }
@@ -3299,19 +3295,19 @@
             font-size: 46px;
             font-weight: 800;
             margin-bottom: 50px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 20px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 font-size: 22px;
                 margin-bottom: 15px;
             }
@@ -3323,13 +3319,13 @@
             font-weight: 500;
             margin-bottom: 30px;
             margin-bottom: 50px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-bottom: 25px;
             }
         }
@@ -3342,7 +3338,7 @@
             border: 1px solid rgba(2, 2, 8, 0.1);
             width: 256px;
             height: 54px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             display: flex;
             justify-content: center;
             align-content: center;
@@ -3351,7 +3347,7 @@
             transition: all 0.5s ease;
             position: relative;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 width: 230px;
             }
 
@@ -3398,12 +3394,12 @@
             margin-top: 60px;
             column-gap: 74px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-top: 34px;
                 column-gap: 60px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-top: 30px;
                 column-gap: 15px;
             }
@@ -3411,18 +3407,18 @@
             .rv-23-single_counterup {
                 border-right: 1px solid rgba(2, 2, 8, 0.10);
                 padding-right: 54px;
-                @media #{#{variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile}
+                @media #{#{$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile}
             }
 
                 {
                 padding-right: 40px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 padding-right: 30px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 padding-right: 15px;
             }
 
@@ -3431,15 +3427,15 @@
                 font-weight: 700;
                 color: #020208;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 35px;
                 }
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 25px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     font-size: 20px;
                 }
             }
@@ -3448,8 +3444,8 @@
                 color: rgba(2, 2, 8, 0.6);
                 font-size: 14px;
                 font-weight: 500;
-                font-family: variables.$mulish;
-                font-family: variables.$mulish;
+                font-family: $mulish;
+                font-family: $mulish;
             }
 
             &:last-child {
@@ -3466,27 +3462,27 @@
 .rv-24-about_main_area {
     padding: 160px 0;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 130px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 110px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 50px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 35px 0;
     }
 
@@ -3495,26 +3491,26 @@
         height: 650px;
         width: 100%;
 
-        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
             height: 500px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 450px;
             width: 400px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 400px;
             width: 350px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             height: 350px;
             width: 300px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 250px;
             width: 200px;
         }
@@ -3535,19 +3531,19 @@
             height: 450px;
             width: 410px;
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 height: 380px;
                 width: 359px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 height: 322px;
                 width: auto;
                 bottom: -50px;
                 right: -100px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 230px;
                 width: 180px;
                 bottom: -40px;
@@ -3561,11 +3557,11 @@
         position: relative;
         padding-left: 130px;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 100px 0 0 0;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             padding: 80px 0 0 0;
         }
 
@@ -3574,9 +3570,9 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 20px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 10px;
             }
         }
@@ -3585,24 +3581,24 @@
             color: #020208;
             font-size: 44px;
             font-weight: 800;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             margin-bottom: 40px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 25px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-bottom: 15px;
                 font-size: 25px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 19px;
             }
         }
@@ -3611,14 +3607,14 @@
             color: rgba(2, 2, 8, 0.7);
             font-size: 16px;
             font-weight: 500;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             margin-bottom: 50px;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-bottom: 15px;
             }
         }
@@ -3630,7 +3626,7 @@
             gap: 15px;
             margin-bottom: 50px;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 30px;
                 column-gap: 15px;
             }
@@ -3639,7 +3635,7 @@
                 color: #020208;
                 font-weight: 600;
                 font-size: 15px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 i {
                     color: #B38D3F;
@@ -3676,7 +3672,7 @@
                 line-height: 54px;
                 z-index: 1;
                 display: inline-block;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 &::before {
                     content: "";
@@ -3730,14 +3726,14 @@
                         color: #020208;
                         margin-bottom: 0;
                         display: block;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
 
                     .rv-24-about_call_num {
                         color: rgba(2, 2, 8, 0.6);
                         font-weight: 500;
                         font-size: 15px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
                 }
             }
@@ -3751,27 +3747,27 @@
     background: #D6DEC9;
     position: relative;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 130px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 50px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 35px 0;
     }
 
@@ -3780,30 +3776,30 @@
         height: 650px;
         width: 500px;
 
-        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
             height: 640px;
             width: 430px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 550px;
             width: 400px;
             margin-left: 30px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 440px;
             width: 350px;
             margin-left: 30px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 400px;
             width: 300px;
             margin-left: 30px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 300px;
             width: 230px;
             margin-left: 0;
@@ -3821,26 +3817,26 @@
             height: 150px;
             width: 150px;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 left: -8%;
                 top: 21%;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 left: -10%;
                 top: 17%;
                 height: 120px;
                 width: 120px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 left: -10%;
                 top: 17%;
                 height: 100px;
                 width: 100px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 80px;
                 width: 80px;
                 left: -10%;
@@ -3856,33 +3852,33 @@
             height: 310px;
             width: 250px;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 height: 300px;
                 width: 240px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 height: 250px;
                 width: 200px;
                 bottom: -22px;
                 right: 15px;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 height: 220px;
                 width: 175px;
                 bottom: -30px;
                 right: 0px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 height: 200px;
                 width: 150px;
                 bottom: -30px;
                 right: 0px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 150px;
                 width: 130px;
                 bottom: -31px;
@@ -3899,64 +3895,64 @@
                 padding: 40px 30px;
                 transform: translate(-50%, -50%);
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     padding: 30px 20px;
                 }
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     padding: 15px 25px;
                 }
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     padding: 5px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     padding: 5px 20px;
                 }
 
                 h5 {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     font-size: 15px;
                     font-weight: 700;
                     text-transform: uppercase;
                     color: #FFFFFF;
                     margin-bottom: 30px;
 
-                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                         margin-bottom: 15px;
                     }
 
-                    @media #{variables.$sm-mobile} {
+                    @media #{$sm-mobile} {
                         margin-bottom: 0px;
                         font-size: 12px;
                     }
                 }
 
                 span {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     color: #4A1808;
                     font-size: 80px;
                     font-style: normal;
                     font-weight: 1000;
 
-                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                         font-size: 60px;
                     }
 
-                    @media #{variables.$sm-mobile} {
+                    @media #{$sm-mobile} {
                         font-size: 30px;
                     }
                 }
 
                 p {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     font-size: 15px;
                     font-weight: 700;
                     color: #FFFFFF;
                     margin: 0;
 
-                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                         font-size: 12px;
 
                     }
@@ -3969,11 +3965,11 @@
     .rv-25-about_content {
         padding-left: 70px;
 
-        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
             padding-left: 40px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 40px 0 0 0;
         }
 
@@ -3982,13 +3978,13 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 20px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm,variables.$sm-mobile,variables.$mobile} {
+            @media #{$sm,$sm-mobile,$mobile} {
                 margin-bottom: 10px;
             }
 
-            @media #{variables.$mobile} {
+            @media #{$mobile} {
                 margin-bottom: 5px;
             }
         }
@@ -3998,29 +3994,29 @@
             font-size: 50px;
             font-weight: 700;
             margin-bottom: 35px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
                 margin-bottom: 20px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 font-size: 25px;
                 margin-bottom: 15px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 20px;
                 margin-bottom: 10px;
             }
@@ -4031,22 +4027,22 @@
             font-size: 16px;
             font-weight: 400;
             margin-bottom: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             margin-bottom: 50px;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 margin-bottom: 20px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-bottom: 15px;
             }
         }
@@ -4057,28 +4053,28 @@
             margin-bottom: 50px;
             flex-wrap: wrap;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 35px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin-bottom: 20px;
             }
 
             li {
                 color: #020208;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 font-weight: 600;
                 font-size: 15px;
                 flex: 0 0 50%;
                 max-width: 50%;
                 padding-bottom: 20px;
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     padding-bottom: 10px;
                 }
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     padding-bottom: 10px;
                     flex: 0 0 100%;
                     max-width: 100%;
@@ -4090,7 +4086,7 @@
                     margin-right: 20px;
                     font-size: 17px;
 
-                    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                         margin-right: 10px;
                     }
                 }
@@ -4118,9 +4114,9 @@
                 line-height: 54px;
                 z-index: 1;
                 display: inline-block;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$mobile} {
+                @media #{$mobile} {
                     width: 160px;
                 }
 
@@ -4147,7 +4143,7 @@
                 align-items: center;
                 column-gap: 15px;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     order: -1;
                 }
 
@@ -4169,14 +4165,14 @@
                         color: #020208;
                         margin-bottom: 0;
                         display: block;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
 
                     .rv-25-about_author_desc {
                         color: rgba(2, 2, 8, 0.7);
                         font-weight: 500;
                         font-size: 15px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
                 }
             }

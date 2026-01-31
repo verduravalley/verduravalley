@@ -1,0 +1,196 @@
+/* ============================================
+   RTL (Right-to-Left) Overrides
+   For Arabic language support.
+   Bootstrap RTL handles utility classes automatically;
+   these overrides target custom SCSS directional properties.
+============================================ */
+
+[dir="rtl"] {
+
+  // ---- HEADER ----
+  .rv-1-header__nav {
+    > ul {
+      gap: 18px;
+    }
+
+    ul {
+      .sub-menu {
+        text-align: right;
+
+        @media screen and (min-width: 992px) {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .rv-1-header-nav__sidebar {
+    // Only override on mobile — on desktop the sidebar is inline (no transform)
+    @media screen and (max-width: 991px) {
+      right: auto;
+      left: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 10px;
+      transform: translateX(-100%);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .rv-20-header__nav {
+    ul {
+      li {
+        button {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  // Fix right-buttons directional margins for RTL
+  .rv-inner-header-right-btns {
+    margin-right: 0;
+    margin-left: 15px;
+
+    a {
+      margin-right: 0;
+      margin-left: 15px;
+
+      i {
+        padding-right: 0;
+        padding-left: 5px;
+      }
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // ---- BANNER ----
+  .rv-20-banner_slide_button_area {
+    right: auto;
+    left: 15%;
+
+    @media #{$lg,$md} {
+      left: 9%;
+    }
+
+    @media #{$md,$sm,$mobile,$sm-mobile} {
+      left: 6%;
+    }
+  }
+
+  .rv-20-banner_slide_button_prev,
+  .rv-20-banner_slide_button_next {
+    i {
+      // Arrow icons are flipped in the component via JS
+    }
+  }
+
+  .rv-20-banner_content {
+    text-align: right;
+  }
+
+  // ---- ABOUT ----
+  .rv-1-about__txt {
+    text-align: right;
+  }
+
+  .rv-1-about__pills {
+    justify-content: flex-start;
+    direction: rtl;
+  }
+
+  .rv-1-about__descr {
+    text-align: right;
+  }
+
+  // ---- FOOTER ----
+  .rv-8-footer-widget__links {
+    li {
+      a {
+        padding-left: 0;
+        padding-right: 15px;
+
+        &::before {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .rv-footer-contact-item {
+    .icon {
+      margin-right: 0;
+      margin-left: 12px;
+    }
+  }
+
+  .rv-2-footer__nav {
+    a {
+      &:not(:last-child) {
+        border-right: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        padding-right: 0;
+        padding-left: 15px;
+        margin-right: 0;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  // ---- CONTACT ----
+  .rv-inner-contact-info__heading {
+    .rv-inner-contact-info__icon {
+      margin-right: 0;
+      margin-left: 15px;
+    }
+  }
+
+  // ---- BREADCRUMB ----
+  .rv-breadcrumb__nav {
+    li {
+      .dvdr {
+        margin: 0 8px;
+      }
+    }
+  }
+
+  // ---- PRODUCTS ----
+  .rv-3-product__bottom {
+    direction: rtl;
+  }
+
+  .rv-3-product__price {
+    .prev-price {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+  }
+
+  // ---- GENERAL / COMPONENTS ----
+  .rv-1-section__heading {
+    text-align: right;
+  }
+
+  .rv-text-anime {
+    direction: rtl;
+  }
+
+  // Legacy card in About
+  .rv-legacy-card__txt {
+    text-align: right;
+  }
+
+  // Vision section keeps center
+  .rv-vision-section {
+    text-align: center;
+  }
+}

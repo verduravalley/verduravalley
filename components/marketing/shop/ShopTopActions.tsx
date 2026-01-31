@@ -1,3 +1,7 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 type Props = {
   startIndex: number;
   endIndex: number;
@@ -21,18 +25,20 @@ const ShopTopActions = ({
   handleSortingChange,
   sorting,
 }: Props) => {
+  const t = useTranslations('shop');
+
   return (
     <div className="rv-shop-area__top-actions">
       <div className="row gy-3 align-items-center">
         <div className="col-xxl-6 col-xl-6 col-lg-5 text-center text-md-start">
           <p className="text-center text-lg-start mb-0">
-            Showing {startIndex + 1}-{endIndex} OF {totalItems} results
+            {t('showing', { start: startIndex + 1, end: endIndex, total: totalItems })}
           </p>
         </div>
         <div className="col-xxl-6 col-xl-6 col-lg-7">
           <div className="rv-shop-area__right-actions">
             <h6 className="showed-products-number mb-0">
-              show :
+              {t('show')}
               <button
                 onClick={() => handleItemsPerPageChange(9)}
                 className={itemsPerPage === 9 ? "active" : ""}
@@ -76,11 +82,11 @@ const ShopTopActions = ({
                   onChange={(e) => handleSortingChange(e.target.value)}
                   value={sorting}
                 >
-                  <option value="menu_order">Default sorting</option>
-                  <option value="popularity">Sort by Popularity</option>
-                  <option value="rating">Sort by Rating</option>
-                  <option value="price">Sort by Price: Low to High</option>
-                  <option value="price-desc">Sort by Price: High to Low</option>
+                  <option value="menu_order">{t('defaultSorting')}</option>
+                  <option value="popularity">{t('sortByPopularity')}</option>
+                  <option value="rating">{t('sortByRating')}</option>
+                  <option value="price">{t('sortByPriceLow')}</option>
+                  <option value="price-desc">{t('sortByPriceHigh')}</option>
                 </select>
               </form>
             </div>

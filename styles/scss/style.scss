@@ -123,3 +123,6 @@ CSS INDEX
 @import "pages/cart-page";
 @import "pages/checkout-page";
 @import "pages/login-page";
+
+// RTL overrides for Arabic language
+@import "sections/rtl-overrides";

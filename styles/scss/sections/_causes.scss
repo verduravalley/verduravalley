@@ -1,9 +1,7 @@
-@use "../main/breakpoints";
-
 /* ----- 31. Causes ----- */
 .rv-10-causes {
     .row.g-30 {
-        @include breakpoints.xl {
+        @include xl {
             --bs-gutter-x: 20px;
         }
     }
@@ -14,7 +12,7 @@
     border: 1px solid rgba(5, 5, 5, 0.14);
     padding: 24px;
 
-    @include breakpoints.lg {
+    @include lg {
         padding: 15px;
     }
 
@@ -31,18 +29,18 @@
         border-radius: 10px;
         margin-bottom: 25px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 15px;
         }
 
         img {
             height: 270px;
 
-            @include breakpoints.xl {
+            @include xl {
                 height: 225px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 200px;
             }
         }
@@ -83,13 +81,13 @@
         color: var(--white-f);
         border-color: #050505;
 
-        @include breakpoints.xl {
+        @include xl {
             height: 50px;
             line-height: 47px;
             padding: 0 34px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             height: 45px;
             line-height: 42px;
             padding: 0 24px;
@@ -105,7 +103,7 @@
 .rv-10-stats {
     margin-bottom: 30px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-bottom: 20px;
     }
 

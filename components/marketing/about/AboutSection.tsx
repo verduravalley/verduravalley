@@ -1,32 +1,34 @@
+'use client';
+
+import { useTranslations } from "next-intl";
 import NumberCounter from "../utils/NumberCounter";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
 const AboutSection = () => {
+  const t = useTranslations('home.about');
+
   return (
     <section className="rv-20-about_section">
       <div className="container">
-        {/* Added justify-content-center to the row to keep everything middle-aligned */}
         <DivAnimateYAxis className="row justify-content-center">
-          
-          {/* Increased width to col-lg-10 for a centered, readable spread */}
           <div className="col-md-12 col-lg-10 col-xl-9">
             <div className="rv-20-about_section_content text-center">
-              
+
               {/* Heading Section */}
               <div className="rv-20-about_section_heading">
                 <div className="d-flex justify-content-center">
                   <p className="rv-20-about_sub_title rv-text-anime d-flex">
-                    <span></span> Our Vision
+                    <span></span> {t('subtitle')}
                   </p>
                 </div>
                 <div>
                   <h2 className="rv-20-about_section_title rv-text-anime">
-                    Bringing the Farm to Your Table with Integrity.
+                    {t('title')}
                   </h2>
                 </div>
               </div>
 
-              {/* Experience Counter moved to a prominent central position */}
+              {/* Experience Counter */}
               <div className="rv-20-about_experience_txt mb-50" style={{ margin: '0 auto', display: 'inline-block' }}>
                 <NumberCounter
                   number={3}
@@ -34,25 +36,25 @@ const AboutSection = () => {
                   durationToComplete={2}
                   icon="+"
                 />
-                <p>Core Products and Services</p>
+                <p>{t('counterLabel')}</p>
               </div>
 
-              {/* Mission and Goals Row - Adjusted for horizontal centering */}
+              {/* Mission and Goals Row */}
               <div className="rv-20-about_content_top_actions d-flex justify-content-center flex-wrap">
                 <div className="rv-20-about_content_single_top_actions text-start">
                   <div className="rv-20-about_content_single_top_actions_left">
-                    <h3>Our Mission</h3>
-                    <p>Delivering healthy, high-quality fresh produce and artisan foods globally.</p>
+                    <h3>{t('missionTitle')}</h3>
+                    <p>{t('missionDesc')}</p>
                   </div>
                   <div className="rv-20-about_content_single_top_actions_icon">
                     <i className="fas fa-leaf" style={{ color: "#2D6A4F" }}></i>
                   </div>
                 </div>
-                
+
                 <div className="rv-20-about_content_single_top_actions text-start">
                   <div className="rv-20-about_content_single_top_actions_left">
-                    <h3>Artisan Quality</h3>
-                    <p>Crafting food with traditional methods and modern safety standards.</p>
+                    <h3>{t('artisanTitle')}</h3>
+                    <p>{t('artisanDesc')}</p>
                   </div>
                   <div className="rv-20-about_content_single_top_actions_icon">
                     <i className="fas fa-award" style={{ color: "#2D6A4F" }}></i>
@@ -60,39 +62,39 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* Detail List - Using text-start for the list items to maintain readability */}
+              {/* Detail List */}
               <div className="rv-20-about_list mt-40">
                 <ul className="row">
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>Sustainable Growth
+                      <i className="far fa-chevron-double-right"></i>{t('sustainableTitle')}
                     </h4>
-                    <p>Eco-friendly farming practices to protect our soil and your health.</p>
+                    <p>{t('sustainableDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>Global Standards
+                      <i className="far fa-chevron-double-right"></i>{t('globalTitle')}
                     </h4>
-                    <p>A Cairo-based hub meeting international safety certifications.</p>
+                    <p>{t('globalDesc')}</p>
                   </li>
-                  
+
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>Fresh Harvest
+                      <i className="far fa-chevron-double-right"></i>{t('freshTitle')}
                     </h4>
-                    <p>Minimizing field-to-kitchen time for maximum nutrient density.</p>
+                    <p>{t('freshDesc')}</p>
                   </li>
-                  
+
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>Artisan Spirit
+                      <i className="far fa-chevron-double-right"></i>{t('artisanSpiritTitle')}
                     </h4>
-                    <p>Supporting local craftsmanship for unique, high-value food products.</p>
+                    <p>{t('artisanSpiritDesc')}</p>
                   </li>
                 </ul>
               </div>
-              
+
             </div>
           </div>
         </DivAnimateYAxis>

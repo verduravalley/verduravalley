@@ -1,14 +1,12 @@
-@use "../main/breakpoints";
-
 /* ----- 15. skills ----- */
 .rv-2-skills {
     padding: 60px 0;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 20px 0;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 0 0 10px;
     }
 
@@ -20,17 +18,17 @@
         width: max-content;
         max-width: 100%;
 
-        @include breakpoints.md {
+        @include md {
             margin: auto;
             text-align: center;
         }
 
         img {
-            @include breakpoints.md {
+            @include md {
                 max-width: 400px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 height: 300px;
             }
         }
@@ -44,11 +42,11 @@
         line-height: 155.556%;
         margin-bottom: 44px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 24px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 16px;
         }
     }
@@ -65,11 +63,11 @@
         font-weight: 300;
         margin-bottom: 12px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 8px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 12px;
         }
     }

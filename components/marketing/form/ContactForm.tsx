@@ -1,9 +1,12 @@
+'use client';
+
 import { useState, useRef } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useTranslations } from "next-intl";
 
 type Inputs = {
   name: string;
@@ -24,11 +27,13 @@ type Props = {
   onSuccess?: () => void;
 };
 const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
+  const t = useTranslations('contact');
+  const tShop = useTranslations('shop');
   const { register, handleSubmit, reset, control, formState: { errors, isValid } } = useForm<Inputs>({
     mode: "onChange",
     defaultValues: productInfo ? {
-      subject: `Inquiry about ${productInfo.name}`,
-      msg: `I am interested in learning more about ${productInfo.name} (Ref: ${productInfo.slug}). Please provide more details.`
+      subject: tShop('inquirySubject', { name: productInfo.name }),
+      msg: tShop('inquiryMessage', { name: productInfo.name, slug: productInfo.slug })
     } : {}
   });
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -67,11 +72,11 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
         setCaptchaToken(null);
         recaptchaRef.current?.reset();
       } else {
-        toast.error(result.message || "Failed to submit message.");
+        toast.error(result.message || t('submitFailed'));
       }
     } catch (error) {
       console.error(error);
-      toast.error("An error occurred. Please try again later.");
+      toast.error(t('submitError'));
     } finally {
       setIsLoading(false);
     }
@@ -83,7 +88,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
 
   // Helper to render error messages
   const ErrorMsg = ({ field }: { field: keyof Inputs }) => (
-    errors[field] ? <span style={{ color: '#ff4d4f', fontSize: '12px', marginTop: '5px', display: 'block' }}>This field is required</span> : null
+    errors[field] ? <span style={{ color: '#ff4d4f', fontSize: '12px', marginTop: '5px', display: 'block' }}>{t('fieldRequired')}</span> : null
   );
 
   return (
@@ -98,7 +103,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
           <input
             type="text"
             id="rv-2-contact-name"
-            placeholder="Your Name"
+            placeholder={t('yourName')}
             disabled={isLoading}
             {...register("name", { required: true })}
           />
@@ -108,7 +113,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
           <input
             type="email"
             id="rv-2-contact-email"
-            placeholder="Email"
+            placeholder={t('email')}
             disabled={isLoading}
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
@@ -119,7 +124,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
           <input
             type="text"
             id="rv-2-contact-business"
-            placeholder="Business Name"
+            placeholder={t('businessName')}
             disabled={isLoading}
             {...register("businessName", { required: true })}
           />
@@ -130,7 +135,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
           <input
             type="text"
             id="rv-2-contact-website"
-            placeholder="Website (Optional)"
+            placeholder={t('website')}
             disabled={isLoading}
             {...register("website")}
           />
@@ -162,19 +167,19 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
         <div className="col-12">
           <select id="rv-2-contact-subject" disabled={isLoading} {...register("subject", { required: true })}>
             <option value="" hidden>
-              Select Subject
+              {t('selectSubject')}
             </option>
-            <option value="Project Buy">Project Buy</option>
-            <option value="Custom Project">Custom Project</option>
-            <option value="Partnership Offer">Partnership Offer</option>
-            <option value="others">Others</option>
+            <option value="Project Buy">{t('projectBuy')}</option>
+            <option value="Custom Project">{t('customProject')}</option>
+            <option value="Partnership Offer">{t('partnershipOffer')}</option>
+            <option value="others">{t('others')}</option>
           </select>
           <ErrorMsg field="subject" />
         </div>
         <div className="col-12">
           <textarea
             id="rv-2-contact-message"
-            placeholder="Message"
+            placeholder={t('message')}
             disabled={isLoading}
             {...register("msg", { required: true })}
           ></textarea>
@@ -183,21 +188,21 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
         <div className="col-12 mb-3 mt-10">
           <ReCAPTCHA
             ref={recaptchaRef}
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''} 
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
             onChange={onCaptchaChange}
           />
         </div>
         <div className="col-12">
-          <button 
-            type="submit" 
-            disabled={isSubmitDisabled} 
-            style={{ 
-              opacity: isSubmitDisabled ? 0.5 : 1, 
+          <button
+            type="submit"
+            disabled={isSubmitDisabled}
+            style={{
+              opacity: isSubmitDisabled ? 0.5 : 1,
               cursor: isSubmitDisabled ? 'not-allowed' : 'pointer',
               transition: 'all 0.3s ease'
             }}
           >
-            {isLoading ? 'Sending...' : 'Send Message'}
+            {isLoading ? t('sending') : t('sendMessage')}
           </button>
         </div>
       </div>
@@ -208,14 +213,14 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
             <div className="rv-contact-modal__icon">
               <i className="fa-regular fa-circle-check"></i>
             </div>
-            <h3 className="rv-contact-modal__title">Thank You!</h3>
-            <p className="rv-contact-modal__text">We have received your message and will get back to you soon.</p>
-            <button 
+            <h3 className="rv-contact-modal__title">{t('thankYou')}</h3>
+            <p className="rv-contact-modal__text">{t('receivedMessage')}</p>
+            <button
               type="button"
               className="rv-contact-modal__btn"
               onClick={() => setShowSuccessModal(false)}
             >
-              Okay
+              {t('okay')}
             </button>
           </div>
         </div>

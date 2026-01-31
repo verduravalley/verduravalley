@@ -1,5 +1,3 @@
-@use "../main/breakpoints";
-
 /* ----- 07. Speakers ----- */
 .rv-1-speakers {
     background-color: #E4E4E4;
@@ -9,7 +7,7 @@
             &:nth-child(odd) {
                 margin-top: 50px;
 
-                @include breakpoints.xxs {
+                @include xxs {
                     margin-top: 0;
                 }
             }

@@ -1,14 +1,12 @@
-@use "../main/breakpoints";
-
 /* ----- 16. Award ----- */
 .rv-2-award {
     padding-bottom: 120px;
 
-    @include breakpoints.xl {
+    @include xl {
         padding-bottom: 80px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding-bottom: 60px;
     }
 }
@@ -18,21 +16,21 @@
     grid-template-columns: max-content max-content auto max-content;
     gap: 110px;
 
-    @include breakpoints.xl {
+    @include xl {
         gap: 50px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 20px;
         gap: 30px;
     }
 
-    @include breakpoints.sm {
+    @include sm {
         grid-template-columns: max-content max-content auto;
         text-align: left;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         grid-template-columns: repeat(2, 50%);
         text-align: center;
     }
@@ -71,7 +69,7 @@
     }
 
     &__details {
-        @include breakpoints.xxs {
+        @include xxs {
             grid-column: 1/ 4;
         }
     }
@@ -80,11 +78,11 @@
         font-size: 28px;
         font-weight: 600;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 25px;
         }
 
-        @include breakpoints.md {
+        @include md {
             font-size: 22px;
         }
     }
@@ -97,11 +95,11 @@
     &__btn {
         color: var(--white-f);
 
-        @include breakpoints.md {
+        @include md {
             grid-column: auto;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             grid-column: 1/ 4;
         }
 

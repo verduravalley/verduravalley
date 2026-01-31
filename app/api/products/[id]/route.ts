@@ -29,14 +29,15 @@ export async function PUT(
 
   try {
     const body = await request.json();
-    const { name, slug, category, description, product_info, price, prev_price, images, is_active } = body;
+    const { name, slug, category, description, product_info, price, prev_price, images, is_active, name_ar, description_ar, product_info_ar, category_ar } = body;
 
     const result = await query(
       `UPDATE products SET
         name = $1, slug = $2, category = $3, description = $4, product_info = $5,
-        price = $6, prev_price = $7, images = $8, is_active = $9, updated_at = NOW()
-       WHERE id = $10 RETURNING *`,
-      [name, slug, category, description, product_info, price || 0, prev_price || null, images, is_active, id]
+        price = $6, prev_price = $7, images = $8, is_active = $9, updated_at = NOW(),
+        name_ar = $10, description_ar = $11, product_info_ar = $12, category_ar = $13
+       WHERE id = $14 RETURNING *`,
+      [name, slug, category, description, product_info, price || 0, prev_price || null, images, is_active, name_ar || null, description_ar || null, product_info_ar || null, category_ar || null, id]
     );
 
     if (result.rows.length === 0) {

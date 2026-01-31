@@ -1,16 +1,16 @@
-// import { toggleVideoModalOpen } from "@/store/features/videoModalSlice";
-// import { useAppDispatch } from "@/store/hooks";
+'use client';
+
 import { useEffect, useState } from "react";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import gsap from "gsap";
 import SplitType from "split-type";
+import { useTranslations, useLocale } from "next-intl";
 
 const BannerSection = () => {
-  // const dispatch = useAppDispatch();
-  // const openVideoModal = () => {
-  //   dispatch(toggleVideoModalOpen());
-  // };
+  const t = useTranslations('banner');
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
   const [swiper, setSwiper] = useState<any>(null);
 
   useEffect(() => {
@@ -19,19 +19,24 @@ const BannerSection = () => {
         const currentSlide = swiper.slides[swiper.activeIndex];
         const textsToAnimate = currentSlide.querySelectorAll(".rv-text-anime");
         textsToAnimate.forEach((textToAnimate: HTMLElement) => {
+          // Skip SplitType animation for Arabic text to preserve text integrity
+          if (isRTL && (textToAnimate.classList.contains('rv-20-banner_content_heading') || 
+                        textToAnimate.classList.contains('rv-20-banner_content_sub_heading'))) {
+            return;
+          }
           const animate = new SplitType(textToAnimate, {
             types: "words,chars",
           });
           gsap.from(animate.chars, {
             opacity: 0,
-            x: 100,
+            x: isRTL ? -100 : 100,
             duration: 1.1,
             stagger: { amount: 0.9 },
           });
         });
       });
     }
-  }, [swiper]);
+  }, [swiper, isRTL]);
 
   return (
     <section className="rv-20-banner_section">
@@ -52,23 +57,16 @@ const BannerSection = () => {
               <div className="col-sm-10 col-md-9 col-lg-8 col-xl-7">
                 <div className="rv-20-banner_content">
                   <span className="rv-20-banner_content_sub_heading rv-text-anime d-flex">
-                    <span></span> Verdura Valley
+                    <span></span> {t('slide1Sub')}
                   </span>
                   <h1 className="rv-20-banner_content_heading rv-text-anime">
-                    Mushrooms, Herbs..
+                    {t('slide1Heading')}
                   </h1>
 
                   <div className="rv-20-banner_button_area">
                     <a href="#" className="rv-20-banner_content_btn">
-                      Explore More
+                      {t('exploreMore')}
                     </a>
-                    {/* <a
-                      className="rv-20-banner_content_play_btn"
-                      role="button"
-                      onClick={openVideoModal}
-                    >
-                      <i className="fas fa-play"></i> Play Now
-                    </a> */}
                   </div>
                 </div>
               </div>
@@ -81,22 +79,15 @@ const BannerSection = () => {
               <div className="col-sm-10 col-md-9 col-lg-8 col-xl-7">
                 <div className="rv-20-banner_content">
                   <span className="rv-20-banner_content_sub_heading rv-text-anime">
-                    <span></span> Rooted in quantity
+                    <span></span> {t('slide2Sub')}
                   </span>
                   <h1 className="rv-20-banner_content_heading rv-text-anime">
-                    and Hydroponic grown crops
+                    {t('slide2Heading')}
                   </h1>
                   <div className="rv-20-banner_button_area">
                     <a href="#" className="rv-20-banner_content_btn">
-                      Explore More
+                      {t('exploreMore')}
                     </a>
-                    {/* <a
-                      className="rv-20-banner_content_play_btn"
-                      role="button"
-                      onClick={openVideoModal}
-                    >
-                      <i className="fas fa-play"></i> Play Now
-                    </a> */}
                   </div>
                 </div>
               </div>
@@ -108,11 +99,11 @@ const BannerSection = () => {
       <div className="rv-20-banner_slide_button_area">
         <div className="rv-20-banner_slide_button_prev ">
           {" "}
-          <i className="fas fa-arrow-left"></i>{" "}
+          <i className={`fas fa-arrow-${isRTL ? 'right' : 'left'}`}></i>{" "}
         </div>
         <div className="rv-20-banner_slide_button_next ">
           {" "}
-          <i className="fas fa-arrow-right"></i>{" "}
+          <i className={`fas fa-arrow-${isRTL ? 'left' : 'right'}`}></i>{" "}
         </div>
       </div>
     </section>

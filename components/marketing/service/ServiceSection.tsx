@@ -1,64 +1,47 @@
 "use client";
+
 import { serviceData } from "@/data/Data";
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
 const ServiceSection = () => {
+  const t = useTranslations('home.service');
   const serviceRef = useRef<HTMLDivElement>(null);
   const [activeItemId, setActiveItemId] = useState<number>(0);
 
   const customServices = [
     {
       id: 1,
-      title: "High Food Safety Standards",
+      titleKey: "s1Title" as const,
       imgMain: serviceData[9]?.imgMain || "",
       imgIcon: serviceData[9]?.imgIcon || "",
-      dropText: "Safety First",
-      list: [
-        "Strict Quality Control",
-        "Safe Storage Practices",
-        "Regular Safety Inspections",
-        "Contamination Prevention",
-      ],
+      dropKey: "s1Drop" as const,
+      listKeys: ["s1l1", "s1l2", "s1l3", "s1l4"] as const,
     },
     {
       id: 2,
-      title: "Clean Handling & Hygiene Standards",
+      titleKey: "s2Title" as const,
       imgMain: serviceData[10]?.imgMain || "",
       imgIcon: serviceData[10]?.imgIcon || "",
-      dropText: "Hygiene Excellence",
-      list: [
-        "Sanitized Work Areas",
-        "Proper Food Handling",
-        "Staff Hygiene Training",
-        "Clean Packaging Process",
-      ],
+      dropKey: "s2Drop" as const,
+      listKeys: ["s2l1", "s2l2", "s2l3", "s2l4"] as const,
     },
     {
       id: 3,
-      title: "Water-Efficient & Eco-Friendly Farming",
+      titleKey: "s3Title" as const,
       imgMain: serviceData[11]?.imgMain || "",
       imgIcon: serviceData[11]?.imgIcon || "",
-      dropText: "Sustainability",
-      list: [
-        "Smart Irrigation Systems",
-        "Water Conservation Methods",
-        "Sustainable Farming Practices",
-        "Reduced Environmental Impact",
-      ],
+      dropKey: "s3Drop" as const,
+      listKeys: ["s3l1", "s3l2", "s3l3", "s3l4"] as const,
     },
     {
       id: 4,
-      title: "Safety & Wellbeing",
+      titleKey: "s4Title" as const,
       imgMain: serviceData[12]?.imgMain || "",
       imgIcon: serviceData[12]?.imgIcon || "",
-      dropText: "Worker Protection",
-      list: [
-        "Worker Safety Measures",
-        "Healthy Work Environment",
-        "Equipment Safety Standards",
-        "Continuous Safety Training",
-      ],
+      dropKey: "s4Drop" as const,
+      listKeys: ["s4l1", "s4l2", "s4l3", "s4l4"] as const,
     },
   ];
 
@@ -67,8 +50,8 @@ const ServiceSection = () => {
   };
 
   const handleMouseLeave = () => {
-    // Do nothing or add additional logic if needed when mouse leaves
   };
+
   return (
     <section className="rv-20-service_section">
       <div className="container">
@@ -77,15 +60,12 @@ const ServiceSection = () => {
             <div className="rv-20-service_section_heading">
               <div>
                 <p className="rv-20-service_sub_title rv-text-anime d-flex">
-                  <span></span> Our Standards
+                  <span></span> {t('subtitle')}
                 </p>
               </div>
               <div>
                 <h2 className="rv-20-service_section_title rv-text-anime">
-                   Why Verdura Valley
-
-
-
+                   {t('title')}
                 </h2>
               </div>
             </div>
@@ -116,20 +96,20 @@ const ServiceSection = () => {
                     </div>
 
                     <div className="rv-20-single_service_content_title">
-                      <h4>{item.title}</h4>
+                      <h4>{t(item.titleKey)}</h4>
                     </div>
                   </div>
                   <div className="hidden-part">
                     <ul className="rv-20-single_service_list">
-                      {item.list.map((listItem, index) => (
+                      {item.listKeys.map((listKey, index) => (
                         <li key={index}>
                           <i className="fas fa-check"></i>
-                          {listItem}
+                          {t(listKey)}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <h4 className="rv-20-service_drp_txt">{item.dropText}</h4>
+                  <h4 className="rv-20-service_drp_txt">{t(item.dropKey)}</h4>
                 </div>
               </div>
             </div>

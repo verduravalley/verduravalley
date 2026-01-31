@@ -1,5 +1,3 @@
-@use "../main/breakpoints";
-
 /* ----- 41. PROJECTS INNER PAGE ----- */
 .rv-inner-project {
     width: 100%;
@@ -7,11 +5,11 @@
     .rv-9-project__txt {
         padding: 0 35px 28px;
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 0 30px 23px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 0 25px 18px;
         }
     }
@@ -21,21 +19,21 @@
     }
 
     .rv-3-project__img img {
-        @include breakpoints.xl {
+        @include xl {
             height: 500px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             height: 400px;
         }
     }
 
     .rv-9-project__title {
-        @include breakpoints.xl {
+        @include xl {
             font-size: 28px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 25px;
         }
 

@@ -91,6 +91,33 @@ export async function POST() {
       )
     `);
 
+    // Add Arabic columns for bilingual support
+    await query(`
+      DO $$
+      BEGIN
+        -- Products Arabic columns
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='name_ar') THEN
+          ALTER TABLE products ADD COLUMN name_ar VARCHAR(255);
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='description_ar') THEN
+          ALTER TABLE products ADD COLUMN description_ar TEXT;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='product_info_ar') THEN
+          ALTER TABLE products ADD COLUMN product_info_ar TEXT;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='products' AND column_name='category_ar') THEN
+          ALTER TABLE products ADD COLUMN category_ar VARCHAR(255);
+        END IF;
+        -- Leadership Arabic columns
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='leadership' AND column_name='name_ar') THEN
+          ALTER TABLE leadership ADD COLUMN name_ar VARCHAR(255);
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='leadership' AND column_name='title_ar') THEN
+          ALTER TABLE leadership ADD COLUMN title_ar VARCHAR(255);
+        END IF;
+      END $$;
+    `);
+
     // Seed default code of conduct if it doesn't exist
     await query(`
       INSERT INTO site_configs (key, value)

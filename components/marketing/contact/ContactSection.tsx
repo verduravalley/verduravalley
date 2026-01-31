@@ -1,48 +1,51 @@
-import React from 'react';
+'use client';
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
 const ContactSection = () => {
+  const t = useTranslations('home.contact');
+
   return (
     <section className="rv-20-contact_main_section">
       <div className="container">
-        {/* Section Title moved above the row */}
+        {/* Section Title */}
         <div className="row">
           <div className="col-12 text-center mb-50">
             <div className="rv-20-contact_section_heading">
               <p className="rv-20-contact_sub_title rv-text-anime d-flex m-auto">
-                <span></span>Where We Operate
+                <span></span>{t('subtitle')}
               </p>
               <h2 className="rv-20-contact_section_title rv-text-anime">
-                  Based in the Heart of Cairo, Serving the Future of Food.
+                  {t('title')}
               </h2>
             </div>
           </div>
         </div>
 
         <DivAnimateYAxis className="row align-items-center">
-          {/* Left Side: Responsive Image */}
+          {/* Left Side: Image */}
           <div className="col-md-12 col-lg-5">
             <div className="rv-20-contact_image">
-              <img 
-                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/organiyo/contact.jpg" 
-                alt="Operations in Cairo, Egypt" 
+              <img
+                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/organiyo/contact.jpg"
+                alt="Operations in Cairo, Egypt"
               />
             </div>
           </div>
 
-          {/* Right Side: Text & Partner CTA */}
+          {/* Right Side: Text & CTA */}
           <div className="col-md-12 col-lg-7">
             <div className="rv-20-contact_form_area">
                 <p className="mt-20 mb-30 text-content">
-                  From our strategic hub in <strong>Cairo, Egypt</strong>, we coordinate 
-                  sustainable supply chains that ensure food safety and quality across 
-                  the region.
+                  {t('descriptionPre')} <strong>{t('descriptionLocation')}</strong>{t('descriptionPost')}
                 </p>
 
               <div className="rv-20-contact_cta_wrapper mt-40">
-                <a href="/contact" className="rv-20-btn">
-                  Partner with Us
-                </a>
+                <Link href="/contact" className="rv-20-btn">
+                  {t('cta')}
+                </Link>
               </div>
             </div>
           </div>

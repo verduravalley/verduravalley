@@ -16,11 +16,11 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, title, image_url, sort_order } = body;
+    const { name, title, image_url, sort_order, name_ar, title_ar } = body;
 
     const result = await query(
-      'INSERT INTO leadership (name, title, image_url, sort_order) VALUES ($1, $2, $3, $4) RETURNING *',
-      [name, title, image_url, sort_order || 0]
+      'INSERT INTO leadership (name, title, image_url, sort_order, name_ar, title_ar) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+      [name, title, image_url, sort_order || 0, name_ar || null, title_ar || null]
     );
 
     return NextResponse.json(result.rows[0], { status: 201 });

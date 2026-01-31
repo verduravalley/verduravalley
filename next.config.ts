@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -20,7 +23,6 @@ const nextConfig: NextConfig = {
 
   sassOptions: {
     includePaths: ['./styles'],
-    silenceDeprecations: ['import'],
   },
 
   // Suppress hydration warnings in development
@@ -30,4 +32,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

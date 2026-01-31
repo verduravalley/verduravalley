@@ -1,9 +1,10 @@
 'use client';
 
 import { ShopItem } from "@/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import ProductContactModal from "../modal/ProductContactModal";
+import { useTranslations } from "next-intl";
 
 type Props = {
   img: string;
@@ -26,6 +27,7 @@ const ShopCard = ({
   style,
 }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const t = useTranslations('shop');
 
   return (
     <div className={`rv-3-product rv-12-product ${style ? style : ""}`} style={{ position: 'relative' }}>
@@ -39,7 +41,7 @@ const ShopCard = ({
           <Link href={`/products/${slug}`}>
             {name}
             {/* Stretched link to make whole card clickable */}
-            <span 
+            <span
               style={{
                 position: 'absolute',
                 top: 0,
@@ -59,17 +61,17 @@ const ShopCard = ({
             <span className="current-price">${price}</span>
           </span>
 
-          <button 
-            className="rv-3-product__cart-btn" 
+          <button
+            className="rv-3-product__cart-btn"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setIsModalOpen(true);
             }}
-            style={{ 
+            style={{
               position: 'relative',
               zIndex: 2,
-              backgroundColor: 'var(--rv-pr-1)', 
+              backgroundColor: 'var(--rv-pr-1)',
               color: 'white',
               padding: '8px 15px',
               borderRadius: '5px',
@@ -79,15 +81,15 @@ const ShopCard = ({
               cursor: 'pointer'
             }}
           >
-            Contact for more
+            {t('contactForMore')}
           </button>
         </div>
       </div>
 
-      <ProductContactModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        productInfo={{ name, slug }} 
+      <ProductContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        productInfo={{ name, slug }}
       />
     </div>
   );

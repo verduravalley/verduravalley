@@ -1,10 +1,8 @@
-@use "../main/breakpoints";
-
 /* ----- 34. Case Study ----- */
 .rv-14-case-studies {
     background-color: #EAF5F8;
 
-    @include breakpoints.md {
+    @include md {
         padding-top: 60px;
     }
 
@@ -19,17 +17,17 @@
         // padding: 0;
         border-left: 1px solid rgba(2, 2, 8, 0.10);
 
-        @include breakpoints.xl {
+        @include xl {
             min-height: 430px;
             margin: 80px 0 80px 50px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin: 80px 0 80px 30px;
             min-height: 370px;
         }
 
-        @include breakpoints.md {
+        @include md {
             min-height: auto;
             margin: 30px 0 60px 0;
         }
@@ -45,20 +43,20 @@
             max-width: 960px;
             max-height: 830px;
 
-            @include breakpoints.xxl {
+            @include xxl {
                 max-height: 782px;
             }
 
-            @include breakpoints.xl {
+            @include xl {
                 max-height: 592px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 100%;
                 max-height: 562px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 max-width: 100%;
                 width: 100%;
             }
@@ -72,23 +70,23 @@
         padding-left: 75px;
         height: max-content !important;
 
-        @include breakpoints.xl {
+        @include xl {
             padding-left: 65px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding-left: 55px;
         }
 
-        @include breakpoints.md {
+        @include md {
             padding-left: 45px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             padding-left: 35px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding-left: 25px;
         }
 
@@ -118,15 +116,15 @@
         -webkit-text-stroke: 1px rgba(2, 2, 8, 0.14);
         -webkit-text-fill-color: transparent;
 
-        @include breakpoints.md {
+        @include md {
             font-size: 66px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 60px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 56px;
         }
     }

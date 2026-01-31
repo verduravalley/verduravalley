@@ -29,11 +29,11 @@ export async function PUT(
 
   try {
     const body = await request.json();
-    const { name, title, image_url, sort_order } = body;
+    const { name, title, image_url, sort_order, name_ar, title_ar } = body;
 
     const result = await query(
-      'UPDATE leadership SET name = $1, title = $2, image_url = $3, sort_order = $4 WHERE id = $5 RETURNING *',
-      [name, title, image_url, sort_order, id]
+      'UPDATE leadership SET name = $1, title = $2, image_url = $3, sort_order = $4, name_ar = $5, title_ar = $6 WHERE id = $7 RETURNING *',
+      [name, title, image_url, sort_order, name_ar || null, title_ar || null, id]
     );
 
     if (result.rows.length === 0) {

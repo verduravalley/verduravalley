@@ -1,7 +1,3 @@
-@use "../abstracts/variables";
-@use "../main/breakpoints";
-@use "../main/mixin";
-
 /* ----- 12. Blogs ----- */
 .rv-1-blog {
     &:hover {
@@ -17,11 +13,11 @@
             width: 100%;
             height: 300px;
 
-            @include breakpoints.xl {
+            @include xl {
                 height: 270px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 240px;
             }
         }
@@ -31,11 +27,11 @@
         border: 1px solid rgb(5 5 5 / 14%);
         padding: 25px 30px 30px;
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 20px 24px 25px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 20px;
         }
     }
@@ -45,17 +41,17 @@
         column-gap: 24px;
         margin-bottom: 15px;
 
-        @include breakpoints.lg {
+        @include lg {
             flex-direction: column;
             row-gap: 5px;
             margin-bottom: 18px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             flex-direction: row;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             flex-direction: column;
         }
 
@@ -72,12 +68,12 @@
         color: var(--black);
         margin-bottom: 23px;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 20px;
             margin-bottom: 18px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 18px;
             margin-bottom: 13px;
         }
@@ -107,11 +103,11 @@
     border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 90px 55px;
 
-    @include breakpoints.xxl {
+    @include xxl {
         padding: 60px 35px;
     }
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 30px 25px;
     }
 
@@ -131,7 +127,7 @@
         align-items: center;
         margin-bottom: 46px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 30px;
         }
     }
@@ -155,11 +151,11 @@
         font-weight: 700;
         line-height: 126.667%;
 
-        @include breakpoints.xxl {
+        @include xxl {
             font-size: 26px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 22px;
         }
 
@@ -176,11 +172,11 @@
         line-height: 160%;
         margin-bottom: 65px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             margin-bottom: 45px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 35px;
         }
     }
@@ -229,7 +225,7 @@
             height: 270px;
             width: 100%;
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 210px;
             }
         }
@@ -238,7 +234,7 @@
     &__txt {
         padding: 30px;
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 20px;
         }
     }
@@ -249,7 +245,7 @@
         gap: 15px;
         margin-bottom: 23px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 18px;
         }
     }
@@ -280,16 +276,16 @@
             color: #A97240;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 20px;
             margin-bottom: 16px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 18px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 17px;
         }
     }
@@ -306,7 +302,7 @@
 #rv-3-blogs-slider-pagination {
     margin-top: 60px;
 
-    @include breakpoints.lg {
+    @include lg {
         margin-top: 40px;
     }
 }
@@ -315,11 +311,11 @@
 .rv-4-blogs-1 {
     padding-top: 90px;
 
-    @include breakpoints.xl {
+    @include xl {
         padding-top: 50px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding-top: 30px;
     }
 
@@ -328,21 +324,21 @@
         column-count: 3;
         column-gap: 30px;
 
-        @include breakpoints.xl {
+        @include xl {
             --bs-gutter-x: 20px;
             column-gap: 20px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             --bs-gutter-x: 15px;
             column-gap: 15px;
         }
 
-        @include breakpoints.md {
+        @include md {
             column-count: 2;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             column-count: 1;
         }
     }
@@ -351,12 +347,12 @@
 .rv-4-blog {
     break-inside: avoid;
 
-    @include breakpoints.sm {
+    @include sm {
         width: 75%;
         margin: auto;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         width: 100%;
     }
 
@@ -374,11 +370,11 @@
             width: 100%;
             height: 470px;
 
-            @include breakpoints.xl {
+            @include xl {
                 height: 430px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 400px;
             }
         }
@@ -392,13 +388,13 @@
         box-shadow: (0px 1px 3px rgba(8, 28, 21, 0.14));
         padding: 40px 35px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin: 0 20px;
             margin-top: -50px;
             padding: 30px 25px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin: 0 15px;
             margin-top: -50px;
             padding: 25px 20px;
@@ -408,7 +404,7 @@
     .rv-3-blog__infos {
         margin-bottom: 16px;
 
-        @include breakpoints.lg {
+        @include lg {
             row-gap: 10px;
             flex-wrap: wrap;
         }
@@ -429,7 +425,7 @@
         // text-overflow: ellipsis;
         overflow: hidden;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 15px;
         }
 
@@ -458,11 +454,11 @@
     &:not(:last-child) {
         margin-bottom: 30px;
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 20px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             margin-bottom: 15px;
         }
     }
@@ -471,15 +467,15 @@
         .rv-4-blog__img img {
             height: 340px;
 
-            @include breakpoints.md {
+            @include md {
                 height: 280px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 height: 250px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 height: 230px;
             }
         }
@@ -490,11 +486,11 @@
 .rv-4-blogs-2 {
     padding: 100px 0;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 80px 0;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 60px 0;
     }
 
@@ -503,11 +499,11 @@
         border: 1px solid rgba(44, 44, 44, 0.10);
         align-items: center;
 
-        @include breakpoints.md {
+        @include md {
             flex-direction: column;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             width: 100%;
         }
 
@@ -520,24 +516,24 @@
                 height: 100%;
                 max-height: 400px;
 
-                @include breakpoints.xl {
+                @include xl {
                     height: 355px;
                 }
 
-                @include breakpoints.lg {
+                @include lg {
                     max-height: 345px;
                     width: 470px;
                 }
 
-                @include breakpoints.md {
+                @include md {
                     width: 100%;
                 }
 
-                @include breakpoints.xs {
+                @include xs {
                     max-height: 280px;
                 }
 
-                @include breakpoints.xxs {
+                @include xxs {
                     max-height: 240px;
                 }
             }
@@ -549,23 +545,23 @@
             margin: 0;
             box-shadow: none;
 
-            @include breakpoints.xl {
+            @include xl {
                 padding: 50px 40px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 padding: 40px;
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 padding: 30px 35px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 padding: 30px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 padding: 20px 15px;
             }
         }
@@ -573,7 +569,7 @@
         .rv-3-blog__infos {
             margin-bottom: 21px;
 
-            @include breakpoints.xxs {
+            @include xxs {
                 margin-bottom: 16px;
             }
         }
@@ -582,19 +578,19 @@
             font-size: 32px;
             line-height: 131.25%;
 
-            @include breakpoints.xl {
+            @include xl {
                 font-size: 30px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 font-size: 25px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 font-size: 23px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 20px;
             }
         }
@@ -606,11 +602,11 @@
             line-height: 162.5%;
             margin-bottom: 32px;
 
-            @include breakpoints.sm {
+            @include sm {
                 margin-bottom: 22px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 margin-bottom: 17px;
             }
         }
@@ -623,22 +619,22 @@
     align-items: center;
     gap: 30px;
 
-    @include breakpoints.xl {
+    @include xl {
         gap: 25px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         gap: 20px;
     }
 
-    @include breakpoints.xs {
+    @include xs {
         flex-direction: column;
         text-align: center;
         width: 90%;
         margin-inline: auto;
     }
 
-    @include breakpoints.xxs {
+    @include xxs {
         width: 100%;
     }
 
@@ -651,7 +647,7 @@
     &:not(:last-child) {
         margin-bottom: 30px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 25px;
         }
     }
@@ -675,15 +671,15 @@
             line-height: 133.333%;
             margin-bottom: 21px;
 
-            @include breakpoints.xl {
+            @include xl {
                 font-size: 22px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 margin-bottom: 15px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 20px;
                 margin-bottom: 10px;
             }
@@ -696,7 +692,7 @@
         .rv-3-blog__infos {
             margin-bottom: 13px;
 
-            @include breakpoints.xs {
+            @include xs {
                 justify-content: center;
             }
         }
@@ -711,7 +707,7 @@
     }
 
     &--left {
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 30px;
         }
 
@@ -724,7 +720,7 @@
         .rv-5-blog__img {
             margin-bottom: 22px;
 
-            @include breakpoints.md {
+            @include md {
                 margin-bottom: 12px;
             }
 
@@ -732,15 +728,15 @@
                 width: 100%;
                 height: auto;
 
-                @include breakpoints.md {
+                @include md {
                     height: 430px;
                 }
 
-                @include breakpoints.xs {
+                @include xs {
                     height: 300px;
                 }
 
-                @include breakpoints.xxs {
+                @include xxs {
                     height: 240px;
                 }
             }
@@ -752,28 +748,28 @@
                 gap: 40px;
                 align-items: center;
 
-                @include breakpoints.xl {
+                @include xl {
                     gap: 30px;
                 }
 
-                @include breakpoints.lg {
+                @include lg {
                     flex-direction: column;
                     align-items: flex-start;
                     row-gap: 20px;
                 }
 
-                @include breakpoints.md {
+                @include md {
                     row-gap: 10px;
                     flex-direction: row;
                     align-items: center;
                 }
 
 
-                @include breakpoints.xs {
+                @include xs {
                     column-gap: 20px;
                 }
 
-                @include breakpoints.xxs {
+                @include xxs {
                     flex-direction: column;
                     align-items: flex-start;
                 }
@@ -795,15 +791,15 @@
                     font-weight: 700;
                     line-height: 80%;
 
-                    @include breakpoints.md {
+                    @include md {
                         font-size: 90px;
                     }
 
-                    @include breakpoints.sm {
+                    @include sm {
                         font-size: 80px;
                     }
 
-                    @include breakpoints.xxs {
+                    @include xxs {
                         font-size: 70px;
                     }
                 }
@@ -817,19 +813,19 @@
                 line-height: 133.333%;
                 margin-bottom: 0;
 
-                @include breakpoints.xl {
+                @include xl {
                     font-size: 28px;
                 }
 
-                @include breakpoints.lg {
+                @include lg {
                     font-size: 26px;
                 }
 
-                @include breakpoints.xs {
+                @include xs {
                     font-size: 24px;
                 }
 
-                @include breakpoints.xxs {
+                @include xxs {
                     font-size: 22px;
                 }
 
@@ -850,7 +846,7 @@
             justify-content: space-between;
             align-items: flex-end;
 
-            @include breakpoints.sm {
+            @include sm {
                 flex-direction: column;
                 align-items: center;
                 row-gap: 15px;
@@ -860,15 +856,15 @@
         &-heading__left {
             width: 40%;
 
-            @include breakpoints.lg {
+            @include lg {
                 width: 50%;
             }
 
-            @include breakpoints.md {
+            @include md {
                 width: 60%;
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 width: 100%;
                 text-align: center;
             }
@@ -887,7 +883,7 @@
     border-radius: 14px;
     overflow: hidden;
 
-    @include breakpoints.xs {
+    @include xs {
         flex-direction: column;
         align-items: flex-start;
         row-gap: 20px;
@@ -911,7 +907,7 @@
         overflow: hidden;
         align-self: stretch;
 
-        @include breakpoints.xs {
+        @include xs {
             border-top-left-radius: 14px;
             border-top-right-radius: 14px;
         }
@@ -928,17 +924,17 @@
         border: none;
         padding: 34px;
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 24px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             padding: 0;
         }
     }
 
     .rv-1-blog__infos {
-        @include breakpoints.xl {
+        @include xl {
             flex-direction: column;
             align-items: flex-start;
             row-gap: 10px;
@@ -969,11 +965,11 @@
         line-height: 136.364%;
         margin-bottom: 12px;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 20px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             font-size: 18px;
         }
     }
@@ -983,7 +979,7 @@
         font-family: var(--mulish);
         margin-bottom: 27px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 17px;
         }
     }
@@ -1003,7 +999,7 @@
         align-items: flex-end;
         text-align: left;
 
-        @include breakpoints.sm {
+        @include sm {
             flex-direction: column;
             align-items: center;
             text-align: center;
@@ -1035,11 +1031,11 @@
         font-weight: 500;
         margin-bottom: 23px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 13px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             flex-direction: row;
         }
 
@@ -1057,7 +1053,7 @@
         line-height: 145.455%;
         margin-bottom: 33px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 23px;
         }
 
@@ -1134,15 +1130,15 @@
 // INDEX-9 BLOGS
 .rv-9-blogs {
     .rv-6-section__heading {
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 26px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 20px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             row-gap: 5px;
             margin-bottom: 5px;
         }
@@ -1203,11 +1199,11 @@
         img {
             height: 300px;
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 250px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 height: 200px;
             }
         }
@@ -1218,11 +1214,11 @@
         border-radius: 0 0 14px 14px;
         border-top: none;
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 25px 25px 20px;
         }
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 20px 20px 15px;
         }
     }
@@ -1240,7 +1236,7 @@
         margin-bottom: 30px;
         line-height: 145.455%;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 20px;
         }
 
@@ -1362,7 +1358,7 @@
             width: 100%;
             height: 300px;
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 220px;
             }
         }
@@ -1371,7 +1367,7 @@
     .rv-1-blog__txt {
         border: none;
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 20px 15px;
         }
     }
@@ -1465,7 +1461,7 @@
 // INDEX-14 BLOGS
 .rv-14-blogs {
     &__slider {
-        @include breakpoints.md {
+        @include md {
             overflow: hidden !important;
         }
 
@@ -1492,15 +1488,15 @@
     &__txt {
         padding: 40px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             padding: 35px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 25px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             padding: 0;
         }
     }
@@ -1539,12 +1535,12 @@
             color: #E64209;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 22px;
             margin-bottom: 40px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 30px;
         }
     }
@@ -1568,7 +1564,7 @@
     }
 
     .rv-6-blog__img {
-        @include breakpoints.xs {
+        @include xs {
             border-radius: 0;
         }
 
@@ -1576,7 +1572,7 @@
             width: 260px;
             max-height: 350px;
 
-            @include breakpoints.xxl {
+            @include xxl {
                 max-height: 320px;
             }
         }
@@ -1588,27 +1584,27 @@
     padding: 100px 0;
     background: #F3F5FB;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 90px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 45px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 40px 0;
     }
 
@@ -1619,7 +1615,7 @@
         gap: 20px;
         border: 1px solid #b5b5b5d6;
 
-        @media #{variables.$sm,variables.$sm-mobile} {
+        @media #{$sm,$sm-mobile} {
             flex-direction: column;
         }
 
@@ -1632,12 +1628,12 @@
                 transition: 0.5s;
                 object-fit: cover;
 
-                @media #{variables.$sm,variables.$sm-mobile} {
+                @media #{$sm,$sm-mobile} {
                     height: 300px;
                     object-fit: cover;
                 }
 
-                @media #{variables.$sm,variables.$sm-mobile} {
+                @media #{$sm,$sm-mobile} {
                     height: 250px;
                     object-fit: cover;
                 }
@@ -1649,7 +1645,7 @@
         }
 
         .rv-15-single_blog_content {
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 padding: 10px;
             }
 
@@ -1660,7 +1656,7 @@
                 gap: 15px;
                 padding-bottom: 30px;
 
-                @media #{variables.$lg,md,sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,md,sm,$mobile,$sm-mobile} {
                     padding-bottom: 20px;
                 }
 
@@ -1669,7 +1665,7 @@
                     color: #FFFFFF;
                     padding: 3px 12px;
                     font-weight: 600;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                 }
 
                 span {
@@ -1686,16 +1682,16 @@
                 font-size: 20px;
                 font-weight: 700;
                 margin-bottom: 20px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$lg,md,sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,md,sm,$mobile,$sm-mobile} {
                     margin-bottom: 15;
                 }
 
                 a {
                     color: #050505;
                     transition: 0.5s;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
                     &:hover {
                         color: #F35B04;
@@ -1706,9 +1702,9 @@
             .rv-15-single_blog_content_desc {
                 color: #666666;
                 margin-bottom: 30px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$lg,md,sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,md,sm,$mobile,$sm-mobile} {
                     margin-bottom: 10px;
                 }
             }
@@ -1717,7 +1713,7 @@
                 color: #050505;
                 font-weight: 700;
                 transition: 0.5s;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 i {
                     padding-left: 5px;
@@ -1737,15 +1733,15 @@
     background: #E6E6F5;
     padding: 100px 0;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 90px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 70px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 50px 0;
     }
 
@@ -1756,27 +1752,27 @@
             color: #050505;
             text-align: center;
             padding-bottom: 60px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 33px;
                 padding-bottom: 30px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 30px;
                 padding-bottom: 30px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 24px;
                 padding-bottom: 20px;
             }
@@ -1790,15 +1786,15 @@
         transition: all 0.3s linear 0s;
         overflow: hidden;
 
-        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
             padding: 50px 20px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             padding: 30px 15px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-bottom: 20px;
         }
 
@@ -1815,13 +1811,13 @@
             .rv-16-single_blog_meta {
                 span {
                     color: rgba(255, 255, 255, 0.7);
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                 }
             }
 
             .rv-16-single_blog_content_title {
                 a {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     color: #FFFFFF;
                 }
             }
@@ -1900,11 +1896,11 @@
             padding-bottom: 40px;
             column-gap: 15px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-bottom: 30px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 row-gap: 10px;
             }
 
@@ -1926,15 +1922,15 @@
             font-size: 30px;
             font-weight: 800;
             padding-bottom: 25px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 20px;
                 padding-bottom: 10px;
             }
 
             a {
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 color: #020208;
                 transition: all 0.3s linear 0s;
             }
@@ -1945,11 +1941,11 @@
             font-weight: 500;
             padding-bottom: 50px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-bottom: 30px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 padding-bottom: 15px;
             }
         }
@@ -1958,7 +1954,7 @@
             color: #020208;
             font-weight: 700;
             transition: 0.5s;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
             i {
                 padding-left: 5px;
@@ -1983,11 +1979,11 @@
     background: #F2F2F3;
     padding: 130px 0 100px 0;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 70px 0 20px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 50px 0 0 0;
     }
 
@@ -2004,7 +2000,7 @@
                 position: relative;
                 padding-left: 10px;
                 text-transform: uppercase;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 &::after {
                     position: absolute;
@@ -2023,9 +2019,9 @@
                 font-weight: 800;
                 margin: 0;
                 padding-top: 7px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     font-size: 25px;
                 }
             }
@@ -2046,9 +2042,9 @@
                 justify-content: center;
                 align-items: center;
                 background: transparent;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     font-size: 14px;
                     width: 130px;
                 }
@@ -2092,7 +2088,7 @@
             align-items: center;
             column-gap: 15px;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-bottom: 15px;
                 column-gap: 10px;
             }
@@ -2101,9 +2097,9 @@
                 font-size: 17px;
                 font-weight: 700;
                 color: #020208;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 15px;
                 }
 
@@ -2114,7 +2110,7 @@
 
             span {
                 color: rgba(2, 2, 8, 0.6);
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
             }
 
@@ -2122,9 +2118,9 @@
                 font-weight: 600;
                 color: rgba(2, 2, 8, 0.6);
                 margin: 0;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 14px;
                 }
 
@@ -2139,7 +2135,7 @@
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 10px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
             a {
                 color: #020208;
@@ -2154,13 +2150,13 @@
             color: rgba(2, 2, 8, 0.6);
             font-weight: 500;
             margin-bottom: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
         }
 
         .rv-17-single_blog_btn {
             color: #020208;
             font-weight: 700;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
             &:hover {
                 color: #D21028;
@@ -2193,7 +2189,7 @@
         z-index: 1;
         text-align: center;
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             font-size: 35px;
         }
 
@@ -2238,14 +2234,14 @@
                 display: flex;
                 align-items: center;
                 text-align: center;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
         }
 
         .rv-18-single_blog_content {
             padding: 30px 25px 50px 25px;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 padding: 30px 15px 30px 15px;
             }
 
@@ -2265,14 +2261,14 @@
                     font-size: 17px;
                     font-weight: 500;
                     color: rgba(11, 23, 40, 0.7);
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                 }
 
                 .rv-18-single_blog_comment {
                     font-weight: 500;
                     color: rgba(11, 23, 40, 0.7);
                     margin: 0;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                 }
             }
 
@@ -2280,15 +2276,15 @@
                 font-size: 22px;
                 font-weight: 700;
                 margin-bottom: 40px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     font-size: 18px;
                     margin-bottom: 30px;
                 }
 
                 a {
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                     color: #0B1728;
 
                     &:hover {
@@ -2300,7 +2296,7 @@
             .rv-18-single_blog_btn {
                 color: #000000;
                 font-weight: 700;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 &:hover {
                     color: #1C74E9;
@@ -2327,15 +2323,15 @@
     position: relative;
     z-index: 1;
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 100px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
@@ -2347,7 +2343,7 @@
         bottom: 0;
         height: 50px;
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             height: 30px;
         }
 
@@ -2377,9 +2373,9 @@
         margin-bottom: 60px;
         z-index: 1;
         text-align: center;
-        font-family: variables.$mulish;
+        font-family: $mulish;
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             font-size: 40px;
             margin-bottom: 40px;
         }
@@ -2398,11 +2394,11 @@
         padding: 30px 30px 40px 30px;
         transition: all 0.3s ease;
 
-        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
             padding: 22px 20px 30px 20px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-bottom: 30px;
         }
 
@@ -2420,11 +2416,11 @@
             position: relative;
             overflow: hidden;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 height: 220px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 200px;
             }
 
@@ -2447,7 +2443,7 @@
                 display: flex;
                 align-items: center;
                 text-align: center;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
 
         }
@@ -2455,7 +2451,7 @@
         .rv-19-single_blog_content {
             padding-top: 30px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-top: 30px;
             }
 
@@ -2463,9 +2459,9 @@
                 font-size: 20px;
                 font-weight: 700;
                 margin-bottom: 30px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 18px;
                     margin-bottom: 20px;
                 }
@@ -2485,7 +2481,7 @@
                 font-size: 16px;
                 font-weight: 500;
                 margin-bottom: 35px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
 
             .rv-19-single_blog_btn {
@@ -2493,7 +2489,7 @@
                 font-weight: 700;
                 font-size: 16px;
                 transition: all 0.4s ease;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 &:hover {
                     color: #DFE11B;
@@ -2518,15 +2514,15 @@
 .rv-20-blog_section {
     padding: 120px 0 90px 0;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 120px 0 100px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0 60px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0 30px 0;
     }
 
@@ -2548,7 +2544,7 @@
             align-items: center;
             column-gap: 4px;
             margin: 0 auto;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
             span {
                 height: 5px;
@@ -2564,18 +2560,18 @@
             color: #081C15;
             margin-bottom: 50px;
             margin-top: 20px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 28px;
                 margin-bottom: 35px;
             }
 
-            @media #{variables.$md,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$mobile,$sm-mobile} {
                 font-size: 22px;
                 margin-bottom: 30px;
             }
@@ -2604,11 +2600,11 @@
             overflow: hidden;
             position: relative;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 height: 200px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 180px;
             }
 
@@ -2633,7 +2629,7 @@
                 background: #FFFFFF;
                 padding: 5px 10px;
                 font-weight: 500;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 i {
                     color: rgba(8, 28, 21, 0.7);
@@ -2646,13 +2642,13 @@
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 15px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 20px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 18px;
                 margin-bottom: 10px;
             }
@@ -2671,9 +2667,9 @@
             color: rgba(8, 28, 21, 0.7);
             font-weight: 500;
             margin-bottom: 20px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 14px;
                 margin-bottom: 10px;
             }
@@ -2682,7 +2678,7 @@
         .rv-20-single_blog_btn {
             color: #081C15;
             font-weight: 700;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
             &:hover {
                 letter-spacing: 2px;
@@ -2704,23 +2700,23 @@
 .rv-22-blog_section {
     padding-bottom: 120px;
 
-    @media #{variables.$xxl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xxl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 80px;
     }
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 70px;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 60px;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 50px;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding-bottom: 40px;
     }
 
@@ -2734,7 +2730,7 @@
             text-transform: uppercase;
             display: inline-block;
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 font-size: 14px;
             }
 
@@ -2748,11 +2744,11 @@
                 top: 50%;
                 transform: translateY(-50%);
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     width: 40px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     width: 35px;
                 }
 
@@ -2827,11 +2823,11 @@
             .rv8_sub_pre_sty {
                 left: -50%;
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     left: -45%;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     left: -40%;
                 }
             }
@@ -2839,11 +2835,11 @@
             .rv8_sub_pre_nex {
                 right: -50%;
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     right: -45%;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     right: -40%;
                 }
             }
@@ -2855,22 +2851,22 @@
             color: #040E1F;
             text-transform: uppercase;
             margin-bottom: 60px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 25px;
                 margin-bottom: 35px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 20px;
                 margin-bottom: 30px;
             }
@@ -2892,11 +2888,11 @@
             width: auto;
             overflow: hidden;
 
-            @media #{variables.$mobile} {
+            @media #{$mobile} {
                 height: 250px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 200px;
             }
 
@@ -2930,7 +2926,7 @@
                     font-weight: 600;
                     border-radius: 20px;
 
-                    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                         padding: 5px 10px;
                         font-size: 12px;
                     }
@@ -2955,10 +2951,10 @@
                 font-size: 22px;
                 font-weight: 700;
                 color: #040E1F;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 margin-bottom: 25px;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 17px;
                 }
 
@@ -3004,27 +3000,27 @@
 .rv-23-blog_section {
     padding-bottom: 130px;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 100px;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 80px;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 70px;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding-bottom: 60px;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding-bottom: 50px
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding-bottom: 35px;
     }
 
@@ -3038,7 +3034,7 @@
             background: #020208;
             padding: 1px 4px;
             display: inline-block;
-            font-family: variables.$mulish;
+            font-family: $mulish;
         }
 
         .rv-23-blog_title {
@@ -3046,14 +3042,14 @@
             font-size: 46px;
             font-weight: 800;
             margin-bottom: 50px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
                 margin-bottom: 25px;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 font-size: 26px;
                 margin-bottom: 15px;
             }
@@ -3066,7 +3062,7 @@
         padding-left: 40px;
         border: 1px solid rgba(8, 28, 21, 0.14);
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             margin-bottom: 30px;
         }
 
@@ -3084,15 +3080,15 @@
                 display: inline;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 height: 250px;
             }
 
-            @media #{variables.$sm} {
+            @media #{$sm} {
                 height: 200px;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 height: 180px;
             }
 
@@ -3119,7 +3115,7 @@
                     color: #FFFFFF;
                     font-size: 14px;
                     font-weight: 600;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                 }
 
             }
@@ -3127,11 +3123,11 @@
             .rv-23-single_blog_content_title {
                 font-size: 22px;
                 font-weight: 700;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 color: #040E1F;
                 margin-bottom: 25px;
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     font-size: 18px;
                     margin-bottom: 15px;
                 }
@@ -3180,7 +3176,7 @@
             left: -44px;
             top: 31%;
             rotate: -90deg;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
             i {
                 color: rgba(5, 5, 5, 0.7);
@@ -3198,27 +3194,27 @@
     padding: 160px 0;
     position: relative;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 130px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 50px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 35px 0;
     }
 
@@ -3229,11 +3225,11 @@
         margin-bottom: 50px;
         padding: 0;
 
-        @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
             margin-bottom: 40px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             flex-direction: column;
             justify-content: center;
             text-align: center;
@@ -3244,7 +3240,7 @@
         .rv-24-blog_heading {
             flex-basis: 50%;
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 flex-basis: 60%;
             }
 
@@ -3253,9 +3249,9 @@
                 font-size: 16px;
                 font-weight: 600;
                 margin-bottom: 20px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     margin-bottom: 10px;
                 }
             }
@@ -3264,18 +3260,18 @@
                 color: #020208;
                 font-size: 44px;
                 font-weight: 800;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 margin: 0;
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 30px;
                 }
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     font-size: 25px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     font-size: 20px;
                 }
             }
@@ -3287,7 +3283,7 @@
 
             .rv-10-blog-swiper-button-next,
             .rv-10-blog-swiper-button-prev {
-                @include mixin.slide_btn;
+                @include slide_btn;
 
                 i {
                     background: transparent;
@@ -3318,15 +3314,15 @@
             overflow: hidden;
             border-radius: 20px;
 
-            @media #{variables.$sm} {
+            @media #{$sm} {
                 height: 270px;
             }
 
-            @media #{variables.$mobile} {
+            @media #{$mobile} {
                 height: 250px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 height: 200px;
             }
 
@@ -3354,7 +3350,7 @@
                 font-size: 16px;
                 margin-bottom: 15px;
                 font-weight: 500;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 i {
                     color: rgba(2, 2, 8, 0.7);
@@ -3367,9 +3363,9 @@
             .rv-24-single_blog_content_title {
                 font-size: 20px;
                 font-weight: 700;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     font-size: 17px;
                 }
 
@@ -3398,27 +3394,27 @@
     padding: 120px 0;
     background: #D6DEC9;
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 100px 0;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding: 90px 0;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding: 80px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0;
     }
 
-    @media #{variables.$mobile,variables.$sm-mobile} {
+    @media #{$mobile,$sm-mobile} {
         padding: 45px 0;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding: 40px 0;
     }
 
@@ -3430,9 +3426,9 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 10px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-bottom: 10px;
             }
         }
@@ -3442,27 +3438,27 @@
             font-size: 46px;
             font-weight: 700;
             margin-bottom: 60px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 35px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 33px;
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 30px;
                 margin-bottom: 30px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 24px;
                 margin-bottom: 20px;
             }
@@ -3483,7 +3479,7 @@
             width: auto;
             overflow: hidden;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 height: 220px;
             }
 
@@ -3502,12 +3498,12 @@
         &_content {
             padding: 30px 30px 40px 30px;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 padding: 25px 20px 25px 20px;
             }
 
             .catagory a {
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 background: #A07549;
                 padding: 5px 15px;
                 color: #FFFFFF;
@@ -3517,17 +3513,17 @@
             }
 
             &_title {
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 font-size: 22px;
                 font-weight: 700;
                 margin-bottom: 30px;
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     font-size: 20px;
                     margin-bottom: 25px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     font-size: 18px;
                     margin-bottom: 25px;
                 }
@@ -3556,7 +3552,7 @@
                     margin: 0;
                     background: #FFFFFF;
                     font-weight: 500;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
                     i {
                         color: rgba(2, 2, 8, 0.7);

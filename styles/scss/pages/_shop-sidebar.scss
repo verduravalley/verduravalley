@@ -1,15 +1,13 @@
-@use "../main/breakpoints";
-
 /*----- 39. SHOP PAGE STYLES STARTS HERE -----*/
 .rv-shop-area {
     &__top-actions {
         margin-bottom: 60px;
 
-        @include breakpoints.xl {
+        @include xl {
             margin-bottom: 40px;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             margin-bottom: 30px;
         }
     }
@@ -20,11 +18,11 @@
         gap: 40px;
         align-items: center;
 
-        @include breakpoints.md {
+        @include md {
             justify-content: center;
         }
 
-        @include breakpoints.xs {
+        @include xs {
             flex-wrap: wrap;
             row-gap: 12px;
             column-gap: 20px;
@@ -254,12 +252,12 @@
 
 .rv-inner-products-container {
     >.row {
-        @include breakpoints.xl {
+        @include xl {
             --bs-gutter-x: 20px;
             --bs-gutter-y: 20px;
         }
 
-        @include breakpoints.md {
+        @include md {
             --bs-gutter-x: 15px;
             --bs-gutter-y: 15px;
         }
@@ -275,7 +273,7 @@
                 align-items: center;
                 text-align: left;
 
-                @include breakpoints.xxs {
+                @include xxs {
                     flex-direction: column;
                 }
 
@@ -288,12 +286,12 @@
                     align-self: stretch;
                     flex-shrink: 0;
 
-                    @include breakpoints.sm {
+                    @include sm {
                         min-width: auto;
                         max-width: 200px;
                     }
 
-                    @include breakpoints.xxs {
+                    @include xxs {
                         max-width: 100%;
                         width: 100%;
                     }
@@ -302,7 +300,7 @@
                 .rv-3-product__txt {
                     padding: 30px;
 
-                    @include breakpoints.xs {
+                    @include xs {
                         padding: 20px;
                     }
                 }
@@ -334,15 +332,15 @@
     overflow: hidden;
     padding: 50px 25px 45px;
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 40px 25px 35px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         padding: 30px 25px 25px;
     }
 
-    @include breakpoints.xs {
+    @include xs {
         padding: 20px 25px 15px;
     }
 
@@ -434,11 +432,11 @@
         gap: 10px;
         margin-top: 50px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-top: 35px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             justify-content: center;
         }
     }
@@ -454,13 +452,13 @@
         line-height: 45px;
         color: rgb(5 5 5 / 60%);
 
-        @include breakpoints.md {
+        @include md {
             width: 40px;
             height: 40px;
             line-height: 40px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             width: 35px;
             height: 35px;
             line-height: 35px;
@@ -484,7 +482,7 @@
         --bs-gutter-x: 20px;
         --bs-gutter-y: 20px;
 
-        @include breakpoints.lg {
+        @include lg {
             --bs-gutter-y: 15px;
             --bs-gutter-x: 15px;
         }

@@ -1,34 +1,31 @@
-@use "../abstracts/variables";
-@use "../main/breakpoints";
-
 /* ----- 17. Contact ----- */
 .rv-2-contact {
     padding-bottom: 100px;
 
-    @include breakpoints.xl {
+    @include xl {
         padding-bottom: 80px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding-bottom: 60px;
     }
 
     .rv-2-section-title {
         width: 55%;
 
-        @include breakpoints.xxl {
+        @include xxl {
             width: 65%;
         }
 
-        @include breakpoints.md {
+        @include md {
             width: 75%;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             width: 90%;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             width: 100%;
         }
     }
@@ -38,15 +35,15 @@
         background: linear-gradient(94deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
         padding: 68px 80px 80px;
 
-        @include breakpoints.xxl {
+        @include xxl {
             padding: 48px 50px 60px;
         }
 
-        @include breakpoints.xl {
+        @include xl {
             padding: 28px 30px 40px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding: 18px 15px 30px;
         }
     }
@@ -57,12 +54,12 @@
         line-height: 135%;
         margin-bottom: 30px;
 
-        @include breakpoints.xl {
+        @include xl {
             font-size: 30px;
             margin-bottom: 20px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             font-size: 25px;
             margin-bottom: 15px;
         }
@@ -110,7 +107,7 @@
                 color: var(--white-f);
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 height: 45px;
             }
         }
@@ -121,7 +118,7 @@
         height: 100%;
         vertical-align: top;
 
-        @include breakpoints.md {
+        @include md {
             height: 300px;
         }
     }
@@ -139,12 +136,12 @@
         margin: auto;
         padding: 50px;
 
-        @include breakpoints.xl {
+        @include xl {
             width: auto;
             padding: 20px 22px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding: 12px;
         }
 
@@ -153,19 +150,19 @@
             background-size: 100% 100%;
             padding: 118px 90px;
 
-            @include breakpoints.xl {
+            @include xl {
                 padding: 58px 70px;
             }
 
-            @include breakpoints.lg {
+            @include lg {
                 padding: 48px 50px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 padding: 38px 40px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 padding: 38px 30px;
             }
 
@@ -173,24 +170,24 @@
                 margin-bottom: 20px;
                 font-size: 44px;
 
-                @include breakpoints.lg {
+                @include lg {
                     font-size: 40px;
                 }
 
-                @include breakpoints.md {
+                @include md {
                     font-size: 38px;
                     margin-bottom: 15px;
                 }
 
-                @include breakpoints.sm {
+                @include sm {
                     font-size: 35px;
                 }
 
-                @include breakpoints.xs {
+                @include xs {
                     font-size: 32px;
                 }
 
-                @include breakpoints.xxs {
+                @include xxs {
                     font-size: 28px;
                 }
             }
@@ -205,11 +202,11 @@
             height: 45px;
             background-color: #fff;
 
-            @include breakpoints.md {
+            @include md {
                 height: 40px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 height: 35px;
                 padding: 0 14px;
             }
@@ -217,7 +214,7 @@
             &:not(:last-child) {
                 margin-bottom: 15px;
 
-                @include breakpoints.md {
+                @include md {
                     margin-bottom: 10px;
                 }
             }
@@ -244,11 +241,11 @@
             background-color: #8E5B63;
             height: 54px;
 
-            @include breakpoints.md {
+            @include md {
                 height: 44px;
             }
 
-            @include breakpoints.xs {
+            @include xs {
                 height: 38px;
             }
 
@@ -277,7 +274,7 @@
             position: relative;
             z-index: -1;
 
-            @include breakpoints.xl {
+            @include xl {
                 height: 400px;
             }
         }
@@ -289,11 +286,11 @@
     position: relative;
     top: -185px;
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         top: -150px;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         top: -100px;
     }
 
@@ -301,18 +298,18 @@
         background: #E8F1FD;
         padding: 100px 80px;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 70px 40px;
         }
 
-        @media #{variables.$sm-mobile} {
+        @media #{$sm-mobile} {
             padding: 50px 15px;
         }
 
         .rv-18-contact_info_area {
             padding-right: 35px;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding-right: 0;
             }
 
@@ -322,18 +319,18 @@
                 font-weight: 800;
                 position: relative;
                 margin-bottom: 30px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 z-index: 1;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 40px;
                 }
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 35px;
                 }
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     font-size: 28px;
                 }
 
@@ -351,7 +348,7 @@
                 column-gap: 15px;
                 margin-bottom: 20px;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     flex-direction: column;
                     gap: 20px;
                 }
@@ -362,7 +359,7 @@
                     padding: 20px 20px 10px 20px;
                     background: #FFFFFF;
 
-                    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                    @media #{$sm,$mobile,$sm-mobile} {
                         flex-direction: column;
                         align-items: center;
                         gap: 25px;
@@ -378,11 +375,11 @@
                         display: inline-block;
                         padding: 5px 10px;
                         height: max-content;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
                     }
 
                     .rv-18-contact_location_txt {
-                        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                        @media #{$sm,$mobile,$sm-mobile} {
                             text-align: center;
                         }
 
@@ -392,7 +389,7 @@
                             color: #142137;
                             margin-bottom: 10px;
                             cursor: pointer;
-                            font-family: variables.$mulish;
+                            font-family: $mulish;
                             transition: all 0.4s ease;
 
                             &:hover {
@@ -404,7 +401,7 @@
                             color: rgba(20, 33, 55, 0.6);
                             font-size: 14px;
                             font-weight: 500;
-                            font-family: variables.$mulish;
+                            font-family: $mulish;
                         }
                     }
 
@@ -417,7 +414,7 @@
             background: #1C74E9;
             padding: 50px 40px;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 padding: 30px 15px;
             }
 
@@ -426,7 +423,7 @@
                 font-size: 24px;
                 font-weight: 800;
                 margin-bottom: 20px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
 
             .rv-18-contact_form_input_box {
@@ -451,7 +448,7 @@
                 padding: 10px 48px;
                 transition: none;
                 border-radius: 0;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
 
             textarea {
@@ -484,7 +481,7 @@
                     position: relative;
                     z-index: 1;
                     transition: all 0.4s ease;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
                     &:hover {
                         letter-spacing: 1px;
@@ -511,15 +508,15 @@
     background: #F7F7F7;
     z-index: 1;
 
-    @media #{variables.$xl,variables.$lg} {
+    @media #{$xl,$lg} {
         padding: 100 0 120px 0;
     }
 
-    @media #{variables.$md} {
+    @media #{$md} {
         padding: 80px 0 100px 0;
     }
 
-    @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$sm,$mobile,$sm-mobile} {
         padding: 60px 0 80px 0;
     }
 
@@ -529,12 +526,12 @@
         max-width: 340px;
         margin: 0 auto;
 
-        @media #{variables.$xl,variables.$lg} {
+        @media #{$xl,$lg} {
             height: 350px;
             max-width: 300px;
         }
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             height: 300px;
             width: 100%;
             max-width: 300px;
@@ -542,13 +539,13 @@
             margin-bottom: 40px;
         }
 
-        @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$sm,$mobile,$sm-mobile} {
             height: 260px;
             max-width: 280px;
             margin-bottom: 30px;
         }
 
-        @media #{variables.$mobile,variables.$sm-mobile} {
+        @media #{$mobile,$sm-mobile} {
             height: 220px;
             max-width: 250px;
             margin-bottom: 25px;
@@ -578,10 +575,10 @@
             justify-content: center;
             align-items: center;
             column-gap: 4px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             margin-bottom: 30px;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 margin: auto;
                 margin-bottom: 20px;
             }
@@ -599,22 +596,22 @@
             font-weight: 800;
             color: #081C15;
             margin-top: 30px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 28px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 22px;
                 text-align: center;
             }
 
-            @media #{variables.$mobile,variables.$sm-mobile} {
+            @media #{$mobile,$sm-mobile} {
                 font-size: 18px;
             }
         }
@@ -630,7 +627,7 @@
                 border-radius: 30px;
                 display: inline-block;
                 font-weight: 700;
-                font-family: variables.$mulish;
+                font-family: $mulish;
                 transition: all 0.3s ease;
 
                 &:hover {
@@ -640,7 +637,7 @@
                 }
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile} {
+            @media #{$md,$sm,$mobile} {
                 text-align: center;
             }
         }
@@ -651,7 +648,7 @@
             max-width: 470px;
             color: rgba(8, 28, 21, 0.7);
             
-            @media #{variables.$md,variables.$sm,variables.$mobile} {
+            @media #{$md,$sm,$mobile} {
                 text-align: center;
                 margin-left: auto;
                 margin-right: auto;
@@ -662,7 +659,7 @@
             background: #FFFFFF;
             padding: 40px 30px;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 padding: 30px 20px;
             }
 
@@ -687,7 +684,7 @@
                 transition: none;
                 border-radius: 0;
                 text-transform: capitalize;
-                font-family: variables.$mulish;
+                font-family: $mulish;
             }
 
             textarea {
@@ -722,7 +719,7 @@
                     z-index: 1;
                     transition: all 0.4s ease;
                     height: 54px;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
 
                     &:hover {
                         letter-spacing: 1px;
@@ -741,7 +738,7 @@
             }
 
             .rv-20-form_row {
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     flex-direction: column;
                 }
             }
@@ -783,23 +780,23 @@
 .rv-22-contact_main_section {
     padding-bottom: 120px;
 
-    @media #{variables.$xxl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xxl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 100px;
     }
 
-    @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 90px;
     }
 
-    @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 80px;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         padding-bottom: 70px;
     }
 
-    @media #{variables.$sm-mobile} {
+    @media #{$sm-mobile} {
         padding-bottom: 60px;
     }
 
@@ -815,7 +812,7 @@
             padding: 40px 30px;
             flex: 0 0 70%;
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 width: 100%;
                 flex: 0 0 100%;
             }
@@ -827,7 +824,7 @@
                 font-weight: 500;
                 text-transform: uppercase;
                 display: inline-block;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 .rv8_sub_pre_nex {
                     content: "";
@@ -913,24 +910,24 @@
                 font-size: 46px;
                 font-weight: 700;
                 margin-bottom: 60px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 40px;
                     margin-bottom: 40px;
                 }
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     font-size: 30px;
                     margin-bottom: 30px;
                 }
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     font-size: 25px;
                     margin-bottom: 25px;
                 }
 
-                @media #{variables.$mobile,variables.$sm-mobile} {
+                @media #{$mobile,$sm-mobile} {
                     font-size: 20px;
                     margin-bottom: 20px;
                 }
@@ -960,7 +957,7 @@
                     text-transform: capitalize;
                     appearance: none;
                     -webkit-appearance: none;
-                    font-family: variables.$mulish;
+                    font-family: $mulish;
                 }
 
                 .rv8c-cap {
@@ -1012,7 +1009,7 @@
                         transition: all 0.4s ease;
                         height: 54px;
                         border-radius: 30px;
-                        font-family: variables.$mulish;
+                        font-family: $mulish;
 
                         &:hover {
                             letter-spacing: 1px;
@@ -1040,11 +1037,11 @@
             height: 564px;
             bottom: 0;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 width: 280px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 display: none;
             }
 
@@ -1068,14 +1065,14 @@
     .inner-container {
         padding-left: 100px;
 
-        @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$md,$sm,$mobile,$sm-mobile} {
             padding: 0 0 0 0;
         }
     }
 
     .rv-25-contact_form_area {
         padding-right: 80px;
-        @media #{#{variables.$xxl,variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile}
+        @media #{#{$xxl,$xl,$lg,$md,$sm,$mobile,$sm-mobile}
     }
 
         {
@@ -1087,7 +1084,7 @@
         padding: 70px 50px;
         box-shadow: 0px 1px 3px 0px rgba(8, 28, 21, 0.14);
 
-        @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+        @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
             padding: 40px 35px;
         }
 
@@ -1105,9 +1102,9 @@
                 font-size: 16px;
                 font-weight: 600;
                 margin-bottom: 10px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     margin-bottom: 10px;
                 }
             }
@@ -1117,25 +1114,25 @@
                 font-size: 46px;
                 font-weight: 700;
                 margin-bottom: 30px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
-                @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 40px;
                 }
 
-                @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 35px;
                 }
 
-                @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$md,$sm,$mobile,$sm-mobile} {
                     font-size: 30px;
                 }
 
-                @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+                @media #{$sm,$mobile,$sm-mobile} {
                     font-size: 23px;
                 }
 
-                @media #{variables.$sm-mobile} {
+                @media #{$sm-mobile} {
                     font-size: 22px;
                 }
             }
@@ -1154,7 +1151,7 @@
             padding: 13px 30px;
             transition: none;
             border-radius: 0;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             text-transform: capitalize;
             appearance: none;
             -webkit-appearance: none;
@@ -1164,19 +1161,19 @@
             color: #FFFFFF;
             height: 140px;
             padding: 10px 20px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
         }
 
         ::placeholder {
             color: rgba(2, 2, 8, 0.7);
             font-weight: 400;
             font-size: 14px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
         }
 
         textarea::placeholder {
             color: rgba(2, 2, 8, 0.7);
-            font-family: variables.$mulish;
+            font-family: $mulish;
         }
 
         :focus {
@@ -1220,7 +1217,7 @@
                 z-index: 1;
                 transition: all 0.4s ease;
                 height: 54px;
-                font-family: variables.$mulish;
+                font-family: $mulish;
 
                 &:hover {
                     letter-spacing: 1px;
@@ -1242,7 +1239,7 @@
 }
 
 .rv-25-accordion_area {
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         margin-top: 50px;
     }
 
@@ -1254,9 +1251,9 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 20px;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 margin-bottom: 10px;
             }
         }
@@ -1265,26 +1262,26 @@
             color: #FFFFFF;
             font-size: 46px;
             font-weight: 700;
-            font-family: variables.$mulish;
+            font-family: $mulish;
             margin-bottom: 30px;
 
-            @media #{variables.$xl,variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 40px;
             }
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 30px;
             }
 
-            @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$md,$sm,$mobile,$sm-mobile} {
                 font-size: 25px;
             }
 
-            @media #{variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$sm,$mobile,$sm-mobile} {
                 font-size: 22px;
             }
 
-            @media #{variables.$sm-mobile} {
+            @media #{$sm-mobile} {
                 font-size: 18px;
             }
         }
@@ -1328,9 +1325,9 @@
             font-size: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.14);
             padding: 20px 0;
-            font-family: variables.$mulish;
+            font-family: $mulish;
 
-            @media #{variables.$lg,variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+            @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 17px;
             }
 
@@ -1368,7 +1365,7 @@
         width: 100%;
     }
 
-    @media #{variables.$md,variables.$sm,variables.$mobile,variables.$sm-mobile} {
+    @media #{$md,$sm,$mobile,$sm-mobile} {
         display: none;
     }
 }

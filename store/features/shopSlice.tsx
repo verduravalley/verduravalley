@@ -28,7 +28,11 @@ export const fetchDashboardProducts = createAsyncThunk(
         quantity: 1,
         color: "green",
         product_info: item.product_info || "",
-        description: item.description || ""
+        description: item.description || "",
+        name_ar: item.name_ar || "",
+        description_ar: item.description_ar || "",
+        product_info_ar: item.product_info_ar || "",
+        category_ar: item.category_ar || "",
       }));
   }
 );

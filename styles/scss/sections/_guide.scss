@@ -1,30 +1,28 @@
-@use "../main/breakpoints";
-
 /* ----- 29. Guide ----- */
 .rv-9-guides {
 
-    @include breakpoints.xl {
+    @include xl {
         padding: 40px 0 80px;
     }
 
-    @include breakpoints.md {
+    @include md {
         padding: 30px 0 60px;
     }
 
     &__row {
         --bs-gutter-x: 100px;
 
-        @include breakpoints.xl {
+        @include xl {
             --bs-gutter-x: 20px;
         }
 
-        @include breakpoints.md {
+        @include md {
             --bs-gutter-x: 30px;
         }
     }
 
     &__img img {
-        @include breakpoints.xl {
+        @include xl {
             max-width: 80%;
         }
     }
@@ -35,16 +33,16 @@
     border: 0;
     margin-bottom: 75px;
 
-    @include breakpoints.xl {
+    @include xl {
         margin-bottom: 65px;
         gap: 20px;
     }
 
-    @include breakpoints.lg {
+    @include lg {
         gap: 15px;
     }
 
-    @include breakpoints.md {
+    @include md {
         flex-direction: row;
         margin-bottom: 35px;
     }
@@ -64,7 +62,7 @@
         position: relative;
         overflow: visible;
 
-        @include breakpoints.lg {
+        @include lg {
             width: 48px;
             height: 48px;
         }
@@ -80,11 +78,11 @@
             background: url(https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434751/rv-9-guide-stroke_prgh6q.png) no-repeat center center;
             background-size: 100% 90px;
 
-            @include breakpoints.xl {
+            @include xl {
                 height: 80px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 height: 50px;
             }
         }
@@ -100,7 +98,7 @@
         font-weight: 700;
         margin-bottom: 11px;
 
-        @include breakpoints.lg {
+        @include lg {
             font-size: 18px;
             margin-bottom: 6px;
         }

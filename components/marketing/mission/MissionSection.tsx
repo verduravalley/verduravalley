@@ -1,6 +1,11 @@
+'use client';
+
+import { useTranslations } from "next-intl";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
 const MissionSection = () => {
+  const t = useTranslations('home.mission');
+
   return (
     <section className="rv-20-mission_section">
       <div className="container">
@@ -9,13 +14,13 @@ const MissionSection = () => {
             <div className="rv-20-mission_content">
               <div className="rv-20-mission_heading">
                 <p className="rv-20-mission_sub_title rv-text-anime d-flex justify-content-center">
-                  <span></span> Our Mission
+                  <span></span> {t('subtitle')}
                 </p>
                   <div className="rv-vision-section text-center">
     <div className="rv-1-section__heading justify-content-center">
     </div>
     <p className="rv-vision-descr mx-auto">
-      Nurturing health and flavor through clean farming and mindful food creation.
+      {t('description')}
     </p>
   </div>
               </div>

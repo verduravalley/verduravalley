@@ -1,11 +1,9 @@
-@use "../main/breakpoints";
-
 /* ----- 46. PROJECT DETAILS PAGE ----- */
 .rv-project-details {
     &__cover-slider {
         margin-bottom: 40px;
 
-        @include breakpoints.sm {
+        @include sm {
             margin-bottom: 25px;
         }
     }
@@ -18,19 +16,19 @@
             height: 520px;
             width: 100%;
 
-            @include breakpoints.lg {
+            @include lg {
                 height: 460px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 height: 360px;
             }
 
-            @include breakpoints.sm {
+            @include sm {
                 height: 260px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 height: 180px;
             }
         }
@@ -41,19 +39,19 @@
         gap: 100px;
         margin-bottom: 70px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-bottom: 50px;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin-bottom: 30px;
         }
 
-        @include breakpoints.md {
+        @include md {
             gap: 50px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             flex-direction: column-reverse;
             row-gap: 20px;
         }
@@ -66,7 +64,7 @@
     &__infos {
         flex-shrink: 0;
 
-        @include breakpoints.sm {
+        @include sm {
             display: flex;
             flex-wrap: wrap;
             column-gap: 8px;
@@ -78,7 +76,7 @@
         border-radius: 10px;
         padding: 15px 24px 9px;
 
-        @include breakpoints.xxs {
+        @include xxs {
             padding: 10px 15px 4px;
         }
 
@@ -119,11 +117,11 @@
             font-weight: 700;
             margin-bottom: 22px;
 
-            @include breakpoints.md {
+            @include md {
                 margin-bottom: 15px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 22px;
             }
         }
@@ -136,7 +134,7 @@
             &:not(:last-child) {
                 margin-bottom: 18px;
 
-                @include breakpoints.xl {
+                @include xl {
                     margin-bottom: 12px;
                 }
             }
@@ -157,11 +155,11 @@
     &__video {
         margin: 120px 0;
 
-        @include breakpoints.lg {
+        @include lg {
             margin: 80px 0;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin: 60px 0;
         }
     }
@@ -169,7 +167,7 @@
     &__bottom-imgs {
         margin-top: 40px;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-top: 30px;
         }
     }
@@ -189,15 +187,15 @@
         margin-top: 60px;
         position: relative;
 
-        @include breakpoints.lg {
+        @include lg {
             margin-top: 50px;
         }
 
-        @include breakpoints.md {
+        @include md {
             margin-top: 40px;
         }
 
-        @include breakpoints.sm {
+        @include sm {
             border-radius: 40px;
         }
 
@@ -211,7 +209,7 @@
             height: calc(100% - 60px);
             background-color: rgba(10, 16, 29, 0.30);
 
-            @include breakpoints.sm {
+            @include sm {
                 height: 1px;
                 width: calc(100% - 60px);
             }
@@ -225,12 +223,12 @@
         align-items: center;
         gap: 20px;
 
-        @include breakpoints.lg {
+        @include lg {
             padding: 12px;
             gap: 15px;
         }
 
-        @include breakpoints.xxs {
+        @include xxs {
             gap: 10px;
         }
 
@@ -256,17 +254,17 @@
             transition: 0.4s ease;
             color: var(--black);
 
-            @include breakpoints.lg {
+            @include lg {
                 width: 74px;
                 height: 74px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 width: 68px;
                 height: 68px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 width: 60px;
                 height: 60px;
                 font-size: 20px;
@@ -281,11 +279,11 @@
             font-weight: 600;
             text-transform: uppercase;
 
-            @include breakpoints.lg {
+            @include lg {
                 margin-bottom: 3px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 14px;
             }
         }
@@ -301,15 +299,15 @@
             font-weight: 700;
             transition: 0.4s ease;
 
-            @include breakpoints.lg {
+            @include lg {
                 font-size: 22px;
             }
 
-            @include breakpoints.md {
+            @include md {
                 font-size: 20px;
             }
 
-            @include breakpoints.xxs {
+            @include xxs {
                 font-size: 18px;
             }
 
@@ -328,7 +326,7 @@
         border: none;
         color: var(--black);
 
-        @include breakpoints.xs {
+        @include xs {
             border: 1px solid #ddd;
         }
 
