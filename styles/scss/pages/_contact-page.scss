@@ -98,6 +98,14 @@
                 }
             }
         }
+        // Remove left padding on the contact info bottom area
+        .rv-inner-contact-info__bottom {
+            padding-left: 0 !important;
+        }
+        .rv-inner-contact-info__bottom .rv-5-footer-timings {
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+        }
     }
 
     &__txt {
