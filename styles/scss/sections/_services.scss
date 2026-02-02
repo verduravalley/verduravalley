@@ -1899,13 +1899,19 @@
         }
 
         .rv-20-single_service_list {
+        
+            width: 100%;
 
             li {
-                color: rgba(20, 33, 55, 0.7);
-                font-weight: 500;
+                display: block;
+                color: rgba(20, 33, 55, 0.85);
+                font-weight: 600;
                 font-size: 16px;
-                margin-bottom: 15px;
+                margin-bottom: 12px;
                 font-family: $mulish;
+                max-width: 100%;
+                padding-right: 8px;
+                word-break: break-word;
 
                 i {
                     color: #FFFFFF;
@@ -1916,7 +1922,8 @@
                     border-radius: 50%;
                     line-height: 20px;
                     text-align: center;
-                    margin-right: 10px;
+                    margin-right: 12px;
+                    flex-shrink: 0;
                 }
             }
         }
