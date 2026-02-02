@@ -18,9 +18,9 @@ const AboutSection = () => {
               {/* Heading Section */}
               <div className="rv-20-about_section_heading">
                 <div className="d-flex justify-content-center">
-                  <p className="rv-20-about_sub_title rv-text-anime d-flex">
+                  {/* <p className="rv-20-about_sub_title rv-text-anime d-flex">
                     <span></span> {t('subtitle')}
-                  </p>
+                  </p> */}
                 </div>
                 <div>
                   <h2 className="rv-20-about_section_title rv-text-anime">
@@ -30,7 +30,7 @@ const AboutSection = () => {
               </div>
 
               {/* Experience Counter */}
-              <div className="rv-20-about_experience_txt mb-50" style={{ margin: '0 auto', display: 'inline-block' }}>
+              {/* <div className="rv-20-about_experience_txt mb-50" style={{ margin: '0 auto', display: 'inline-block' }}>
                 <NumberCounter
                   number={3}
                   initialNumber={1}
@@ -38,11 +38,11 @@ const AboutSection = () => {
                   icon="+"
                 />
                 <p>{t('counterLabel')}</p>
-              </div>
+              </div> */}
 
               {/* Mission and Goals Row */}
               <div className="rv-20-about_content_top_actions d-flex justify-content-center flex-wrap">
-                <div className="rv-20-about_content_single_top_actions text-start">
+                {/* <div className="rv-20-about_content_single_top_actions text-start">
                   <div className="rv-20-about_content_single_top_actions_left">
                     <h3>{t('missionTitle')}</h3>
                     <p>{t('missionDesc')}</p>
@@ -50,9 +50,9 @@ const AboutSection = () => {
                   <div className="rv-20-about_content_single_top_actions_icon">
                     <i className="fas fa-leaf" style={{ color: "#2D6A4F" }}></i>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="rv-20-about_content_single_top_actions text-start">
+                {/* <div className="rv-20-about_content_single_top_actions text-start">
                   <div className="rv-20-about_content_single_top_actions_left">
                     <h3>{t('artisanTitle')}</h3>
                     <p>{t('artisanDesc')}</p>
@@ -60,7 +60,7 @@ const AboutSection = () => {
                   <div className="rv-20-about_content_single_top_actions_icon">
                     <i className="fas fa-award" style={{ color: "#2D6A4F" }}></i>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Detail List */}

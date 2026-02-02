@@ -18,7 +18,7 @@ const ServiceSection = () => {
       imgMain: serviceData[9]?.imgMain || "",
       imgIcon: serviceData[9]?.imgIcon || "",
       dropKey: "s1Drop" as const,
-      listKeys: ["s1l1", "s1l2", "s1l3", "s1l4"] as const,
+      listKeys: ["s1l1"] as const,
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const ServiceSection = () => {
       imgMain: serviceData[10]?.imgMain || "",
       imgIcon: serviceData[10]?.imgIcon || "",
       dropKey: "s2Drop" as const,
-      listKeys: ["s2l1", "s2l2", "s2l3", "s2l4"] as const,
+      listKeys: ["s2l1"] as const,
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const ServiceSection = () => {
       imgMain: serviceData[11]?.imgMain || "",
       imgIcon: serviceData[11]?.imgIcon || "",
       dropKey: "s3Drop" as const,
-      listKeys: ["s3l1", "s3l2", "s3l3", "s3l4"] as const,
+      listKeys: ["s3l1"] as const,
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const ServiceSection = () => {
       imgMain: serviceData[12]?.imgMain || "",
       imgIcon: serviceData[12]?.imgIcon || "",
       dropKey: "s4Drop" as const,
-      listKeys: ["s4l1", "s4l2", "s4l3", "s4l4"] as const,
+      listKeys: ["s4l1"] as const,
     },
   ];
 
@@ -60,9 +60,9 @@ const ServiceSection = () => {
           <div className="col-md-6">
             <div className="rv-20-service_section_heading">
               <div>
-                <p className="rv-20-service_sub_title rv-text-anime d-flex">
+                {/* <p className="rv-20-service_sub_title rv-text-anime d-flex">
                   <span></span> {t('subtitle')}
-                </p>
+                </p> */}
               </div>
               <div>
                 <h2 className="rv-20-service_section_title rv-text-anime">
@@ -91,9 +91,9 @@ const ServiceSection = () => {
                 >
                   <div className="visible-part">
                     <div className="rv-20-single_service_content_top">
-                      <div className="rv-20-single_service_icon">
+                      {/* <div className="rv-20-single_service_icon">
                         <CloudinaryImage src={item.imgIcon} alt="image" width={80} height={80} />
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="rv-20-single_service_content_title">
@@ -104,7 +104,7 @@ const ServiceSection = () => {
                     <ul className="rv-20-single_service_list">
                       {item.listKeys.map((listKey, index) => (
                         <li key={index}>
-                          <i className="fas fa-check"></i>
+                          {/* <i className="fas fa-check"></i> */}
                           {t(listKey)}
                         </li>
                       ))}

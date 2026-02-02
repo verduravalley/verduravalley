@@ -32,9 +32,7 @@ const TeamSection = () => {
             <div className="rv-20-team_section_top">
               <div className="rv-20-team_section_heading">
                 <div>
-                  <p className="rv-20-team_sub_title rv-text-anime d-flex">
-                    <span></span> {t('subtitle')}
-                  </p>
+                  
                 </div>
 
                 <div>

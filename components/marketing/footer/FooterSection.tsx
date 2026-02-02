@@ -49,7 +49,7 @@ const FooterSection = ({
             {/* COLUMN 2: Services Links (Width: 3/12) */}
             <div className="col-12 col-md-3 col-lg-3 pt-2">
               <div className="rv-1-footer-widget rv-20-footer-widget">
-                <h5 className="rv-1-footer-widget__title mb-3">{t('ourServices')}</h5>
+                {/* <h5 className="rv-1-footer-widget__title mb-3">{t('ourServices')}</h5> */}
                 <ul className="rv-8-footer-widget__links">
                   <li>
                       <Link href="/about" style={{ textDecoration: 'none' }}>{tn('aboutUs')}</Link>
@@ -80,7 +80,7 @@ const FooterSection = ({
                     </div>
                     <div className="text">
                         <span>{t('callUs')}</span>
-                        <a href="tel:0123 456 789" style={{ textDecoration: 'none' }} dir={isArabic ? 'ltr' : undefined}>0123 456 789</a>
+                        <a href="tel:01021002597" style={{ textDecoration: 'none' }} dir={isArabic ? 'ltr' : undefined}>0123 456 789</a>
                     </div>
                   </div>
 

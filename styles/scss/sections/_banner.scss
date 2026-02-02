@@ -4457,13 +4457,13 @@
 
             .rv-20-banner_content_heading {
                 color: #FFFFFF;
-                font-size: 75px;
+                font-size: 35px;
                 font-weight: 800;
-                margin-bottom: 60px;
+                margin-bottom: 40px;
                 font-family: var(--mulish);
 
                 @media #{$md,$sm,$mobile,$sm-mobile} {
-                    font-size: 60px;
+                    font-size: 30px;
                 }
 
                 @media #{$sm,$mobile,$sm-mobile} {

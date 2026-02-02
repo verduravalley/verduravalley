@@ -28,9 +28,9 @@ const AboutSection2 = () => {
             <div className="rv-1-about__txt">
               <div className="rv-1-section__heading">
                 <div>
-                  <h6 className="rv-1-section__sub-title rv-text-anime">
+                  {/* <h6 className="rv-1-section__sub-title rv-text-anime">
                     {t('storySubtitle')}
-                  </h6>
+                  </h6> */}
                 </div>
                 <div>
                   <h2 className="rv-1-section__title rv-text-anime">
@@ -64,13 +64,39 @@ const AboutSection2 = () => {
         </div>
       </div>
 
+      {/* The Memorial / Legacy Card */}
+        <DivAnimateYAxis>
+          <div className="rv-legacy-card mt-40 mb-40 w-100">
+            <div className="d-flex align-items-start align-items-md-center gap-4 flex-column flex-md-row">
+              <div className="rv-legacy-card__img-wrapper">
+                <CloudinaryImage
+                  src="/assets/images/medhat-marzouk.jpg"
+                  alt={t('memorialName')}
+                  className="rv-legacy-img"
+                  width={300}
+                  height={300}
+                />
+              </div>
+
+              <div className="rv-legacy-card__txt">
+                <span className="rv-legacy-tag">{t('memorialTag')}</span>
+                <h4 className="rv-legacy-name">{t('memorialName')}</h4>
+                <span className="rv-legacy-dates">{t('memorialDates')}</span>
+                <p className="rv-legacy-desc">
+                  {t('memorialDesc')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </DivAnimateYAxis>
+
       {/* --- Our Vision (Full Width Background) --- */}
       <div className="rv-vision-bg" style={{ backgroundColor: '#e8f5e9', padding: '80px 0' }}>
         <div className="container">
           <DivAnimateYAxis>
             <div className="rv-vision-section text-center">
               <div className="rv-1-section__heading justify-content-center">
-                <h6 className="rv-1-section__sub-title">{t('visionSubtitle')}</h6>
+                {/* <h6 className="rv-1-section__sub-title">{t('visionSubtitle')}</h6> */}
                 <h2 className="rv-1-section__title">{t('visionTitle')}</h2>
               </div>
               <p className="rv-vision-descr mx-auto">
@@ -85,7 +111,7 @@ const AboutSection2 = () => {
         {/* --- Our Philosophy / Core Values --- */}
         <div className="rv-philosophy-grid mt-100 mb-100">
           <div className="rv-1-section__heading mb-50">
-            <h6 className="rv-1-section__sub-title">{t('philosophySubtitle')}</h6>
+            {/* <h6 className="rv-1-section__sub-title">{t('philosophySubtitle')}</h6> */}
             <h2 className="rv-1-section__title">{t('philosophyTitle')}</h2>
           </div>
 
@@ -128,7 +154,7 @@ const AboutSection2 = () => {
         </div>
 
         {/* The Memorial / Legacy Card */}
-        <DivAnimateYAxis>
+        {/* <DivAnimateYAxis>
           <div className="rv-legacy-card mt-40 mb-40 w-100">
             <div className="d-flex align-items-start align-items-md-center gap-4 flex-column flex-md-row">
               <div className="rv-legacy-card__img-wrapper">
@@ -151,7 +177,7 @@ const AboutSection2 = () => {
               </div>
             </div>
           </div>
-        </DivAnimateYAxis>
+        </DivAnimateYAxis> */}
 
 
         <div className="rv-1-about__vectors">

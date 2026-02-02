@@ -16,8 +16,8 @@ export default function HomePage() {
       <BannerSection />
       <TeamSection />
       <MissionSection />
-      <AboutSection />
       <ServiceSection />
+      <AboutSection />
       <ContactSection />
     </>
   );

@@ -39,7 +39,7 @@ const CodeOfConductPage = () => {
           <DivAnimateYAxis>
             <div className="rv-vision-section text-center mb-100">
               <div className="rv-1-section__heading justify-content-center">
-                <h2 className="rv-1-section__title">{t('heading')}</h2>
+                {/* <h2 className="rv-1-section__title">{t('heading')}</h2> */}
               </div>
               <p className="rv-vision-descr mx-auto">
                 {t('description')}

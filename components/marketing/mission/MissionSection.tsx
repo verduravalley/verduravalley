@@ -13,9 +13,9 @@ const MissionSection = () => {
           <div className="col-lg-8 col-xl-7">
             <div className="rv-20-mission_content">
               <div className="rv-20-mission_heading">
-                <p className="rv-20-mission_sub_title rv-text-anime d-flex justify-content-center">
+                {/* <p className="rv-20-mission_sub_title rv-text-anime d-flex justify-content-center">
                   <span></span> {t('subtitle')}
-                </p>
+                </p> */}
                   <div className="rv-vision-section text-center">
     <div className="rv-1-section__heading justify-content-center">
     </div>

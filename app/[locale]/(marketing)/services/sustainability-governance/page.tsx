@@ -73,7 +73,7 @@ const SustainabilityGovernancePage = () => {
         </div>
       </section>
 
-      <section className="rv-section-spacing" style={{ backgroundColor: '#e8f5e9' }}>
+      {/* <section className="rv-section-spacing" style={{ backgroundColor: '#e8f5e9' }}>
         <div className="container">
           <div className="text-center" style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <div className="rv-vision-section text-center">
@@ -86,7 +86,7 @@ const SustainabilityGovernancePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };

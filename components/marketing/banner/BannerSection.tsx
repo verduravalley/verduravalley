@@ -57,14 +57,14 @@ const BannerSection = () => {
               <div className="col-sm-10 col-md-9 col-lg-8 col-xl-7">
                 <div className="rv-20-banner_content">
                   <span className="rv-20-banner_content_sub_heading rv-text-anime d-flex">
-                    <span></span> {t('slide1Sub')}
+                    {t('slide1Sub')}
                   </span>
                   <h1 className="rv-20-banner_content_heading rv-text-anime">
                     {t('slide1Heading')}
                   </h1>
 
                   <div className="rv-20-banner_button_area">
-                    <a href="#" className="rv-20-banner_content_btn">
+                    <a href="/products" className="rv-20-banner_content_btn">
                       {t('exploreMore')}
                     </a>
                   </div>
@@ -79,13 +79,13 @@ const BannerSection = () => {
               <div className="col-sm-10 col-md-9 col-lg-8 col-xl-7">
                 <div className="rv-20-banner_content">
                   <span className="rv-20-banner_content_sub_heading rv-text-anime">
-                    <span></span> {t('slide2Sub')}
+                    {t('slide2Sub')}
                   </span>
                   <h1 className="rv-20-banner_content_heading rv-text-anime">
                     {t('slide2Heading')}
                   </h1>
                   <div className="rv-20-banner_button_area">
-                    <a href="#" className="rv-20-banner_content_btn">
+                    <a href="/products" className="rv-20-banner_content_btn">
                       {t('exploreMore')}
                     </a>
                   </div>
@@ -96,7 +96,7 @@ const BannerSection = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="rv-20-banner_slide_button_area">
+      {/* <div className="rv-20-banner_slide_button_area">
         <div className="rv-20-banner_slide_button_prev">
           {" "}
           <i className={`fas fa-arrow-${isRTL ? 'right' : 'left'}`}></i>{" "}
@@ -105,7 +105,7 @@ const BannerSection = () => {
           {" "}
           <i className={`fas fa-arrow-${isRTL ? 'left' : 'right'}`}></i>{" "}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

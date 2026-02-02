@@ -36,7 +36,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
               <div className="rv-inner-contact-info__bottom">
                 <ul className="rv-5-footer-timings">
                   <li>
-                    <a href="tel:0123456789">0123 456 789</a>
+                    <a href="tel:0123456789">01021002597</a>
                   </li>
                 </ul>
               </div>
