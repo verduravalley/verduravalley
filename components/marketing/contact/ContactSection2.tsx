@@ -70,7 +70,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    {t('hoursOfOperation')}
+                    {t('workingDays')}
                   </h5>
                 </div>
               </div>
@@ -78,8 +78,8 @@ const ContactSection2 = ({ innerPage }: Props) => {
               <div className="rv-inner-contact-info__bottom">
                 <ul className="rv-5-footer-timings">
                   <li>
-                    <span className="key">{t('mondayFriday')} </span>
-                    <span className="value">{t('hoursValue')}</span>
+                    <span className="key">{t('sundayThursday')} </span>
+                    {/* <span className="value">{t('hoursValue')}</span> */}
                   </li>
                 </ul>
               </div>
