@@ -66,7 +66,7 @@ const AboutSection2 = () => {
 
       {/* The Memorial / Legacy Card */}
         <DivAnimateYAxis>
-          <div className="rv-legacy-card mt-40 mb-40 w-100">
+          <div className="rv-legacy-card mb-40 w-75 mx-auto">
             <div className="d-flex align-items-start align-items-md-center gap-4 flex-column flex-md-row">
               <div className="rv-legacy-card__img-wrapper">
                 <CloudinaryImage

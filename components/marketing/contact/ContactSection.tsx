@@ -15,9 +15,9 @@ const ContactSection = () => {
         <div className="row">
           <div className="col-12 text-center mb-50">
             <div className="rv-20-contact_section_heading">
-              <p className="rv-20-contact_sub_title rv-text-anime d-flex m-auto">
+              {/* <p className="rv-20-contact_sub_title rv-text-anime d-flex m-auto">
                 <span></span>{t('subtitle')}
-              </p>
+              </p> */}
               <h2 className="rv-20-contact_section_title rv-text-anime">
                   {t('title')}
               </h2>
@@ -30,7 +30,7 @@ const ContactSection = () => {
           <div className="col-md-12 col-lg-5">
             <div className="rv-20-contact_image">
               <CloudinaryImage
-                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/organiyo/contact.jpg"
+                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770052638/restaurants-and-hotels_d7tskf.jpg"
                 alt="Operations in Cairo, Egypt"
                 width={800}
                 height={600}

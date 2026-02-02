@@ -47,7 +47,7 @@ const FooterSection = ({
             </div>
 
             {/* COLUMN 2: Services Links (Width: 3/12) */}
-            <div className="col-12 col-md-3 col-lg-3 pt-2">
+            <div className="col-12 col-md-3 col-lg-3 pt-5">
               <div className="rv-1-footer-widget rv-20-footer-widget">
                 {/* <h5 className="rv-1-footer-widget__title mb-3">{t('ourServices')}</h5> */}
                 <ul className="rv-8-footer-widget__links">

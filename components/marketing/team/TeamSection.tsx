@@ -11,17 +11,17 @@ const TeamSection = () => {
     {
       id: 1,
       nameKey: "foodProcessors" as const,
-      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768250848/organiyo/Food%20Processors.jpg",
+      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770052633/food-processors_n7f5zy.jpg",
     },
     {
       id: 2,
       nameKey: "hotels" as const,
-      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768251056/organiyo/Hotels.jpg",
+      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770052650/mushroom-pasta_fdybmx.jpg",
     },
     {
       id: 3,
       nameKey: "retailers" as const,
-      image: "/assets/images/Retailers & Distributors.jpg",
+      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770052651/grocery-store_whs3cp.jpg",
     },
   ];
   return (
