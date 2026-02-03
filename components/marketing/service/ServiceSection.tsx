@@ -5,42 +5,49 @@ import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import CloudinaryImage from "@/components/CloudinaryImage";
+import IconFood from "../utils/svg/IconFood";
+import IconClean from "../utils/svg/IconClean";
+import IconWater from "../utils/svg/IconWater";
+import IconClimate from "../utils/svg/IconClimate";
 
 const ServiceSection = () => {
   const t = useTranslations('home.service');
   const serviceRef = useRef<HTMLDivElement>(null);
   const [activeItemId, setActiveItemId] = useState<number>(0);
 
+  const iconMap = {
+    1: IconFood,
+    2: IconClean,
+    3: IconWater,
+    4: IconClimate,
+  };
+
   const customServices = [
     {
       id: 1,
       titleKey: "s1Title" as const,
-      imgMain: serviceData[9]?.imgMain || "",
-      imgIcon: serviceData[9]?.imgIcon || "",
+      icon: IconFood,
       dropKey: "s1Drop" as const,
       listKeys: ["s1l1"] as const,
     },
     {
       id: 2,
       titleKey: "s2Title" as const,
-      imgMain: serviceData[10]?.imgMain || "",
-      imgIcon: serviceData[10]?.imgIcon || "",
+      icon: IconClean,
       dropKey: "s2Drop" as const,
       listKeys: ["s2l1"] as const,
     },
     {
       id: 3,
       titleKey: "s3Title" as const,
-      imgMain: serviceData[11]?.imgMain || "",
-      imgIcon: serviceData[11]?.imgIcon || "",
+      icon: IconWater,
       dropKey: "s3Drop" as const,
       listKeys: ["s3l1"] as const,
     },
     {
       id: 4,
       titleKey: "s4Title" as const,
-      imgMain: serviceData[12]?.imgMain || "",
-      imgIcon: serviceData[12]?.imgIcon || "",
+      icon: IconClimate,
       dropKey: "s4Drop" as const,
       listKeys: ["s4l1"] as const,
     },
@@ -81,7 +88,9 @@ const ServiceSection = () => {
                 }`}
               >
                 <div className="rv-20-single_service_iamge">
-                  <CloudinaryImage src={item.imgMain} alt="image" width={600} height={400} />
+                  <div style={{ width: '100%', height: '300px', paddingLeft: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f5' }}>
+                    {item.icon && <item.icon />}
+                  </div>
                 </div>
                 <div
                   className="rv-20-single_service_content_main"
