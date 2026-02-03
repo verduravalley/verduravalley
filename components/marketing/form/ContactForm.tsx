@@ -197,6 +197,13 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
             type="submit"
             disabled={isSubmitDisabled}
             style={{
+              backgroundColor: '#2d6a4f',
+              color: 'white',
+              border: 'none',
+              padding: '12px 30px',
+              borderRadius: '4px',
+              fontSize: '16px',
+              fontWeight: '600',
               opacity: isSubmitDisabled ? 0.5 : 1,
               cursor: isSubmitDisabled ? 'not-allowed' : 'pointer',
               transition: 'all 0.3s ease'

@@ -355,6 +355,12 @@
             }
         }
     }
+
+    &__vectors {
+        .rv-1-about__vector {
+            filter: saturate(1.2) hue-rotate(-150deg) brightness(0.75) contrast(1.1);
+        }
+    }
 }
 
 @keyframes scaleInOut {
