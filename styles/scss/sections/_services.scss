@@ -1827,16 +1827,17 @@
         &_content_main {
             background: #FFFFFF;
             transition: all 0.4s ease;
-            padding: 24px 40px 40px;
+            padding: 12px 40px 40px;
+            border-radius: 20px;
             position: relative;
             margin: 0 25px;
-            margin-top: -80px;
+            margin-top: -65px;
             overflow: hidden;
             display: grid;
             grid-template-rows: auto 0fr;
 
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                padding: 22px;
+                padding: 12px 22px 22px;
                 margin: 0 15px;
             }
 
