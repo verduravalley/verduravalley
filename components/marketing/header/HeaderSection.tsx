@@ -80,7 +80,7 @@ const HeaderSection = () => {
       >
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-2 col-4 col-xxs-6">
+            <div className="col-lg-2 col-6">
               <div className="rv-1-logo">
                 <Link href="/">
                   <CloudinaryImage
@@ -95,8 +95,8 @@ const HeaderSection = () => {
               </div>
             </div>
 
-            <div className="col-lg-10 col-8 col-xxs-6 order-2 order-lg-1">
-              <div className="d-flex align-items-center justify-content-between">
+            <div className="col-lg-10 col-6 order-2 order-lg-1">
+              <div className="d-flex align-items-center justify-content-end justify-content-lg-between">
                 <div
                   className={`rv-1-header-nav__sidebar ${
                     isSidebarOpen ? "active" : ""
