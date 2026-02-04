@@ -31,7 +31,7 @@ export default function ProductDetailsPage({ params }: PageProps) {
 
   const productInfo = shopData.find((item) => item.slug === productSlug);
 
-  if (status === 'loading') {
+  if (status === 'idle' || status === 'loading') {
     return (
       <>
         <BreadcrumbSection title="Product Details" />
