@@ -120,7 +120,7 @@ const HeaderSection = () => {
                     </button>
                   </div>
 
-                  <NavSection style="rv-20-header__nav" />
+                  <NavSection style="rv-20-header__nav" onClose={closeSidebar} />
                 </div>
 
                 <div className="d-flex justify-content-end align-items-center gap-2 flex-nowrap">

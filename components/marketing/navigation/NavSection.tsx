@@ -14,7 +14,7 @@ type DropdownState = {
   blog: boolean;
   sustainability: boolean;
 };
-const NavSection = ({ style }: Props) => {
+const NavSection = ({ style, onClose }: Props & { onClose?: () => void }) => {
   const t = useTranslations('nav');
   const [dropdown, setDropdown] = useState<DropdownState>({
     home: false,
@@ -33,14 +33,18 @@ const NavSection = ({ style }: Props) => {
     }
   };
 
+  const handleLinkClick = () => {
+    if (onClose) onClose();
+  };
+
   return (
     <div className={`rv-1-header__nav ${style}`}>
       <ul className="justify-content-center">
         <li>
-          <Link href="/">{t('home')}</Link>
+          <Link href="/" onClick={handleLinkClick}>{t('home')}</Link>
         </li>
 
-        <li>
+        <li className={dropdown.pages ? "rv-dropdown-active" : ""}>
           <button
             onClick={() => handleToggleDropdown("pages")}
             style={{
@@ -58,16 +62,16 @@ const NavSection = ({ style }: Props) => {
           >{t('about')}</button>
           <ul className="sub-menu">
             <li>
-              <Link href="/about">{t('aboutUs')}</Link>
+              <Link href="/about" onClick={handleLinkClick}>{t('aboutUs')}</Link>
             </li>
             <li>
-              <Link href="/leadership">{t('leadership')}</Link>
+              <Link href="/leadership" onClick={handleLinkClick}>{t('leadership')}</Link>
             </li>
           </ul>
         </li>
 
         <li>
-          <Link href="/products">{t('products')}</Link>
+          <Link href="/products" onClick={handleLinkClick}>{t('products')}</Link>
         </li>
  <li className={dropdown.sustainability ? "rv-dropdown-active" : ""}>
           <button
@@ -90,16 +94,16 @@ const NavSection = ({ style }: Props) => {
           </button>
           <ul className="sub-menu">
             <li>
-              <Link href="/services/code-of-conduct">{t('codeOfConduct')}</Link>
+              <Link href="/services/code-of-conduct" onClick={handleLinkClick}>{t('codeOfConduct')}</Link>
             </li>
             <li>
-              <Link href="/services/sustainability-governance">{t('sustainabilityPage')}</Link>
+              <Link href="/services/sustainability-governance" onClick={handleLinkClick}>{t('sustainabilityPage')}</Link>
             </li>
           </ul>
         </li>
 
         <li>
-          <Link href="/contact">{t('contact')}</Link>
+          <Link href="/contact" onClick={handleLinkClick}>{t('contact')}</Link>
         </li>
       </ul>
     </div>
