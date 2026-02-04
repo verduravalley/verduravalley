@@ -180,11 +180,6 @@ const AboutSection2 = () => {
         </DivAnimateYAxis> */}
 
 
-        <div className="rv-1-about__vectors">
-          <CloudinaryImage src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434580/rv-1-vector-6_pk9i7z.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-1" width={100} height={100} />
-          <CloudinaryImage src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434580/rv-1-vector-7_nmuwed.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-2" width={100} height={100} />
-          <CloudinaryImage src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768434581/rv-1-vector-8_k11vah.png" alt="vector" className="rv-1-about__vector rv-1-about__vector-3" width={100} height={100} />
-        </div>
       </div>
     </section>
   );
