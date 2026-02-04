@@ -24,8 +24,9 @@ const ProductDetailsImageSlider = ({ images = [] }: Props) => {
       {/* Main Slider */}
       <Swiper
         style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
+          "--swiper-navigation-color": "#2d6a4f",
+          "--swiper-pagination-color": "#2d6a4f",
+          overflow: "visible",
         } as React.CSSProperties}
         loop={true}
         spaceBetween={10}
