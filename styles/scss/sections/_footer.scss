@@ -943,6 +943,14 @@
                 padding-left: 5px; /* Slight movement on hover */
             }
         }
+
+        &.rv-footer-services-links {
+            @include sm {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+        }
     }
 
     /* Bottom Bar */

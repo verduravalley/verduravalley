@@ -56,6 +56,10 @@
             padding-bottom: 20px;
         }
 
+        @include sm {
+            margin-top: 20px;
+        }
+
         @include xxs {
             padding-bottom: 0;
         }
@@ -134,8 +138,9 @@
   @include sm {
     padding: 30px 20px;
     text-align: center;
+    width: 100% !important;
   }
-  
+
   /* --- The "Slow Motion" Effect --- */
   /* This creates a very smooth, non-linear animation that feels elegant */
   transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
