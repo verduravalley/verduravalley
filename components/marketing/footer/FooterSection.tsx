@@ -62,10 +62,10 @@ const FooterSection = ({
                     <Link href="/leadership" style={{ textDecoration: 'none' }}>{tn('leadership')}</Link>
                   </li>
                   <li>
-                    <Link href="/code-of-conduct" style={{ textDecoration: 'none' }}>{tn('codeOfConduct')}</Link>
+                    <Link href="/services/code-of-conduct" style={{ textDecoration: 'none' }}>{tn('codeOfConduct')}</Link>
                   </li>
                   <li>
-                    <Link href="/sustainability-governance" style={{ textDecoration: 'none' }}>{tn('sustainabilityPage')}</Link>
+                    <Link href="/services/sustainability-governance" style={{ textDecoration: 'none' }}>{tn('sustainabilityPage')}</Link>
                   </li>
                 </ul>
               </div>
