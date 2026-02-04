@@ -30,7 +30,7 @@ const TeamSection3 = () => {
                   </div>
 
                   <div className="rv-9-member__txt">
-                    <div className="rv-9-member-socials rv-inner-member-socials">
+                    {/* <div className="rv-9-member-socials rv-inner-member-socials">
                       <div className="rv-1-speaker__socials">
                         <a href="#">
                           <i className="fa-brands fa-facebook-f"></i>
@@ -45,7 +45,7 @@ const TeamSection3 = () => {
                       <div className="rv-9-member-socials__icon">
                         <i className="fa-regular fa-circle-nodes"></i>
                       </div>
-                    </div>
+                    </div> */}
                     <div>
                       <span className="rv-3-project__sub-title">
                         {isRtl && item.subTitle_ar ? item.subTitle_ar : item.subTitle}
