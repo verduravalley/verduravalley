@@ -47,10 +47,14 @@ const FooterSection = ({
             </div>
 
             {/* COLUMN 2: Services Links (Width: 3/12) */}
-            <div className="col-12 col-md-3 col-lg-3 pt-5">
+            <div className="col-12 col-md-3 col-lg-3 pt-md-5">
               <div className="rv-1-footer-widget rv-20-footer-widget">
                 {/* <h5 className="rv-1-footer-widget__title mb-3">{t('ourServices')}</h5> */}
-                <ul className="rv-8-footer-widget__links">
+                <ul className="rv-8-footer-widget__links" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '0.5rem',
+                }}>
                   <li>
                       <Link href="/about" style={{ textDecoration: 'none' }}>{tn('aboutUs')}</Link>
                   </li>
