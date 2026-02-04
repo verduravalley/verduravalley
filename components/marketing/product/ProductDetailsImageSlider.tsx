@@ -42,7 +42,7 @@ const ProductDetailsImageSlider = ({ images = [] }: Props) => {
                 alt={`Product Image ${index + 1}`}
                 width={800}
                 height={800}
-                style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '15px' }}
+                style={{ width: '80%', height: 'auto', objectFit: 'cover', borderRadius: '15px' }}
                 priority={index === 0}
               />
             </div>
