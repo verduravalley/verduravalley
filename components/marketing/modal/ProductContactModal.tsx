@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from "react";
 import ContactForm from "../form/ContactForm";
 import { useTranslations } from "next-intl";
 
@@ -14,13 +15,20 @@ type Props = {
 
 const ProductContactModal = ({ isOpen, onClose, productInfo }: Props) => {
   const t = useTranslations('shop');
+  const tContact = useTranslations('contact');
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleClose = () => {
+    onClose();
+    setShowSuccess(false);
+  };
 
   return (
     <>
       <div
         className={`rv-modal-overlay ${isOpen ? "active" : ""}`}
         role="button"
-        onClick={onClose}
+        onClick={handleClose}
         style={{ zIndex: 1000 }}
       ></div>
       <div
@@ -34,28 +42,47 @@ const ProductContactModal = ({ isOpen, onClose, productInfo }: Props) => {
           overflowY: 'auto'
         }}
       >
-        <div className="rv-modal-header" style={{ padding: '0 0 20px' }}>
-          <h3>{t('productInquiry')}</h3>
-          <button
-            onClick={onClose}
-            style={{
-              border: 'none',
-              background: 'none',
-              fontSize: '20px',
-              cursor: 'pointer'
-            }}
-          >
-            <i className="fa-regular fa-xmark"></i>
-          </button>
-        </div>
+        {showSuccess ? (
+          <div className="rv-contact-modal" style={{ boxShadow: 'none' }}>
+            <div className="rv-contact-modal__icon">
+              <i className="fa-regular fa-circle-check"></i>
+            </div>
+            <h3 className="rv-contact-modal__title">{tContact('thankYou')}</h3>
+            <p className="rv-contact-modal__text">{tContact('receivedMessage')}</p>
+            <button
+              type="button"
+              className="rv-contact-modal__btn"
+              onClick={handleClose}
+            >
+              {tContact('okay')}
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="rv-modal-header" style={{ padding: '0 0 20px' }}>
+              <h3>{t('productInquiry')}</h3>
+              <button
+                onClick={handleClose}
+                style={{
+                  border: 'none',
+                  background: 'none',
+                  fontSize: '20px',
+                  cursor: 'pointer'
+                }}
+              >
+                <i className="fa-regular fa-xmark"></i>
+              </button>
+            </div>
 
-        <div className="text-center mb-20">
-          <p className="rv-contact-modal__text" style={{ fontSize: '15px' }}>
-            {t('inquiringAbout')} <strong style={{ color: 'var(--rv-pr-1)' }}>{productInfo.name}</strong>
-          </p>
-        </div>
+            <div className="text-center mb-20">
+              <p className="rv-contact-modal__text" style={{ fontSize: '15px' }}>
+                {t('inquiringAbout')} <strong style={{ color: 'var(--rv-pr-1)' }}>{productInfo.name}</strong>
+              </p>
+            </div>
 
-        <ContactForm innerPage isModal productInfo={productInfo} />
+            <ContactForm innerPage isModal productInfo={productInfo} onSuccess={() => setShowSuccess(true)} />
+          </>
+        )}
       </div>
     </>
   );

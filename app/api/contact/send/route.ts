@@ -44,11 +44,13 @@ export async function POST(request: NextRequest) {
     }
 
     // 4. Send email via Resend
+    const safeMsg = msg?.trim() || 'No message provided';
     const { data, error } = await resend.emails.send({
       from: 'Verdura Valley <contact@verduravalley.com>',
       to: ['info@verduravalley.com'],
       replyTo: email,
       subject: `New Request: ${subject} - [Verdura Valley]`,
+      text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nBusiness: ${businessName}\nWebsite: ${website || 'Not provided'}\nSubject: ${subject}\n\nMessage:\n${safeMsg}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333;">
           <h2 style="color: #2D6A4F;">New Contact Form Submission</h2>
@@ -81,7 +83,7 @@ export async function POST(request: NextRequest) {
           <br/>
           <p><strong>Message:</strong></p>
           <blockquote style="background: #f9f9f9; border-left: 10px solid #2D6A4F; margin: 1.5em 10px; padding: 1.5em 20px; font-style: italic;">
-            ${msg}
+            ${safeMsg}
           </blockquote>
         </div>
       `,

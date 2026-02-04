@@ -7,7 +7,12 @@
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(npm install:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(node:*)",
+      "Bash(for i in 1 2 3 4 5)",
+      "Bash(do node -e \"const s=Date.now\\(\\);fetch\\(''https://www.google.com/recaptcha/api/siteverify'',{method:''POST'',signal:AbortSignal.timeout\\(5000\\)}\\).then\\(r=>console.log\\(''Run $i: OK'',r.status,\\(Date.now\\(\\)-s\\)+''ms''\\)\\).catch\\(e=>console.log\\(''Run $i: FAIL'',e.cause?.code||e.message,\\(Date.now\\(\\)-s\\)+''ms''\\)\\)\")",
+      "Bash(done)",
+      "Bash(head:*)"
     ]
   }
 }
