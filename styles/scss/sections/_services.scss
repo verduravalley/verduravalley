@@ -1706,20 +1706,20 @@
 // INDEX-20 SERVICES
 .rv-20-service_section {
     background: #F7F7F7;
-    padding: 120px 0;
+    padding: 40px 0;
     position: relative;
     z-index: 2;
 
     @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-        padding: 100px 0;
+        padding: 35px 0;
     }
 
     @media #{$md,$sm,$mobile,$sm-mobile} {
-        padding: 70px 0;
+        padding: 30px 0;
     }
 
     @media #{$sm,$mobile,$sm-mobile} {
-        padding: 50px 0;
+        padding: 25px 0;
     }
 
     .rv-20-service_section_heading {

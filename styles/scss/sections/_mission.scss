@@ -1,17 +1,17 @@
 /* ----- 33. Mission ----- */
 // INDEX-20 MISSION
 .rv-20-mission_section {
-    padding: 80px 0;
+    padding: 30px 0;
     background-color: #F8F9FA;
     position: relative;
     z-index: 1;
 
     @media #{$lg} {
-        padding: 60px 0;
+        padding: 25px 0;
     }
 
     @media #{$md,$sm,$mobile,$sm-mobile} {
-        padding: 50px 0;
+        padding: 20px 0;
     }
 
     .rv-20-mission_content {

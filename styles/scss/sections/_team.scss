@@ -1475,18 +1475,18 @@
 
 // INDEX-20 TEAM
 .rv-20-team_main_area_section {
-    padding: 120px 0 90px 0;
+    padding: 40px 0 30px 0;
 
     @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
-        padding: 120px 0 100px 0;
+        padding: 35px 0 25px 0;
     }
 
     @media #{$md,$sm,$mobile,$sm-mobile} {
-        padding: 80px 0 60px 0;
+        padding: 30px 0 20px 0;
     }
 
     @media #{$sm,$mobile,$sm-mobile} {
-        padding: 60px 0 30px 0;
+        padding: 25px 0 15px 0;
     }
 
     .rv-20-team_section_top {

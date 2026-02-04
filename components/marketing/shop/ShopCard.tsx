@@ -41,7 +41,6 @@ const ShopCard = ({
     <div className={`rv-3-product rv-12-product ${style ? style : ""}`} style={{ position: 'relative' }}>
       <div className="rv-3-product__img rv-12-product__img">
         <CloudinaryImage src={img} alt="Product Image" width={400} height={400} />
-        {discount && <span className="rv-3-product__tag">-20%</span>}
       </div>
 
       <div className="rv-3-product__txt">

@@ -49,11 +49,11 @@
     }
 
     &__txt {
-        padding-bottom: 215px;
+        padding-bottom: 30px;
         position: relative;
 
         @include xl {
-            padding-bottom: 45px;
+            padding-bottom: 20px;
         }
 
         @include xxs {
@@ -62,14 +62,14 @@
     }
 
     &__descr {
-        margin-bottom: 53px;
+        margin-bottom: 30px;
 
         @include xl {
-            margin-bottom: 43px;
+            margin-bottom: 25px;
         }
 
         @include sm {
-            margin-bottom: 28px;
+            margin-bottom: 18px;
         }
     }
 
@@ -879,7 +879,19 @@
 .rv-vision-section {
     max-width: 1100px;
     margin: 0 auto;
-    
+
+    .rv-1-section__title {
+        font-size: 32px;
+
+        @include lg {
+            font-size: 28px;
+        }
+
+        @include sm {
+            font-size: 24px;
+        }
+    }
+
     .rv-vision-descr {
         font-size: 25px;
         line-height: 1.7;
@@ -899,6 +911,25 @@
         }
         &::before { left: 0; top: -10px; }
         &::after { right: 0; bottom: -40px; }
+    }
+}
+
+.rv-philosophy-grid {
+    .rv-1-section__heading {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .rv-1-section__title {
+        font-size: 32px;
+
+        @include lg {
+            font-size: 28px;
+        }
+
+        @include sm {
+            font-size: 24px;
+        }
     }
 }
 
@@ -2455,20 +2486,20 @@
 
 // INDEX-20 ABOUT
 .rv-20-about_section {
-    padding: 190px 0 120px 0;
+    padding: 60px 0 40px 0;
     position: relative;
     z-index: 1;
 
     @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-        padding: 170px 0 100px 0;
+        padding: 50px 0 35px 0;
     }
 
     @media #{$md,$sm,$mobile,$sm-mobile} {
-        padding: 150px 0 70px 0;
+        padding: 40px 0 30px 0;
     }
 
     @media #{$sm,$mobile,$sm-mobile} {
-        padding: 100px 0 50px 0;
+        padding: 30px 0 25px 0;
     }
 
     .rv-20-about_image {

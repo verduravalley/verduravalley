@@ -169,7 +169,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
             <option value="" hidden>
               {t('selectSubject')}
             </option>
-            <option value="General Inquiry">{t('generalInquiry')}</option><option value="Project Buy">{t('projectBuy')}</option>
+            <option value="General Inquiry">{t('generalInquiry')}</option><option value="Project Buy">{t('generalInquiry')}</option>
             <option value="Custom Project">{t('customProject')}</option>
             <option value="Partnership Offer">{t('partnershipOffer')}</option>
             <option value="others">{t('others')}</option>

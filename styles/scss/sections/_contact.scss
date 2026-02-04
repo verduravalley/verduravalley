@@ -503,21 +503,21 @@
 
 // INDEX-20 CONTACT
 .rv-20-contact_main_section {
-    padding: 120px 0;
+    padding: 40px 0;
     position: relative;
     background: #F7F7F7;
     z-index: 1;
 
     @media #{$xl,$lg} {
-        padding: 100 0 120px 0;
+        padding: 35px 0;
     }
 
     @media #{$md} {
-        padding: 80px 0 100px 0;
+        padding: 30px 0;
     }
 
     @media #{$sm,$mobile,$sm-mobile} {
-        padding: 60px 0 80px 0;
+        padding: 25px 0;
     }
 
     .rv-20-contact_image {
