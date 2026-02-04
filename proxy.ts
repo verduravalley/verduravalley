@@ -1,5 +1,6 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import { jwtVerify } from 'jose';
 import { locales, defaultLocale } from '@/i18n/config';
 
 const intlMiddleware = createMiddleware({
@@ -7,6 +8,8 @@ const intlMiddleware = createMiddleware({
   defaultLocale,
   localePrefix: 'always',
 });
+
+const AUTH_COOKIE = 'vv-auth-token';
 
 export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -16,23 +19,26 @@ export default async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Run i18n middleware (handles locale detection/redirect)
-  const intlResponse = intlMiddleware(request);
-
   // Dashboard auth check
   const pathnameWithoutLocale = pathname.replace(/^\/(en|ar)/, '');
   if (pathnameWithoutLocale.startsWith('/dashboard')) {
-    // TODO: Implement real authentication
-    const isAuthenticated = true;
-    if (!isAuthenticated) {
-      const locale = pathname.match(/^\/(en|ar)/)?.[1] || defaultLocale;
-      const signInUrl = new URL(`/${locale}/sign-in`, request.url);
-      signInUrl.searchParams.set('redirect', pathname);
-      return NextResponse.redirect(signInUrl);
+    const token = request.cookies.get(AUTH_COOKIE)?.value;
+    const locale = pathname.match(/^\/(en|ar)/)?.[1] || defaultLocale;
+
+    if (!token) {
+      return NextResponse.redirect(new URL(`/${locale}/sign-in`, request.url));
+    }
+
+    try {
+      const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+      await jwtVerify(token, secret);
+    } catch {
+      return NextResponse.redirect(new URL(`/${locale}/sign-in`, request.url));
     }
   }
 
-  return intlResponse;
+  // Run i18n middleware (handles locale detection/redirect)
+  return intlMiddleware(request);
 }
 
 export const config = {
