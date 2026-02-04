@@ -73,6 +73,14 @@
         align-items: center;
         justify-content: center;
         aspect-ratio: 53 / 58;
+
+        @include sm {
+            max-height: 520px;
+        }
+
+        @include xxs {
+            max-height: 450px;
+        }
     }
 
     &__top-txt {
