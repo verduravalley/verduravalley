@@ -65,7 +65,13 @@ export default function Sidebar() {
           <Globe className="w-5 h-5 me-3" />
           {tc('switchLang')}
         </button>
-        <button className="flex items-center w-full px-4 py-2 text-sm font-medium text-red-400 hover:bg-slate-800 rounded-lg transition-colors">
+        <button
+          onClick={async () => {
+            await fetch('/api/auth/logout', { method: 'POST' });
+            router.push('/sign-in');
+          }}
+          className="flex items-center w-full px-4 py-2 text-sm font-medium text-red-400 hover:bg-slate-800 rounded-lg transition-colors"
+        >
           <LogOut className="w-5 h-5 me-3" />
           {t('signOut')}
         </button>
