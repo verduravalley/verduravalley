@@ -121,6 +121,17 @@ export async function POST() {
       END $$;
     `);
 
+    // Create admins table
+    await query(`
+      CREATE TABLE IF NOT EXISTS admins (
+        id SERIAL PRIMARY KEY,
+        username VARCHAR(100) UNIQUE NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password_hash VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+
     // Seed default code of conduct if it doesn't exist
     await query(`
       INSERT INTO site_configs (key, value)
