@@ -43,7 +43,7 @@ const ProductContactModal = ({ isOpen, onClose, productInfo }: Props) => {
         }}
       >
         {showSuccess ? (
-          <div className="rv-contact-modal" style={{ boxShadow: 'none' }}>
+          <div className="rv-contact-modal" style={{ boxShadow: 'none', maxWidth: '100%' }}>
             <div className="rv-contact-modal__icon">
               <i className="fa-regular fa-circle-check"></i>
             </div>

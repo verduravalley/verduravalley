@@ -147,6 +147,7 @@
       "leadership": "Leadership",
       "codeOfConduct": "Code of Conduct",
       "messages": "Messages",
+      "customRequests": "Custom Requests",
       "signOut": "Sign Out"
     },
     "common": {
@@ -240,6 +241,15 @@
       "phone": "Phone",
       "business": "Business",
       "na": "N/A"
+    },
+    "customRequests": {
+      "title": "Custom Requests",
+      "noRequests": "No custom requests yet.",
+      "phone": "Phone",
+      "business": "Business",
+      "productName": "Product",
+      "category": "Category",
+      "quantity": "Quantity"
     },
     "codeOfConduct": {
       "title": "Code of Conduct",

@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { query } from '@/lib/db';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// GET /api/contact/custom-product - Fetch all custom requests
+export async function GET() {
+  try {
+    const result = await query('SELECT * FROM custom_requests ORDER BY created_at DESC');
+    return NextResponse.json(result.rows);
+  } catch (error) {
+    console.error('Error fetching custom requests:', error);
+    return NextResponse.json([], { status: 500 });
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,7 +40,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. Send email via Resend
+    // 3. Save to database
+    try {
+      await query(
+        'INSERT INTO custom_requests (name, email, phone, business_name, website, product_name, category, quantity, description) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+        [name, email, phone, businessName, website || null, productName, category, quantity, description]
+      );
+    } catch (dbError) {
+      console.error('Database save error:', dbError);
+    }
+
+    // 4. Send email via Resend
     const safeDesc = description?.trim() || 'No description provided';
     const { error } = await resend.emails.send({
       from: 'Verdura Valley <contact@verduravalley.com>',

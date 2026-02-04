@@ -132,6 +132,23 @@ export async function POST() {
       )
     `);
 
+    // Create custom_requests table
+    await query(`
+      CREATE TABLE IF NOT EXISTS custom_requests (
+        id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        phone TEXT,
+        business_name TEXT,
+        website TEXT,
+        product_name TEXT NOT NULL,
+        category TEXT,
+        quantity TEXT,
+        description TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+
     // Seed default code of conduct if it doesn't exist
     await query(`
       INSERT INTO site_configs (key, value)

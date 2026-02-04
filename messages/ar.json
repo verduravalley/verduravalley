@@ -147,6 +147,7 @@
       "leadership": "القيادة",
       "codeOfConduct": "مدونة قواعد السلوك",
       "messages": "الرسائل",
+      "customRequests": "طلبات مخصصة",
       "signOut": "تسجيل الخروج"
     },
     "common": {
@@ -240,6 +241,15 @@
       "phone": "الهاتف",
       "business": "الشركة",
       "na": "غير متوفر"
+    },
+    "customRequests": {
+      "title": "طلبات مخصصة",
+      "noRequests": "لا توجد طلبات مخصصة بعد.",
+      "phone": "الهاتف",
+      "business": "الشركة",
+      "productName": "المنتج",
+      "category": "الفئة",
+      "quantity": "الكمية"
     },
     "codeOfConduct": {
       "title": "مدونة قواعد السلوك",
