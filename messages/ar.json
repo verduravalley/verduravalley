@@ -97,7 +97,8 @@
     "okay": "حسناً",
     "fieldRequired": "هذا الحقل مطلوب",
     "submitFailed": "فشل إرسال الرسالة.",
-    "submitError": "حدث خطأ. يرجى المحاولة مرة أخرى لاحقاً."
+    "submitError": "حدث خطأ. يرجى المحاولة مرة أخرى لاحقاً.",
+    "contactInfo": "معلومات الاتصال"
   },
   "shop": {
     "contactForMore": "تواصل لمزيد من المعلومات",
@@ -116,7 +117,16 @@
     "productDescription": "وصف المنتج",
     "newCollection": "تشكيلة جديدة",
     "featuredProducts": "منتجات مميزة",
-    "shopAllProducts": "تسوق جميع المنتجات"
+    "shopAllProducts": "تسوق جميع المنتجات",
+    "customProductRequest": "طلب منتج مخصص",
+    "customProductDesc": "أخبرنا عن المنتج الذي تحتاجه وسنعود إليك.",
+    "customProductCardDesc": "لم تجد ما تبحث عنه؟ أخبرنا بما تحتاج.",
+    "requestNow": "اطلب الآن",
+    "submitRequest": "إرسال الطلب",
+    "productName": "اسم المنتج",
+    "category": "الفئة",
+    "quantity": "الكمية",
+    "productInfo": "معلومات المنتج"
   },
   "breadcrumb": {
     "home": "الرئيسية",

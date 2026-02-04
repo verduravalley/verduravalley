@@ -1,5 +1,6 @@
 import { ShopItem } from "@/types";
 import ShopCard from "./ShopCard";
+import CustomProductCard from "./CustomProductCard";
 type Props = {
   currentItems: ShopItem[];
   isGridView: boolean;
@@ -24,6 +25,9 @@ const ShopGridInnerProduct = ({ currentItems, isGridView }: Props) => {
             />
           </div>
         ))}
+        <div className={`col ${isGridView ? "" : "list-view-on"}`}>
+          <CustomProductCard />
+        </div>
       </div>
     </div>
   );

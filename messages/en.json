@@ -97,7 +97,8 @@
     "okay": "Okay",
     "fieldRequired": "This field is required",
     "submitFailed": "Failed to submit message.",
-    "submitError": "An error occurred. Please try again later."
+    "submitError": "An error occurred. Please try again later.",
+    "contactInfo": "Contact Information"
   },
   "shop": {
     "contactForMore": "Contact for more",
@@ -116,7 +117,16 @@
     "productDescription": "Product Description",
     "newCollection": "New Collection",
     "featuredProducts": "Featured Products",
-    "shopAllProducts": "Shop all Products"
+    "shopAllProducts": "Shop all Products",
+    "customProductRequest": "Request Custom Product",
+    "customProductDesc": "Tell us about the product you need and we'll get back to you.",
+    "customProductCardDesc": "Can't find what you're looking for? Tell us what you need.",
+    "requestNow": "Request Now",
+    "submitRequest": "Submit Request",
+    "productName": "Product Name",
+    "category": "Category",
+    "quantity": "Quantity",
+    "productInfo": "Product Information"
   },
   "breadcrumb": {
     "home": "Home",
