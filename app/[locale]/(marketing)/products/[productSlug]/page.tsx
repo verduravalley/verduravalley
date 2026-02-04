@@ -48,7 +48,7 @@ export default function ProductDetailsPage({ params }: PageProps) {
         <>
           <BreadcrumbSection title={isRtl && productInfo.name_ar ? productInfo.name_ar : productInfo.name} />
           <ProductDetailMain item={productInfo} />
-          <RelatedProducts />
+          <RelatedProducts currentSlug={productSlug} />
         </>
       ) : (
         <ErrorSection />
