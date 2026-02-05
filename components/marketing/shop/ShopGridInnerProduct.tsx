@@ -9,6 +9,9 @@ const ShopGridInnerProduct = ({ currentItems, isGridView }: Props) => {
   return (
     <div className="rv-inner-products-container rv-12-product--2">
       <div className="row row-cols-xl-4 row-cols-md-3 row-cols-2 row-cols-xxs-1 g-30">
+        <div className={`col ${isGridView ? "" : "list-view-on"}`}>
+          <CustomProductCard />
+        </div>
         {currentItems.map((item) => (
           <div
             className={`col ${isGridView ? "" : "list-view-on"}`}
@@ -25,9 +28,6 @@ const ShopGridInnerProduct = ({ currentItems, isGridView }: Props) => {
             />
           </div>
         ))}
-        <div className={`col ${isGridView ? "" : "list-view-on"}`}>
-          <CustomProductCard />
-        </div>
       </div>
     </div>
   );

@@ -320,6 +320,28 @@
                     text-align: left;
                     margin-top: 10px;
                 }
+
+                &.custom-product-card {
+                    max-width: 450px;
+                    min-height: 350px;
+                    border: none;
+
+                    @include sm {
+                        max-width: 200px;
+                    }
+
+                    @include xxs {
+                        max-width: 80%;
+                        margin: 0 auto;
+                        align-items: center;
+                        margin-bottom: 10px;
+                    }
+
+                    .rv-3-product__img {
+                        width: 100%;
+                        min-width: unset;
+                    }
+                }
             }
         }
     }
