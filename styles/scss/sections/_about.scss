@@ -2491,7 +2491,7 @@
 
 // INDEX-20 ABOUT
 .rv-20-about_section {
-    padding: 60px 0 40px 0;
+    // padding: 60px 0 40px 0;
     position: relative;
     z-index: 1;
 
@@ -2702,20 +2702,20 @@
             .rv-20-about_section_title {
                 font-size: 60px;
                 font-weight: 800;
-                color: #081C15;
+                color: #2D6A4F;
                 margin-bottom: 25px;
 
                 @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
-                    font-size: 35px;
+                    font-size: 30px;
                 }
 
                 @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                    font-size: 28px;
+                    font-size: 20px;
                     margin-bottom: 35px;
                 }
 
                 @media #{$md,$mobile,$sm-mobile} {
-                    font-size: 22px;
+                    font-size: 15px;
                     margin-bottom: 30px;
                 }
             }

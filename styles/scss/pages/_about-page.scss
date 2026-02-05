@@ -1,31 +1,30 @@
 /* ----- 47. ABOUT PAGE ----- */
 .rv-inner-about-btn {
-
-    .txt,
-    .icon {
-        border-color: #509e0f;
-        background-color: #509e0f;
-    }
+  .txt,
+  .icon {
+    border-color: #2d6a4f;
+    background-color: #2d6a4f;
+  }
 }
 
 .rv-1-section-heading-2 .rv-1-section-heading__right .rv-inner-about-btn:hover {
-    border-color: #509e0f;
-    background-color: #509e0f;
+  border-color: #2d6a4f;
+  background-color: #2d6a4f;
 }
 
 .rv-inner-slider-nav button:hover {
-    border-color: #509e0f;
-    background-color: #509e0f;
+  border-color: #2d6a4f;
+  background-color: #2d6a4f;
 }
 
 .rv-1-about.rv-section-spacing {
-    padding: 40px 0;
+  padding: 40px 0;
 
-    @media #{$xl} {
-        padding: 35px 0;
-    }
+  @media #{$xl} {
+    padding: 35px 0;
+  }
 
-    @media #{$md} {
-        padding: 30px 0;
-    }
+  @media #{$md} {
+    padding: 30px 0;
+  }
 }

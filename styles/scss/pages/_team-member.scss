@@ -1,33 +1,33 @@
 /*----- 48. TEAM MEMBER -----*/
 .rv-inner-member-socials {
-    .rv-9-member-socials__icon {
-        background-color: #509e0f;
-    }
+  .rv-9-member-socials__icon {
+    background-color: #2d6a4f;
+  }
 
-    .rv-1-speaker__socials a:hover {
-        background-color: #509e0f;
-    }
+  .rv-1-speaker__socials a:hover {
+    background-color: #2d6a4f;
+  }
 }
 
 .rv-team-members-section {
-    .rv-9-member.rv-inner-member {
-        display: flex;
-        flex-direction: column;
+  .rv-9-member.rv-inner-member {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .rv-9-member__img {
+      height: 350px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
         height: 100%;
-
-        .rv-9-member__img {
-            height: 350px;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .rv-9-member__txt {
-            flex: 1;
-        }
+        object-fit: cover;
+      }
     }
+
+    .rv-9-member__txt {
+      flex: 1;
+    }
+  }
 }

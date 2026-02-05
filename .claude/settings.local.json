@@ -12,7 +12,12 @@
       "Bash(for i in 1 2 3 4 5)",
       "Bash(do node -e \"const s=Date.now\\(\\);fetch\\(''https://www.google.com/recaptcha/api/siteverify'',{method:''POST'',signal:AbortSignal.timeout\\(5000\\)}\\).then\\(r=>console.log\\(''Run $i: OK'',r.status,\\(Date.now\\(\\)-s\\)+''ms''\\)\\).catch\\(e=>console.log\\(''Run $i: FAIL'',e.cause?.code||e.message,\\(Date.now\\(\\)-s\\)+''ms''\\)\\)\")",
       "Bash(done)",
-      "Bash(head:*)"
+      "Bash(head:*)",
+      "Bash(while read f)",
+      "Bash(done echo \"\" ls \"d:/Work/Megzz/components/marketing/checkout/PaymentGatewaySelector.tsx\")",
+      "Bash(__NEW_LINE_9251c88853a6140d__ echo \"\")",
+      "Bash(done echo \"\" echo \"=== Payment Libs ===\" ls -la \"d:/Work/Megzz/lib/paymob.ts\" \"d:/Work/Megzz/lib/kashier.ts\" echo \"\" echo \"=== Checkout Pages ===\" find \"d:/Work/Megzz/app/[locale]/\\(marketing\\)/checkout\" -name \"page.tsx\")",
+      "Bash(done echo \"\" echo \"=== Payment Gateway Selector ===\" ls -la \"d:/Work/Megzz/components/marketing/checkout/PaymentGatewaySelector.tsx\")"
     ]
   }
 }

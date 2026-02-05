@@ -594,20 +594,20 @@
         .rv-20-contact_section_title {
             font-size: 42px;
             font-weight: 800;
-            color: #081C15;
+            color: #2D6A4F;
             margin-top: 30px;
             font-family: $mulish;
 
             @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
-                font-size: 40px;
+                font-size: 30px;
             }
 
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                font-size: 28px;
+                font-size: 20px;
             }
 
             @media #{$md,$sm,$mobile,$sm-mobile} {
-                font-size: 22px;
+                font-size: 15px;
                 text-align: center;
             }
 
