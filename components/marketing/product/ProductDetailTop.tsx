@@ -22,10 +22,10 @@ const ProductDetailTop = ({ item }: Props) => {
         {isRtl && item.product_info_ar ? item.product_info_ar : item.product_info}
       </p>
 
-      <h4 className="rv-product-details__price">
+      {/* <h4 className="rv-product-details__price">
         <span className="prev-price">${item.prevPrice}.00</span>
         <span className="current-price">${item.price}.00</span>
-      </h4>
+      </h4> */}
 
       <div className="rv-product-details__actions">
         <button

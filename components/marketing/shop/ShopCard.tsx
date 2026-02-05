@@ -63,10 +63,10 @@ const ShopCard = ({
         </h5>
 
         <div className="rv-3-product__bottom">
-          <span className="rv-3-product__price">
+          {/* <span className="rv-3-product__price">
             <span className="prev-price">${prevPrice}</span>
             <span className="current-price">${price}</span>
-          </span>
+          </span> */}
 
           <button
             className="rv-3-product__cart-btn"
