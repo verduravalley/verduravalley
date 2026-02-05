@@ -80,7 +80,7 @@ const FooterSection = ({
                     </div>
                     <div className="text">
                         <span>{t('callUs')}</span>
-                        <a href="tel:01021002597" style={{ textDecoration: 'none' }} dir={isArabic ? 'ltr' : undefined}>0123 456 789</a>
+                        <a href="tel:01021002597" style={{ textDecoration: 'none' }} dir={isArabic ? 'ltr' : undefined}>01021002597</a>
                     </div>
                   </div>
 
