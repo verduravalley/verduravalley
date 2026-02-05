@@ -1705,7 +1705,7 @@
 
 // INDEX-20 SERVICES
 .rv-20-service_section {
-    background: #F7F7F7;
+    background: #FFFFFF;
     padding: 40px 0;
     position: relative;
     z-index: 2;
@@ -1756,11 +1756,14 @@
         }
 
         .rv-20-service_section_title {
-            font-size: 34px;
+            font-size: 30px;
             font-weight: 800;
             color: #081C15;
             margin-bottom: 60px;
             font-family: $mulish;
+            max-width: 1900px;
+            margin-left: auto;
+            margin-right: auto;
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 font-size: 45px;
             }

@@ -3,11 +3,11 @@
 import { useTranslations } from "next-intl";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
-const MissionSection = () => {
-  const t = useTranslations('home.mission');
+const MissionSection2 = () => {
+  const t = useTranslations('home.mission2');
 
   return (
-    <section className="rv-20-mission_section mb-5">
+    <section className="rv-20-mission_section mt-5">
       <div className="container">
         <DivAnimateYAxis className="row justify-content-center">
           <div className="col-lg-12 col-xl-12">
@@ -32,4 +32,4 @@ const MissionSection = () => {
   );
 };
 
-export default MissionSection;
+export default MissionSection2;

@@ -64,7 +64,7 @@ const ServiceSection = () => {
     <section className="rv-20-service_section">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-6">
+          <div className="col-md-12">
             <div className="rv-20-service_section_heading">
               <div>
                 {/* <p className="rv-20-service_sub_title rv-text-anime d-flex">
@@ -81,7 +81,7 @@ const ServiceSection = () => {
         </div>
         <DivAnimateYAxis className="row justify-content-center">
           {customServices.map((item) => (
-            <div className="col-lg-3 col-md-6 col-sm-12" key={item.id}>
+            <div className="col-lg-6 col-md-6 col-sm-12 pb-3" key={item.id}>
               <div
                 className={`rv-20-single_service ${
                   activeItemId === item.id ? "active" : ""

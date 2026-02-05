@@ -7,6 +7,7 @@ import MissionSection from '@/components/marketing/mission/MissionSection';
 import AboutSection from '@/components/marketing/about/AboutSection';
 import ServiceSection from '@/components/marketing/service/ServiceSection';
 import ContactSection from '@/components/marketing/contact/ContactSection';
+import MissionSection2 from '@/components/marketing/mission/MissionSection2';
 
 export default function HomePage() {
   usePageView('home');
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <>
       <BannerSection />
+      <MissionSection2 />
       <TeamSection />
       <MissionSection />
       <ServiceSection />
