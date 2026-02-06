@@ -119,7 +119,7 @@ const ServiceSection = () => {
                       ))}
                     </ul>
                   </div>
-                  <h4 className="rv-20-service_drp_txt">{t(item.dropKey)}</h4>
+                  {/* <h4 className="rv-20-service_drp_txt">{t(item.dropKey)}</h4> */}
                 </div>
               </div>
             </div>
