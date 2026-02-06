@@ -1,4 +1,34 @@
 /* ----- 17. Contact ----- */
+.rv-2-contact-form-title {
+    font-family: $mulish;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2D6A4F;
+
+    @media #{$lg, $md} {
+        font-size: 30px;
+    }
+
+    @media #{$sm, $mobile, $sm-mobile} {
+        font-size: 22px;
+    }
+}
+
+.rv-inner-contact-info__title {
+    font-family: $mulish;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2D6A4F;
+
+    @media #{$lg, $md} {
+        font-size: 30px;
+    }
+
+    @media #{$sm, $mobile, $sm-mobile} {
+        font-size: 22px;
+    }
+}
+
 .rv-2-contact {
     padding-bottom: 100px;
 
@@ -603,16 +633,16 @@
             }
 
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                font-size: 20px;
+                font-size: 30px;
             }
 
             @media #{$md,$sm,$mobile,$sm-mobile} {
-                font-size: 15px;
+                font-size: 30px;
                 text-align: center;
             }
 
             @media #{$mobile,$sm-mobile} {
-                font-size: 18px;
+                font-size: 22px;
             }
         }
     }
@@ -755,6 +785,7 @@
         width: 200px;
         height: 300px;
 
+
         img {
             height: 100%;
             width: 100%;
@@ -764,11 +795,12 @@
     .home-6-sh-2 {
         position: absolute;
         right: 0;
-        top: 50%;
+        top: 35%;
         height: 355px;
         width: 200px;
         z-index: -1;
         transform: translateY(-50%);
+        opacity: 0.6;
 
         img {
             height: 100%;

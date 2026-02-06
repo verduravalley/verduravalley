@@ -31,7 +31,7 @@ const SustainabilityGovernancePage = () => {
       <section className="rv-section-spacing" style={{ backgroundColor: '#e8f5e9' }}>
         <div className="container">
           <div className="rv-vision-section text-center ">
-            <h2 className="rv-1-section__title" style={{ fontSize: '2.7rem', marginBottom: '4rem', color: '#1b5e20' }}>{t('heroTitle')}</h2>
+            <h2 className="rv-hero-title">{t('heroTitle')}</h2>
             <div className="rv-1-section__heading justify-content-center">
             </div>
             <p className="rv-vision-descr mx-auto">

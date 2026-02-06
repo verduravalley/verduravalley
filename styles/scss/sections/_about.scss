@@ -886,36 +886,83 @@
     margin: 0 auto;
 
     .rv-1-section__title {
-        font-size: 32px;
+        font-family: $mulish;
+        font-size: 30px;
+        font-weight: 700;
+        color: #2D6A4F;
 
-        @include lg {
-            font-size: 28px;
+        @media #{$lg, $md} {
+            font-size: 30px;
         }
 
-        @include sm {
-            font-size: 24px;
+        @media #{$sm, $mobile, $sm-mobile} {
+            font-size: 22px;
         }
     }
 
     .rv-vision-descr {
+        font-family: $mulish;
         font-size: 25px;
         line-height: 1.7;
         color: #555;
         font-style: italic;
-        margin-top: 30px;
         position: relative;
-        padding: 0 40px;
+
+        @media #{$lg, $md} {
+            font-size: 25px;
+        }
+
+        @media #{$sm, $mobile, $sm-mobile} {
+            font-size: 22px;
+        }
 
         &::before, &::after {
             content: '"';
-            font-size: 60px;
+            font-size: 50px;
             color: #2D6A4F;
-            opacity: 0.2;
-            position: absolute;
             font-family: serif;
+            line-height: 0;
+            vertical-align: middle;
         }
-        &::before { left: 0; top: -10px; }
-        &::after { right: 0; bottom: -40px; }
+        &::before {
+            margin-right: 5px;
+        }
+        &::after {
+            margin-left: 5px;
+        }
+    }
+}
+
+/* --- Sustainability Page Titles --- */
+.rv-section-title__title {
+    font-family: $mulish;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2D6A4F;
+
+    @media #{$lg, $md} {
+        font-size: 30px;
+    }
+
+    @media #{$sm, $mobile, $sm-mobile} {
+        font-size: 22px;
+    }
+}
+
+.rv-hero-title {
+    font-family: $mulish;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 4rem;
+
+    @media #{$lg, $md} {
+        font-size: 30px;
+    }
+
+    @media #{$sm, $mobile, $sm-mobile} {
+        font-size: 22px;
+        margin-bottom: 2rem;
     }
 }
 
@@ -926,14 +973,17 @@
     }
 
     .rv-1-section__title {
-        font-size: 32px;
+        font-family: $mulish;
+        font-size: 30px;
+        font-weight: 700;
+        color: #2D6A4F;
 
-        @include lg {
-            font-size: 28px;
+        @media #{$lg, $md} {
+            font-size: 30px;
         }
 
-        @include sm {
-            font-size: 24px;
+        @media #{$sm, $mobile, $sm-mobile} {
+            font-size: 22px;
         }
     }
 }
@@ -2704,18 +2754,20 @@
                 font-weight: 800;
                 color: #2D6A4F;
                 margin-bottom: 25px;
+                            font-family: $mulish;
+
 
                 @media #{$xl,$lg,$md,$sm,$mobile,$sm-mobile} {
                     font-size: 30px;
                 }
 
                 @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                    font-size: 20px;
+                    font-size: 30px;
                     margin-bottom: 35px;
                 }
 
                 @media #{$md,$mobile,$sm-mobile} {
-                    font-size: 15px;
+                    font-size: 22px;
                     margin-bottom: 30px;
                 }
             }
@@ -2851,11 +2903,12 @@
 
     .about-sh-6 {
         position: absolute;
-        top: 100px;
+        top: 120px;
         right: 0;
         height: 300px;
         width: 200px;
         z-index: -1;
+        opacity: 0.6;
 
         img {
             height: 100%;

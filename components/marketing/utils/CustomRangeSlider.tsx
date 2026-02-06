@@ -49,7 +49,7 @@ const CustomRangeSlider: React.FC<CustomRangeSliderProps> = ({
     const sliderTrack = document.querySelector(
       ".slider-track"
     ) as HTMLDivElement;
-    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #509e0f ${percent1}% , #509e0f ${percent2}%, #dadae5 ${percent2}%)`;
+    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #2D6A4F ${percent1}% , #2D6A4F ${percent2}%, #dadae5 ${percent2}%)`;
   };
 
   return (
