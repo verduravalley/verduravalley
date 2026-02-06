@@ -125,6 +125,13 @@
     "submitRequest": "إرسال الطلب",
     "productName": "اسم المنتج",
     "category": "الفئة",
+    "fruits": "فواكه",
+    "vegetables": "خضروات",
+    "mushrooms": "مشروم",
+    "herbs": "أعشاب",
+    "hydroponics": "زراعة مائية",
+    "corps": "محاصيل",
+    "other": "أخرى",
     "quantity": "الكمية",
     "productInfo": "معلومات المنتج"
   },
