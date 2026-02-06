@@ -416,15 +416,21 @@ html.lenis {
   }
 
   @include sm {
-    min-width: 500px;
+    min-width: 90%;
+    width: 90%;
+    max-height: 80vh;
   }
 
   @include xs {
-    min-width: 460px;
+    min-width: 92%;
+    width: 92%;
+    max-height: 85vh;
   }
 
   @include xxs {
-    min-width: 320px;
+    min-width: 94%;
+    width: 94%;
+    max-height: 85vh;
   }
 
   .rv-modal-header {

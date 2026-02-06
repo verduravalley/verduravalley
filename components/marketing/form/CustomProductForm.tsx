@@ -121,7 +121,7 @@ const CustomProductForm = ({ onSuccess }: Props) => {
           <ErrorMsg field="productName" />
         </div>
         <div className="col-sm-6">
-          <select disabled={isLoading} {...register("category", { required: true })} style={{ width: '100%', height: '48px', padding: '0 15px', border: '1px solid #dedede', backgroundColor: 'transparent', color: '#081C15', fontWeight: 'normal', appearance: 'auto', cursor: 'pointer' }}>
+          <select disabled={isLoading} {...register("category", { required: true })} style={{ width: '100%', height: '48px', padding: '0 15px', border: '1px solid #dedede', backgroundColor: 'transparent', color: '#081C15', fontWeight: 'normal', cursor: 'pointer' }}>
             <option value="" disabled hidden>{tShop('category')}</option>
             <option value="fruits">{tShop('fruits')}</option>
             <option value="vegetables">{tShop('vegetables')}</option>
