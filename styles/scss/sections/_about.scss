@@ -63,6 +63,21 @@
         @include xxs {
             padding-bottom: 0;
         }
+
+        .rv-1-section__title {
+            font-family: $mulish;
+            font-size: 30px;
+            font-weight: 700;
+            color: #2D6A4F;
+
+            @media #{$lg, $md} {
+                font-size: 30px;
+            }
+
+            @media #{$sm, $mobile, $sm-mobile} {
+                font-size: 22px;
+            }
+        }
     }
 
     &__descr {

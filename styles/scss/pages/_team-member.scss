@@ -28,6 +28,29 @@
 
     .rv-9-member__txt {
       flex: 1;
+
+      .rv-3-project__title {
+        font-family: $mulish;
+        font-size: 25px;
+        font-weight: 700;
+
+        @media #{$lg, $md} {
+          font-size: 30px;
+        }
+
+        @media #{$sm, $mobile, $sm-mobile} {
+          font-size: 18px;
+        }
+
+        a {
+          color: #2D6A4F;
+          transition: 0.3s ease;
+
+          &:hover {
+            color: #1b5e20;
+          }
+        }
+      }
     }
   }
 }
