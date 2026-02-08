@@ -7,6 +7,7 @@ import CloudinaryImage from "@/components/CloudinaryImage";
 
 const AboutSection = () => {
   const t = useTranslations('home.about');
+  const t2 = useTranslations('about');
 
   return (
     <section className="rv-20-about_section">
@@ -68,30 +69,30 @@ const AboutSection = () => {
                 <ul className="row">
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t('sustainableTitle')}
+                      <i className="far fa-chevron-double-right"></i>{t2('stewardshipTitle')}
                     </h4>
-                    <p>{t('sustainableDesc')}</p>
+                    <p>{t2('stewardshipDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t('globalTitle')}
+                      <i className="far fa-chevron-double-right"></i>{t2('qualityTitle')}
                     </h4>
-                    <p>{t('globalDesc')}</p>
+                    <p>{t2('qualityDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t('freshTitle')}
+                      <i className="far fa-chevron-double-right"></i>{t2('respectTitle')}
                     </h4>
-                    <p>{t('freshDesc')}</p>
+                    <p>{t2('respectDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t('artisanSpiritTitle')}
+                      <i className="far fa-chevron-double-right"></i>{t2('integrityTitle')}
                     </h4>
-                    <p>{t('artisanSpiritDesc')}</p>
+                    <p>{t2('integrityDesc')}</p>
                   </li>
                 </ul>
               </div>
