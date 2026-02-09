@@ -27,16 +27,22 @@ const SustainabilityGovernancePage = () => {
     <main className="rv-14-body">
       <BreadcrumbSection title={t('title')} />
 
-      {/* Hero Section */}
-      <section className="rv-section-spacing" style={{ backgroundColor: '#e8f5e9' }}>
+      {/* Hero Title */}
+      <section className="rv-section-spacing pb-3 pt-5">
         <div className="container">
-          <div className="rv-vision-section text-center ">
-            <h2 className="rv-hero-title">{t('heroTitle')}</h2>
+          <h2 className="rv-hero-title text-center p-0 m-0">{t('heroTitle')}</h2>
+        </div>
+      </section>
+
+      {/* Hero Description */}
+      <section className="w-100 p-4" style={{ backgroundColor: '#e8f5e9' }}>
+        <div className="container">
+          <div className="rv-vision-section text-center">
             <div className="rv-1-section__heading justify-content-center">
+              <p className="rv-vision-descr mx-auto">
+                {t('heroDesc')}
+              </p>
             </div>
-            <p className="rv-vision-descr mx-auto">
-              {t('heroDesc')}
-            </p>
           </div>
         </div>
       </section>

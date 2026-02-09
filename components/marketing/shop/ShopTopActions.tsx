@@ -84,9 +84,9 @@ const ShopTopActions = ({
                 >
                   <option value="menu_order">{t('defaultSorting')}</option>
                   <option value="popularity">{t('sortByPopularity')}</option>
-                  <option value="rating">{t('sortByRating')}</option>
-                  <option value="price">{t('sortByPriceLow')}</option>
-                  <option value="price-desc">{t('sortByPriceHigh')}</option>
+                  {/* <option value="rating">{t('sortByRating')}</option> */}
+                  {/* <option value="price">{t('sortByPriceLow')}</option>
+                  <option value="price-desc">{t('sortByPriceHigh')}</option> */}
                 </select>
               </form>
             </div>

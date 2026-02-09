@@ -7,7 +7,7 @@ const MissionSection = () => {
   const t = useTranslations('home.mission');
 
   return (
-    <section className="rv-20-mission_section mb-5">
+    <section className="rv-20-mission_section">
       <div className="container">
         <DivAnimateYAxis className="row justify-content-center">
           <div className="col-lg-12 col-xl-12">

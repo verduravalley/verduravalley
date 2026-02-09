@@ -1796,7 +1796,7 @@
 
         &.active {
             .rv-20-single_service_content_main {
-                padding-bottom: 50px;
+                // padding-bottom: 50px;
                 grid-template-rows: auto 1fr;
 
                 @media #{$sm,$mobile,$sm-mobile} {}
@@ -1806,8 +1806,21 @@
                 }
             }
 
-            .rv-20-single_service_content_title h4 {
-                margin-bottom: 30px;
+            .rv-20-single_service_content_title {
+                margin: 0 20px;
+                position: relative;
+                background: #FFFFFF;
+                padding: 15px 20px;
+                top: -20px;
+                border: 2px solid rgba(8, 28, 21, 0.1);
+                border-radius: 20px;
+
+                h4 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    font-family: $mulish;
+                }
             }
         }
 
@@ -1831,14 +1844,15 @@
         &_content_main {
             background: #FFFFFF;
             transition: all 0.4s ease;
-            padding: 12px 40px 40px;
+            padding: 1px 40px 10px;
             border-radius: 20px;
             position: relative;
             margin: 0 25px;
-            margin-top: -65px;
+            margin-top: -45px;
             overflow: hidden;
             display: grid;
             grid-template-rows: auto 0fr;
+            border: 2px solid rgba(8, 28, 21, 0.1);
 
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
                 padding: 12px 22px 22px;
@@ -1849,6 +1863,13 @@
                 overflow: hidden;
             }
 
+        }
+
+        &_content_title h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 0;
+            font-family: $mulish;
         }
 
         &_content_top {
@@ -1890,7 +1911,7 @@
             }
 
             h4 {
-                font-size: 22px;
+                font-size: 20px;
                 font-weight: 700;
                 color: #142137;
                 margin: 20px 0 0 0;

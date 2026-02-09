@@ -922,6 +922,7 @@
         color: #555;
         font-style: italic;
         position: relative;
+        margin-bottom: 0;
 
         @media #{$lg, $md} {
             font-size: 25px;
