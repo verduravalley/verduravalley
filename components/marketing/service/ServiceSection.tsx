@@ -81,14 +81,14 @@ const ServiceSection = () => {
         </div>
         <DivAnimateYAxis className="row justify-content-center">
           {customServices.map((item) => (
-            <div className="col-lg-6 col-md-6 col-sm-12 pb-3" key={item.id}>
+            <div className="col-lg-3 col-md-6 col-sm-12 pb-3" key={item.id}>
               <div
                 className={`rv-20-single_service ${
                   activeItemId === item.id ? "active" : ""
                 }`}
               >
                 <div className="rv-20-single_service_iamge">
-                  <div style={{ width: '100%', height: '300px', paddingLeft: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f5' }}>
+                  <div style={{ width: '180px', height: '120px', margin: '0 auto 25px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {item.icon && <item.icon />}
                   </div>
                 </div>
