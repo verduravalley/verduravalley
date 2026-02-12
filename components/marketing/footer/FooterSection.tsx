@@ -126,8 +126,8 @@ const FooterSection = ({
 
             <div className="col-md-5">
                 <div className="rv-2-footer__nav rv-20-footer-bottom__nav justify-content-center justify-content-md-end">
-                <a href="#" style={{ textDecoration: 'none' }}>{t('privacyPolicy')}</a>
-                <a href="#" style={{ textDecoration: 'none' }}>{t('termsOfService')}</a>
+                <Link href="/services/privacy-policy" style={{ textDecoration: 'none' }}>{t('privacyPolicy')}</Link>
+                <Link href="/services/terms-of-service" style={{ textDecoration: 'none' }}>{t('termsOfService')}</Link>
               </div>
             </div>
           </div>

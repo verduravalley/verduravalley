@@ -143,7 +143,9 @@
     "contact": "Contact",
     "leadership": "Leadership",
     "codeOfConduct": "Code of Conduct",
-    "sustainability": "Sustainability & Governance"
+    "sustainability": "Sustainability & Governance",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
   },
   "dashboard": {
     "sidebar": {
@@ -373,6 +375,48 @@
     "pillar5Desc": "Our production approach prioritizes prevention, control, and system design to minimize the need for chemical pesticides. By combining controlled environments, monitoring, and good agricultural practices, we aim to reduce pesticide dependency while protecting crop integrity and consumer health.",
     "pillar6Title": "Clean Handling & Hygiene Standards",
     "pillar6Desc": "We maintain strict cleanliness and hygiene practices across all stages of production, handling, and packaging to protect product quality, food safety, and the health of our team and customers."
+  },
+  "privacyPolicyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: February 2026",
+    "introTitle": "Introduction",
+    "introDesc": "Verdura Valley Co. for Development (\"Verdura Valley\", \"we\", \"us\", or \"our\") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or interact with our services.",
+    "collectTitle": "Information We Collect",
+    "collectDesc": "We may collect the following types of information: your name, email address, phone number, and business name when you submit a contact form or product inquiry; technical data such as your IP address, browser type, and device information collected automatically through cookies; and usage data about how you navigate and interact with our website.",
+    "useTitle": "How We Use Your Information",
+    "useDesc": "We use your information to respond to your inquiries and provide customer support, process and fulfill product requests, improve our website and services, send relevant updates about our products and operations (only with your consent), and comply with legal obligations.",
+    "protectionTitle": "Data Protection",
+    "protectionDesc": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Access to personal data is restricted to authorized personnel only.",
+    "cookiesTitle": "Cookies",
+    "cookiesDesc": "Our website uses cookies to enhance your browsing experience and analyze site traffic. You can control cookie preferences through your browser settings. Essential cookies are required for the website to function properly.",
+    "thirdPartyTitle": "Third-Party Services",
+    "thirdPartyDesc": "We may use third-party services such as analytics providers and cloud hosting platforms. These services may collect data on our behalf and are bound by their own privacy policies. We do not sell your personal data to third parties.",
+    "rightsTitle": "Your Rights",
+    "rightsDesc": "You have the right to access the personal data we hold about you, request correction or deletion of your data, withdraw consent for data processing at any time, and lodge a complaint with a relevant data protection authority.",
+    "contactTitle": "Contact Us",
+    "contactDesc": "If you have any questions about this Privacy Policy, please contact us at info@verduravalley.com."
+  },
+  "termsOfServicePage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: February 2026",
+    "introTitle": "Introduction",
+    "introDesc": "These Terms of Service (\"Terms\") govern your use of the Verdura Valley website and services. By accessing or using our website, you agree to be bound by these Terms. If you do not agree, please do not use our services.",
+    "useTitle": "Use of Service",
+    "useDesc": "You agree to use our website and services only for lawful purposes and in accordance with these Terms. You must not use our services in any way that could damage, disable, or impair the website, or interfere with any other party's use of the website.",
+    "productsTitle": "Products & Orders",
+    "productsDesc": "All product descriptions and images on our website are provided for informational purposes. We make every effort to display accurate information, but we do not guarantee that all details are complete or error-free. Product availability is subject to change without notice. Custom orders and inquiries are subject to our confirmation and acceptance.",
+    "pricingTitle": "Pricing",
+    "pricingDesc": "Prices displayed on our website are subject to change without prior notice. For bulk orders, custom products, or wholesale pricing, please contact us directly. All transactions are conducted in accordance with applicable local regulations.",
+    "ipTitle": "Intellectual Property",
+    "ipDesc": "All content on this website, including text, graphics, logos, images, and software, is the property of Verdura Valley Co. for Development and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from any content without our prior written consent.",
+    "liabilityTitle": "Limitation of Liability",
+    "liabilityDesc": "Verdura Valley shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services. Our total liability shall not exceed the amount paid by you, if any, for accessing our services.",
+    "governingTitle": "Governing Law",
+    "governingDesc": "These Terms shall be governed by and construed in accordance with the laws of the Arab Republic of Egypt. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Cairo, Egypt.",
+    "changesTitle": "Changes to Terms",
+    "changesDesc": "We reserve the right to update these Terms at any time. Changes will be posted on this page with an updated revision date. Your continued use of our website after any changes constitutes acceptance of the new Terms.",
+    "contactTitle": "Contact Us",
+    "contactDesc": "If you have any questions about these Terms, please contact us at info@verduravalley.com."
   },
   "common": {
     "loading": "Loading...",
