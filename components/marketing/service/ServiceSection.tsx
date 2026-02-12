@@ -43,8 +43,8 @@ const ServiceSection = () => {
 
           <div className="row g-4">
             {services.map((item, index) => (
-              <div className="col-lg-3 col-md-6" key={index}>
-                <DivAnimateYAxis duration={1 + (index * 0.1)}>
+              <div className="col-lg-3 col-md-6 d-flex" key={index}>
+                <DivAnimateYAxis className="w-100" duration={1 + (index * 0.1)}>
                   <div className="rv-value-card">
                     <div className="rv-value-card__icon">
                       {item.icon}
