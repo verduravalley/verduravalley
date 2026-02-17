@@ -1,16 +1,27 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useTranslations } from 'next-intl';
 import BreadcrumbSection from '@/components/marketing/breadcrumb/BreadcrumbSection';
 import DivAnimateYAxis from '@/components/marketing/utils/DivAnimateYAxis';
-import { FileText, Loader2, Download, ExternalLink } from 'lucide-react';
+import { FileText, Loader2, Download, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+
+// Configure PDF worker
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const CodeOfConductPage = () => {
   const t = useTranslations('codeOfConductPage');
   const [pdfUrl, setPdfUrl] = useState("");
   const [loading, setLoading] = useState(true);
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [scale, setScale] = useState(1.0);
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchPdfUrl = async () => {
@@ -28,19 +39,37 @@ const CodeOfConductPage = () => {
     fetchPdfUrl();
   }, []);
 
+  // Responsive scaling
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
+        // Auto-scale for mobile
+        if (window.innerWidth < 768) {
+             setScale(window.innerWidth / 650); // Approximate A4 width ratio
+        }
+      }
+    };
+    
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+    
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
+    setNumPages(numPages);
+  }
+
   return (
     <main className="rv-14-body">
       <BreadcrumbSection title={t('title')} />
 
-      {/* Live PDF Viewer Section */}
       <section className="pdf-viewer-section rv-section-spacing">
-        <div className="container">
-          {/* --- Our Vision --- */}
+        <div className="container" ref={containerRef}>
           <DivAnimateYAxis>
-            <div className="rv-vision-section text-center mb-100">
-              <div className="rv-1-section__heading justify-content-center">
-                {/* <h2 className="rv-1-section__title">{t('heading')}</h2> */}
-              </div>
+            <div className="rv-vision-section text-center mb-60">
               <p className="rv-vision-descr mx-auto">
                 {t('description')}
               </p>
@@ -53,56 +82,90 @@ const CodeOfConductPage = () => {
               <p className="text-gray-500 font-medium">{t('loadingDocument')}</p>
             </div>
           ) : pdfUrl ? (
-            <>
-              {/* Professional PDF Browser Mockup */}
-              <div className="pdf-browser-wrapper shadow-lg rounded-xl border border-gray-200" style={{ boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', borderRadius: '0.75rem', border: '1px solid #e5e7eb', display: 'flex', flexDirection: 'column' }}>
-                <div className="pdf-browser-header bg-gray-100 p-3 flex items-center border-b" style={{ backgroundColor: '#f3f4f6', padding: '0.75rem', display: 'flex', alignItems: 'center', borderBottom: '1px solid #e5e7eb', borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' }}>
-                  <div className="flex gap-2 mr-4" style={{ display: 'flex', gap: '0.5rem', marginRight: '1rem' }}>
-                    <span className="w-3 h-3 rounded-full bg-red-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#f87171' }}></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#facc15' }}></span>
-                    <span className="w-3 h-3 rounded-full bg-green-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#4ade80' }}></span>
-                  </div>
-                  <div className="bg-white px-4 py-1 rounded text-xs text-gray-400 flex-grow max-w-md truncate" style={{ backgroundColor: 'white', padding: '0.25rem 1rem', borderRadius: '0.25rem', fontSize: '10px', color: '#9ca3af', flexGrow: 1, maxWidth: '28rem', border: '1px solid #e5e7eb' }}>
-                    {t('browserTitle')}
-                  </div>
-                </div>
-
-                <div 
-                  className="pdf-browser-scroll-container" 
-                  style={{ 
-                    width: '100%', 
-                    height: '75vh', 
-                    minHeight: '500px', 
-                    overflowY: 'auto', 
-                    overflowX: 'auto', 
-                    WebkitOverflowScrolling: 'touch',
-                    backgroundColor: '#525659',
-                    position: 'relative',
-                    display: 'block'
-                  }}
+            <div className="flex flex-col items-center">
+              {/* PDF Controls */}
+              <div className="flex items-center gap-4 mb-6 bg-gray-100 p-3 rounded-full shadow-sm flex-wrap justify-center">
+                <button 
+                  onClick={() => setPageNumber(p => Math.max(1, p - 1))}
+                  disabled={pageNumber <= 1}
+                  className="p-2 hover:bg-white rounded-full disabled:opacity-50 transition-colors"
                 >
-                  <iframe
-                    src={`/api/code-of-conduct/pdf?v=${Date.now()}#view=FitW`}
-                    title={t('title')}
-                    style={{ 
-                      width: '100vw',
-                      maxWidth: '100%',
-                      height: '100%', 
-                      minHeight: '100%',
-                      border: 'none',
-                      display: 'block'
-                    }}
-                    scrolling="yes"
-                  />
-                </div>
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <span className="text-sm font-medium">
+                  {pageNumber} / {numPages || '--'}
+                </span>
+                <button 
+                  onClick={() => setPageNumber(p => Math.min(numPages, p + 1))}
+                  disabled={pageNumber >= numPages}
+                  className="p-2 hover:bg-white rounded-full disabled:opacity-50 transition-colors"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+                
+                <div className="w-px h-6 bg-gray-300 mx-2 hidden sm:block"></div>
+                
+                <button 
+                   onClick={() => setScale(s => Math.max(0.5, s - 0.1))}
+                   className="p-2 hover:bg-white rounded-full transition-colors hidden sm:block"
+                >
+                  <ZoomOut className="w-4 h-4" />
+                </button>
+                <span className="text-sm font-medium w-12 text-center hidden sm:block">{Math.round(scale * 100)}%</span>
+                <button 
+                   onClick={() => setScale(s => Math.min(2.0, s + 0.1))}
+                   className="p-2 hover:bg-white rounded-full transition-colors hidden sm:block"
+                >
+                  <ZoomIn className="w-4 h-4" />
+                </button>
               </div>
 
-              <div className="text-center mt-30" style={{ marginTop: '30px' }}>
-                <a href={`/api/code-of-conduct/pdf?v=${Date.now()}`} target="_blank" className="rv-14-service__btn flex items-center justify-center gap-2 mx-auto w-fit" rel="noreferrer">
-                  {t('downloadFull')} <Download className="w-5 h-5" />
-                </a>
+              {/* PDF Document */}
+              <div className="shadow-2xl border border-gray-200 bg-white" style={{ minHeight: '500px' }}>
+                <Document
+                  file={`/api/code-of-conduct/pdf?v=${Date.now()}`}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  loading={
+                    <div className="flex items-center justify-center h-96 w-full">
+                       <Loader2 className="w-8 h-8 text-green-600 animate-spin" />
+                    </div>
+                  }
+                  error={
+                    <div className="p-10 text-center">
+                       <p className="text-red-500 mb-4">{t('unavailableDesc')}</p>
+                       <a href={`/api/code-of-conduct/pdf?v=${Date.now()}`} target="_blank" className="text-green-600 underline font-medium">
+                         {t('downloadFull')}
+                       </a>
+                    </div>
+                  }
+                >
+                  <Page 
+                    pageNumber={pageNumber} 
+                    scale={scale} 
+                    width={containerWidth ? Math.min(containerWidth, 800) : undefined}
+                    renderTextLayer={false}
+                    renderAnnotationLayer={false}
+                    className="max-w-full"
+                  />
+                </Document>
               </div>
-            </>
+
+               {/* Mobile Page Indicator/Controls */}
+               <div className="mt-6 flex flex-col items-center gap-4">
+                  <p className="text-sm text-gray-500 sm:hidden">
+                    {pageNumber} of {numPages}
+                  </p>
+
+                  <a 
+                    href={`/api/code-of-conduct/pdf?v=${Date.now()}`} 
+                    target="_blank" 
+                    className="rv-14-service__btn flex items-center justify-center gap-2"
+                    rel="noreferrer"
+                  >
+                    {t('downloadFull')} <Download className="w-5 h-5" />
+                  </a>
+               </div>
+            </div>
           ) : (
             <div className="text-center py-20 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
                <div className="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">

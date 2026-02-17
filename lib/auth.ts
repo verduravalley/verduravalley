@@ -9,7 +9,7 @@ export const AUTH_COOKIE = 'vv-auth-token';
 
 export const COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
+  secure: false, // Temporarily disabled for debugging/flexibility
   sameSite: 'lax' as const,
   path: '/',
   maxAge: 60 * 60 * 24 * 7, // 7 days
