@@ -33,7 +33,8 @@ const AuthForm = () => {
 
       toast.success('Logged in successfully!');
       reset();
-      router.push('/dashboard');
+      // Use window.location to ensure cookie is set before navigation
+      window.location.href = '/en/dashboard';
     } catch {
       toast.error('Something went wrong');
     } finally {

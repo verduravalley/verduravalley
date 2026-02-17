@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { Loader2, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Download, FileText } from 'lucide-react';
+import { Loader2, ChevronLeft, ChevronRight, Download, FileText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import 'react-pdf/dist/Page/AnnotationLayer.css';
@@ -19,7 +19,6 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
   const t = useTranslations('codeOfConductPage');
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState(1);
-  const [scale, setScale] = useState(1.0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -27,10 +26,6 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
     const updateWidth = () => {
       if (containerRef.current) {
         setContainerWidth(containerRef.current.clientWidth);
-        // Auto-scale for mobile
-        if (window.innerWidth < 768) {
-             setScale(window.innerWidth / 650); // Approximate A4 width ratio
-        }
       }
     };
     
@@ -46,89 +41,90 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
 
   return (
     <div className="container" ref={containerRef}>
-      <div className="flex flex-col items-center">
-        {/* PDF Controls */}
-        <div className="flex items-center gap-4 mb-6 bg-gray-100 p-3 rounded-full shadow-sm flex-wrap justify-center">
+      <div className="position-relative">
+        {/* Left Arrow */}
+        {pageNumber > 1 && (
           <button 
-            onClick={() => setPageNumber(p => Math.max(1, p - 1))}
-            disabled={pageNumber <= 1}
-            className="p-2 hover:bg-white rounded-full disabled:opacity-50 transition-colors"
+            onClick={() => setPageNumber(p => p - 1)}
+            className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle shadow-sm"
+            style={{ 
+              width: '50px', 
+              height: '50px', 
+              zIndex: 10,
+              border: '2px solid #2D6A4F',
+              marginLeft: '-25px'
+            }}
+            aria-label="Previous page"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" style={{ color: '#2D6A4F' }} />
           </button>
-          <span className="text-sm font-medium">
-            {pageNumber} / {numPages || '--'}
-          </span>
-          <button 
-            onClick={() => setPageNumber(p => Math.min(numPages, p + 1))}
-            disabled={pageNumber >= numPages}
-            className="p-2 hover:bg-white rounded-full disabled:opacity-50 transition-colors"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-          
-          <div className="w-px h-6 bg-gray-300 mx-2 hidden sm:block"></div>
-          
-          <button 
-             onClick={() => setScale(s => Math.max(0.5, s - 0.1))}
-             className="p-2 hover:bg-white rounded-full transition-colors hidden sm:block"
-          >
-            <ZoomOut className="w-4 h-4" />
-          </button>
-          <span className="text-sm font-medium w-12 text-center hidden sm:block">{Math.round(scale * 100)}%</span>
-          <button 
-             onClick={() => setScale(s => Math.min(2.0, s + 0.1))}
-             className="p-2 hover:bg-white rounded-full transition-colors hidden sm:block"
-          >
-            <ZoomIn className="w-4 h-4" />
-          </button>
-        </div>
+        )}
 
-        {/* PDF Document */}
-        <div className="shadow-2xl border border-gray-200 bg-white" style={{ minHeight: '500px' }}>
+        {/* PDF Document - 100% width */}
+        <div className="shadow-lg border border-gray-200 bg-white w-100">
           <Document
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
             loading={
-              <div className="flex items-center justify-center h-96 w-full">
-                 <Loader2 className="w-8 h-8 text-green-600 animate-spin" />
+              <div className="d-flex flex-column align-items-center justify-content-center py-5" style={{ minHeight: '500px' }}>
+                 <Loader2 className="text-success mb-3" style={{ width: '3rem', height: '3rem' }} />
+                 <span className="text-muted">Loading PDF...</span>
               </div>
             }
             error={
-              <div className="p-10 text-center">
-                 <p className="text-red-500 mb-4">{t('unavailableDesc')}</p>
-                 <a href={url} target="_blank" className="text-green-600 underline font-medium">
+              <div className="p-5 text-center">
+                 <FileText className="text-muted mb-3 mx-auto" style={{ width: '3rem', height: '3rem' }} />
+                 <p className="text-danger mb-3">{t('unavailableDesc')}</p>
+                 <a href={url} target="_blank" className="btn btn-success" rel="noreferrer">
                    {t('downloadFull')}
                  </a>
               </div>
             }
           >
             <Page 
-              pageNumber={pageNumber} 
-              scale={scale} 
-              width={containerWidth ? Math.min(containerWidth, 800) : undefined}
-              renderTextLayer={false}
-              renderAnnotationLayer={false}
-              className="max-w-full"
+              pageNumber={pageNumber}
+              width={containerWidth || undefined}
+              renderTextLayer={true}
+              renderAnnotationLayer={true}
+              className="w-100"
             />
           </Document>
         </div>
 
-         {/* Mobile Page Indicator/Controls */}
-         <div className="mt-6 flex flex-col items-center gap-4">
-            <p className="text-sm text-gray-500 sm:hidden">
-              {pageNumber} of {numPages}
-            </p>
+        {/* Right Arrow */}
+        {pageNumber < numPages && (
+          <button 
+            onClick={() => setPageNumber(p => p + 1)}
+            className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle shadow-sm"
+            style={{ 
+              width: '50px', 
+              height: '50px', 
+              zIndex: 10,
+              border: '2px solid #2D6A4F',
+              marginRight: '-25px'
+            }}
+            aria-label="Next page"
+          >
+            <ChevronRight className="w-6 h-6" style={{ color: '#2D6A4F' }} />
+          </button>
+        )}
+      </div>
 
-            <a 
-              href={url} 
-              target="_blank" 
-              className="rv-14-service__btn flex items-center justify-center gap-2"
-              rel="noreferrer"
-            >
-              {t('downloadFull')} <Download className="w-5 h-5" />
-            </a>
-         </div>
+      {/* Page indicator and download button */}
+      <div className="mt-4 d-flex flex-column align-items-center gap-3">
+        <p className="text-muted small mb-0">
+          Page {pageNumber} of {numPages}
+        </p>
+
+        <a 
+          href={url} 
+          target="_blank" 
+          className="rv-14-service__btn d-flex align-items-center gap-2"
+          rel="noreferrer"
+        >
+          <Download style={{ width: '1.25rem', height: '1.25rem' }} />
+          {t('downloadFull')}
+        </a>
       </div>
     </div>
   );
