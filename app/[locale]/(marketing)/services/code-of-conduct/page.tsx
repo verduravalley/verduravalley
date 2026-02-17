@@ -55,8 +55,8 @@ const CodeOfConductPage = () => {
           ) : pdfUrl ? (
             <>
               {/* Professional PDF Browser Mockup */}
-              <div className="pdf-browser-wrapper shadow-lg rounded-xl overflow-hidden border border-gray-200" style={{ boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', borderRadius: '0.75rem', overflow: 'hidden', border: '1px solid #e5e7eb' }}>
-                <div className="pdf-browser-header bg-gray-100 p-3 flex items-center border-b" style={{ backgroundColor: '#f3f4f6', padding: '0.75rem', display: 'flex', alignItems: 'center', borderBottom: '1px solid #e5e7eb' }}>
+              <div className="pdf-browser-wrapper shadow-lg rounded-xl border border-gray-200" style={{ boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', borderRadius: '0.75rem', border: '1px solid #e5e7eb', display: 'flex', flexDirection: 'column' }}>
+                <div className="pdf-browser-header bg-gray-100 p-3 flex items-center border-b" style={{ backgroundColor: '#f3f4f6', padding: '0.75rem', display: 'flex', alignItems: 'center', borderBottom: '1px solid #e5e7eb', borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' }}>
                   <div className="flex gap-2 mr-4" style={{ display: 'flex', gap: '0.5rem', marginRight: '1rem' }}>
                     <span className="w-3 h-3 rounded-full bg-red-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#f87171' }}></span>
                     <span className="w-3 h-3 rounded-full bg-yellow-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#facc15' }}></span>
@@ -67,13 +67,15 @@ const CodeOfConductPage = () => {
                   </div>
                 </div>
 
-                <iframe
-                  src={`/api/code-of-conduct/pdf?v=${Date.now()}#view=FitH`}
-                  title={t('title')}
-                  className="w-full h-[600px] md:h-[800px]"
-                  style={{ width: '100%', height: '800px', border: 0 }}
-                  frameBorder="0"
-                />
+                <div className="w-full h-[500px] md:h-[800px] overflow-auto" style={{ height: '70vh', minHeight: '500px', overflow: 'auto', WebkitOverflowScrolling: 'touch' }}>
+                  <iframe
+                    src={`/api/code-of-conduct/pdf?v=${Date.now()}#view=FitH`}
+                    title={t('title')}
+                    className="w-full h-full"
+                    style={{ width: '100%', height: '100%', border: 0 }}
+                    frameBorder="0"
+                  />
+                </div>
               </div>
 
               <div className="text-center mt-30" style={{ marginTop: '30px' }}>
