@@ -36,3 +36,4 @@ const TermsOfServiceSection = () => {
 };
 
 export default TermsOfServiceSection;
+ 
