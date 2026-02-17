@@ -1,0 +1,116 @@
+.rv-legal-section {
+  background-color: #ffffff;
+  
+  .rv-legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+
+    @media (max-width: 768px) {
+      padding: 30px 20px;
+    }
+  }
+
+  .rv-legal-header {
+    text-align: center;
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 30px;
+
+    .rv-legal-title {
+      font-size: 42px;
+      font-weight: 700;
+      color: #2D6A4F;
+      margin-bottom: 10px;
+    }
+
+    .rv-legal-date {
+      font-size: 16px;
+      color: #666;
+      font-style: italic;
+    }
+  }
+
+  .rv-legal-body {
+    padding-top: 30px;
+    color: #444;
+    line-height: 1.8;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .rv-legal-intro {
+      font-size: 18px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .rv-legal-block {
+      .rv-legal-block-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #2D6A4F;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        
+        &::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background: #eee;
+          margin-left: 20px;
+        }
+
+        [dir="rtl"] &::after {
+          margin-left: 0;
+          margin-right: 20px;
+        }
+      }
+
+      .rv-legal-sub-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2D6A4F;
+        margin-bottom: 10px;
+      }
+    }
+
+    .rv-legal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 8px;
+
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: #2D6A4F; /* Green from the brand */
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 1;
+          top: 0;
+        }
+
+        [dir="rtl"] & {
+          padding-left: 0;
+          padding-right: 25px;
+
+          &::before {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
