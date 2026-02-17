@@ -62,18 +62,37 @@ const CodeOfConductPage = () => {
                     <span className="w-3 h-3 rounded-full bg-yellow-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#facc15' }}></span>
                     <span className="w-3 h-3 rounded-full bg-green-400" style={{ width: '0.75rem', height: '0.75rem', borderRadius: '9999px', backgroundColor: '#4ade80' }}></span>
                   </div>
-                  <div className="bg-white px-4 py-1 rounded text-xs text-gray-600 flex-grow max-w-md truncate" style={{ backgroundColor: 'white', padding: '0.25rem 1rem', borderRadius: '0.25rem', fontSize: '0.75rem', color: '#9ca3af', flexGrow: 1, maxWidth: '28rem' }}>
+                  <div className="bg-white px-4 py-1 rounded text-xs text-gray-400 flex-grow max-w-md truncate" style={{ backgroundColor: 'white', padding: '0.25rem 1rem', borderRadius: '0.25rem', fontSize: '10px', color: '#9ca3af', flexGrow: 1, maxWidth: '28rem', border: '1px solid #e5e7eb' }}>
                     {t('browserTitle')}
                   </div>
                 </div>
 
-                <div className="w-full h-[500px] md:h-[800px] overflow-auto" style={{ height: '70vh', minHeight: '500px', overflow: 'auto', WebkitOverflowScrolling: 'touch' }}>
+                <div 
+                  className="pdf-browser-scroll-container" 
+                  style={{ 
+                    width: '100%', 
+                    height: '75vh', 
+                    minHeight: '500px', 
+                    overflowY: 'auto', 
+                    overflowX: 'auto', 
+                    WebkitOverflowScrolling: 'touch',
+                    backgroundColor: '#525659',
+                    position: 'relative',
+                    display: 'block'
+                  }}
+                >
                   <iframe
-                    src={`/api/code-of-conduct/pdf?v=${Date.now()}#view=FitH`}
+                    src={`/api/code-of-conduct/pdf?v=${Date.now()}#view=FitW`}
                     title={t('title')}
-                    className="w-full h-full"
-                    style={{ width: '100%', height: '100%', border: 0 }}
-                    frameBorder="0"
+                    style={{ 
+                      width: '100vw',
+                      maxWidth: '100%',
+                      height: '100%', 
+                      minHeight: '100%',
+                      border: 'none',
+                      display: 'block'
+                    }}
+                    scrolling="yes"
                   />
                 </div>
               </div>
