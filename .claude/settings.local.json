@@ -17,7 +17,14 @@
       "Bash(done echo \"\" ls \"d:/Work/Megzz/components/marketing/checkout/PaymentGatewaySelector.tsx\")",
       "Bash(__NEW_LINE_9251c88853a6140d__ echo \"\")",
       "Bash(done echo \"\" echo \"=== Payment Libs ===\" ls -la \"d:/Work/Megzz/lib/paymob.ts\" \"d:/Work/Megzz/lib/kashier.ts\" echo \"\" echo \"=== Checkout Pages ===\" find \"d:/Work/Megzz/app/[locale]/\\(marketing\\)/checkout\" -name \"page.tsx\")",
-      "Bash(done echo \"\" echo \"=== Payment Gateway Selector ===\" ls -la \"d:/Work/Megzz/components/marketing/checkout/PaymentGatewaySelector.tsx\")"
+      "Bash(done echo \"\" echo \"=== Payment Gateway Selector ===\" ls -la \"d:/Work/Megzz/components/marketing/checkout/PaymentGatewaySelector.tsx\")",
+      "Bash(git -C d:/Work/Verdura log --oneline styles/scss/style.scss)",
+      "Bash(git -C d:/Work/Verdura diff HEAD~1 styles/scss/style.scss)",
+      "Bash(git -C d:/Work/Verdura show 68e8033:styles/scss/style.scss)",
+      "Bash(git -C d:/Work/Verdura show 68e8033 --stat)",
+      "Bash(git -C d:/Work/Verdura show 68e8033)",
+      "Bash(git -C d:/Work/Verdura show 8b8f1f6 --stat)",
+      "Bash(git -C d:/Work/Verdura show 8b8f1f6:app/[locale]/\\\\\\(marketing\\\\\\)/services/code-of-conduct/page.tsx)"
     ]
   }
 }

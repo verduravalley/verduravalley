@@ -19,6 +19,7 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
   const t = useTranslations('codeOfConductPage');
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState(1);
+  const [transitioning, setTransitioning] = useState(false);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -28,10 +29,10 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
         setContainerWidth(containerRef.current.clientWidth);
       }
     };
-    
+
     window.addEventListener('resize', updateWidth);
     updateWidth();
-    
+
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
@@ -39,29 +40,49 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
     setNumPages(numPages);
   }
 
+  const changePage = (delta: number) => {
+    setTransitioning(true);
+    setTimeout(() => {
+      setPageNumber(p => p + delta);
+      setTransitioning(false);
+    }, 300);
+  };
+
   return (
     <div className="container" ref={containerRef}>
       <div className="position-relative">
         {/* Left Arrow */}
         {pageNumber > 1 && (
-          <button 
-            onClick={() => setPageNumber(p => p - 1)}
-            className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle shadow-sm"
-            style={{ 
-              width: '50px', 
-              height: '50px', 
+          <button
+            onClick={() => changePage(-1)}
+            className="position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center"
+            style={{
+              width: '44px',
+              height: '44px',
               zIndex: 10,
-              border: '2px solid #2D6A4F',
-              marginLeft: '-25px'
+              marginLeft: '-22px',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'opacity 0.2s ease',
+              opacity: 0.6,
             }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={e => (e.currentTarget.style.opacity = '0.6')}
             aria-label="Previous page"
           >
-            <ChevronLeft className="w-6 h-6" style={{ color: '#2D6A4F' }} />
+            <ChevronLeft style={{ color: '#2D6A4F', width: '28px', height: '28px' }} />
           </button>
         )}
 
         {/* PDF Document - 100% width */}
-        <div className="shadow-lg border border-gray-200 bg-white w-100">
+        <div
+          className="shadow-lg border border-gray-200 bg-white w-100"
+          style={{
+            opacity: transitioning ? 0 : 1,
+            transition: 'opacity 0.3s ease',
+          }}
+        >
           <Document
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
@@ -81,7 +102,7 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
               </div>
             }
           >
-            <Page 
+            <Page
               pageNumber={pageNumber}
               width={containerWidth || undefined}
               renderTextLayer={true}
@@ -93,19 +114,25 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
 
         {/* Right Arrow */}
         {pageNumber < numPages && (
-          <button 
-            onClick={() => setPageNumber(p => p + 1)}
-            className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle shadow-sm"
-            style={{ 
-              width: '50px', 
-              height: '50px', 
+          <button
+            onClick={() => changePage(1)}
+            className="position-absolute top-50 end-0 translate-middle-y d-flex align-items-center justify-content-center"
+            style={{
+              width: '44px',
+              height: '44px',
               zIndex: 10,
-              border: '2px solid #2D6A4F',
-              marginRight: '-25px'
+              marginRight: '-22px',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'opacity 0.2s ease',
+              opacity: 0.6,
             }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={e => (e.currentTarget.style.opacity = '0.6')}
             aria-label="Next page"
           >
-            <ChevronRight className="w-6 h-6" style={{ color: '#2D6A4F' }} />
+            <ChevronRight style={{ color: '#2D6A4F', width: '28px', height: '28px' }} />
           </button>
         )}
       </div>
@@ -116,9 +143,9 @@ const PdfViewer = ({ url }: PdfViewerProps) => {
           Page {pageNumber} of {numPages}
         </p>
 
-        <a 
-          href={url} 
-          target="_blank" 
+        <a
+          href={url}
+          target="_blank"
           className="rv-14-service__btn d-flex align-items-center gap-2"
           rel="noreferrer"
         >
