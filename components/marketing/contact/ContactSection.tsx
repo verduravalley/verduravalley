@@ -30,7 +30,7 @@ const ContactSection = () => {
           <div className="col-md-12 col-lg-5">
             <div className="rv-20-contact_image">
               <CloudinaryImage
-                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770223608/button-mushrooms3_m4u90g.jpg"
+                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448351/pexels-katana-42038662-9944543_lgizza.jpg"
                 alt="Operations in Cairo, Egypt"
                 width={800}
                 height={600}

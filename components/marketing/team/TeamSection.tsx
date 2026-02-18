@@ -16,7 +16,7 @@ const TeamSection = () => {
     {
       id: 2,
       nameKey: "hotels" as const,
-      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770052650/mushroom-pasta_fdybmx.jpg",
+      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448395/pexels-cottonbro-4253125_aju5xj.jpg",
     },
     {
       id: 3,

@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       languages: { en: '/en', ar: '/ar' },
     },
+    icons: {
+      icon: 'https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768251099/organiyo/Logos/Verdura%20Valley%20White%20Background.png',
+    },
   };
 }
 
@@ -37,6 +40,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
+        <link rel="icon" href="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1768251104/organiyo/Logos/Verdura-Valley.png" />
         {/* Conditional Bootstrap LTR/RTL */}
         {dir === 'rtl' ? (
           <link rel="stylesheet" href="/css/bootstrap.rtl.min.css" />
