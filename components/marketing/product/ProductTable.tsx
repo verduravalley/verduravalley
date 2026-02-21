@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ShopItem } from "@/types";
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import ProductContactModal from "../modal/ProductContactModal";
 import CloudinaryImage from "@/components/CloudinaryImage";
 
@@ -17,6 +18,8 @@ const ProductTable = ({
   handleRemoveItem,
   handleUpdateQuantity,
 }: Props) => {
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
   const [selectedProduct, setSelectedProduct] = useState<{name: string, slug: string} | null>(null);
 
   return (
@@ -95,7 +98,7 @@ const ProductTable = ({
                       <div className="rv-wishlist-action">
                         <button
                           className="rv-add-to-cart-btn rv-1-banner-btn rv-wishlist-action-btn"
-                          onClick={() => setSelectedProduct({ name: item.name, slug: item.slug })}
+                          onClick={() => setSelectedProduct({ name: isRtl && item.name_ar ? item.name_ar : item.name, slug: item.slug })}
                         >
                           Contact for more
                         </button>

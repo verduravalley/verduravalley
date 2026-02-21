@@ -150,7 +150,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
             control={control}
             rules={{ required: true, minLength: 8 }}
             render={({ field: { onChange, value } }) => (
-              <div className="flex-column">
+              <div className="flex-column" dir="ltr">
                 <PhoneInput
                   country={'eg'}
                   value={value}

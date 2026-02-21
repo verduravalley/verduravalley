@@ -41,7 +41,7 @@ const ProductDetailTop = ({ item }: Props) => {
       <ProductContactModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
-        productInfo={{ name: item.name, slug: item.slug }} 
+        productInfo={{ name: isRtl && item.name_ar ? item.name_ar : item.name, slug: item.slug }}
       />
     </div>
   );

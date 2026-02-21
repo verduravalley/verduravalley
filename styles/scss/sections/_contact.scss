@@ -73,8 +73,12 @@
             padding: 28px 30px 40px;
         }
 
+        @include sm {
+            padding: 20px 18px 24px;
+        }
+
         @include xxs {
-            padding: 18px 15px 30px;
+            padding: 16px 12px 20px;
         }
     }
 
@@ -122,6 +126,10 @@
 
         textarea {
             height: 160px;
+
+            @include sm {
+                height: 100px;
+            }
         }
 
         button {
