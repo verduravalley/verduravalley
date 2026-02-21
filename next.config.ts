@@ -27,10 +27,11 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com",
+      "worker-src 'self' blob:",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https://res.cloudinary.com https://via.placeholder.com",
-      "connect-src 'self' https://api.resend.com https://res.cloudinary.com",
+      "connect-src 'self' blob: https://api.resend.com https://res.cloudinary.com",
       "frame-src 'self' https://www.youtube.com https://www.google.com",
       "media-src 'self' https://res.cloudinary.com",
     ].join('; '),
