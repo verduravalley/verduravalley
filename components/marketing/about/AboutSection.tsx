@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 import NumberCounter from "../utils/NumberCounter";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import CloudinaryImage from "@/components/CloudinaryImage";
@@ -8,6 +9,8 @@ import CloudinaryImage from "@/components/CloudinaryImage";
 const AboutSection = () => {
   const t = useTranslations('home.about');
   const t2 = useTranslations('about');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
 
   return (
     <section className="rv-20-about_section">
@@ -25,7 +28,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h2 className="rv-20-about_section_title rv-text-anime">
-                    {t('title')}
+                    {stripDot(t('title'), isAr)}
                   </h2>
                 </div>
               </div>
@@ -69,28 +72,28 @@ const AboutSection = () => {
                 <ul className="row">
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t2('stewardshipTitle')}
+                      <i className="far fa-chevron-double-right"></i>{stripDot(t2('stewardshipTitle'), isAr)}
                     </h4>
                     <p>{t2('stewardshipDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t2('qualityTitle')}
+                      <i className="far fa-chevron-double-right"></i>{stripDot(t2('qualityTitle'), isAr)}
                     </h4>
                     <p>{t2('qualityDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t2('respectTitle')}
+                      <i className="far fa-chevron-double-right"></i>{stripDot(t2('respectTitle'), isAr)}
                     </h4>
                     <p>{t2('respectDesc')}</p>
                   </li>
 
                   <li className="col-md-6 text-start">
                     <h4>
-                      <i className="far fa-chevron-double-right"></i>{t2('integrityTitle')}
+                      <i className="far fa-chevron-double-right"></i>{stripDot(t2('integrityTitle'), isAr)}
                     </h4>
                     <p>{t2('integrityDesc')}</p>
                   </li>

@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { fetchDashboardLeadership } from "@/store/features/leadershipSlice";
 
 import { useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 
 const TeamSection3 = () => {
   const dispatch = useAppDispatch();
@@ -27,7 +28,7 @@ const TeamSection3 = () => {
             ) : teamData.map((item) => (
               <div className="col" key={item.id}>
                 <div className="rv-9-member rv-inner-member">
-                  <div className="rv-9-member__img">
+                  <div className="rv-9-member__img" style={{ height: '320px', overflow: 'hidden' }}>
                     <CustomImageAnimate src={item.img} alt={isRtl && item.title_ar ? item.title_ar : item.title} />
                   </div>
 
@@ -55,8 +56,8 @@ const TeamSection3 = () => {
                     </div>
                     <div>
                       <h5 className="rv-3-project__title">
-                        <a href="/leadership" aria-label={isRtl && item.title_ar ? item.title_ar : item.title}>
-                          {isRtl && item.title_ar ? item.title_ar : item.title}
+                        <a href="/leadership" aria-label={stripDot(isRtl && item.title_ar ? item.title_ar : item.title, isRtl)}>
+                          {stripDot(isRtl && item.title_ar ? item.title_ar : item.title, isRtl)}
                         </a>
                       </h5>
                     </div>

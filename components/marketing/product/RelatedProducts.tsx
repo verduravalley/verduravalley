@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useAppSelector } from "@/store/hooks";
 import ShopCard from "../shop/ShopCard";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 
 type Props = {
   currentSlug?: string;
@@ -12,6 +13,8 @@ type Props = {
 const RelatedProducts = ({ currentSlug }: Props) => {
   const { shopData } = useAppSelector((state) => state.shop);
   const t = useTranslations('shop');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
 
   const filteredProducts = currentSlug
     ? shopData.filter((item) => item.slug !== currentSlug)
@@ -24,8 +27,8 @@ const RelatedProducts = ({ currentSlug }: Props) => {
       <div className="container">
         <div className="rv-3-section-heading rv-related-prod-heading">
           <div className="rv-3-section-heading__left">
-            <h6 className="rv-7-section__sub-title">{t('newCollection')}</h6>
-            <h2 className="rv-related-prod__title">{t('featuredProducts')}</h2>
+            <h6 className="rv-7-section__sub-title">{stripDot(t('newCollection'), isAr)}</h6>
+            <h2 className="rv-related-prod__title">{stripDot(t('featuredProducts'), isAr)}</h2>
           </div>
 
           <div className="rv-3-section-heading__right">

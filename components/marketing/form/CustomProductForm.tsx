@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 
 type Inputs = {
   name: string;
@@ -27,6 +28,8 @@ type Props = {
 const CustomProductForm = ({ onSuccess }: Props) => {
   const t = useTranslations('contact');
   const tShop = useTranslations('shop');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
   const { register, handleSubmit, reset, control, formState: { errors, isValid } } = useForm<Inputs>({
     mode: "onChange",
   });
@@ -75,7 +78,7 @@ const CustomProductForm = ({ onSuccess }: Props) => {
       <div className="row">
         {/* Contact Info */}
         <div className="col-12 mb-10">
-          <h6 style={{ color: '#2d6a4f', fontWeight: 700, marginBottom: 0 }}>{t('contactInfo')}</h6>
+          <h6 style={{ color: '#2d6a4f', fontWeight: 700, marginBottom: 0 }}>{stripDot(t('contactInfo'), isAr)}</h6>
         </div>
         <div className="col-12">
           <input type="text" placeholder={t('yourName')} disabled={isLoading} {...register("name", { required: true })} />
@@ -114,7 +117,7 @@ const CustomProductForm = ({ onSuccess }: Props) => {
 
         {/* Product Info */}
         <div className="col-12 mt-20 mb-10">
-          <h6 style={{ color: '#2d6a4f', fontWeight: 700, marginBottom: 0 }}>{tShop('productInfo')}</h6>
+          <h6 style={{ color: '#2d6a4f', fontWeight: 700, marginBottom: 0 }}>{stripDot(tShop('productInfo'), isAr)}</h6>
         </div>
         <div className="col-sm-6">
           <input type="text" placeholder={tShop('productName')} disabled={isLoading} {...register("productName", { required: true })} />

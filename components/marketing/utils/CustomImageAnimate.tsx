@@ -45,6 +45,7 @@ const CustomImageAnimate = ({ className, alt, src }: Props) => {
         width={600}
         height={800}
         className={className ?? ""}
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
       />
     </div>
   );

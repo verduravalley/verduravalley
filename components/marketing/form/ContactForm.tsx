@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 
 type Inputs = {
   name: string;
@@ -29,6 +30,8 @@ type Props = {
 const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
   const t = useTranslations('contact');
   const tShop = useTranslations('shop');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
   const { register, handleSubmit, reset, control, formState: { errors, isValid } } = useForm<Inputs>({
     mode: "onChange",
     defaultValues: productInfo ? {
@@ -220,7 +223,7 @@ const ContactForm = ({ innerPage, isModal, productInfo, onSuccess }: Props) => {
             <div className="rv-contact-modal__icon">
               <i className="fa-regular fa-circle-check"></i>
             </div>
-            <h3 className="rv-contact-modal__title">{t('thankYou')}</h3>
+            <h3 className="rv-contact-modal__title">{stripDot(t('thankYou'), isAr)}</h3>
             <p className="rv-contact-modal__text">{t('receivedMessage')}</p>
             <button
               type="button"

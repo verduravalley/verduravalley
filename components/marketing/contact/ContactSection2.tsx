@@ -3,13 +3,16 @@
 import ContactForm from "../form/ContactForm";
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 
 type Props = {
   innerPage?: boolean;
 };
 const ContactSection2 = ({ innerPage }: Props) => {
   const t = useTranslations('contact');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
 
   return (
     <section
@@ -28,7 +31,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    {t('contactNumbers')}
+                    {stripDot(t('contactNumbers'), isAr)}
                   </h5>
                 </div>
               </div>
@@ -49,7 +52,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    {t('emailAddress')}
+                    {stripDot(t('emailAddress'), isAr)}
                   </h5>
                 </div>
               </div>
@@ -70,7 +73,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
                 </div>
                 <div>
                   <h5 className="rv-inner-contact-info__title">
-                    {t('workingDays')}
+                    {stripDot(t('workingDays'), isAr)}
                   </h5>
                 </div>
               </div>
@@ -88,7 +91,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
         ) : (
           <div>
             <h2 className="rv-2-section-title rv-text-anime">
-              {t('readyToHelp')}
+              {stripDot(t('readyToHelp'), isAr)}
             </h2>
           </div>
         )}
@@ -101,7 +104,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
               }`}
             >
               <div>
-                <h3 className="rv-2-contact-form-title">{t('letsConnect')}</h3>
+                <h3 className="rv-2-contact-form-title">{stripDot(t('letsConnect'), isAr)}</h3>
               </div>
 
               <ContactForm innerPage={innerPage ? true : false} />

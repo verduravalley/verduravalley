@@ -6,11 +6,14 @@ import IconIntegrity from "../utils/svg/IconIntegrity";
 import IconRespect from "../utils/svg/IconRespect";
 import IconSafe from "../utils/svg/IconSafe";
 import IconStewardship from "../utils/svg/IconStewardship";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 import CloudinaryImage from "@/components/CloudinaryImage";
 
 const AboutSection2 = () => {
   const t = useTranslations('about');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
 
   return (
     <section className="rv-1-about rv-section-spacing">
@@ -34,7 +37,7 @@ const AboutSection2 = () => {
                 </div>
                 <div>
                   <h2 className="rv-1-section__title rv-text-anime">
-                    {t('storyTitle')}
+                    {stripDot(t('storyTitle'), isAr)}
                   </h2>
                 </div>
               </div>
@@ -97,7 +100,7 @@ const AboutSection2 = () => {
             <div className="rv-vision-section text-center">
               <div className="rv-1-section__heading justify-content-center ">
                 {/* <h6 className="rv-1-section__sub-title">{t('visionSubtitle')}</h6> */}
-                <h2 className="rv-1-section__title">{t('visionTitle')}</h2>
+                <h2 className="rv-1-section__title">{stripDot(t('visionTitle'), isAr)}</h2>
               </div>
               <p className="rv-vision-descr mx-auto">
                 {t('visionDesc')}
@@ -112,7 +115,7 @@ const AboutSection2 = () => {
         <div className="rv-philosophy-grid mt-40 mb-40">
           <div className="rv-1-section__heading ">
             {/* <h6 className="rv-1-section__sub-title">{t('philosophySubtitle')}</h6> */}
-            <h2 className="rv-1-section__title">{t('philosophyTitle')}</h2>
+            <h2 className="rv-1-section__title">{stripDot(t('philosophyTitle'), isAr)}</h2>
           </div>
 
           <div className="row g-4">
@@ -144,7 +147,7 @@ const AboutSection2 = () => {
                     <div className="rv-value-card__icon">
                       {value.icon}
                     </div>
-                    <h4 className="rv-value-card__title">{value.title}</h4>
+                    <h4 className="rv-value-card__title">{stripDot(value.title, isAr)}</h4>
                     <p className="rv-value-card__desc">{value.desc}</p>
                   </div>
                 </DivAnimateYAxis>

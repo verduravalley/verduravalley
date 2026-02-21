@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import ContactForm from "../form/ContactForm";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 
 type Props = {
   isOpen: boolean;
@@ -16,6 +17,8 @@ type Props = {
 const ProductContactModal = ({ isOpen, onClose, productInfo }: Props) => {
   const t = useTranslations('shop');
   const tContact = useTranslations('contact');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClose = () => {
@@ -47,7 +50,7 @@ const ProductContactModal = ({ isOpen, onClose, productInfo }: Props) => {
             <div className="rv-contact-modal__icon">
               <i className="fa-regular fa-circle-check"></i>
             </div>
-            <h3 className="rv-contact-modal__title">{tContact('thankYou')}</h3>
+            <h3 className="rv-contact-modal__title">{stripDot(tContact('thankYou'), isAr)}</h3>
             <p className="rv-contact-modal__text">{tContact('receivedMessage')}</p>
             <button
               type="button"
@@ -60,7 +63,7 @@ const ProductContactModal = ({ isOpen, onClose, productInfo }: Props) => {
         ) : (
           <>
             <div className="rv-modal-header" style={{ padding: '0 0 20px' }}>
-              <h3>{t('productInquiry')}</h3>
+              <h3>{stripDot(t('productInquiry'), isAr)}</h3>
               <button
                 onClick={handleClose}
                 style={{

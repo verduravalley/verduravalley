@@ -2,6 +2,7 @@
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 import CloudinaryImage from "@/components/CloudinaryImage";
 
 type Props = {
@@ -70,7 +71,7 @@ const FooterSection = ({
             {/* COLUMN 3: Contact Info - Moved here to fill space (Width: 4/12) */}
             <div className="col-12 col-md-3 col-lg-4">
               <div className="rv-1-footer-widget rv-20-footer-contact">
-                <h5 className="rv-1-footer-widget__title mb-3">{t('contactUs')}</h5>
+                <h5 className="rv-1-footer-widget__title mb-3">{stripDot(t('contactUs'), isArabic)}</h5>
 
                 <div className="rv-footer-contact-list">
                   {/* Phone */}

@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { stripDot } from "@/lib/stripDot";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import IconFood from "../utils/svg/IconFood";
 import IconClean from "../utils/svg/IconClean";
@@ -9,6 +10,8 @@ import IconClimate from "../utils/svg/IconClimate";
 
 const ServiceSection = () => {
   const t = useTranslations('home.service');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
 
   const services = [
     {
@@ -38,7 +41,7 @@ const ServiceSection = () => {
       <div className="container">
         <div className="rv-philosophy-grid">
           <div className="rv-1-section__heading">
-            <h2 className="rv-1-section__title">{t('title')}</h2>
+            <h2 className="rv-1-section__title">{stripDot(t('title'), isAr)}</h2>
           </div>
 
           <div className="row g-4">
@@ -49,7 +52,7 @@ const ServiceSection = () => {
                     <div className="rv-value-card__icon">
                       {item.icon}
                     </div>
-                    <h4 className="rv-value-card__title">{t(item.titleKey)}</h4>
+                    <h4 className="rv-value-card__title">{stripDot(t(item.titleKey), isAr)}</h4>
                     <p className="rv-value-card__desc">{t(item.descKey)}</p>
                   </div>
                 </DivAnimateYAxis>
