@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { locales } from '@/i18n/config';
 import { getTranslations } from 'next-intl/server';
 import { Outfit, Cairo } from 'next/font/google';
-import FontAwesomeLoader from '@/components/FontAwesomeLoader';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -85,11 +84,14 @@ export default async function LocaleLayout({
           <link rel="stylesheet" href="/css/bootstrap.min.css" />
         )}
         {/* LCP preload handled automatically by <Image priority> in BannerStaticFallback */}
+        {/* FontAwesome: all kits loaded synchronously for reliable icon display across all pages */}
+        <link rel="stylesheet" href="/assets/fontawesome/all.min.css" />
+        <link rel="stylesheet" href="/assets/fontawesome/sharp-solid.min.css" />
+        <link rel="stylesheet" href="/assets/fontawesome/sharp-regular.min.css" />
       </head>
       <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ReduxProvider>
-            <FontAwesomeLoader />
             {children}
             <ToastContainer position={dir === 'rtl' ? 'top-left' : 'top-right'} autoClose={3000} />
           </ReduxProvider>
