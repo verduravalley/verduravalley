@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import { ShopItem } from "@/types";
 import { useState } from "react";

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import ProductDetailsImageSlider from "../product/ProductDetailsImageSlider";
 import ProductDetailTop from "../product/ProductDetailTop";

@@ -119,7 +119,7 @@ const FooterSection = ({
         <div className="container">
           <div className="row align-items-center gy-3">
             <div className="col-md-7">
-              <p className="rv-2-copyright rv-1-copyright mb-0 text-center text-md-start">
+              <p className="rv-2-copyright rv-1-copyright mb-0 text-center text-md-start" suppressHydrationWarning>
                 {t('copyright', { year: new Date().getFullYear() })}
               </p>
             </div>

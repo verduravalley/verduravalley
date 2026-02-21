@@ -1,32 +1,27 @@
 'use client';
+// 'use client' required: dynamic() with ssr:false (modals) needs client context in Turbopack
+// FontAwesome is deferred via <head> link preload in locale/layout.tsx (not bundled here)
 
-// Bootstrap loaded conditionally (LTR/RTL) in [locale]/layout.tsx <head>
-
-// Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Font Awesome
-import '@/public/fontawesome/all.min.css';
-import '@/public/fontawesome/sharp-regular.min.css';
-import '@/public/fontawesome/sharp-solid.min.css';
-
-// Custom SCSS
 import '@/styles/scss/style.scss';
 
-// Components - dynamic imports to avoid hydration mismatches
 import dynamic from 'next/dynamic';
 
+// Header/Footer: ssr:true — included in SSR output for SEO (links, nav visible to crawlers)
 const HeaderSection = dynamic(
   () => import('@/components/marketing/header/HeaderSection'),
-  { ssr: false }
+  { ssr: true }
 );
 const FooterSection = dynamic(
   () => import('@/components/marketing/footer/FooterSection'),
-  { ssr: false }
+  { ssr: true }
 );
+
+// Modals: client-only (Redux state, portals) — ssr:false correct
 const CartModal = dynamic(
   () => import('@/components/marketing/modal/CartModal'),
   { ssr: false }

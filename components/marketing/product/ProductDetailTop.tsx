@@ -1,3 +1,5 @@
+'use client';
+
 import { ShopItem } from "@/types";
 import { useState } from "react";
 import ProductContactModal from "../modal/ProductContactModal";

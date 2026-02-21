@@ -24,7 +24,10 @@
       "Bash(git -C d:/Work/Verdura show 68e8033 --stat)",
       "Bash(git -C d:/Work/Verdura show 68e8033)",
       "Bash(git -C d:/Work/Verdura show 8b8f1f6 --stat)",
-      "Bash(git -C d:/Work/Verdura show 8b8f1f6:app/[locale]/\\\\\\(marketing\\\\\\)/services/code-of-conduct/page.tsx)"
+      "Bash(git -C d:/Work/Verdura show 8b8f1f6:app/[locale]/\\\\\\(marketing\\\\\\)/services/code-of-conduct/page.tsx)",
+      "Bash(npm run build:*)",
+      "Bash(du:*)",
+      "Bash(cat:*)"
     ]
   }
 }

@@ -1,26 +1,55 @@
-'use client';
+// Server Component — removed 'use client', improves FCP/LCP/SEO
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import PageViewTracker from '@/components/marketing/utils/PageViewTracker';
 
-import { usePageView } from '@/hooks/usePageView';
+// Above-fold: render immediately (no lazy load)
 import BannerSection from '@/components/marketing/banner/BannerSection';
-import TeamSection from '@/components/marketing/team/TeamSection';
-import MissionSection from '@/components/marketing/mission/MissionSection';
-import AboutSection from '@/components/marketing/about/AboutSection';
-import ServiceSection from '@/components/marketing/service/ServiceSection';
-import ContactSection from '@/components/marketing/contact/ContactSection';
-import MissionSection2 from '@/components/marketing/mission/MissionSection2';
+
+// Below-fold: lazy load to reduce initial JS/TBT
+const MissionSection2 = dynamic(
+  () => import('@/components/marketing/mission/MissionSection2'),
+  { ssr: true }
+);
+const TeamSection = dynamic(
+  () => import('@/components/marketing/team/TeamSection'),
+  { ssr: true }
+);
+const MissionSection = dynamic(
+  () => import('@/components/marketing/mission/MissionSection'),
+  { ssr: true }
+);
+const ServiceSection = dynamic(
+  () => import('@/components/marketing/service/ServiceSection'),
+  { ssr: true }
+);
+const AboutSection = dynamic(
+  () => import('@/components/marketing/about/AboutSection'),
+  { ssr: true }
+);
+const ContactSection = dynamic(
+  () => import('@/components/marketing/contact/ContactSection'),
+  { ssr: true }
+);
 
 export default function HomePage() {
-  usePageView('home');
-
   return (
     <>
+      {/* Fire-and-forget analytics — no render impact */}
+      <PageViewTracker page="home" />
+
+      {/* LCP element — rendered immediately */}
       <BannerSection />
-      <MissionSection2 />
-      <TeamSection />
-      <MissionSection />
-      <ServiceSection />
-      <AboutSection />
-      <ContactSection />
+
+      {/* Below-fold sections — code-split, streamed via Suspense */}
+      <Suspense fallback={null}>
+        <MissionSection2 />
+        <TeamSection />
+        <MissionSection />
+        <ServiceSection />
+        <AboutSection />
+        <ContactSection />
+      </Suspense>
     </>
   );
 }

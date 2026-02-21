@@ -1,16 +1,26 @@
-'use client';
-
-import { usePageView } from '@/hooks/usePageView';
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { SITE_URL } from '@/app/[locale]/layout';
 import BreadcrumbSection from '@/components/marketing/breadcrumb/BreadcrumbSection';
 import ShopMain from '@/components/marketing/main/ShopMain';
+import PageViewTracker from '@/components/marketing/utils/PageViewTracker';
 
-export default function ProductsPage() {
-  usePageView('products');
-  const t = useTranslations('breadcrumb');
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+  return {
+    title: `Products | ${t('title')}`,
+    description: t('description'),
+    alternates: { canonical: `${SITE_URL}/${locale}/products` },
+  };
+}
 
+export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'breadcrumb' });
   return (
     <>
+      <PageViewTracker page="products" />
       <BreadcrumbSection title={t('products')} />
       <ShopMain />
     </>

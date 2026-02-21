@@ -47,7 +47,7 @@ const TeamSection = () => {
         <DivAnimateYAxis className="row justify-content-center">
           {caterToData.map((item) => (
             <div className="col-md-6 col-sm-8 col-lg-4" key={item.id}>
-              <div className="rv-20-single_team ">
+              <div className="rv-20-single_team">
                 <div className="rv-20-single_team_image">
                   <CloudinaryImage 
                     src={item.image} 

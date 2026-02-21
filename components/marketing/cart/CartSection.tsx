@@ -1,3 +1,5 @@
+'use client';
+
 import { removeFromCart, updateQuantity } from "@/store/features/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toast } from "react-toastify";

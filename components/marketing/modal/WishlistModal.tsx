@@ -1,3 +1,5 @@
+'use client';
+
 import ProductTable from "../product/ProductTable";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {

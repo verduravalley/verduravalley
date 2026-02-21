@@ -1,3 +1,5 @@
+'use client';
+
 import { toggleVideoModalClose } from "@/store/features/videoModalSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 type Props = {

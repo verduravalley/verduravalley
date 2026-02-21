@@ -74,9 +74,7 @@ const HeaderSection = () => {
   return (
     <header className="rv-1-header rv-inner-header p-0">
       <div
-        className={`rv-20-header-bottom to-be-fixed ${
-          isHeaderFixed ? "fixed" : ""
-        }`}
+        className={`rv-20-header-bottom to-be-fixed${isHeaderFixed ? " fixed" : ""}`}
       >
         <div className="container">
           <div className="row align-items-center">
@@ -98,9 +96,7 @@ const HeaderSection = () => {
             <div className="col-lg-10 col-6 order-2 order-lg-1">
               <div className="d-flex align-items-center justify-content-end justify-content-lg-between">
                 <div
-                  className={`rv-1-header-nav__sidebar ${
-                    isSidebarOpen ? "active" : ""
-                  }`}
+                  className={`rv-1-header-nav__sidebar${isSidebarOpen ? " active" : ""}`}
                   ref={sidebarRef}
                 >
                   <div className="sidebar-heading d-lg-none d-flex align-items-center justify-content-between">
@@ -115,8 +111,9 @@ const HeaderSection = () => {
                     <button
                       className="rv-3-def-btn rv-1-header-mobile-menu-btn rv-20-mobile-menu-btn sidebar-close-btn"
                       onClick={closeSidebar}
+                      aria-label="Close menu"
                     >
-                      <i className="fa-regular fa-xmark"></i>
+                      <i className="fa-regular fa-xmark" aria-hidden="true"></i>
                     </button>
                   </div>
 
@@ -157,8 +154,10 @@ const HeaderSection = () => {
                     className="rv-1-header-mobile-menu-btn rv-3-def-btn rv-20-mobile-menu-btn d-lg-none d-inline-block"
                     id="rv-1-header-mobile-menu-btn"
                     onClick={openSidebar}
+                    aria-label="Open menu"
+                    aria-expanded={isSidebarOpen}
                   >
-                    <i className="fa-regular fa-bars"></i>
+                    <i className="fa-regular fa-bars" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>

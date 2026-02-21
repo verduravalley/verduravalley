@@ -1,3 +1,5 @@
+'use client';
+
 import { toggleSearchModalClose } from "@/store/features/searchModalSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import SearchForm from "../form/SearchForm";

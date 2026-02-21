@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from "react";
 import CustomImageAnimate from "../utils/CustomImageAnimate";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";

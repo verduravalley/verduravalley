@@ -1,3 +1,5 @@
+'use client';
+
 import { projectData3 } from "@/data/Data";
 
 import { Autoplay, Navigation } from "swiper/modules";
