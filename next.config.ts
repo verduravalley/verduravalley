@@ -77,7 +77,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       'lucide-react',
       '@reduxjs/toolkit',
-      'framer-motion',
       'swiper',
     ],
   },

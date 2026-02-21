@@ -58,7 +58,7 @@ const TeamSection = () => {
                 </div>
                 <div className="rv-20-team_member_info">
                   <h4 className="rv-20-team_member_name">
-                    <a href="#">{t(item.nameKey)}</a>
+                    <a href="/products" aria-label={t(item.nameKey)}>{t(item.nameKey)}</a>
                   </h4>
                 </div>
               </div>

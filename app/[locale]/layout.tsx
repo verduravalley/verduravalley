@@ -84,13 +84,7 @@ export default async function LocaleLayout({
         ) : (
           <link rel="stylesheet" href="/css/bootstrap.min.css" />
         )}
-        {/* LCP hero image — preload with fetchpriority high */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448404/pexels-zeynep-sude-emek-193601188-20315537_oaktwr.jpg"
-          fetchPriority="high"
-        />
+        {/* LCP preload handled automatically by <Image priority> in BannerStaticFallback */}
       </head>
       <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages} locale={locale}>

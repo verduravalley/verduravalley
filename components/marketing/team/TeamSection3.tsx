@@ -20,7 +20,7 @@ const TeamSection3 = () => {
   return (
     <section className="rv-inner-team rv-section-spacing rv-team-members-section">
       <div className="container">
-        <div className="rv-inner-team-row" data-aos="fade-up">
+        <div className="rv-inner-team-row" suppressHydrationWarning>
           <div className="row row-cols-lg-3 row-cols-2 row-cols-xxs-1 g-30">
             {status === 'loading' ? (
               <div className="col-12 text-center">Loading...</div>
@@ -28,7 +28,7 @@ const TeamSection3 = () => {
               <div className="col" key={item.id}>
                 <div className="rv-9-member rv-inner-member">
                   <div className="rv-9-member__img">
-                    <CustomImageAnimate src={item.img} alt="Project Image" />
+                    <CustomImageAnimate src={item.img} alt={isRtl && item.title_ar ? item.title_ar : item.title} />
                   </div>
 
                   <div className="rv-9-member__txt">
@@ -55,7 +55,7 @@ const TeamSection3 = () => {
                     </div>
                     <div>
                       <h5 className="rv-3-project__title">
-                        <a href="#">
+                        <a href="/leadership" aria-label={isRtl && item.title_ar ? item.title_ar : item.title}>
                           {isRtl && item.title_ar ? item.title_ar : item.title}
                         </a>
                       </h5>

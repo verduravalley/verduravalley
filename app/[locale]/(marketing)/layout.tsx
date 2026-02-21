@@ -2,11 +2,7 @@
 // 'use client' required: dynamic() with ssr:false (modals) needs client context in Turbopack
 // FontAwesome is deferred via <head> link preload in locale/layout.tsx (not bundled here)
 
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
+// Swiper CSS moved to component level (BannerSwiperClient, ProjectSection2, ProductDetailsImageSlider)
 import '@/styles/scss/style.scss';
 
 import dynamic from 'next/dynamic';
