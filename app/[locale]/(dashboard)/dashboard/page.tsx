@@ -117,67 +117,67 @@ export default function DashboardHome() {
   const maxDailyViews = Math.max(...stats.views.daily.map((d) => d.views), 1);
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-        <LayoutDashboard className="w-6 h-6" /> {t('title')}
+    <div className="space-y-4">
+      <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+        <LayoutDashboard className="w-5 h-5" /> {t('title')}
       </h1>
 
       {/* Top Stat Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <Link
           href="/dashboard/products"
-          className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+          className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow no-underline"
         >
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">{t('products')}</p>
-              <p className="text-2xl font-bold text-gray-900 mt-1">{stats.products.total}</p>
-              <p className="text-xs text-gray-400 mt-1">{stats.products.active} {t('active')}</p>
+              <p className="text-xs font-medium text-gray-500">{t('products')}</p>
+              <p className="text-xl font-bold text-gray-900 mt-1">{stats.products.total}</p>
+              <p className="text-[10px] text-gray-400 mt-0.5">{stats.products.active} {t('active')}</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-blue-50">
-              <Package className="w-5 h-5 text-blue-600" />
+            <div className="p-2 rounded-lg bg-blue-50">
+              <Package className="w-4 h-4 text-blue-600" />
             </div>
           </div>
         </Link>
 
         <Link
           href="/dashboard/contact"
-          className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+          className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow no-underline"
         >
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">{t('messages')}</p>
-              <p className="text-2xl font-bold text-gray-900 mt-1">{stats.messages.total}</p>
-              <p className="text-xs text-gray-400 mt-1">{stats.messages.thisMonth} {t('thisMonth')}</p>
+              <p className="text-xs font-medium text-gray-500">{t('messages')}</p>
+              <p className="text-xl font-bold text-gray-900 mt-1">{stats.messages.total}</p>
+              <p className="text-[10px] text-gray-400 mt-0.5">{stats.messages.thisMonth} {t('thisMonth')}</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-green-50">
-              <Mail className="w-5 h-5 text-green-600" />
+            <div className="p-2 rounded-lg bg-green-50">
+              <Mail className="w-4 h-4 text-green-600" />
             </div>
           </div>
         </Link>
 
-        <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">{t('siteViews')}</p>
-              <p className="text-2xl font-bold text-gray-900 mt-1">{stats.views.thisMonth}</p>
-              <p className="text-xs text-gray-400 mt-1">{stats.views.today} {t('today')}</p>
+              <p className="text-xs font-medium text-gray-500">{t('siteViews')}</p>
+              <p className="text-xl font-bold text-gray-900 mt-1">{stats.views.thisMonth}</p>
+              <p className="text-[10px] text-gray-400 mt-0.5">{stats.views.today} {t('today')}</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-purple-50">
-              <Eye className="w-5 h-5 text-purple-600" />
+            <div className="p-2 rounded-lg bg-purple-50">
+              <Eye className="w-4 h-4 text-purple-600" />
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">{t('weeklyViews')}</p>
-              <p className="text-2xl font-bold text-gray-900 mt-1">{stats.views.thisWeek}</p>
-              <p className="text-xs text-gray-400 mt-1">{stats.views.total} {t('allTime')}</p>
+              <p className="text-xs font-medium text-gray-500">{t('weeklyViews')}</p>
+              <p className="text-xl font-bold text-gray-900 mt-1">{stats.views.thisWeek}</p>
+              <p className="text-[10px] text-gray-400 mt-0.5">{stats.views.total} {t('allTime')}</p>
             </div>
-            <div className="p-2.5 rounded-lg bg-amber-50">
-              <TrendingUp className="w-5 h-5 text-amber-600" />
+            <div className="p-2 rounded-lg bg-amber-50">
+              <TrendingUp className="w-4 h-4 text-amber-600" />
             </div>
           </div>
         </div>

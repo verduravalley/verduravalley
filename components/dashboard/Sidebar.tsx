@@ -7,6 +7,8 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 import { LayoutDashboard, Package, Users, FileText, Mail, ShoppingBag, LogOut, Globe, Menu, X } from 'lucide-react';
 import clsx from 'clsx';
+import Image from 'next/image';
+
 
 const navItems = [
   { href: '/dashboard', labelKey: 'overview', icon: LayoutDashboard },
@@ -57,18 +59,30 @@ export default function Sidebar() {
           open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         )}
       >
-        <div className="p-6 border-b border-slate-800 flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-bold text-green-400">{t('adminTitle')}</h1>
-            <p className="text-xs text-slate-400 mt-1">{t('console')}</p>
+        <div className="p-4 lg:p-6 border-b border-slate-800">
+          <div className="flex items-center justify-between mb-4 lg:hidden">
+            <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">{t('console')}</p>
+            <button
+              onClick={() => setOpen(false)}
+              className="text-slate-400 hover:text-white"
+              aria-label="Close menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
-          <button
-            onClick={() => setOpen(false)}
-            className="lg:hidden text-slate-400 hover:text-white"
-            aria-label="Close menu"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex flex-col items-center text-center">
+            <div className="rounded-md">
+              <Image 
+                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/f_auto,q_auto,w_240,c_limit/v1768251104/organiyo/Logos/Verdura-Valley.png" 
+                alt="Verdura Valley" 
+                width={140} 
+                height={140}
+                className="w-14 h-14 lg:w-20 lg:h-20 object-contain rounded"
+              />
+            </div>
+            <h1 className="text-md font-bold text-green-400 leading-tight">Verdura</h1>
+            <p className="hidden lg:block text-[10px] text-slate-400 uppercase tracking-wider font-semibold mt-1">{t('console')}</p>
+          </div>
         </div>
 
         <nav className="flex-1 p-4 space-y-2">
@@ -80,6 +94,7 @@ export default function Sidebar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
+                style={{ textDecoration: 'none' }}
                 className={clsx(
                   'flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors',
                   isActive

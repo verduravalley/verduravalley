@@ -86,15 +86,13 @@ export default function LeadershipPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-          <span className="bg-green-100 p-2 rounded-lg text-green-600">
-            <Users className="w-6 h-6" />
-          </span>
+      <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+        <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+           <Users className="w-5 h-5 text-green-600" />
           {t('title')}
         </h1>
         <button
-          className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-700 transition shadow-sm"
+          className="bg-green-600 text-white px-3 py-1.5 rounded-lg flex items-center gap-2 hover:bg-green-700 transition shadow-sm text-sm"
           onClick={() => setIsModalOpen(true)}
         >
           <Plus className="w-4 h-4" /> {t('addMember')}
@@ -107,19 +105,19 @@ export default function LeadershipPage() {
         ) : members.length === 0 ? (
           <div className="col-span-full py-12 text-center text-gray-500">{t('noMembers')}</div>
         ) : members.map((member) => (
-          <div key={member.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md transition">
+          <div key={member.id} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3 hover:shadow-md transition">
             <div className="relative">
                <Image
                 src={member.image_url || "https://via.placeholder.com/150"}
                 alt={member.name}
-                className="w-20 h-20 rounded-2xl object-cover bg-gray-50 ring-4 ring-gray-50"
-                width={80}
-                height={80}
+                className="w-14 h-14 rounded-xl object-cover bg-gray-50 ring-2 ring-gray-50"
+                width={56}
+                height={56}
               />
             </div>
-            <div className="flex-1">
-              <h3 className="font-bold text-gray-900 text-lg leading-tight">{member.name}</h3>
-              <p className="text-sm text-green-600 font-medium mt-1">{member.title}</p>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-bold text-gray-900 text-base leading-tight truncate">{member.name}</h3>
+              <p className="text-xs text-green-600 font-medium mt-0.5 truncate">{member.title}</p>
             </div>
             <div className="flex flex-col gap-2">
               <button 

@@ -110,12 +110,12 @@ export default function ProductsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-          <Package className="w-6 h-6" /> {t('title')}
+      <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+        <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+          <Package className="w-5 h-5 text-green-600" /> {t('title')}
         </h1>
         <button
-          className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-700 transition shadow-sm"
+          className="bg-green-600 text-white px-3 py-1.5 rounded-lg flex items-center gap-2 hover:bg-green-700 transition shadow-sm text-sm"
           onClick={() => setIsModalOpen(true)}
         >
           <Plus className="w-4 h-4" /> {t('addProduct')}
@@ -126,11 +126,11 @@ export default function ProductsPage() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('product')}</th>
-              <th className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('category')}</th>
-              <th className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('price')}</th>
-              <th className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('status')}</th>
-              <th className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase tracking-wider">{t('actions')}</th>
+              <th className="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('product')}</th>
+              <th className="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('category')}</th>
+              <th className="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('price')}</th>
+              <th className="px-4 py-3 text-start text-xs font-medium text-gray-500 uppercase tracking-wider">{t('status')}</th>
+              <th className="px-4 py-3 text-end text-xs font-medium text-gray-500 uppercase tracking-wider">{t('actions')}</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -141,43 +141,39 @@ export default function ProductsPage() {
             ) : (
               products.map((product) => (
                 <tr key={product.id} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
+                      <div className="h-8 w-8 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
                         {product.images?.[0] ? (
-                          <Image className="h-10 w-10 object-cover" src={product.images[0]} alt={product.name} width={40} height={40} />
+                          <Image className="h-8 w-8 object-cover" src={product.images[0]} alt={product.name} width={32} height={32} />
                         ) : (
-                          <Package className="h-6 w-6 m-2 text-gray-400" />
+                          <Package className="h-4 h-4 m-2 text-gray-400" />
                         )}
                       </div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">{product.name}</div>
-                        <div className="text-sm text-gray-500 truncate max-w-xs">{product.description}</div>
+                      <div className="ml-3 min-w-0">
+                        <div className="text-sm font-medium text-gray-900 truncate max-w-[150px]">{product.name}</div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="px-2.5 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span className="px-2 py-0.5 inline-flex text-[10px] leading-4 font-semibold rounded-full bg-green-100 text-green-800">
                       {product.category || t('uncategorized')}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">${Number(product.price || 0).toFixed(2)}</div>
-                    {product.prev_price && (
-                      <div className="text-xs text-gray-400 line-through">${Number(product.prev_price).toFixed(2)}</div>
-                    )}
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <div className="text-sm text-gray-900 font-medium">${Number(product.price || 0).toFixed(2)}</div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2.5 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full ${product.is_active !== false ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span className={`px-2 py-0.5 inline-flex text-[10px] leading-4 font-semibold rounded-full ${product.is_active !== false ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                       {product.is_active !== false ? tc('active') : tc('inactive')}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                    <button className="text-blue-600 hover:text-blue-900 mr-4" onClick={() => router.push(`/dashboard/products/${product.id}`)}>
-                      <Pencil className="w-4 h-4" />
+                  <td className="px-4 py-3 whitespace-nowrap text-end text-sm font-medium">
+                    <button className="text-blue-600 hover:text-blue-900 mr-3" onClick={() => router.push(`/dashboard/products/${product.id}`)}>
+                      <Pencil className="w-3.5 h-3.5" />
                     </button>
                     <button className="text-red-600 hover:text-red-900" onClick={() => handleDelete(product.id)}>
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-3.5 h-3.5" />
                     </button>
                   </td>
                 </tr>

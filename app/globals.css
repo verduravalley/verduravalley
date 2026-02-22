@@ -43,3 +43,10 @@ html {
 body.modal-open {
   overflow: hidden;
 }
+
+/* Strip underlines from all dashboard navigation links */
+main a,
+aside a {
+  text-decoration: none !important;
+}
+

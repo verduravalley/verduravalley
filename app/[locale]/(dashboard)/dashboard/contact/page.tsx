@@ -40,8 +40,8 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-        <Mail className="w-6 h-6" /> {t('title')}
+      <h1 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+        <Mail className="w-5 h-5 text-green-600" /> {t('title')}
       </h1>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
