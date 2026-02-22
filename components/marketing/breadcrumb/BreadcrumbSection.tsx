@@ -11,11 +11,11 @@ const BreadcrumbSection = ({ title, currentPage }: Props) => {
   const t = useTranslations('breadcrumb');
 
   return (
-    <div className="rv-breadcrumb pt-120 pb-120">
+    <div className="rv-breadcrumb py-4">
       <div className="container">
         <h1 className="rv-breadcrumb__title">{title}</h1>
 
-        <ul className="rv-breadcrumb__nav d-flex justify-content-center">
+        {/* <ul className="rv-breadcrumb__nav d-flex justify-content-center">
           <li>
             <Link href="/">
               <i className="fa-solid fa-sharp fa-home"></i> {t('home')}
@@ -25,7 +25,7 @@ const BreadcrumbSection = ({ title, currentPage }: Props) => {
             <span className="dvdr"> &#47;</span>
             <span>{currentPage ? currentPage : title}</span>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const CodeOfConductPage = () => {
     <main className="rv-14-body">
       <BreadcrumbSection title={t('title')} />
 
-      <section className="pdf-viewer-section rv-section-spacing">
+      <section className="pdf-viewer-section rv-section-spacing" style={{ paddingTop: 0 }}>
         <div className="container">
           <DivAnimateYAxis>
             <div className="rv-vision-section text-center mb-60">

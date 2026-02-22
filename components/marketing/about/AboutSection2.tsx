@@ -16,7 +16,7 @@ const AboutSection2 = () => {
   const isAr = locale === 'ar';
 
   return (
-    <section className="rv-1-about rv-section-spacing">
+    <section className="rv-1-about rv-section-spacing" style={{ paddingTop: 10 }}>
       <div className="container position-relative">
         <div className="row rv-1-about-row g-0 justify-content-between">
           {/* Left Side: Main Visual (The Modern Facility) */}

@@ -19,7 +19,7 @@ const TeamSection3 = () => {
   }, [dispatch]);
 
   return (
-    <section className="rv-inner-team rv-section-spacing rv-team-members-section">
+    <section className="rv-inner-team rv-section-spacing rv-team-members-section" style={{ paddingTop: 10 }}>
       <div className="container">
         <div className="rv-inner-team-row" suppressHydrationWarning>
           <div className="row row-cols-lg-3 row-cols-2 row-cols-xxs-1 g-30">

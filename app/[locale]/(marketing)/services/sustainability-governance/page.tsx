@@ -28,7 +28,7 @@ const SustainabilityGovernancePage = () => {
       <BreadcrumbSection title={t('title')} />
 
       {/* Hero Title */}
-      <section className="rv-section-spacing pb-3 pt-5">
+      <section className="rv-section-spacing pb-3" style={{ paddingTop: 10 }}>
         <div className="container">
           <h2 className="rv-hero-title text-center p-0 m-0">{t('heroTitle')}</h2>
         </div>

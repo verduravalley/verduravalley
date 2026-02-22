@@ -20,6 +20,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
         innerPage ? "rv-inner-contact rv-section-spacing" : ""
       }`}
       id="contact"
+      style={innerPage ? { paddingTop: 10 } : {}}
     >
       <div className="container">
         {innerPage ? (

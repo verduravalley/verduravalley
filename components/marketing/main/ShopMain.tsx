@@ -52,7 +52,7 @@ const ShopMain: React.FC = () => {
 
   const totalPages = Math.ceil(shop.shopData.length / itemsPerPage);
   return (
-    <div className="rv-shop-area rv-section-spacing">
+    <div className="rv-shop-area rv-section-spacing" style={{ paddingTop: 10 }}>
       <div className="container">
         <ShopTopActions
           startIndex={startIndex}
