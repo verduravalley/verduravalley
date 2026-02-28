@@ -26,12 +26,12 @@ const ServiceSection = () => {
     },
     {
       titleKey: "s3Title" as const,
-      icon: <IconWater />,
+      icon: <IconClimate />,
       descKey: "s3l1" as const,
     },
     {
       titleKey: "s4Title" as const,
-      icon: <IconClimate />,
+      icon: <IconWater />,
       descKey: "s4l1" as const,
     },
   ];
