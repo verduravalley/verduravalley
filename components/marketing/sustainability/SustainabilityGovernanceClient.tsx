@@ -76,7 +76,7 @@ const SustainabilityGovernanceClient = () => {
                   </div>
 
                   <div className="content-wrapper">
-                    <h4 className="rv-14-service__title">
+                    <h4 className="rv-14-service__title mt-4">
                       <Link href="#">{item.title}</Link>
                     </h4>
                     <p className="rv-3-service__descr">{item.description}</p>

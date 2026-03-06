@@ -27,7 +27,8 @@
       "Bash(git -C d:/Work/Verdura show 8b8f1f6:app/[locale]/\\\\\\(marketing\\\\\\)/services/code-of-conduct/page.tsx)",
       "Bash(npm run build:*)",
       "Bash(du:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm list critters)"
     ]
   }
 }

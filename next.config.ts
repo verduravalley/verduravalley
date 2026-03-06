@@ -70,6 +70,7 @@ const nextConfig: NextConfig = {
 
   sassOptions: {
     includePaths: ['./styles'],
+    silenceDeprecations: ['import'],
   },
 
   // Tree-shake heavy packages

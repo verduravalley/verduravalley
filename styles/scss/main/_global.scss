@@ -478,6 +478,15 @@ html.lenis {
   }
 }
 
+// responsive adjustments for narrow screens
+@media (max-width: 640px) {
+  .rv-modal-container {
+    min-width: auto;
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
 .video-modal-container.active {
   background-color: transparent;
 
