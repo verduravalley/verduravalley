@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { stripDot } from "@/lib/stripDot";
@@ -21,6 +22,19 @@ const FooterSection = ({
   const tn = useTranslations('nav');
   const locale = useLocale();
   const isArabic = locale === 'ar';
+
+  const [phone, setPhone] = useState('01021002597');
+  const [email, setEmail] = useState('info@verduravalley.com');
+
+  useEffect(() => {
+    fetch('/api/settings')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.contact_phone) setPhone(data.contact_phone);
+        if (data.contact_email) setEmail(data.contact_email);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <footer className={`rv-9-footer ${style ? style : ""}`}>
@@ -81,7 +95,7 @@ const FooterSection = ({
                     </div>
                     <div className="text">
                         <span>{t('callUs')}</span>
-                        <a href="tel:01021002597" style={{ textDecoration: 'none' }} dir={isArabic ? 'ltr' : undefined}>01021002597</a>
+                        <a href={`tel:${phone}`} style={{ textDecoration: 'none' }} dir={isArabic ? 'ltr' : undefined}>{phone}</a>
                     </div>
                   </div>
 
@@ -92,7 +106,7 @@ const FooterSection = ({
                     </div>
                     <div className="text">
                         <span>{t('emailUs')}</span>
-                        <a href="mailto:info@verduravalley.com" style={{ textDecoration: 'none' }}>info@verduravalley.com</a>
+                        <a href={`mailto:${email}`} style={{ textDecoration: 'none' }}>{email}</a>
                     </div>
                   </div>
 

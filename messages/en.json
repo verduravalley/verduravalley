@@ -157,6 +157,7 @@
       "codeOfConduct": "Code of Conduct",
       "messages": "Messages",
       "customRequests": "Custom Requests",
+      "settings": "Settings",
       "signOut": "Sign Out"
     },
     "common": {
@@ -275,6 +276,13 @@
       "savingDocument": "Saving new document...",
       "selectPdf": "Select PDF File",
       "recommendation": "Recommendation: Ensure the PDF is optimized for web viewing and contains all the latest governance updates."
+    },
+    "settings": {
+      "title": "Settings",
+      "contactInfo": "Contact Information",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "saved": "Saved successfully!"
     }
   },
   "home": {

@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
-import { LayoutDashboard, Package, Users, FileText, Mail, ShoppingBag, LogOut, Globe, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Package, Users, FileText, Mail, ShoppingBag, LogOut, Globe, Menu, X, Settings } from 'lucide-react';
 import clsx from 'clsx';
 import Image from 'next/image';
 
@@ -17,6 +17,7 @@ const navItems = [
   { href: '/dashboard/code-of-conduct', labelKey: 'codeOfConduct', icon: FileText },
   { href: '/dashboard/contact', labelKey: 'messages', icon: Mail },
   { href: '/dashboard/custom-requests', labelKey: 'customRequests', icon: ShoppingBag },
+  { href: '/dashboard/settings', labelKey: 'settings', icon: Settings },
 ];
 
 export default function Sidebar() {

@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from "react";
 import ContactForm from "../form/ContactForm";
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
@@ -13,6 +14,19 @@ const ContactSection2 = ({ innerPage }: Props) => {
   const t = useTranslations('contact');
   const locale = useLocale();
   const isAr = locale === 'ar';
+
+  const [phone, setPhone] = useState('01021002597');
+  const [email, setEmail] = useState('info@verduravalley.com');
+
+  useEffect(() => {
+    fetch('/api/settings')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.contact_phone) setPhone(data.contact_phone);
+        if (data.contact_email) setEmail(data.contact_email);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <section
@@ -40,7 +54,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
               <div className="rv-inner-contact-info__bottom">
                 <ul className="rv-5-footer-timings">
                   <li>
-                    <a href="tel:0123456789">01021002597</a>
+                    <a href={`tel:${phone}`}>{phone}</a>
                   </li>
                 </ul>
               </div>
@@ -61,7 +75,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
               <div className="rv-inner-contact-info__bottom">
                 <ul className="rv-5-footer-timings">
                   <li>
-                    <a href="mailto:info@verduravalley.com">info@verduravalley.com</a>
+                    <a href={`mailto:${email}`}>{email}</a>
                   </li>
                 </ul>
               </div>

@@ -149,10 +149,20 @@ export async function POST() {
       )
     `);
 
-    // Seed default code of conduct if it doesn't exist
+    // Seed default site configs if they don't exist
     await query(`
       INSERT INTO site_configs (key, value)
       VALUES ('code_of_conduct_url', 'https://res.cloudinary.com/demo/image/upload/multi_page_pdf.pdf')
+      ON CONFLICT (key) DO NOTHING
+    `);
+    await query(`
+      INSERT INTO site_configs (key, value)
+      VALUES ('contact_phone', '01021002597')
+      ON CONFLICT (key) DO NOTHING
+    `);
+    await query(`
+      INSERT INTO site_configs (key, value)
+      VALUES ('contact_email', 'info@verduravalley.com')
       ON CONFLICT (key) DO NOTHING
     `);
 
