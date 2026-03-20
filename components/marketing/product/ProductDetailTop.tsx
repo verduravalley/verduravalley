@@ -16,13 +16,32 @@ const ProductDetailTop = ({ item }: Props) => {
   const isRtl = locale === 'ar';
   const t = useTranslations('shop');
 
+  const category = isRtl && item.category_ar ? item.category_ar : item.category;
+
   return (
     <div className="rv-product-details__top-txt">
+      {category && (
+        <span style={{
+          display: 'inline-block',
+          fontSize: '11px',
+          fontWeight: 600,
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          color: '#2d6a4f',
+          background: '#d8f3dc',
+          borderRadius: '20px',
+          padding: '3px 12px',
+          marginBottom: '10px',
+        }}>
+          {category}
+        </span>
+      )}
       <h2 className="rv-product-details__title">{isRtl && item.name_ar ? item.name_ar : item.name}</h2>
 
-      <p className="rv-product-details__short-descr">
-        {isRtl && item.product_info_ar ? item.product_info_ar : item.product_info}
-      </p>
+      <div
+        className="rv-product-details__short-descr rte-content"
+        dangerouslySetInnerHTML={{ __html: isRtl && item.product_info_ar ? item.product_info_ar : (item.product_info ?? '') }}
+      />
 
       {/* <h4 className="rv-product-details__price">
         <span className="prev-price">${item.prevPrice}.00</span>

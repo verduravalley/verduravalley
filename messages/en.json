@@ -153,6 +153,7 @@
       "console": "Management Console",
       "overview": "Overview",
       "products": "Products",
+      "categories": "Categories",
       "leadership": "Leadership",
       "codeOfConduct": "Code of Conduct",
       "messages": "Messages",
@@ -171,7 +172,8 @@
       "inactive": "Inactive",
       "optional": "optional",
       "areYouSure": "Are you sure?",
-      "activeOnWebsite": "Active (visible on website)"
+      "activeOnWebsite": "Active (visible on website)",
+      "actions": "Actions"
     },
     "overview": {
       "title": "Overview",
@@ -199,6 +201,18 @@
       "initializeDb": "Initialize Database",
       "initializing": "Initializing...",
       "dbInitSuccess": "Database initialized successfully!"
+    },
+    "categories": {
+      "title": "Categories",
+      "addCategory": "Add Category",
+      "addNewCategory": "Add New Category",
+      "editCategory": "Edit Category",
+      "createCategory": "Create Category",
+      "name": "Name",
+      "nameAr": "Name (Arabic)",
+      "slug": "Slug",
+      "sortOrder": "Sort Order",
+      "noCategories": "No categories yet. Add your first category."
     },
     "products": {
       "title": "Products",

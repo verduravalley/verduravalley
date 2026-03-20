@@ -121,6 +121,18 @@ export async function POST() {
       END $$;
     `);
 
+    // Create categories table
+    await query(`
+      CREATE TABLE IF NOT EXISTS categories (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        name_ar VARCHAR(255),
+        slug VARCHAR(255) UNIQUE NOT NULL,
+        sort_order INTEGER DEFAULT 0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+
     // Create admins table
     await query(`
       CREATE TABLE IF NOT EXISTS admins (

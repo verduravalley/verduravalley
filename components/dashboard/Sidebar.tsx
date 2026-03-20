@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
-import { LayoutDashboard, Package, Users, FileText, Mail, ShoppingBag, LogOut, Globe, Menu, X, Settings } from 'lucide-react';
+import { LayoutDashboard, Package, Users, FileText, Mail, ShoppingBag, LogOut, Globe, Menu, X, Settings, Tag } from 'lucide-react';
 import clsx from 'clsx';
 import Image from 'next/image';
 
@@ -13,6 +13,7 @@ import Image from 'next/image';
 const navItems = [
   { href: '/dashboard', labelKey: 'overview', icon: LayoutDashboard },
   { href: '/dashboard/products', labelKey: 'products', icon: Package },
+  { href: '/dashboard/categories', labelKey: 'categories', icon: Tag },
   { href: '/dashboard/leadership', labelKey: 'leadership', icon: Users },
   { href: '/dashboard/code-of-conduct', labelKey: 'codeOfConduct', icon: FileText },
   { href: '/dashboard/contact', labelKey: 'messages', icon: Mail },

@@ -7,6 +7,8 @@ import { useRouter } from '@/i18n/navigation';
 import { Dialog } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import ImageUpload from '@/components/dashboard/ImageUpload';
+import VideoUpload from '@/components/dashboard/VideoUpload';
+import RichTextEditor from '@/components/dashboard/RichTextEditor';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -42,20 +44,42 @@ interface ProductFormData {
   category_ar: string;
 }
 
+interface Category {
+  id: number;
+  name: string;
+  name_ar: string | null;
+}
+
 export default function ProductsPage() {
   const router = useRouter();
   const t = useTranslations('dashboard.products');
   const tc = useTranslations('dashboard.common');
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [images, setImages] = useState<string[]>([]);
+  const [videos, setVideos] = useState<string[]>([]);
+  const [description, setDescription] = useState('');
+  const [productInfo, setProductInfo] = useState('');
+  const [descriptionAr, setDescriptionAr] = useState('');
+  const [productInfoAr, setProductInfoAr] = useState('');
 
   const { register, handleSubmit, reset } = useForm<ProductFormData>();
 
   useEffect(() => {
     fetchProducts();
+    fetchCategories();
   }, []);
+
+  const fetchCategories = async () => {
+    try {
+      const res = await axios.get('/api/categories');
+      setCategories(res.data);
+    } catch (error) {
+      console.error('Failed to fetch categories', error);
+    }
+  };
 
   const fetchProducts = async () => {
     try {
@@ -80,12 +104,21 @@ export default function ProductsPage() {
       const payload = {
         ...data,
         slug,
-        images: images
+        description,
+        product_info: productInfo,
+        description_ar: descriptionAr,
+        product_info_ar: productInfoAr,
+        images: [...images, ...videos],
       };
       await axios.post('/api/products', payload);
       setIsModalOpen(false);
       reset();
       setImages([]);
+      setVideos([]);
+      setDescription('');
+      setProductInfo('');
+      setDescriptionAr('');
+      setProductInfoAr('');
       fetchProducts();
     } catch (error) {
       alert('Failed to create product');
@@ -96,6 +129,11 @@ export default function ProductsPage() {
     setIsModalOpen(false);
     reset();
     setImages([]);
+    setVideos([]);
+    setDescription('');
+    setProductInfo('');
+    setDescriptionAr('');
+    setProductInfoAr('');
   };
 
   const handleDelete = async (id: string) => {
@@ -206,6 +244,11 @@ export default function ProductsPage() {
                 label="Product Images"
                 multiple={true}
               />
+              <VideoUpload
+                value={videos}
+                onChange={setVideos}
+                folder="organiyo/products"
+              />
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">{t('price')}</label>
@@ -233,17 +276,18 @@ export default function ProductsPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('category')}</label>
                 <select {...register('category')} required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
                   <option value="">{t('selectCategory')}</option>
-                  <option value="Basil">Basil</option>
-                  <option value="Mushrooms">Mushrooms</option>
+                  {categories.map((cat) => (
+                    <option key={cat.id} value={cat.name}>{cat.name}</option>
+                  ))}
                 </select>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('description')}</label>
-                <textarea {...register('description')} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition h-20" placeholder="Brief product description..." />
+                <RichTextEditor value={description} onChange={setDescription} placeholder="Brief product description..." />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('productInfo')}</label>
-                <textarea {...register('product_info')} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition h-20" placeholder="Detailed production info, ingredients..." />
+                <RichTextEditor value={productInfo} onChange={setProductInfo} placeholder="Detailed production info, ingredients..." />
               </div>
 
               {/* Arabic Fields */}
@@ -258,17 +302,18 @@ export default function ProductsPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('categoryAr')}</label>
                 <select {...register('category_ar')} dir="rtl" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
                   <option value="">اختر الفئة</option>
-                  <option value="ريحان">ريحان</option>
-                  <option value="مشروم">مشروم</option>
+                  {categories.map((cat) => (
+                    <option key={cat.id} value={cat.name_ar || cat.name}>{cat.name_ar || cat.name}</option>
+                  ))}
                 </select>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('descriptionAr')}</label>
-                <textarea {...register('description_ar')} dir="rtl" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition h-20" placeholder="وصف مختصر للمنتج..." />
+                <RichTextEditor value={descriptionAr} onChange={setDescriptionAr} placeholder="وصف مختصر للمنتج..." dir="rtl" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">{t('productInfoAr')}</label>
-                <textarea {...register('product_info_ar')} dir="rtl" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition h-20" placeholder="معلومات تفصيلية عن المنتج..." />
+                <RichTextEditor value={productInfoAr} onChange={setProductInfoAr} placeholder="معلومات تفصيلية عن المنتج..." dir="rtl" />
               </div>
 
 

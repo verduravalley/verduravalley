@@ -7,6 +7,8 @@ import { useForm } from 'react-hook-form';
 import { use } from 'react';
 import { ArrowLeft, Save } from 'lucide-react';
 import ImageUpload from '@/components/dashboard/ImageUpload';
+import VideoUpload from '@/components/dashboard/VideoUpload';
+import RichTextEditor from '@/components/dashboard/RichTextEditor';
 import { useTranslations } from 'next-intl';
 
 interface Product {
@@ -26,6 +28,12 @@ interface Product {
   category_ar?: string;
 }
 
+interface Category {
+  id: number;
+  name: string;
+  name_ar: string | null;
+}
+
 export default function EditProductPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
   const t = useTranslations('dashboard.products');
@@ -36,16 +44,39 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
   const { register, handleSubmit, reset } = useForm<Product>();
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState<string[]>([]);
+  const [videos, setVideos] = useState<string[]>([]);
+  const [description, setDescription] = useState('');
+  const [productInfo, setProductInfo] = useState('');
+  const [descriptionAr, setDescriptionAr] = useState('');
+  const [productInfoAr, setProductInfoAr] = useState('');
+  const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
     if (id) fetchProduct();
+    fetchCategories();
   }, [id]);
+
+  const fetchCategories = async () => {
+    try {
+      const res = await axios.get('/api/categories');
+      setCategories(res.data);
+    } catch (error) {
+      console.error('Failed to fetch categories', error);
+    }
+  };
 
   const fetchProduct = async () => {
     try {
       const res = await axios.get(`/api/products/${id}`);
       reset(res.data);
-      setImages(res.data.images || []);
+      const allMedia: string[] = res.data.images || [];
+      const isVideo = (url: string) => /\.(mp4|webm|mov|ogg|avi)$/i.test(url) || url.includes('/video/upload/');
+      setImages(allMedia.filter((u) => !isVideo(u)));
+      setVideos(allMedia.filter((u) => isVideo(u)));
+      setDescription(res.data.description || '');
+      setProductInfo(res.data.product_info || '');
+      setDescriptionAr(res.data.description_ar || '');
+      setProductInfoAr(res.data.product_info_ar || '');
     } catch (error) {
       console.error('Failed to fetch product', error);
       alert('Product not found');
@@ -67,7 +98,11 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
       await axios.put(`/api/products/${id}`, {
         ...data,
         slug,
-        images: images,
+        description,
+        product_info: productInfo,
+        description_ar: descriptionAr,
+        product_info_ar: productInfoAr,
+        images: [...images, ...videos],
       });
       alert('Product updated successfully!');
       router.push('/dashboard/products');
@@ -103,6 +138,11 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
             folder="organiyo/products"
             label="Product Images"
             multiple={true}
+          />
+          <VideoUpload
+            value={videos}
+            onChange={setVideos}
+            folder="organiyo/products"
           />
           <div className="grid grid-cols-2 gap-4 mt-6">
             <div>
@@ -155,29 +195,20 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
             >
               <option value="">{t('selectCategory')}</option>
-              <option value="Basil">Basil</option>
-              <option value="Mushrooms">Mushrooms</option>
+              {categories.map((cat) => (
+                <option key={cat.id} value={cat.name}>{cat.name}</option>
+              ))}
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">{t('description')}</label>
-            <textarea
-              {...register('description')}
-              rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
-              placeholder="Brief product description..."
-            />
+            <RichTextEditor value={description} onChange={setDescription} placeholder="Brief product description..." />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">{t('productInfo')}</label>
-            <textarea
-              {...register('product_info')}
-              rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
-              placeholder="Detailed production information, ingredients, etc..."
-            />
+            <RichTextEditor value={productInfo} onChange={setProductInfo} placeholder="Detailed production information, ingredients, etc..." />
           </div>
 
           {/* Arabic Fields */}
@@ -202,31 +233,20 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
             >
               <option value="">اختر الفئة</option>
-              <option value="ريحان">ريحان</option>
-              <option value="مشروم">مشروم</option>
+              {categories.map((cat) => (
+                <option key={cat.id} value={cat.name_ar || cat.name}>{cat.name_ar || cat.name}</option>
+              ))}
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">{t('descriptionAr')}</label>
-            <textarea
-              {...register('description_ar')}
-              dir="rtl"
-              rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
-              placeholder="وصف مختصر للمنتج..."
-            />
+            <RichTextEditor value={descriptionAr} onChange={setDescriptionAr} placeholder="وصف مختصر للمنتج..." dir="rtl" />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">{t('productInfoAr')}</label>
-            <textarea
-              {...register('product_info_ar')}
-              dir="rtl"
-              rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"
-              placeholder="معلومات تفصيلية عن المنتج..."
-            />
+            <RichTextEditor value={productInfoAr} onChange={setProductInfoAr} placeholder="معلومات تفصيلية عن المنتج..." dir="rtl" />
           </div>
 
 

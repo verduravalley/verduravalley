@@ -44,6 +44,7 @@ interface ShopState {
   currentPage: number;
   shopData: ShopItem[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  selectedCategories: string[];
 }
 
 const initialState: ShopState = {
@@ -51,8 +52,9 @@ const initialState: ShopState = {
   itemsPerPage: 12,
   sorting: "menu_order",
   currentPage: 1,
-  shopData: [], // Start empty, will fill from API
+  shopData: [],
   status: 'idle',
+  selectedCategories: [],
 };
 
 const shopSlice = createSlice({
@@ -76,6 +78,10 @@ const shopSlice = createSlice({
     setShopData: (state, action: PayloadAction<ShopItem[]>) => {
       state.shopData = action.payload;
     },
+    setSelectedCategories: (state, action: PayloadAction<string[]>) => {
+      state.selectedCategories = action.payload;
+      state.currentPage = 1;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -92,7 +98,7 @@ const shopSlice = createSlice({
   },
 });
 
-export const { setView, setItemsPerPage, setSorting, nextPage, setShopData } =
+export const { setView, setItemsPerPage, setSorting, nextPage, setShopData, setSelectedCategories } =
   shopSlice.actions;
 
 // New selector to get the filtered shop data based on the current state
@@ -101,9 +107,13 @@ export const selectShopState = (state: RootState) => state.shop;
 export const selectFilteredShopData = createSelector(
   [selectShopState],
   (shop) => {
-    const { sorting, itemsPerPage, currentPage, shopData } = shop;
+    const { sorting, itemsPerPage, currentPage, shopData, selectedCategories = [] } = shop;
 
-    const sortedShopData = [...shopData].sort((a, b) => {
+    const filtered = selectedCategories.length === 0
+      ? shopData
+      : shopData.filter((item) => selectedCategories.includes(item.category));
+
+    const sortedShopData = [...filtered].sort((a, b) => {
       switch (sorting) {
         case "popularity":
           // Placeholder logic for popularity
@@ -126,10 +136,12 @@ export const selectFilteredShopData = createSelector(
       return 0;
     });
 
+    const totalItems = sortedShopData.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    return sortedShopData.slice(startIndex, endIndex);
+    return { currentItems: sortedShopData.slice(startIndex, endIndex), totalItems, totalPages };
   }
 );
 

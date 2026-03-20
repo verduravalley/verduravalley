@@ -153,6 +153,7 @@
       "console": "لوحة التحكم",
       "overview": "نظرة عامة",
       "products": "المنتجات",
+      "categories": "الفئات",
       "leadership": "القيادة",
       "codeOfConduct": "مدونة قواعد السلوك",
       "messages": "الرسائل",
@@ -171,7 +172,8 @@
       "inactive": "غير نشط",
       "optional": "اختياري",
       "areYouSure": "هل أنت متأكد؟",
-      "activeOnWebsite": "نشط (مرئي على الموقع)"
+      "activeOnWebsite": "نشط (مرئي على الموقع)",
+      "actions": "الإجراءات"
     },
     "overview": {
       "title": "نظرة عامة",
@@ -199,6 +201,18 @@
       "initializeDb": "تهيئة قاعدة البيانات",
       "initializing": "جارٍ التهيئة...",
       "dbInitSuccess": "تم تهيئة قاعدة البيانات بنجاح!"
+    },
+    "categories": {
+      "title": "الفئات",
+      "addCategory": "إضافة فئة",
+      "addNewCategory": "إضافة فئة جديدة",
+      "editCategory": "تعديل الفئة",
+      "createCategory": "إنشاء الفئة",
+      "name": "الاسم",
+      "nameAr": "الاسم (عربي)",
+      "slug": "المعرف",
+      "sortOrder": "ترتيب العرض",
+      "noCategories": "لا توجد فئات بعد. أضف أول فئة."
     },
     "products": {
       "title": "المنتجات",
