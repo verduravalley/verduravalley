@@ -28,7 +28,9 @@
       "Bash(npm run build:*)",
       "Bash(du:*)",
       "Bash(cat:*)",
-      "Bash(npm list critters)"
+      "Bash(npm list critters)",
+      "Bash(kill 430)",
+      "Bash(pkill -f \"next dev\")"
     ]
   }
 }

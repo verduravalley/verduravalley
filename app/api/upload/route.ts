@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
+import { getAuthFromRequest } from '@/lib/auth';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -9,6 +10,9 @@ cloudinary.config({
 
 // POST /api/upload - Upload file to Cloudinary
 export async function POST(request: NextRequest) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const body = await request.json();
     const { file, folder = 'organiyo', resourceType = 'image' } = body;

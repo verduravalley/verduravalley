@@ -1,7 +1,11 @@
 import { SignJWT, jwtVerify } from 'jose';
+import type { NextRequest } from 'next/server';
 
 const getSecret = () => {
-  const secretStr = process.env.JWT_SECRET || 'fallback-secret-key-for-development';
+  const secretStr = process.env.JWT_SECRET;
+  if (!secretStr) {
+    throw new Error('JWT_SECRET environment variable is not set');
+  }
   return new TextEncoder().encode(secretStr);
 };
 
@@ -32,4 +36,10 @@ export async function verifyToken(token: string) {
   } catch {
     return null;
   }
+}
+
+export async function getAuthFromRequest(request: NextRequest): Promise<{ id: number; email: string } | null> {
+  const token = request.cookies.get(AUTH_COOKIE)?.value;
+  if (!token) return null;
+  return verifyToken(token);
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getAuthFromRequest } from '@/lib/auth';
 
 // GET /api/categories - Fetch all categories
 export async function GET() {
@@ -24,6 +25,9 @@ export async function GET() {
 
 // POST /api/categories - Create a new category
 export async function POST(request: NextRequest) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const body = await request.json();
     const { name, name_ar, sort_order } = body;

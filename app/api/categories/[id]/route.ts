@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getAuthFromRequest } from '@/lib/auth';
 
 // PUT /api/categories/[id] - Update a category
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const { id } = await params;
     const body = await request.json();
@@ -38,6 +42,9 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
 // DELETE /api/categories/[id] - Delete a category
 export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const { id } = await params;
     await query('DELETE FROM categories WHERE id = $1', [id]);

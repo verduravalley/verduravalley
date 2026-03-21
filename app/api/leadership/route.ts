@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getAuthFromRequest } from '@/lib/auth';
 
 // GET /api/leadership - Fetch all team members
 export async function GET() {
@@ -14,6 +15,9 @@ export async function GET() {
 
 // POST /api/leadership - Create a new team member
 export async function POST(request: NextRequest) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const body = await request.json();
     const { name, title, image_url, images, sort_order, name_ar, title_ar } = body;

@@ -133,6 +133,19 @@ export async function POST() {
       )
     `);
 
+    // Create orders table
+    await query(`
+      CREATE TABLE IF NOT EXISTS orders (
+        id SERIAL PRIMARY KEY,
+        customer_name VARCHAR(255) NOT NULL,
+        total DECIMAL(10,2) DEFAULT 0,
+        status VARCHAR(50) DEFAULT 'Pending',
+        type VARCHAR(50) DEFAULT 'Delivery',
+        notes TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+
     // Create admins table
     await query(`
       CREATE TABLE IF NOT EXISTS admins (

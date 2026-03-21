@@ -33,7 +33,9 @@ export default async function proxy(request: NextRequest) {
       const secret = new TextEncoder().encode(process.env.JWT_SECRET);
       await jwtVerify(token, secret);
     } catch {
-      return NextResponse.redirect(new URL(`/${locale}/sign-in`, request.url));
+      const response = NextResponse.redirect(new URL(`/${locale}/sign-in`, request.url));
+      response.cookies.set(AUTH_COOKIE, '', { maxAge: 0, path: '/' });
+      return response;
     }
   }
 
