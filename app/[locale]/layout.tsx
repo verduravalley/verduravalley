@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { locales } from '@/i18n/config';
 import { getTranslations } from 'next-intl/server';
-import { Outfit, Cairo } from 'next/font/google';
+import { Outfit, Tajawal } from 'next/font/google';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -15,9 +15,9 @@ const outfit = Outfit({
   preload: true,
 });
 
-const cairo = Cairo({
+const tajawal = Tajawal({
   subsets: ['arabic', 'latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '700'],
   variable: '--font-cairo',
   display: 'swap',
   preload: false,
@@ -70,8 +70,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
   const fontClass = locale === 'ar'
-    ? `${cairo.variable} ${outfit.variable}`
-    : `${outfit.variable} ${cairo.variable}`;
+    ? `${tajawal.variable} ${outfit.variable}`
+    : `${outfit.variable} ${tajawal.variable}`;
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning className={fontClass}>
