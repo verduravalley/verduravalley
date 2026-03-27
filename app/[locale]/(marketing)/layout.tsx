@@ -7,6 +7,7 @@ import '@/styles/scss/style.scss';
 
 import dynamic from 'next/dynamic';
 import ScrollToTop from '@/components/marketing/utils/ScrollToTop';
+import WhatsAppButton from '@/components/marketing/utils/WhatsAppButton';
 
 // Header/Footer: ssr:true — included in SSR output for SEO (links, nav visible to crawlers)
 const HeaderSection = dynamic(
@@ -52,6 +53,8 @@ export default function MarketingLayout({
         footerContactStyle="rv-20-footer__contact-card"
         footerFormStyle="rv-20-footer-nwsltr__form"
       />
+
+      <WhatsAppButton />
 
       {/* Global Modals */}
       <CartModal />

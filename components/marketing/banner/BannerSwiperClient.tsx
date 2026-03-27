@@ -19,7 +19,8 @@ const animateSlideText = async (swiper: any, isRTL: boolean) => {
   const gsap = gsapMod.default ?? gsapMod;
   const SplitType = (splitMod.default ?? splitMod) as any;
 
-  const currentSlide = swiper.slides[swiper.activeIndex];
+  const currentSlide = swiper.slides?.[swiper.activeIndex];
+  if (!currentSlide) return;
   const textsToAnimate = currentSlide.querySelectorAll('.rv-text-anime');
   textsToAnimate.forEach((textToAnimate: HTMLElement) => {
     if (
