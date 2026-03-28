@@ -32,7 +32,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https://res.cloudinary.com https://via.placeholder.com",
       "connect-src 'self' blob: https://api.resend.com https://res.cloudinary.com https://www.google.com https://www.gstatic.com",
-      "frame-src 'self' https://www.youtube.com https://www.google.com",
+      "frame-src 'self' https://www.youtube.com https://www.google.com https://accounts.google.com",
       "media-src 'self' https://res.cloudinary.com",
     ].join('; '),
   },

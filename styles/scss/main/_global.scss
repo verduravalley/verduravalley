@@ -247,6 +247,7 @@ html.lenis {
 
 .logo img {
   width: 140px;
+  height: auto;
 
   @include sm {
     width: 130px;

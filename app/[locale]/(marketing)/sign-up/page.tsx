@@ -1,13 +1,5 @@
-'use client';
-
-import BreadcrumbSection from '@/components/marketing/breadcrumb/BreadcrumbSection';
-import AuthForm from '@/components/marketing/form/AuthForm';
+import { notFound } from 'next/navigation';
 
 export default function SignUpPage() {
-  return (
-    <>
-      <BreadcrumbSection title="Sign Up" currentPage="Sign Up" />
-      <AuthForm />
-    </>
-  );
+  notFound();
 }

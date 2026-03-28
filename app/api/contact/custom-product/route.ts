@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { query } from '@/lib/db';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => new Resend(process.env.RESEND_API_KEY);
 
 // GET /api/contact/custom-product - Fetch all custom requests
 export async function GET() {
@@ -52,7 +51,7 @@ export async function POST(request: NextRequest) {
 
     // 4. Send email via Resend
     const safeDesc = description?.trim() || 'No description provided';
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: 'Verdura Valley <contact@verduravalley.com>',
       to: ['info@verduravalley.com'],
       replyTo: email,

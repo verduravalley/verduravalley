@@ -77,9 +77,24 @@ export default function OrdersPage() {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {loading ? (
-              <tr><td colSpan={6} className="px-6 py-8 text-center text-gray-500">Loading orders...</td></tr>
+              Array.from({ length: 5 }).map((_, i) => (
+                <tr key={i}>
+                  <td className="px-6 py-4"><div className="h-4 bg-gray-200 rounded animate-pulse w-16" /></td>
+                  <td className="px-6 py-4"><div className="h-4 bg-gray-200 rounded animate-pulse w-28" /></td>
+                  <td className="px-6 py-4"><div className="h-4 bg-gray-200 rounded animate-pulse w-16" /></td>
+                  <td className="px-6 py-4"><div className="h-4 bg-gray-200 rounded animate-pulse w-14" /></td>
+                  <td className="px-6 py-4"><div className="h-4 bg-gray-200 rounded animate-pulse w-20" /></td>
+                  <td className="px-6 py-4"><div className="h-4 bg-gray-200 rounded animate-pulse w-20" /></td>
+                </tr>
+              ))
             ) : orders.length === 0 ? (
-              <tr><td colSpan={6} className="px-6 py-8 text-center text-gray-500">No orders found for this type.</td></tr>
+              <tr>
+                <td colSpan={6} className="px-6 py-16 text-center">
+                  <ShoppingCart className="w-10 h-10 text-gray-200 mx-auto mb-3" />
+                  <p className="text-gray-500 text-sm font-medium">No orders found</p>
+                  <p className="text-gray-400 text-xs mt-1">Orders for this type will appear here.</p>
+                </td>
+              </tr>
             ) : (
               orders.map((order) => (
                 <tr key={order.id} className="hover:bg-gray-50 transition-colors">

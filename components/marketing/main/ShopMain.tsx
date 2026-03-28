@@ -78,7 +78,7 @@ const ShopMain: React.FC = () => {
     <div className="rv-shop-area rv-section-spacing" style={{ paddingTop: 10 }}>
       <div className="container">
         {/* Category filter pills */}
-        {uniqueCategories.length > 0 && (
+        {shop.status !== 'loading' && shop.status !== 'idle' && uniqueCategories.length > 0 && (
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
             {uniqueCategories.map((cat) => (
               <button
@@ -119,26 +119,40 @@ const ShopMain: React.FC = () => {
           </div>
         )}
 
-        <ShopTopActions
-          startIndex={startIndex}
-          endIndex={endIndex}
-          totalItems={totalItems}
-          handleItemsPerPageChange={handleItemsPerPageChange}
-          itemsPerPage={itemsPerPage}
-          isGridView={isGridView}
-          handleViewChange={handleViewChange}
-          handleSortingChange={handleSortingChange}
-          sorting={sorting}
-        />
+        {shop.status !== 'loading' && shop.status !== 'idle' && (
+          <ShopTopActions
+            startIndex={startIndex}
+            endIndex={endIndex}
+            totalItems={totalItems}
+            handleItemsPerPageChange={handleItemsPerPageChange}
+            itemsPerPage={itemsPerPage}
+            isGridView={isGridView}
+            handleViewChange={handleViewChange}
+            handleSortingChange={handleSortingChange}
+            sorting={sorting}
+          />
+        )}
         <div className="row gy-5 justify-content-center">
           <div className="col-12">
-            {currentItems.length !== 0 ? (
+            {shop.status === 'loading' || shop.status === 'idle' ? (
+              <div className="row gy-4">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div key={i} className="col-xl-4 col-md-6">
+                    <div className="animate-pulse">
+                      <div style={{ background: '#e5e7eb', borderRadius: 12, height: 220, marginBottom: 12 }} />
+                      <div style={{ background: '#e5e7eb', borderRadius: 6, height: 16, width: '70%', marginBottom: 8 }} />
+                      <div style={{ background: '#e5e7eb', borderRadius: 6, height: 14, width: '40%' }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : currentItems.length !== 0 ? (
               <ShopGridInnerProduct currentItems={currentItems} isGridView={isGridView} />
             ) : (
               <NotFoundText />
             )}
           </div>
-          {currentItems.length !== 0 && (
+          {shop.status !== 'loading' && shop.status !== 'idle' && currentItems.length !== 0 && (
             <ShopPagination
               totalPages={totalPages}
               currentPage={currentPage}

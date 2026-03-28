@@ -173,9 +173,28 @@ export default function ProductsPage() {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {loading ? (
-              <tr><td colSpan={5} className="px-6 py-4 text-center">{tc('loading')}</td></tr>
+              Array.from({ length: 5 }).map((_, i) => (
+                <tr key={i}>
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-8 bg-gray-200 rounded-md animate-pulse flex-shrink-0" />
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-28" />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-20" /></td>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-16" /></td>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-14" /></td>
+                  <td className="px-4 py-3 text-end"><div className="h-4 bg-gray-200 rounded animate-pulse w-12 ml-auto" /></td>
+                </tr>
+              ))
             ) : products.length === 0 ? (
-               <tr><td colSpan={5} className="px-6 py-4 text-center text-gray-500">{t('noProducts')}</td></tr>
+              <tr>
+                <td colSpan={5} className="px-6 py-16 text-center">
+                  <Package className="w-10 h-10 text-gray-200 mx-auto mb-3" />
+                  <p className="text-gray-500 text-sm font-medium">{t('noProducts')}</p>
+                  <p className="text-gray-400 text-xs mt-1">Add your first product to get started.</p>
+                </td>
+              </tr>
             ) : (
               products.map((product) => (
                 <tr key={product.id} className="hover:bg-gray-50 transition-colors">

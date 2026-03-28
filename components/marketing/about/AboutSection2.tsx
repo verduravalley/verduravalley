@@ -2,14 +2,13 @@
 
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
-import IconIntegrity from "../utils/svg/IconQuality";
 import IconRespect from "../utils/svg/IconRespect";
 import IconSafe from "../utils/svg/IconIntegrity";
 import IconStewardship from "../utils/svg/IconStewardship";
+import IconQuality from "../utils/svg/IconQuality";
 import { useTranslations, useLocale } from "next-intl";
 import { stripDot } from "@/lib/stripDot";
 import CloudinaryImage from "@/components/CloudinaryImage";
-import IconQuality from "../utils/svg/IconQuality";
 
 const AboutSection2 = () => {
   const t = useTranslations("about");

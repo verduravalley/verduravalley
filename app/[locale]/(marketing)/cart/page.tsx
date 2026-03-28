@@ -1,13 +1,5 @@
-'use client';
-
-import BreadcrumbSection from '@/components/marketing/breadcrumb/BreadcrumbSection';
-import CartSection from '@/components/marketing/cart/CartSection';
+import { notFound } from 'next/navigation';
 
 export default function CartPage() {
-  return (
-    <>
-      <BreadcrumbSection title="Shopping Cart" currentPage="Cart" />
-      <CartSection />
-    </>
-  );
+  notFound();
 }

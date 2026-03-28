@@ -47,9 +47,26 @@ export default function ContactPage() {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="divide-y divide-gray-200">
           {loading ? (
-             <div className="p-8 text-center text-gray-500">{tc('loading')}</div>
+            Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="p-6">
+                <div className="flex justify-between items-start mb-3">
+                  <div className="space-y-2 flex-1">
+                    <div className="h-4 bg-gray-200 rounded animate-pulse w-32" />
+                    <div className="h-3 bg-gray-200 rounded animate-pulse w-40" />
+                    <div className="h-3 bg-gray-200 rounded animate-pulse w-24" />
+                  </div>
+                  <div className="h-3 bg-gray-200 rounded animate-pulse w-16" />
+                </div>
+                <div className="h-4 bg-gray-200 rounded animate-pulse w-1/2 mb-2" />
+                <div className="h-3 bg-gray-200 rounded animate-pulse w-full" />
+              </div>
+            ))
           ) : messages.length === 0 ? (
-             <div className="p-8 text-center text-gray-500">{t('noMessages')}</div>
+            <div className="p-16 text-center">
+              <Mail className="w-12 h-12 text-gray-200 mx-auto mb-3" />
+              <p className="text-gray-500 text-sm font-medium">{t('noMessages')}</p>
+              <p className="text-gray-400 text-xs mt-1">Contact form submissions will appear here.</p>
+            </div>
           ) : (
             messages.map((msg) => (
               <div key={msg.id} className="p-6 hover:bg-gray-50 transition">

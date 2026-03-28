@@ -116,9 +116,23 @@ export default function CategoriesPage() {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {loading ? (
-              <tr><td colSpan={5} className="px-6 py-4 text-center">{tc('loading')}</td></tr>
+              Array.from({ length: 4 }).map((_, i) => (
+                <tr key={i}>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-24" /></td>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-20" /></td>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-20" /></td>
+                  <td className="px-4 py-3"><div className="h-4 bg-gray-200 rounded animate-pulse w-8" /></td>
+                  <td className="px-4 py-3 text-end"><div className="h-4 bg-gray-200 rounded animate-pulse w-12 ml-auto" /></td>
+                </tr>
+              ))
             ) : categories.length === 0 ? (
-              <tr><td colSpan={5} className="px-6 py-10 text-center text-gray-400">{t('noCategories')}</td></tr>
+              <tr>
+                <td colSpan={5} className="px-6 py-16 text-center">
+                  <Tag className="w-10 h-10 text-gray-200 mx-auto mb-3" />
+                  <p className="text-gray-500 text-sm font-medium">{t('noCategories')}</p>
+                  <p className="text-gray-400 text-xs mt-1">Create a category to organize your products.</p>
+                </td>
+              </tr>
             ) : (
               categories.map((cat) => (
                 <tr key={cat.id} className="hover:bg-gray-50 transition-colors">

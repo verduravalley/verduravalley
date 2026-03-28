@@ -23,7 +23,7 @@ const FooterSection = ({
   const locale = useLocale();
   const isArabic = locale === 'ar';
 
-  const [phone, setPhone] = useState('01021002597');
+  const [phone, setPhone] = useState('+2-0155-160-0581');
   const [email, setEmail] = useState('info@verduravalley.com');
 
   useEffect(() => {

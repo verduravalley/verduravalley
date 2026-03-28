@@ -101,9 +101,21 @@ export default function LeadershipPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading ? (
-          <div className="col-span-full py-12 text-center text-gray-500">{t('loadingMembers')}</div>
+          Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+              <div className="w-14 h-14 bg-gray-200 rounded-xl animate-pulse flex-shrink-0" />
+              <div className="flex-1 space-y-2">
+                <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4" />
+                <div className="h-3 bg-gray-200 rounded animate-pulse w-1/2" />
+              </div>
+            </div>
+          ))
         ) : members.length === 0 ? (
-          <div className="col-span-full py-12 text-center text-gray-500">{t('noMembers')}</div>
+          <div className="col-span-full py-16 text-center">
+            <Users className="w-12 h-12 text-gray-200 mx-auto mb-3" />
+            <p className="text-gray-500 text-sm font-medium">{t('noMembers')}</p>
+            <p className="text-gray-400 text-xs mt-1">Add your first team member to get started.</p>
+          </div>
         ) : members.map((member) => (
           <div key={member.id} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3 hover:shadow-md transition">
             <div className="relative">

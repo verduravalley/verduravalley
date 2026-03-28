@@ -22,9 +22,26 @@ const TeamSection3 = () => {
     <section className="rv-inner-team rv-section-spacing rv-team-members-section" style={{ paddingTop: 10 }}>
       <div className="container">
         <div className="rv-inner-team-row" suppressHydrationWarning>
+          {teamData.length === 0 && status !== 'loading' && status !== 'idle' ? (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '80px 20px', textAlign: 'center', width: '100%' }}>
+              <i className="fa-light fa-users" style={{ fontSize: 48, color: '#d1d5db', display: 'block', marginBottom: 16 }}></i>
+              <h5 style={{ color: '#6b7280', fontWeight: 600, marginBottom: 8 }}>No team members yet</h5>
+              <p style={{ color: '#9ca3af', fontSize: 14 }}>Team members will appear here once added.</p>
+            </div>
+          ) : (
           <div className="row row-cols-lg-3 row-cols-2 row-cols-xxs-1 g-30">
-            {status === 'loading' ? (
-              <div className="col-12 text-center">Loading...</div>
+            {status === 'loading' || status === 'idle' ? (
+              Array.from({ length: 6 }).map((_, i) => (
+                <div className="col" key={i}>
+                  <div className="rv-9-member rv-inner-member">
+                    <div style={{ height: '320px', background: '#e5e7eb', borderRadius: 8 }} className="animate-pulse" />
+                    <div className="rv-9-member__txt">
+                      <div style={{ height: 12, background: '#e5e7eb', borderRadius: 4, width: '50%', marginBottom: 8 }} className="animate-pulse" />
+                      <div style={{ height: 16, background: '#e5e7eb', borderRadius: 4, width: '75%' }} className="animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              ))
             ) : teamData.map((item) => (
               <div className="col" key={item.id}>
                 <div className="rv-9-member rv-inner-member">
@@ -66,6 +83,7 @@ const TeamSection3 = () => {
               </div>
             ))}
           </div>
+          )}
         </div>
       </div>
     </section>

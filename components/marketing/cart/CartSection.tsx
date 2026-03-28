@@ -7,6 +7,7 @@ import ProductTable from "../product/ProductTable";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import CouponForm from "../form/CouponForm";
 import Link from "next/link";
+import { ShoppingCart } from "lucide-react";
 
 const CartSection = () => {
   const dispatch = useAppDispatch();
@@ -26,6 +27,23 @@ const CartSection = () => {
     0
   );
 
+  if (cartItems.length === 0) {
+    return (
+      <div className="container">
+        <DivAnimateYAxis className="cart-section">
+          <div style={{ textAlign: 'center', padding: '80px 20px' }}>
+            <ShoppingCart style={{ width: 64, height: 64, color: '#d1d5db', margin: '0 auto 20px' }} />
+            <h3 style={{ color: '#6b7280', fontWeight: 600, marginBottom: 8 }}>Your cart is empty</h3>
+            <p style={{ color: '#9ca3af', fontSize: 14, marginBottom: 28 }}>Looks like you haven&apos;t added anything yet.</p>
+            <Link className="rv-1-banner-btn" href="/products">
+              Browse Products
+            </Link>
+          </div>
+        </DivAnimateYAxis>
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       <DivAnimateYAxis className="cart-section">
@@ -41,16 +59,7 @@ const CartSection = () => {
                   />
 
                   <div className="cart-left-actions d-flex justify-content-end">
-                    {cartItems.length === 0 ? (
-                      <Link
-                        className="rv-1-banner-btn update-cart-btn"
-                        href="/products"
-                      >
-                        Go to Shop
-                      </Link>
-                    ) : (
-                      <CouponForm />
-                    )}
+                    <CouponForm />
                   </div>
                 </div>
               </div>

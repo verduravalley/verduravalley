@@ -1,58 +1,72 @@
-'use client';
-
-import { use, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { fetchDashboardProducts } from '@/store/features/shopSlice';
-import { usePageView } from '@/hooks/usePageView';
+import { notFound } from 'next/navigation';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { SITE_URL } from '@/app/[locale]/layout';
+import { query } from '@/lib/db';
 import BreadcrumbSection from '@/components/marketing/breadcrumb/BreadcrumbSection';
 import ProductDetailMain from '@/components/marketing/main/ProductDetailMain';
 import RelatedProducts from '@/components/marketing/product/RelatedProducts';
-import ErrorSection from '@/components/marketing/error/ErrorSection';
-
-import { useLocale } from "next-intl";
 
 interface PageProps {
-  params: Promise<{ productSlug: string }>;
+  params: Promise<{ locale: string; productSlug: string }>;
 }
 
-export default function ProductDetailsPage({ params }: PageProps) {
-  const { productSlug } = use(params);
-  const dispatch = useAppDispatch();
-  const { shopData, status } = useAppSelector((state) => state.shop);
-  usePageView('product', productSlug);
-  const locale = useLocale();
+async function getProduct(slug: string) {
+  try {
+    const result = await query('SELECT * FROM products WHERE slug = $1 AND is_active = true LIMIT 1', [slug]);
+    return result.rows[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { locale, productSlug } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+  const product = await getProduct(productSlug);
+  const name = (locale === 'ar' && product?.name_ar) ? product.name_ar : (product?.name ?? productSlug);
+  return {
+    title: `${name} | ${t('title')}`,
+    description: product?.description ?? t('description'),
+    alternates: { canonical: `${SITE_URL}/${locale}/products/${productSlug}` },
+  };
+}
+
+export default async function ProductDetailsPage({ params }: PageProps) {
+  const { locale, productSlug } = await params;
+  setRequestLocale(locale);
+
+  const row = await getProduct(productSlug);
+  if (!row) notFound();
+
   const isRtl = locale === 'ar';
 
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchDashboardProducts());
-    }
-  }, [dispatch, status]);
-
-  const productInfo = shopData.find((item) => item.slug === productSlug);
-
-  if (status === 'idle' || status === 'loading') {
-    return (
-      <>
-        <BreadcrumbSection title="Product Details" />
-        <div className="container py-5 text-center">
-          <p>Loading product...</p>
-        </div>
-      </>
-    );
-  }
+  // Map DB row to ShopItem shape
+  const productInfo = {
+    id: row.id,
+    slug: row.slug,
+    name: row.name,
+    name_ar: row.name_ar ?? '',
+    category: row.category ?? '',
+    category_ar: row.category_ar ?? '',
+    description: row.description ?? '',
+    description_ar: row.description_ar ?? '',
+    product_info: row.product_info ?? '',
+    product_info_ar: row.product_info_ar ?? '',
+    price: row.price ?? 0,
+    prevPrice: row.prev_price ?? 0,
+    img: Array.isArray(row.images) && row.images.length > 0 ? row.images[0] : '/assets/img/shop/1.jpg',
+    images: Array.isArray(row.images) ? row.images : [],
+    quantity: 1,
+    popularity: 0,
+    rating: 5,
+    color: '',
+  };
 
   return (
     <>
-      {productInfo ? (
-        <>
-          <BreadcrumbSection title={isRtl && productInfo.name_ar ? productInfo.name_ar : productInfo.name} />
-          <ProductDetailMain item={productInfo} />
-          <RelatedProducts currentSlug={productSlug} />
-        </>
-      ) : (
-        <ErrorSection />
-      )}
+      <BreadcrumbSection title={isRtl && productInfo.name_ar ? productInfo.name_ar : productInfo.name} />
+      <ProductDetailMain item={productInfo} />
+      <RelatedProducts currentSlug={productSlug} />
     </>
   );
 }

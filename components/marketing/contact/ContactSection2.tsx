@@ -15,7 +15,7 @@ const ContactSection2 = ({ innerPage }: Props) => {
   const locale = useLocale();
   const isAr = locale === 'ar';
 
-  const [phone, setPhone] = useState('01021002597');
+  const [phone, setPhone] = useState('+2-0155-160-0581');
   const [email, setEmail] = useState('info@verduravalley.com');
 
   useEffect(() => {
