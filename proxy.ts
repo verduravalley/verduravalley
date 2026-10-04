@@ -29,6 +29,12 @@ export default async function proxy(request: NextRequest) {
       return NextResponse.redirect(new URL(`/${locale}/sign-in`, request.url));
     }
 
+    if (!process.env.JWT_SECRET) {
+      // Without a secret every token below would fail verification silently,
+      // leaving the dashboard unreachable with no clue why.
+      console.error('JWT_SECRET is not set - dashboard auth cannot work');
+    }
+
     try {
       const secret = new TextEncoder().encode(process.env.JWT_SECRET);
       await jwtVerify(token, secret);

@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getAuthFromRequest } from '@/lib/auth';
 
 // GET /api/contact - Fetch all contact messages (for dashboard)
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const result = await query('SELECT * FROM contact_messages ORDER BY created_at DESC');
     return NextResponse.json(result.rows);

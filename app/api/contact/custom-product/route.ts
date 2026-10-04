@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { query } from '@/lib/db';
+import { getAuthFromRequest } from '@/lib/auth';
 const getResend = () => new Resend(process.env.RESEND_API_KEY);
 
 // GET /api/contact/custom-product - Fetch all custom requests
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const result = await query('SELECT * FROM custom_requests ORDER BY created_at DESC');
     return NextResponse.json(result.rows);

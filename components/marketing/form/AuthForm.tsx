@@ -2,7 +2,7 @@
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useRouter } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 import { useState } from "react";
 
 type Inputs = {
@@ -12,7 +12,7 @@ type Inputs = {
 
 const AuthForm = () => {
   const { register, handleSubmit, reset } = useForm<Inputs>();
-  const router = useRouter();
+  const locale = useLocale();
   const [loading, setLoading] = useState(false);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -35,7 +35,7 @@ const AuthForm = () => {
       toast.success('Logged in successfully!');
       reset();
       // Use window.location to ensure cookie is set before navigation
-      window.location.href = '/en/dashboard';
+      window.location.href = `/${locale}/dashboard`;
     } catch {
       toast.error('Something went wrong');
     } finally {

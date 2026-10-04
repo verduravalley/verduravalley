@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getAuthFromRequest } from '@/lib/auth';
 
+// GET stays public - the marketing site reads contact info from here
 export async function GET() {
   try {
     const result = await query(
@@ -18,6 +20,9 @@ export async function GET() {
 }
 
 export async function PUT(req: NextRequest) {
+  const user = await getAuthFromRequest(req);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const { contact_phone, contact_email } = await req.json();
 
