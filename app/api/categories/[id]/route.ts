@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
+import { slugify } from '@/lib/slugify';
 
 // PUT /api/categories/[id] - Update a category
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -17,12 +18,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
       return NextResponse.json({ message: 'Name is required' }, { status: 400 });
     }
 
-    const slug = name
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/[\s-]+/g, '_')
-      .replace(/^_+|_+$/g, '');
+    const slug = slugify(name) || `category_${Date.now()}`;
 
     const result = await query(
       `UPDATE categories SET name = $1, name_ar = $2, slug = $3, sort_order = $4
@@ -37,6 +33,15 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     return NextResponse.json(result.rows[0]);
   } catch (error) {
     console.error('Error updating category:', error);
+
+    // Slugs are derived from the name, so a duplicate name is the likely cause.
+    if ((error as { code?: string })?.code === '23505') {
+      return NextResponse.json(
+        { message: 'A category with this name already exists. Use a different name.' },
+        { status: 409 }
+      );
+    }
+
     return NextResponse.json({ message: 'Error updating category', error: errorDetail(error) }, { status: 500 });
   }
 }
