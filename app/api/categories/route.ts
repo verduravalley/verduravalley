@@ -7,16 +7,9 @@ import { slugify } from '@/lib/slugify';
 // GET /api/categories - Fetch all categories
 export async function GET() {
   try {
-    await query(`
-      CREATE TABLE IF NOT EXISTS categories (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        name_ar VARCHAR(255),
-        slug VARCHAR(255) UNIQUE NOT NULL,
-        sort_order INTEGER DEFAULT 0,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
+    // The schema is owned by scripts/setup-db.mjs and POST /api/init-db;
+    // this route used to re-run its CREATE TABLE on every request, doubling
+    // the queries on the busiest dashboard page.
     const result = await query('SELECT * FROM categories ORDER BY sort_order ASC, name ASC');
     return NextResponse.json(result.rows);
   } catch (error) {
