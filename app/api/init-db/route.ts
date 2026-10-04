@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
 
 // POST /api/init-db - Initialize database tables
@@ -199,7 +200,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Database initialization error:', error);
     return NextResponse.json(
-      { message: 'Error initializing database', error: String(error) },
+      { message: 'Error initializing database', error: errorDetail(error) },
       { status: 500 }
     );
   }

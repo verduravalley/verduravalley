@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
 
 // GET /api/products - Fetch all products
@@ -11,7 +12,7 @@ export async function GET() {
     console.error('Error fetching products:', error);
     return NextResponse.json({ 
       message: 'Error fetching products',
-      error: error instanceof Error ? error.message : String(error)
+      error: errorDetail(error)
     }, { status: 500 });
   }
 }
@@ -34,6 +35,16 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(result.rows[0], { status: 201 });
   } catch (error) {
     console.error('Error creating product:', error);
+
+    // Slugs are derived from the product name, so a duplicate name is the
+    // likely cause here - say so instead of a bare 500.
+    if ((error as { code?: string })?.code === '23505') {
+      return NextResponse.json(
+        { message: 'A product with this name already exists. Use a different name.' },
+        { status: 409 }
+      );
+    }
+
     return NextResponse.json({ message: 'Error creating product' }, { status: 500 });
   }
 }

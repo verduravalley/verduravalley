@@ -10,9 +10,19 @@ interface PageProps {
   params: Promise<{ locale: string; productSlug: string }>;
 }
 
+// Route params arrive percent-encoded, so an Arabic slug only matches the
+// stored value once it is decoded. Malformed escapes fall back to the raw value.
+function decodeSlug(slug: string) {
+  try {
+    return decodeURIComponent(slug);
+  } catch {
+    return slug;
+  }
+}
+
 async function getProduct(slug: string) {
   try {
-    const result = await query('SELECT * FROM products WHERE slug = $1 AND is_active = true LIMIT 1', [slug]);
+    const result = await query('SELECT * FROM products WHERE slug = $1 AND is_active = true LIMIT 1', [decodeSlug(slug)]);
     return result.rows[0] ?? null;
   } catch {
     return null;

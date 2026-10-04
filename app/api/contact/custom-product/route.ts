@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
 const getResend = () => new Resend(process.env.RESEND_API_KEY);
 
@@ -126,7 +127,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Backend Error:', error);
     return NextResponse.json(
-      { message: 'Internal server error.', error: String(error) },
+      { message: 'Internal server error.', error: errorDetail(error) },
       { status: 500 }
     );
   }

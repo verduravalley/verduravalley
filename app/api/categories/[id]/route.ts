@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
 
 // PUT /api/categories/[id] - Update a category
@@ -36,7 +37,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     return NextResponse.json(result.rows[0]);
   } catch (error) {
     console.error('Error updating category:', error);
-    return NextResponse.json({ message: 'Error updating category', error: String(error) }, { status: 500 });
+    return NextResponse.json({ message: 'Error updating category', error: errorDetail(error) }, { status: 500 });
   }
 }
 
@@ -51,6 +52,6 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
     return NextResponse.json({ message: 'Category deleted' });
   } catch (error) {
     console.error('Error deleting category:', error);
-    return NextResponse.json({ message: 'Error deleting category', error: String(error) }, { status: 500 });
+    return NextResponse.json({ message: 'Error deleting category', error: errorDetail(error) }, { status: 500 });
   }
 }

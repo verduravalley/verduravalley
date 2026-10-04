@@ -11,6 +11,7 @@ import VideoUpload from '@/components/dashboard/VideoUpload';
 import RichTextEditor from '@/components/dashboard/RichTextEditor';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { slugify } from '@/lib/slugify';
 
 interface Product {
   id: string;
@@ -94,12 +95,9 @@ export default function ProductsPage() {
 
   const onSubmit = async (data: ProductFormData) => {
     try {
-      const slug = data.name
-        .toLowerCase()
-        .trim()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/[\s-]+/g, '_')
-        .replace(/^_+|_+$/g, '');
+      // Falls back to a timestamp for names with no letters or digits at all,
+      // so the product never lands on an empty (and non-unique) slug.
+      const slug = slugify(data.name) || `product_${Date.now()}`;
 
       const payload = {
         ...data,
@@ -121,7 +119,11 @@ export default function ProductsPage() {
       setProductInfoAr('');
       fetchProducts();
     } catch (error) {
-      alert('Failed to create product');
+      const message =
+        axios.isAxiosError(error) && error.response?.data?.message
+          ? error.response.data.message
+          : 'Failed to create product';
+      alert(message);
     }
   };
 

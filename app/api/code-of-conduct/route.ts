@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
+import { getAuthFromRequest } from '@/lib/auth';
 
-// GET /api/code-of-conduct - Fetch current PDF URL from database
+// GET stays public - the marketing site reads the PDF URL from here
 export async function GET() {
   try {
     const result = await query("SELECT value FROM site_configs WHERE key = 'code_of_conduct_url'");
@@ -20,13 +22,16 @@ export async function GET() {
     console.error('Error fetching code of conduct:', error);
     return NextResponse.json({ 
       message: 'Error fetching data', 
-      error: error instanceof Error ? error.message : String(error) 
+      error: errorDetail(error) 
     }, { status: 500 });
   }
 }
 
 // POST /api/code-of-conduct - Update PDF URL in database
 export async function POST(request: NextRequest) {
+  const user = await getAuthFromRequest(request);
+  if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+
   try {
     const body = await request.json();
     const { pdfUrl } = body;
@@ -49,7 +54,7 @@ export async function POST(request: NextRequest) {
     console.error('Error updating code of conduct:', error);
     return NextResponse.json({ 
       message: 'Error updating data', 
-      error: error instanceof Error ? error.message : String(error) 
+      error: errorDetail(error) 
     }, { status: 500 });
   }
 }

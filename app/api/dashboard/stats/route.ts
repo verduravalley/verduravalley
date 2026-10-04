@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
 
 // GET /api/dashboard/stats - Fetch overview metrics
@@ -124,7 +125,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Dashboard stats error:', error);
     return NextResponse.json(
-      { message: 'Error fetching stats', error: String(error) },
+      { message: 'Error fetching stats', error: errorDetail(error) },
       { status: 500 }
     );
   }

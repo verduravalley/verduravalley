@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { errorDetail } from '@/lib/apiError';
 import { getAuthFromRequest } from '@/lib/auth';
 
 // GET /api/categories - Fetch all categories
@@ -19,7 +20,7 @@ export async function GET() {
     return NextResponse.json(result.rows);
   } catch (error) {
     console.error('Error fetching categories:', error);
-    return NextResponse.json({ message: 'Error fetching categories', error: String(error) }, { status: 500 });
+    return NextResponse.json({ message: 'Error fetching categories', error: errorDetail(error) }, { status: 500 });
   }
 }
 
@@ -52,6 +53,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(result.rows[0], { status: 201 });
   } catch (error) {
     console.error('Error creating category:', error);
-    return NextResponse.json({ message: 'Error creating category', error: String(error) }, { status: 500 });
+    return NextResponse.json({ message: 'Error creating category', error: errorDetail(error) }, { status: 500 });
   }
 }

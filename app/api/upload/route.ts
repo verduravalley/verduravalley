@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
 import { getAuthFromRequest } from '@/lib/auth';
+import { errorDetail } from '@/lib/apiError';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -33,7 +34,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Upload error:', error);
     return NextResponse.json(
-      { message: 'Error uploading file', error: String(error) },
+      { message: 'Error uploading file', error: errorDetail(error) },
       { status: 500 }
     );
   }
