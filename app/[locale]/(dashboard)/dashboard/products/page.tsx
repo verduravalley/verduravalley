@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Package, Plus, Pencil, Trash2, X } from 'lucide-react';
-import { useRouter } from '@/i18n/navigation';
+import { Package, Plus, Pencil, Trash2, X, ExternalLink } from 'lucide-react';
+import { useRouter, Link } from '@/i18n/navigation';
 import { Dialog } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import ImageUpload from '@/components/dashboard/ImageUpload';
@@ -228,6 +228,20 @@ export default function ProductsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap text-end text-sm font-medium">
+                    {/* Only active products exist on the public site, so an
+                        inactive one would link straight to a 404. */}
+                    {product.is_active !== false && (
+                      <Link
+                        href={`/products/${product.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={t('viewOnSite')}
+                        aria-label={t('viewOnSite')}
+                        className="text-gray-500 hover:text-gray-900 mr-3 inline-block align-middle"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
                     <button className="text-blue-600 hover:text-blue-900 mr-3" onClick={() => router.push(`/dashboard/products/${product.id}`)}>
                       <Pencil className="w-3.5 h-3.5" />
                     </button>

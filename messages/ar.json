@@ -160,7 +160,8 @@
       "messages": "الرسائل",
       "customRequests": "طلبات مخصصة",
       "settings": "الإعدادات",
-      "signOut": "تسجيل الخروج"
+      "signOut": "تسجيل الخروج",
+      "goToWebsite": "الذهاب إلى الموقع"
     },
     "common": {
       "english": "English",
@@ -239,7 +240,8 @@
       "backToProducts": "العودة إلى المنتجات",
       "product": "المنتج",
       "status": "الحالة",
-      "actions": "الإجراءات"
+      "actions": "الإجراءات",
+      "viewOnSite": "عرض في الموقع"
     },
     "leadership": {
       "title": "فريق القيادة",
