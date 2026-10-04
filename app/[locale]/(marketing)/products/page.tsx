@@ -2,7 +2,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SITE_URL } from '@/app/[locale]/layout';
 import BreadcrumbSection from '@/components/marketing/breadcrumb/BreadcrumbSection';
 import ShopMain from '@/components/marketing/main/ShopMain';
-import PageViewTracker from '@/components/marketing/utils/PageViewTracker';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -20,7 +19,6 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
   const t = await getTranslations({ locale, namespace: 'breadcrumb' });
   return (
     <>
-      <PageViewTracker page="products" />
       <BreadcrumbSection title={t('products')} />
       <ShopMain />
     </>

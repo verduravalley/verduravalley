@@ -8,6 +8,7 @@ import '@/styles/scss/style.scss';
 import dynamic from 'next/dynamic';
 import ScrollToTop from '@/components/marketing/utils/ScrollToTop';
 import WhatsAppButton from '@/components/marketing/utils/WhatsAppButton';
+import PageViewTracker from '@/components/marketing/utils/PageViewTracker';
 
 // Header/Footer: ssr:true — included in SSR output for SEO (links, nav visible to crawlers)
 const HeaderSection = dynamic(
@@ -44,6 +45,7 @@ export default function MarketingLayout({
 }) {
   return (
     <>
+      <PageViewTracker />
       <ScrollToTop />
       <HeaderSection />
       <main>{children}</main>

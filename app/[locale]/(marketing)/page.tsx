@@ -1,7 +1,6 @@
 // Server Component — removed 'use client', improves FCP/LCP/SEO
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import PageViewTracker from '@/components/marketing/utils/PageViewTracker';
 
 // Above-fold: render immediately (no lazy load)
 import BannerSection from '@/components/marketing/banner/BannerSection';
@@ -36,7 +35,6 @@ export default function HomePage() {
   return (
     <>
       {/* Fire-and-forget analytics — no render impact */}
-      <PageViewTracker page="home" />
 
       {/* LCP element — rendered immediately */}
       <BannerSection />
