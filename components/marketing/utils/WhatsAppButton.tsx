@@ -1,15 +1,9 @@
 'use client';
 
-import { useLocale } from 'next-intl';
-
-const WA_LINKS: Record<string, string> = {
-  en: 'https://wa.link/3vnur5',
-  ar: 'https://wa.link/z94s53',
-};
+const WA_NUMBER = '201042231187';
 
 export default function WhatsAppButton() {
-  const locale = useLocale();
-  const href = WA_LINKS[locale] ?? WA_LINKS.en;
+  const href = `https://wa.me/${WA_NUMBER}`;
 
   return (
     <a

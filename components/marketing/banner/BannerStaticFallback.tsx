@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-const HERO_URL = '/assets/images/hero-fresh-mushrooms.jpg';
+const HERO_URL = '/assets/images/hero-fresh-mushrooms.png';
 
 export default function BannerStaticFallback() {
   const t = useTranslations('banner');

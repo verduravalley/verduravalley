@@ -24,7 +24,7 @@ const TeamSection = () => {
     {
       id: 3,
       nameKey: "retailers" as const,
-      image: "/assets/images/households-consumers.jpg",
+      image: "/assets/images/households-consumers.png",
     },
   ];
   return (
