@@ -3,8 +3,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-const HERO_URL =
-  'https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448404/pexels-zeynep-sude-emek-193601188-20315537_oaktwr.jpg';
+const HERO_URL = '/assets/images/hero-fresh-mushrooms.jpg';
 
 export default function BannerStaticFallback() {
   const t = useTranslations('banner');

@@ -54,8 +54,32 @@ const FooterSection = ({
                   {t('aboutText')}
                 </p>
                 <div className="rv-1-socials rv-15-socials rv-20-socials mt-3">
-                  <a href="#" style={{ textDecoration: 'none' }}>
-                    <i className="fa-brands fa-linkedin-in"></i>
+                  <a
+                    href="https://wa.me/201042231187"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <i className="fa-brands fa-whatsapp"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/verduravalley/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61585561109898"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <i className="fa-brands fa-facebook-f"></i>
                   </a>
                 </div>
               </div>
