@@ -7,10 +7,8 @@ import 'swiper/css/navigation';
 import { useEffect, useState } from 'react';
 import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
-
-const HERO_URL = '/assets/images/hero-cover.png';
+import HeroPicture from './HeroPicture';
 
 const animateSlideText = async (swiper: any, isRTL: boolean) => {
   const gsapMod = await import('gsap');
@@ -68,23 +66,7 @@ export default function BannerSwiperClient() {
           className="rv-20-banner_slide"
           style={{ backgroundImage: 'none', position: 'relative', overflow: 'hidden' }}
         >
-          <Image
-            src={HERO_URL}
-            alt=""
-            priority
-            width={1920}
-            height={800}
-            sizes="100vw"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: 0,
-            }}
-          />
+          <HeroPicture />
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div className="container">
               <div className="row align-items-center">

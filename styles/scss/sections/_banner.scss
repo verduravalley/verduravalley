@@ -4430,6 +4430,15 @@
       background-image: url(/assets/images/hero-cover.png);
     }
 
+    // Phones get a portrait shot: the wide cover would be cropped down to its middle third
+    @media #{$xs} {
+      background-image: url(/assets/images/hero-cover-mobile.png);
+
+      &-2 {
+        background-image: url(/assets/images/hero-cover-mobile.png);
+      }
+    }
+
     .rv-20-banner_content {
       padding: 200px 0;
 

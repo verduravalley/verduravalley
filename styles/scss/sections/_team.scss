@@ -1632,16 +1632,9 @@
             position: relative;
             overflow: hidden;
 
+            // Below desktop: show the whole photo at its own shape, no crop
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                height: 320px;
-            }
-
-            @media #{$mobile} {
-                height: 300px;
-            }
-
-            @media #{$sm-mobile} {
-                height: 280px;
+                height: auto;
             }
 
             img {
@@ -1649,6 +1642,10 @@
                 width: 100%;
                 transition: all 0.4s ease;
                 object-fit: cover;
+
+                @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
+                    height: auto;
+                }
             }
 
             .rv-20-team_member_socials {

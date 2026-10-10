@@ -29,7 +29,7 @@ const AboutSection2 = () => {
                 src="/assets/images/about-facility.png"
                 alt="Verdura Valley Facility"
                 width={600}
-                height={600}
+                height={800}
               />
             </div>
           </DivAnimateXAxis>

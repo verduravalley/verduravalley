@@ -32,8 +32,8 @@ const ContactSection = () => {
               <CloudinaryImage
                 src="/assets/images/cairo-facility-harvest.png"
                 alt="Operations in Cairo, Egypt"
-                width={800}
-                height={600}
+                width={600}
+                height={800}
               />
             </div>
           </div>

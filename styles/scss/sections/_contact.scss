@@ -569,24 +569,12 @@
             max-width: 300px;
         }
 
+        // Tablet and phone: show the whole photo at its own shape, no crop
         @media #{$md,$sm,$mobile,$sm-mobile} {
-            height: 300px;
+            height: auto;
             width: 100%;
-            max-width: 300px;
-            margin: auto;
-            margin-bottom: 40px;
-        }
-
-        @media #{$sm,$mobile,$sm-mobile} {
-            height: 320px;
             max-width: 320px;
-            margin-bottom: 30px;
-        }
-
-        @media #{$mobile,$sm-mobile} {
-            height: 220px;
-            max-width: 250px;
-            margin-bottom: 25px;
+            margin: 0 auto 30px;
         }
 
         img {
@@ -594,6 +582,10 @@
             width: 100%;
             object-fit: cover;
             border-radius: 20px;
+
+            @media #{$md,$sm,$mobile,$sm-mobile} {
+                height: auto;
+            }
         }
     }
     

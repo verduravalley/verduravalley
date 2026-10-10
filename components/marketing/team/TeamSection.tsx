@@ -54,9 +54,9 @@ const TeamSection = () => {
                 <div className="rv-20-single_team_image">
                   <CloudinaryImage 
                     src={item.image} 
-                    alt={t(item.nameKey)} 
-                    width={400} 
-                    height={500} 
+                    alt={t(item.nameKey)}
+                    width={400}
+                    height={366}
                   />
                 </div>
                 <div className="rv-20-team_member_info">
