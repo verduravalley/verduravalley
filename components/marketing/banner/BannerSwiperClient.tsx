@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 
-const HERO_URL = '/assets/images/hero-fresh-mushrooms.png';
+const HERO_URL = '/assets/images/hero-cover.png';
 
 const animateSlideText = async (swiper: any, isRTL: boolean) => {
   const gsapMod = await import('gsap');
