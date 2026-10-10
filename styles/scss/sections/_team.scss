@@ -1633,15 +1633,15 @@
             overflow: hidden;
 
             @media #{$lg,$md,$sm,$mobile,$sm-mobile} {
-                height: 300px;
+                height: 320px;
             }
 
             @media #{$mobile} {
-                height: 250px;
+                height: 300px;
             }
 
             @media #{$sm-mobile} {
-                height: 200px;
+                height: 280px;
             }
 
             img {
