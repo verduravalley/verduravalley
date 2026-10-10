@@ -10,8 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 
-const HERO_URL =
-  'https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448404/pexels-zeynep-sude-emek-193601188-20315537_oaktwr.jpg';
+const HERO_URL = '/assets/images/hero-fresh-mushrooms.jpg';
 
 const animateSlideText = async (swiper: any, isRTL: boolean) => {
   const gsapMod = await import('gsap');

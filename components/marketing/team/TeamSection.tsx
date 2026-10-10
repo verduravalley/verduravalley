@@ -24,7 +24,7 @@ const TeamSection = () => {
     {
       id: 3,
       nameKey: "retailers" as const,
-      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448366/pexels-pixabay-36438_1_rcgklr.jpg",
+      image: "/assets/images/households-consumers.jpg",
     },
   ];
   return (
