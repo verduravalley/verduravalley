@@ -26,7 +26,7 @@ const AboutSection2 = () => {
           <DivAnimateXAxis className="col-xl-4 col-lg-6" position={-80}>
             <div className="rv-1-about__img reveal">
               <CloudinaryImage
-                src="https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448351/pexels-alleksana-5950411_wlisdd.jpg"
+                src="/assets/images/about-facility.png"
                 alt="Verdura Valley Facility"
                 width={600}
                 height={600}

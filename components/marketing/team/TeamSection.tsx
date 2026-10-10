@@ -14,12 +14,12 @@ const TeamSection = () => {
     {
       id: 1,
       nameKey: "foodProcessors" as const,
-      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1770052633/food-processors_n7f5zy.jpg",
+      image: "/assets/images/food-processors.png",
     },
     {
       id: 2,
       nameKey: "hotels" as const,
-      image: "https://res.cloudinary.com/dh1mv7xlv/image/upload/v1771448395/pexels-cottonbro-4253125_aju5xj.jpg",
+      image: "/assets/images/restaurants-hotels.png",
     },
     {
       id: 3,
